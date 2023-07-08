@@ -133,6 +133,8 @@ function save_level(name) {
 	var json = jsonify_board(),
 		f = file_text_open_write(get_save_location() + name + ".txt");
 		
+		show_debug_message(get_save_location() + name + ".txt")
+		
 	json.info = {
 		"name": name
 	}
