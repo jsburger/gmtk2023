@@ -1,0 +1,9 @@
+actions are enemy moves
+
+items are things that get queued into the combat engine and actually do things like add block or deal damage
+
+abilities are for the player to use
+i will be adding buttons for abilities
+
+
+idk how to finish it but you can just do normal things and ignore the core gameplay :)
