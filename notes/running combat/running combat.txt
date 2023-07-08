@@ -1,0 +1,23 @@
+Create combatRunner
+have reference to player and enemies
+
+in combatrunner step:
+	helper functions that build sequences automatically
+		ie: attack(target, x, y) adds the attack to the sequence
+		all of these wait until their turn to activate
+
+	do nothing while player turn
+	if player uses ability, start ability sequence
+	end turn button only available if player turn and no sequence active
+	
+	end turn button:
+		when pressed, do player end turn
+		run enemy turn
+	
+	enemy turn:
+		call enemy turn start
+		resolve any sequences, then call next enemy turn start
+		call enemy turn actions, resolve sequences, etc
+		cakl enemy turn end
+	
+		
