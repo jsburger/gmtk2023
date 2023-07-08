@@ -131,7 +131,7 @@ function save_level(name) {
 	if current_level.info.name = ""
 		current_level.info.name = name
 	var json = jsonify_board(),
-		f = file_text_open_write("new levels/" + name + ".txt");
+		f = file_text_open_write(get_save_location() + name + ".txt");
 		
 	json.info = {
 		"name": name

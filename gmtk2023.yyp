@@ -360,6 +360,7 @@
     {"id":{"name":"vo_impatient05","path":"sounds/vo_impatient05/vo_impatient05.yy",},},
     {"id":{"name":"vo_intro","path":"sounds/vo_intro/vo_intro.yy",},},
     {"id":{"name":"vo_lastturn01","path":"sounds/vo_lastturn01/vo_lastturn01.yy",},},
+    {"id":{"name":"get_save_location","path":"scripts/get_save_location/get_save_location.yy",},},
     {"id":{"name":"vo_lastturn02","path":"sounds/vo_lastturn02/vo_lastturn02.yy",},},
     {"id":{"name":"vo_lastturn03","path":"sounds/vo_lastturn03/vo_lastturn03.yy",},},
     {"id":{"name":"vo_lastturn04","path":"sounds/vo_lastturn04/vo_lastturn04.yy",},},
