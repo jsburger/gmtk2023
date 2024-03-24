@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "GlobalStep",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "New Shit",
-    "path": "folders/Scripts/New Shit.yy",
+  "$GMScript":"",
+  "%Name":"GlobalStep",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"GlobalStep",
+  "parent":{
+    "name":"New Shit",
+    "path":"folders/Scripts/New Shit.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

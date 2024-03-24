@@ -2,6 +2,7 @@ event_inherited();
 sound_play_pitch(snd_explo, 1);
 var list = ds_list_create();
 
+scr_screenshake(10, 2, 0.2);
 
 for (var _x = obj_board.bbox_left; _x <= obj_board.bbox_right; _x += TILE_WIDTH) {
 	with(instance_create_layer(_x, y, "Projectiles", obj_explosion)) {
