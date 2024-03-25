@@ -6,6 +6,7 @@
 
 //image_xscale = width/(bbox_right - bbox_left)
 //image_yscale = height/(bbox_bottom - bbox_top)
+shadow_surface = -1;
 
 editor = false;
 canplace = true;

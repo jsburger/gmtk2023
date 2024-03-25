@@ -38,3 +38,52 @@ if(editor){
 	}
 	draw_set_alpha(1);
 }
+
+if !surface_exists(shadow_surface) {
+	shadow_surface = surface_create(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));	
+}
+
+var surface = shadow_surface
+var camera_x = camera_get_view_x(view_camera[0]) 
+var camera_y = camera_get_view_y(view_camera[0])
+
+surface_set_target(surface)
+draw_clear_alpha(c_black,0);
+gpu_set_fog(true, c_white, 0, 0)
+
+with par_bricklike {
+	if visible {
+		x -= camera_x;
+		y -= camera_y;
+	
+		event_perform(ev_draw, ev_draw_normal)
+	
+		x += camera_x;
+		y += camera_y;
+	}
+}
+
+with par_collectible {
+	x -= camera_x;
+	y -= camera_y;
+	
+	draw_self()
+	
+	x += camera_x;
+	y += camera_y;
+}
+
+with obj_dice {
+	x -= camera_x;
+	y -= camera_y;
+	
+	draw_self()
+	
+	x += camera_x;
+	y += camera_y;
+}
+
+surface_reset_target()
+gpu_set_fog(false, c_black, 0, 0)
+
+draw_surface_ext(surface, camera_x + 4, camera_y + 4, 1, 1, 0, c_black, 0.8)
