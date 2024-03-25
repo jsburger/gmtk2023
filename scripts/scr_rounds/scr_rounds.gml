@@ -168,6 +168,9 @@ function check_fullclear() {
 }
 
 function make_new_board() {
+	with obj_stain_effect{
+		clear_item()	
+	}
 	with par_bricklike {
 		clear_item()
 	}
