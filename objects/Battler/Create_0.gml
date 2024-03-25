@@ -23,6 +23,23 @@ hurt = function(damage) {
 	}
 }
 
+turn_start = function() {
+	statuses.on_turn_start()
+}
+
+turn = function() {
+	
+}
+
+turn_end = function() {
+	statuses.on_turn_end()
+}
+__turn_end = turn_end;
+
+battle_start = function() {
+	
+}
+
 die = function() {
 	image_alpha = .5
 	canact = false

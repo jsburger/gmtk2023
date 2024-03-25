@@ -54,6 +54,7 @@ function get_item_target(targetType) {
 function CombatItem() constructor {
 	delay = 0;
 	target = noone;
+	owner = noone;
 	
 	static act = function(runner) {
 		
@@ -84,23 +85,38 @@ function StatusItem(_statusType, _duration, _power) : CombatItem() constructor {
 	}	
 }
 
+function get_current_actor() {
+	if instance_exists(self) && instance_is(self, Battler) return self;
+	with CombatRunner {
+		if is_player_turn with PlayerBattler return self
+		if instance_exists(current_actor) return current_actor
+	}
+	return noone;
+}
+
 function attack(_target, damage, times = 1, useStrength = true) {
-	if useStrength && instance_exists(self) {
-		damage += statuses.get_attack_bonus()		
+	var actor = get_current_actor();
+	if useStrength {
+		if instance_exists(actor) {
+			damage += actor.statuses.get_attack_bonus()
+		}
 	}
 	with CombatRunner {
 		repeat(times) {
 			var act = new AttackItem(damage)
-			act.target = get_Item_target(_target)
+			act.target = get_item_target(_target)
+			act.owner = actor;
 			enqueue(act)
 		}
 	}
 }
 
 function apply(_target, statusType, statusDuration = 1, statusStrength = 1) {
+	var actor = get_current_actor();
 	with CombatRunner {
 		var act = new StatusItem(statusType, statusDuration, statusStrength)
-		act.target = get_Item_target(_target)
+		act.target = get_item_target(_target)
+		act.owner = actor;
 		enqueue(act)
 	}
 }

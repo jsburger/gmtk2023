@@ -19,6 +19,10 @@ while !is_busy() && !is_player_turn {
 	}
 }
 
+if is_player_turn && current_ability != undefined && !targeting {
+	run_ability()
+}
+
 
 //Resolve items added by actions
 acting = true

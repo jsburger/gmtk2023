@@ -12,7 +12,7 @@ function StatusHolder(creator) constructor {
 	static on_turn_end = function() {
 		for (var i = 0; i < array_length(statuses); ++i) {
 		    var s = statuses[i];
-			var finished = i.on_turn_end();
+			var finished = s.on_turn_end();
 			if finished {
 				array_delete(statuses, i, 1)
 				i--
@@ -21,7 +21,14 @@ function StatusHolder(creator) constructor {
 		}
 	}
 	
-	static clear = function(doRemove) {
+	static on_turn_start = function() {
+		for (var i = 0; i < array_length(statuses); ++i) {
+		    var s = statuses[i];
+			s.on_turn_start();
+		}
+	}
+	
+	static clear = function(doRemove = true) {
 		if doRemove {
 			for (var i = 0; i < array_length(statuses); ++i) {
 			    var s = statuses[i];

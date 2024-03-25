@@ -5,5 +5,5 @@ function get_save_location(){
 		return program_directory + "datafiles/Levels/"
 	}
 	//DEV: YOU CAN CHANGE THIS TO MAKE IT AUTO SAVE INTO THE REPOSITORY
-	return working_directory + "Levels/"
+	return "C:/Users/dizzy/Documents/GameMakerStudio2/gmtk2023/datafiles/Levels/"
 }
