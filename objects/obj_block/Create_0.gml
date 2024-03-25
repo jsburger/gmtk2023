@@ -18,13 +18,13 @@ set_color = function(col) {
 			image_blend = c_white
 			break
 		case MANA.RED:
-			image_blend = c_red
+			image_blend = #d12222
 			break
 		case MANA.BLUE:
-			image_blend = c_blue
+			image_blend = #4566d1
 			break
 		case MANA.YELLOW:
-			image_blend = c_yellow
+			image_blend = #efc555
 			break
 	}
 }

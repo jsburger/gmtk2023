@@ -7,12 +7,14 @@ enum MANA {
 }
 
 global.mana = array_create(MANA.MAX)
+global.mana_gained = array_create(MANA.MAX)
 
 //Reset mana when game restarted
 add_reset_callback(mana_reset)
 
 function mana_add(type, amount) {
 	global.mana[type] += amount
+	global.mana_gained[type] += amount
 }
 
 function mana_reset() {

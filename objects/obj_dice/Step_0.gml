@@ -28,3 +28,10 @@ while(vspeed > max_fallspeed){
 //Portal reset
 if portal > -4 && !place_meeting(x, y, portal){portal = -4}
 if launcher > -4 && !place_meeting(x, y, launcher){launcher = -4}
+
+if pierce <= 0 {
+	image_blend = c_white;	
+}
+else {
+	image_blend = c_red;	
+}

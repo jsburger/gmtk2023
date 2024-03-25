@@ -21,17 +21,18 @@ if gunangle > 180{
 //image_xscale = ((gunangle + 270) % 360) < 180 ? -1 : 1;
 //image_angle = gunangle - 90;
 
-#macro chip_cost 100
+#macro chip_cost 1
 
 if button_pressed(inputs.shoot) && gunangle > 0 && gunangle < 180 && !(_editor) && can_shoot && inBoard {
 	//Shoot chips
 	if instance_exists(die) {
 		//Zone where chips cannot be shot to stop people from wasting chips
-		if (abs(die.y - obj_board.bbox_bottom) >  55) && global.money > chip_cost {
+		if (abs(die.y - obj_board.bbox_bottom) >  55) && (global.mana[MANA.YELLOW] > 0) {
 			with instance_create_layer(x, y, "Projectiles", obj_chip) {
 				motion_set(other.gunangle, 16)
-				global.money -= chip_cost
-				global.payout += chip_cost
+				//global.money -= chip_cost
+				//global.payout += chip_cost
+				global.mana[MANA.YELLOW] -= chip_cost
 			}
 			sound_play_pitch(choose(snd_chip_throw1, snd_chip_throw2), 1)
 			sprite_index = spr_hand_thanos_snap;
@@ -48,6 +49,14 @@ if button_pressed(inputs.shoot) && gunangle > 0 && gunangle < 180 && !(_editor) 
 			motion_set(other.gunangle, 18)
 			other.die = id;
 		}
+		
+		// PUT THIS SOMEWHERE ELSE LATER!!
+		for (var i = 0; i < MANA.MAX; ++i) {
+			global.mana_gained[i] = 0;
+		}	
+		
+		global.mana[MANA.YELLOW] += 3;
+			
 		sound_play_pitch(snd_die_throw, 1)
 		sprite_index = spr_hand_cast;
 		has_dice = false
