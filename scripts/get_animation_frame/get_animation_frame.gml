@@ -1,6 +1,15 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function get_animation_frame(framecount) {
-	var n = (1000 / game_speed) * 6;
-	return floor((current_time mod (n * (framecount)))/n)
+function get_animation_frame(framecount, _fps = 10) {
+	// f/s / animation/s = frames per animation frame
+	var n = 60 / _fps;
+	return (time_to_frame() / n) mod framecount;
+}
+
+function time_to_frame() {
+	//1000 ms/s / f/s = ms per game frame
+	static n = 1000/60;
+	return round(current_time / n);
+}
+
+function sprite_get_animation_frame(sprite) {
+	return get_animation_frame(sprite_get_number(sprite), sprite_get_speed(sprite))
 }

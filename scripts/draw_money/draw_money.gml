@@ -52,7 +52,7 @@ function draw_number_panel(_x, _y, numberString, bgColor, maxLength, scale = 1) 
 	for (var i = 0; i < maxLength; i++) {
 		draw_sprite_ext(spr_number_back, 0, _x + gap * i, _y, scale, scale, 0, bgColor, 1)
 	}
-	_x += gap * (maxLength - string_length(maxLength))
+	_x += gap * (maxLength - string_length(numberString))
 	for (var i = 1; i <= string_length(numberString); i++) {
 		draw_sprite_ext(spr_numbers, get_number_index(string_char_at(numberString, i)), _x + (gap * (i - 1)), _y,
 			scale, scale, 0, c_white, 1)

@@ -1,31 +1,30 @@
-enum MANA {
-	RED,
-	BLUE,
-	YELLOW,
+
+enum TARGET_TYPE {
+	NONE,
+	BOARD,
+	BATTLER
+}
+
+
+function register_ability(name, abilityFactory) {
+	static abilities = ds_map_create();
+	ds_map_add(abilities, name, abilityFactory)
+}
+function ability_get_register() {
+	return register_ability.abilities;
+}
+function ability_get_prototype(name) {
+	return ability_get_register()[? name]
+}
+
+
+function Ability(TargetType = TARGET_TYPE.BATTLER) constructor {
 	
-	MAX //Dont use this, its just meant to represent the last value in the enum so you know how many manas there are
-}
-
-global.mana = array_create(MANA.MAX)
-global.mana_gained = array_create(MANA.MAX)
-
-//Reset mana when game restarted
-add_reset_callback(mana_reset)
-
-function mana_add(type, amount) {
-	global.mana[type] += amount
-	global.mana_gained[type] += amount
-}
-
-function mana_reset() {
-	for (var i = 0; i < MANA.MAX; ++i) {
-		global.mana[i] = 0
+	needs_target = false
+	if TargetType != TARGET_TYPE.NONE {
+		needs_target = true
 	}
-}
-
-function Ability(needsTarget = true) constructor {
-	
-	needs_target = needsTarget
+	target_type = TargetType
 	costs = array_create(MANA.MAX);
 	
 	name = "Ability"
@@ -38,6 +37,11 @@ function Ability(needsTarget = true) constructor {
 	
 	static set_cost = function(type, amount) {
 		costs[type] = amount
+	}
+	static set_costs = function(red = 0, blue = 0, yellow = 0) {
+		costs[MANA.RED] = red
+		costs[MANA.BLUE] = blue
+		costs[MANA.YELLOW] = yellow
 	}
 	
 	static can_cast = function() {
@@ -52,9 +56,33 @@ function Ability(needsTarget = true) constructor {
 		    global.mana[i] -= costs[i]
 		}
 	}
+	
+	#region Targeting logic:
+		static set_targets = function(target_type) {
+			self.target_type = target_type
+			if target_type != TARGET_TYPE.NONE {
+				needs_target = true
+			}
+		}
+	
+		static accepts_target = function(target_info) {
+			return target_info.type == target_type
+		}
+		static __accepts_target = accepts_target
+		
+		static draw_target = function(origin_x, origin_y, hovered_target) {
+			draw_line_width_color(origin_x, origin_y, mouse_x, mouse_y, 3, c_white, c_red)
+			if (accepts_target(hovered_target)) {
+				draw_circle_color(mouse_x, mouse_y, 4, c_red, c_red, false)
+			}
+		}
+		
+	#endregion
+	
+	
 }
 
-function BasicAttack(Damage) : Ability(true) constructor {
+function BasicAttack(Damage) : Ability() constructor {
 	damage = Damage
 	
 	static act = function() {
@@ -62,13 +90,12 @@ function BasicAttack(Damage) : Ability(true) constructor {
 	}
 }
 
-function RedManaAttack(Damage, Cost) : BasicAttack(true) constructor {
-	damage = Damage
+function RedManaAttack(Damage, Cost) : BasicAttack(Damage) constructor {
 	set_cost(MANA.RED, Cost)
 	
 }
 
-function FunctionAbility(func, needsTarget = true) : Ability(needsTarget) constructor {
+function FunctionAbility(func) : Ability() constructor {
 	callback = func
 	
 	static act = function() {

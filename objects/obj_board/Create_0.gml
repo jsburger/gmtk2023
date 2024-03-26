@@ -4,8 +4,25 @@
 //width = 600
 //height = 700
 
-//image_xscale = width/(bbox_right - bbox_left)
-//image_yscale = height/(bbox_bottom - bbox_top)
+become_active = false;
+//Allows the shooter to act
+active = false;
+
+// Activates when clicked and not targeting
+on_click = function() {
+	if !active {
+		become_active = 2
+	}
+}
+
+// Takes priority over on_click when CombatRunner is targeting.
+get_target_info = function() {
+	return {
+		type: TARGET_TYPE.BOARD
+	}
+}
+
+//For drawing shadows
 shadow_surface = -1;
 
 editor = false;

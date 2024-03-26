@@ -71,6 +71,12 @@ function level_load_ext(levelnumber){
 	
 	var level = global.levelData[levelnumber];
 	
+	array_sort(level.objects, function(a, b) {
+		if a.y > b.y return -1
+		if a.y < b.y return 1
+		return 0
+	})
+	
 	foreach(level.objects, function(entry) {
 		with instance_create_layer(entry.x, entry.y, "Instances", asset_get_index(entry.object_index)) {
 			if instance_is(self, obj_cable) obj_layer = 1
@@ -139,7 +145,7 @@ function save_level(name) {
 		"name": name
 	}
 		
-	file_text_write_string(f, json_stringify(json));
+	file_text_write_string(f, json_stringify(json, true));
 	file_text_close(f);
 }
 

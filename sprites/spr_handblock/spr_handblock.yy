@@ -46,7 +46,7 @@
     ],
     "top":0,
   },
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"bricks",
     "path":"folders/Sprites/Blocks/bricks.yy",
@@ -73,7 +73,7 @@
     "eventStubScript":null,
     "eventToFunction":{},
     "length":5.0,
-    "lockOrigin":false,
+    "lockOrigin":true,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
       "Keyframes":[],
@@ -111,7 +111,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":16,
-    "yorigin":10,
+    "yorigin":8,
   },
   "swatchColours":null,
   "swfPrecision":2.525,

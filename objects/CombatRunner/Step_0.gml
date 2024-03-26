@@ -23,7 +23,11 @@ if is_player_turn && current_ability != undefined && !targeting {
 	run_ability()
 }
 
+if button_pressed(inputs.dash) && targeting == true && current_ability != undefined {
+	cancel_targeting()
+}
 
+//TODO: make one array of actions, no need for two
 //Resolve items added by actions
 acting = true
 while has_actions() && waitTime <= 0 {

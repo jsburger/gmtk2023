@@ -1,14 +1,21 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Movement and Chip shooting
 
-var _editor = false,
+var can_act = self.can_act(),
 	inBoard = false;
-if instance_exists(obj_board){
-	_editor = obj_board.editor;	
+if instance_exists(obj_board) {
 	inBoard = point_in_rectangle(mouse_x, mouse_y, obj_board.bbox_left, obj_board.bbox_top, obj_board.bbox_right, obj_board.bbox_bottom)
 }
-if !(_editor and button_check(inputs.editor_cycle)) {
-	scr_movement()
+if (can_act) {
+	var acceleration = 1,
+		maxspeed = 6;
+
+	if button_check(inputs.left) {
+		hspeed -= acceleration
+	}
+	else if button_check(inputs.right) {
+		hspeed += acceleration
+	}
+	speed = clamp(speed, -maxspeed, maxspeed)
 }
 
 gunangle = point_direction(x, y, mouse_x, mouse_y);
@@ -23,7 +30,7 @@ if gunangle > 180{
 
 #macro chip_cost 1
 
-if button_pressed(inputs.shoot) && gunangle > 0 && gunangle < 180 && !(_editor) && can_shoot && inBoard {
+if can_act && button_pressed(inputs.shoot) && can_shoot && inBoard {
 	//Shoot chips
 	if instance_exists(die) {
 		//Zone where chips cannot be shot to stop people from wasting chips
@@ -71,7 +78,7 @@ if button_pressed(inputs.shoot) && gunangle > 0 && gunangle < 180 && !(_editor) 
 
 // Dash
 var _input = button_check(inputs.right) - button_check(inputs.left)
-if button_pressed(inputs.dash) && dash_timer <= 10 && _input != 0{
+if can_act && button_pressed(inputs.dash) && dash_timer <= 10 && _input != 0 {
 	dash_timer = 20;
 	dash_direction = _input;
 	sound_play_pitch(choose(snd_dash1, snd_dash2), 1);

@@ -4,6 +4,8 @@ draw_sprite_ext(spr_board_bg, 0, x, y, (image_xscale - 12/TILE_MIN) * 2/3, (imag
 draw_self();
 draw_sprite_ext(spr_board_border, 0, x, y, 1, 1, image_angle, image_blend, image_alpha)
 
+//board_can_fit(obj_bomb, mouse_x, mouse_y)
+
 //Editor grid
 if(editor){
 	

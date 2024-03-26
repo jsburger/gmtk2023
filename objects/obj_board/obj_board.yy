@@ -38,5 +38,8 @@
     "path":"sprites/spr_board/spr_board.yy",
   },
   "spriteMaskId":null,
+  "tags":[
+    "Clickable",
+  ],
   "visible":true,
 }

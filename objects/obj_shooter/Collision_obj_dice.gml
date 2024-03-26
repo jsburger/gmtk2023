@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Dash into die
 if(other.image_blend != c_dkgray){
 	other.nograv = false;
 	if (dash_timer){

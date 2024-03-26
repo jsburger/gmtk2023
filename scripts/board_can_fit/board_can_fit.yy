@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"board_can_fit",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"board_can_fit",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

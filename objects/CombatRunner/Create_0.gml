@@ -26,22 +26,51 @@ acting = false;
 current_ability = undefined;
 targeting = false;
 
+
+current_target = undefined;
+
 combat_started = false;
 
-mount_ability = function(ability) {
-	current_ability = ability
-	targeting = ability.needs_target
-	if !targeting {
-		run_ablity()
-	}
-}
 
-run_ability = function() {
-	current_actor = PlayerBattler.id;
-	current_ability.act();
-	current_abiltiy.spend_mana();
-	current_ability = undefined;
-}
+#region Running Ability Logic
+
+	mount_ability = function(ability) {
+		if current_ability != undefined {
+			cancel_targeting()
+		}
+		current_ability = ability
+		targeting = ability.needs_target
+		if !targeting {
+			run_ablity()
+		}
+	}
+
+	run_ability = function() {
+		//current_actor = PlayerBattler.id;
+		current_ability.act();
+		current_ability.spend_mana();
+		current_ability = undefined;
+	}
+	
+	accept_target = function(info) {
+		if current_ability.accepts_target(info) {
+			current_target = info
+			run_ability()
+			cancel_targeting() //Doesn't really cancel, just cleans up
+		}
+	}
+	
+	cancel_targeting = function() {
+		current_ability = undefined;
+		targeting = false;
+		with AbilityButton if active {
+			active = false
+		}
+	}
+	
+	
+	
+#endregion
 
 enqueue = function(action) {
 	if acting {

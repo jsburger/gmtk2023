@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+
 
 //So it doesnt bounce on the board when it uses the board staying script
 bounciness = 0
@@ -16,3 +15,11 @@ can_shoot = false
 die = -4;
 
 portal = -4;
+
+can_act = function() {
+	with obj_board {
+		if editor return false
+		if !active return false
+	}
+	return true;
+}

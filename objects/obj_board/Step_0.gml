@@ -1,5 +1,12 @@
 /// @description Editor Code
 
+if become_active > 0 {
+	become_active -= 1
+	if become_active == 0 {
+		active = true
+	}
+}
+
 //Toggle Editor
 if keyboard_check_pressed(vk_home) {
 	editor = !editor;
@@ -70,7 +77,7 @@ if(editor){
 				mask_index = _sprite;
 		
 				//Lazy fix, sorry:
-				if _sprite == spr_ball{	
+				if _sprite == spr_ball {	
 					_sprite = spr_bomb;
 					mask_index = _sprite;
 				}
