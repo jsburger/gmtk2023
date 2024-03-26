@@ -10,6 +10,10 @@ function board_can_fit(object, _x, _y) {
 		box_right  = grid_x + sprite_get_bbox_right(sprite),
 		box_bottom = grid_y + sprite_get_bbox_bottom(sprite);
 	
+	//draw_rectangle_color(
+	//	box_left, box_top, box_right, box_bottom,
+	//	0, 0, 0, 0, false
+	//)
 	
 	if instance_exists(collision_rectangle(
 		box_left, box_top, box_right, box_bottom,
@@ -27,10 +31,6 @@ function board_can_fit(object, _x, _y) {
 		ds_list_destroy(list)
 		
 		if found {
-			//draw_rectangle_color(
-			//	box_left, box_top, box_right, box_bottom,
-			//	0, 0, 0, 0, false
-			//)
 			return false
 		}
 	}
@@ -49,7 +49,7 @@ function board_placement_position(object, _x, _y) {
 	if sprite == -1 sprite = object_get_sprite(object)
 	
 	return {
-		x: grid_x + sprite_get_bbox_left(sprite) - sprite_get_xoffset(sprite),
-		y: grid_y + sprite_get_bbox_top(sprite - sprite_get_yoffset(sprite))
+		x: grid_x + sprite_get_xoffset(sprite),
+		y: grid_y + sprite_get_yoffset(sprite)
 	}
 }

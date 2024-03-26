@@ -108,7 +108,6 @@
   },
   "name":"gmtk2023",
   "resources":[
-    {"id":{"name":"KARM READ THIS","path":"notes/KARM READ THIS/KARM READ THIS.yy",},},
     {"id":{"name":"running combat","path":"notes/running combat/running combat.yy",},},
     {"id":{"name":"Battler","path":"objects/Battler/Battler.yy",},},
     {"id":{"name":"BoardPaintButton","path":"objects/BoardPaintButton/BoardPaintButton.yy",},},
