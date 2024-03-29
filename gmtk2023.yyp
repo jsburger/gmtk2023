@@ -109,6 +109,7 @@
   "name":"gmtk2023",
   "resources":[
     {"id":{"name":"running combat","path":"notes/running combat/running combat.yy",},},
+    {"id":{"name":"AbilityButton","path":"objects/AbilityButton/AbilityButton.yy",},},
     {"id":{"name":"Battler","path":"objects/Battler/Battler.yy",},},
     {"id":{"name":"BoardPaintButton","path":"objects/BoardPaintButton/BoardPaintButton.yy",},},
     {"id":{"name":"BoardPaintSubButton","path":"objects/BoardPaintSubButton/BoardPaintSubButton.yy",},},
@@ -222,7 +223,6 @@
     {"id":{"name":"obj_text_prompt","path":"objects/obj_text_prompt/obj_text_prompt.yy",},},
     {"id":{"name":"obj_tooth","path":"objects/obj_tooth/obj_tooth.yy",},},
     {"id":{"name":"obj_vault","path":"objects/obj_vault/obj_vault.yy",},},
-    {"id":{"name":"AbilityButton","path":"objects/AbilityButton/AbilityButton.yy",},},
     {"id":{"name":"par_bricklike","path":"objects/par_bricklike/par_bricklike.yy",},},
     {"id":{"name":"par_collectible","path":"objects/par_collectible/par_collectible.yy",},},
     {"id":{"name":"par_logiclike","path":"objects/par_logiclike/par_logiclike.yy",},},
