@@ -4,3 +4,10 @@ function variable_instance_defget(instance, variable, def) {
     }
     return def
 }
+
+function struct_defget(struct, variable, def) {
+	if struct_exists(struct, variable) {
+		return struct_get(struct, variable);
+	}
+	return def;
+}

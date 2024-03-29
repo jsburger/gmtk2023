@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"scrAttacks",
+  "%Name":"scrCombatItems",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scrAttacks",
+  "name":"scrCombatItems",
   "parent":{
-    "name":"New Shit",
-    "path":"folders/Scripts/New Shit.yy",
+    "name":"Combat",
+    "path":"folders/Scripts/New Shit/Combat.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
