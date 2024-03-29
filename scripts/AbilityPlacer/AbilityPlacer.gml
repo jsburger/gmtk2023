@@ -5,7 +5,7 @@ register_ability("PlaceBomb", function() {
 		name = "Bomb Placer"
 		desc = "Place a Bomb"
 		sprite_index = spr_bomb
-		set_cost(MANA.RED, 0)
+		set_costs(15, 5, 0)
 		return self
 	}
 })
