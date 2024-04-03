@@ -1,20 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"EnemyBattler",
+  "%Name":"BattlerGayLittleSquirrel",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"EnemyBattler",
+  "name":"BattlerGayLittleSquirrel",
   "overriddenProperties":[],
   "parent":{
-    "name":"New Shit",
-    "path":"folders/objects/New Shit.yy",
+    "name":"Battlers",
+    "path":"folders/objects/Battlers.yy",
   },
   "parentObjectId":{
-    "name":"Battler",
-    "path":"objects/Battler/Battler.yy",
+    "name":"EnemyBattler",
+    "path":"objects/EnemyBattler/EnemyBattler.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -34,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_portrait_frame",
-    "path":"sprites/spr_portrait_frame/spr_portrait_frame.yy",
+    "name":"spr_gay_little_squirrel",
+    "path":"sprites/spr_gay_little_squirrel/spr_gay_little_squirrel.yy",
   },
   "spriteMaskId":null,
   "visible":true,

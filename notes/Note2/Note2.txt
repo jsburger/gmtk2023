@@ -1,0 +1,49 @@
+Enemy moves:
+	Info:
+		Enemies have multiple upcoming moves
+		Moves have descriptions (does not need to be automatic)
+		Accurate predictions (output is known before runtime)
+		Upcoming moves are displayed on a timeline
+		Moves do NOT have multiple timeline entries
+		Timeline presents values as they are, not as they will be
+			Example;
+				Enemy is to gain 3 strength and use a 1 damage attack
+				Timeline will display 1 damage
+	
+	Actions:
+		Take in values or value providers
+		Get values from providers at run time
+	
+	Prediction/Providers:
+		Store all providers somewhere in the move
+			For calling hooks like on_move_select()
+		Providers can and should be reused
+			Incorrect Example:
+				hit(random_provider(10, 20))
+				desc("Deal % damage", random_provider(10, 20))
+			Correct Example:
+				var damage = random_provider(10, 20);
+				hit(damage)
+				desc("Deal % damage", damage)
+		Anything dynamic needs a provider.
+			Likely uses:
+				Instance variables (instance, variable name)
+				Random numbers (range)
+				Instance Count (object + filter)
+				Custom (example: red block count)
+					Generic syntax:
+						function() -> result
+						listener to update with
+		Providers know what move they belong to
+			For calling update functions
+			Use weak refs
+			
+			
+Board Format 2:
+	Add Format
+	Move X to be relative to board center
+	Move Y to be relative to board bottom
+	(Possibly) Upgrade object names to camelCase
+	
+Timeline/Battler background Color Coding
+	Enemy 1 is red for example, Enemy 2 is blue, etc

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Pool",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Pool",
+  "parent":{
+    "name":"Classes",
+    "path":"folders/Scripts/Classes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -70,6 +70,7 @@ function CombatItem() constructor {
 	static act = function(runner) {
 		
 	}
+	
 }
 
 function AttackItem(Damage) : CombatItem() constructor {
@@ -77,7 +78,10 @@ function AttackItem(Damage) : CombatItem() constructor {
 	damage = Damage
 	
 	static act = function(runner) {
-		target.hurt(damage)
+		var t = resolve_target(target)
+		if instance_exists(t) {
+			battler_hurt(t, provider_get(damage), owner)
+		}
 	}
 }
 
@@ -85,14 +89,17 @@ function WaitItem(duration) : CombatItem() constructor {
 	delay = duration;
 }
 
-function StatusItem(_statusType, _duration, _power) : CombatItem() constructor {
+function StatusItem(_statusType, _duration, _strength) : CombatItem() constructor {
 	delay = 15
 	status = _statusType
 	duration = _duration
-	powah = _power
+	strength = _strength
 	
-	act = function(runner) {
-		target.statuses.add(new status(duration, powah))
+	static act = function(runner) {
+		var t = resolve_target(target)
+		if instance_exists(t) {
+			t.statuses.add(new status(provider_get(duration), provider_get(strength)))
+		}
 	}	
 }
 

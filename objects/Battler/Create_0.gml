@@ -17,10 +17,16 @@ hurt = function(damage) {
 		hp += block
 		block = 0
 	}
+	on_hurt(damage)
 	if hp <= 0 {
 		hp = 0
 		die()
 	}
+}
+
+/// Use this for hooks rather than hurt
+on_hurt = function(damage) {
+	
 }
 
 turn_start = function() {
