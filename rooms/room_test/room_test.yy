@@ -1,7 +1,7 @@
 {
   "$GMRoom":"",
   "%Name":"room_test",
-  "creationCodeFile":"${project_dir}/rooms/parent_room/RoomCreationCode.gml",
+  "creationCodeFile":"rooms/parent_room/RoomCreationCode.gml",
   "inheritCode":true,
   "inheritCreationOrder":true,
   "inheritLayers":true,
@@ -38,7 +38,7 @@
     {"$GMRInstanceLayer":"","%Name":"Portraits","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":true,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"","%Name":"inst_61E8AF75","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_61E8AF75","objectId":{"name":"obj_elvis","path":"objects/obj_elvis/obj_elvis.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":896.0,"y":640.0,},
         {"$GMRInstance":"","%Name":"inst_9EC46EC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_9EC46EC","objectId":{"name":"obj_cuffs","path":"objects/obj_cuffs/obj_cuffs.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-64.0,"y":640.0,},
-        {"$GMRInstance":"","%Name":"inst_6B49D92B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6B49D92B","objectId":{"name":"obj_gay_little_squirrel","path":"objects/obj_gay_little_squirrel/obj_gay_little_squirrel.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-416.0,"y":608.0,},
+        {"$GMRInstance":"","%Name":"inst_6B49D92B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6B49D92B","objectId":{"name":"obj_gay_little_squirrel","path":"objects/obj_gay_little_squirrel/obj_gay_little_squirrel.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-480.0,"y":608.0,},
         {"$GMRInstance":"","%Name":"inst_46A02904","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_46A02904","objectId":{"name":"AbilityButton","path":"objects/AbilityButton/AbilityButton.yy",},"properties":[
             {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"AbilityButton","path":"objects/AbilityButton/AbilityButton.yy",},"propertyId":{"name":"ability_key","path":"objects/AbilityButton/AbilityButton.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"PlaceBomb",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.875,"scaleY":1.0,"x":0.0,"y":160.0,},
@@ -99,7 +99,7 @@
   },
   "sequenceId":null,
   "views":[
-    {"hborder":32,"hport":800,"hspeed":-1,"hview":800,"inherit":false,"objectId":null,"vborder":32,"visible":true,"vspeed":-1,"wport":1168,"wview":1168,"xport":0,"xview":-168,"yport":0,"yview":0,},
+    {"hborder":32,"hport":900,"hspeed":-1,"hview":900,"inherit":false,"objectId":null,"vborder":32,"visible":true,"vspeed":-1,"wport":1600,"wview":1600,"xport":0,"xview":-384,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1366,"wview":1366,"xport":0,"xview":0,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1366,"wview":1366,"xport":0,"xview":0,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1366,"wview":1366,"xport":0,"xview":0,"yport":0,"yview":0,},

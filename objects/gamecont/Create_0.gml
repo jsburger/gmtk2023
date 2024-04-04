@@ -2,22 +2,15 @@
 // You can write your code in this editor
 
 randomize()
-global.money = 6000
-global.moneyLast = 0
 
-global.payout = 0
-global.payoutLast = 0
-
-global.cuffs_roll = 0
-global.house_roll = 0
+global.money = 10000
 
 global.wasUsingEditor = false
 
 global.rounds = 0
-global.round = -1
+global.round = 0
 global.levels = ds_list_create()
 
-global.lastroundtie = false
 for (var i = 0; i < array_length(global.levelData); i++) {
 	ds_list_add(global.levels, i)
 }
