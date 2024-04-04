@@ -5,15 +5,17 @@ if (instance_exists(obj_board)) {
 	if bbox_bottom > obj_board.bbox_bottom{
 		if (touchedBottom){
 			if bbox_bottom > obj_board.bbox_bottom + 128{
-					if object_index = obj_dice{
-					scr_dice_land()
+				if object_index == obj_dice {
+					throw_end()
 					instance_destroy()
 					exit;
-				}else{
+				}
+				else {
 					y = yprevious;
 				}
 			}
-		}else{
+		}
+		else {
 			touchedBottom++;
 			y = yprevious;
 			vspeed = -3;

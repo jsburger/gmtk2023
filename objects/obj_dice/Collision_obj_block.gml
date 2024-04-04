@@ -54,8 +54,6 @@ if other.is_destructible{
 	if other.my_health <= 0{
 		instance_destroy(other);
 	}
-	
-	if object_index != obj_ball roll_cuffs()
 }
 
 

@@ -16,4 +16,7 @@ if targeting && current_ability != undefined {
 	if instance_exists(button) {
 		current_ability.draw_target(button.bbox_right, button.y, info)
 	}
+	else {
+		current_ability.draw_target(PlayerBattler.bbox_right, PlayerBattler.y, info)
+	}
 }

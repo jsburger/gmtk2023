@@ -1,15 +1,15 @@
 function resolve_target(target) {
-	if instance_exists(target) return target
+	if is_int64(target) { //Enum check
+		return get_item_target(target)
+	}
 	if is_struct(target) {
 		if is_instanceof(target, Provider) {
 			return resolve_target(target.get())
 		}
-		return struct_defget(target, "instance", noone)
+		return struct_defget(target, "instance", struct_defget(target, "id", noone))
 	}
-	if is_real(target) {
-		return get_item_target(target)
-	}
-	return noone	
+
+	return noone
 }
 
 function provider_get(value) {
@@ -18,4 +18,8 @@ function provider_get(value) {
 
 function battler_hurt(target, damage, source, reactable = false) {
 	target.hurt(damage)
+	with instance_create_depth(target.x, target.y, target.depth - 1, obj_fx) {
+		sprite_index = spr_hit_large
+		needs_board = false
+	}
 }

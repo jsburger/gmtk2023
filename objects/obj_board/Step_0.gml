@@ -15,7 +15,7 @@ if keyboard_check_pressed(vk_home) {
 		update_current_level()
 		global.round = 0
 		global.rounds = 0
-		start_round()
+		round_start()
 		global.round = 0
 		global.money = 6000
 		
@@ -33,7 +33,6 @@ if keyboard_check_pressed(vk_home) {
 		})
 		
 		//with(par_bricklike) instance_destroy(self, false);
-		end_round()
 		level_clear()
 		level_load_ext(global.level_num)
 	}

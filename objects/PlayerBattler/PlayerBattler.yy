@@ -1,17 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"Battler",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"PlayerBattler",
+  "eventList":[],
   "managed":true,
-  "name":"Battler",
+  "name":"PlayerBattler",
   "overriddenProperties":[],
   "parent":{
     "name":"New Shit",
     "path":"folders/objects/New Shit.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"Battler",
+    "path":"objects/Battler/Battler.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -29,10 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_portrait_frame",
+    "path":"sprites/spr_portrait_frame/spr_portrait_frame.yy",
+  },
   "spriteMaskId":null,
-  "tags":[
-    "Clickable",
-  ],
   "visible":true,
 }

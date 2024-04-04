@@ -115,6 +115,11 @@ add_enemy = function(enemyObj) {
 		return self
 	}
 }
+add_enemy_instance = function(instance) {
+	array_push(enemies, instance)
+	instance.enemy_position = array_length(enemies)
+	return instance
+}
 
 remove_enemy = function(index) {
 	with enemies[index] {

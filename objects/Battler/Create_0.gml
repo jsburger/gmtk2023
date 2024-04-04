@@ -1,3 +1,12 @@
+// Takes priority over on_click when CombatRunner is targeting.
+get_target_info = function() {
+	return {
+		type: TARGET_TYPE.BATTLER,
+		instance: other
+	}
+}
+
+
 function set_hp(h) {
 	hpmax = h
 	hp = h
@@ -50,3 +59,6 @@ die = function() {
 	image_alpha = .5
 	canact = false
 }
+
+instance_create_layer(x, bbox_bottom + 32, layer, BattlerHealthBar, { target : other }).depth = depth - 1
+

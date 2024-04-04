@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"scr_dice_land",
+  "%Name":"scrArrays",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_dice_land",
+  "name":"scrArrays",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"New Shit",
+    "path":"folders/Scripts/New Shit.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"json_beautify",
+  "%Name":"add_move",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"json_beautify",
+  "name":"add_move",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Enemy Moves",
+    "path":"folders/Scripts/New Shit/Enemy Moves.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

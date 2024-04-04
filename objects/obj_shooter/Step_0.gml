@@ -57,10 +57,6 @@ if can_act && button_pressed(inputs.shoot) && can_shoot && inBoard {
 			other.die = id;
 		}
 		
-		// PUT THIS SOMEWHERE ELSE LATER!!
-		for (var i = 0; i < MANA.MAX; ++i) {
-			global.mana_gained[i] = 0;
-		}	
 		
 		global.mana[MANA.YELLOW] += 3;
 			
@@ -68,7 +64,7 @@ if can_act && button_pressed(inputs.shoot) && can_shoot && inBoard {
 		sprite_index = spr_hand_cast;
 		has_dice = false
 		image_index = 0;
-		start_play()
+		throw_start()
 		with obj_cuffs {
 			sprite_index = spr_cuffs_shoot
 			image_index = 0

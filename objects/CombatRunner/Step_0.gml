@@ -1,5 +1,7 @@
 /// @description 
 
+with PlayerBattler other.player = self
+
 if waitTime > 0 {
 	waitTime -= 1
 }
@@ -27,7 +29,6 @@ if button_pressed(inputs.dash) && targeting == true && current_ability != undefi
 	cancel_targeting()
 }
 
-//TODO: make one array of actions, no need for two
 //Resolve items added by actions
 acting = true
 while has_actions() && waitTime <= 0 {
@@ -49,4 +50,5 @@ acting = false
 if !is_busy() && waitForPlayer == true {
 	waitForPlayer = false
 	is_player_turn = true
+	round_end()
 }

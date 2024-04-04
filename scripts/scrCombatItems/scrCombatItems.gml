@@ -5,7 +5,9 @@ enum TARGETS {
 	ABOVE,
 	BELOW,
 	RANDOM,
-	SELF
+	SELF,
+	
+	MAX
 }
 
 function get_item_target(targetType) {

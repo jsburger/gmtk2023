@@ -18,15 +18,6 @@ enemy_position = 0
 actions = [];
 has_shuffled = false;
 shuffled = [];
-function add_action(name, desc) {
-	var action = new Action();
-	action.name = name
-	action.desc = desc
-	action.owner = self;
-	
-	array_push(actions, action)
-	return action
-}
 
 enum moveOrder {
 	RANDOM, //truly random
@@ -38,6 +29,7 @@ movemode = moveOrder.RANDOM
 moveProgress = 0;
 current_action = undefined;
 
+/// @returns {Struct.EnemyMove}
 get_next_action = function() {
 	switch(movemode) {
 		case moveOrder.RANDOM:
@@ -56,6 +48,7 @@ get_next_action = function() {
 
 bump_action = function() {
 	current_action = get_next_action()
+	current_action.on_move_decided()
 }
 battle_start_hook = function(){}
 battle_start = function() {
@@ -66,7 +59,7 @@ battle_start = function() {
 }
 
 turn = function() {
-	if current_action != undefined current_action.execute()
+	if current_action != undefined current_action.act()
 	current_action = undefined
 }
 
@@ -76,3 +69,5 @@ turn_end = function() {
 		bump_action()
 	}
 }
+
+CombatRunner.add_enemy_instance(self)

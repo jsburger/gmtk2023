@@ -18,7 +18,7 @@ function ability_get_prototype(name) {
 }
 
 
-function Ability(TargetType = TARGET_TYPE.BATTLER) constructor {
+function Ability(TargetType = TARGET_TYPE.BATTLER) : CombatInterface() constructor {
 	
 	needs_target = false
 	if TargetType != TARGET_TYPE.NONE {
@@ -82,18 +82,14 @@ function Ability(TargetType = TARGET_TYPE.BATTLER) constructor {
 	
 }
 
-function BasicAttack(Damage) : Ability() constructor {
+function AbilityAttack(Damage) : Ability() constructor {
 	damage = Damage
 	
 	static act = function() {
-		attack(TARGETS.AIMED, damage, 1, true)
+		attack(CombatRunner.current_target, damage, true)
 	}
 }
 
-function RedManaAttack(Damage, Cost) : BasicAttack(Damage) constructor {
-	set_cost(MANA.RED, Cost)
-	
-}
 
 function FunctionAbility(func) : Ability() constructor {
 	callback = func

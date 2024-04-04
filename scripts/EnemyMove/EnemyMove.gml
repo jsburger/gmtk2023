@@ -18,6 +18,17 @@ function EnemyMove() : CombatInterface() constructor {
 		array_push(actions, item)
 	}
 	
+	static act = function() {
+		array_foreach(actions, function(action) {
+			with CombatRunner enqueue(action)
+		})
+	}
+	
+	/// Shorthand for targeting the player with an attack
+	static hit = function(damage, useStrength = true) {
+		attack(TARGETS.PLAYER, damage, useStrength)
+	}
+	
 	
 }
 

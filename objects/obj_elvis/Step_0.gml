@@ -24,9 +24,26 @@ if waitforvoiceline > 0 {
 	}
 }
 
-if progress < 1 && wait <= 0 {
+if progress < 1 && wait <= 0 && false {
 	progress += .025
 	waitforvoiceline = 60
 }
 image_xscale = lerp(xscale, 1,sqr(progress))
 image_yscale = lerp(yscale, 1,sqr(progress))
+
+
+if true {
+	if progress < 1 && elvis_is_speaking() {
+		progress += .05
+		progress = min(progress, 1)
+	}
+	if progress > 0 && !elvis_is_speaking(){
+		progress -= .05
+	}
+}
+
+//x = xstart - talking_x * lean
+with obj_elvis_name {
+	image_xscale = other.image_xscale
+	image_yscale = other.image_yscale
+}

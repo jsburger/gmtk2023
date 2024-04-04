@@ -25,8 +25,6 @@ ds_list_shuffle(global.levels)
 
 delays = ds_list_create()
 
-schedule(120, function() {
-	start_round()
-})
+schedule(20, function() {encounter_start()})
 
 alarm[0] = room_speed * 30;
