@@ -1,8 +1,8 @@
 {
   "$GMSprite":"",
   "%Name":"spr_handblock_v",
-  "bboxMode":0,
-  "bbox_bottom":35,
+  "bboxMode":2,
+  "bbox_bottom":31,
   "bbox_left":0,
   "bbox_right":15,
   "bbox_top":0,
