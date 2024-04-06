@@ -63,6 +63,9 @@ function Ability(TargetType = TARGET_TYPE.BATTLER) : CombatInterface() construct
 			if target_type != TARGET_TYPE.NONE {
 				needs_target = true
 			}
+			else {
+				needs_target = false	
+			}
 		}
 	
 		static accepts_target = function(target_info) {
@@ -88,6 +91,15 @@ function AbilityAttack(Damage) : Ability() constructor {
 	static act = function() {
 		attack(CombatRunner.current_target, damage, true)
 	}
+}
+
+function AbilityDefend(Block) : Ability() constructor {
+	block = Block
+	set_targets(TARGET_TYPE.NONE)
+	
+	static act = function() {
+		defend(TARGETS.SELF, block)
+	}	
 }
 
 

@@ -23,3 +23,11 @@ function battler_hurt(target, damage, source, reactable = false) {
 		needs_board = false
 	}
 }
+
+function battler_give_block(target, block) {
+	target.block += block;	
+	with instance_create_depth(target.x, target.y, target.depth - 1, obj_fx) {
+		sprite_index = spr_portal_fx_blue
+		needs_board = false
+	}	
+}

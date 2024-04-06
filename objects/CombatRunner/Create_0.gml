@@ -41,7 +41,7 @@ combat_started = false;
 		current_ability = ability
 		targeting = ability.needs_target
 		if !targeting {
-			run_ablity()
+			run_ability()
 		}
 	}
 

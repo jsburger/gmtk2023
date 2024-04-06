@@ -28,6 +28,12 @@ function CombatInterface() constructor {
 		consume(act)
 	}
 	
+	static defend = function(_target, block) {
+		var act = new DefendItem(block)
+		act.target = _target
+		act.owner = owner;
+		consume(act)			
+	}
 	
 	static give_status = function(_target, statusType, statusDuration = 1, statusStrength = 1) {
 		var act = new StatusItem(statusType, statusDuration, statusStrength)

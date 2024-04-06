@@ -1,9 +1,20 @@
-register_ability("hit10", function() {
-	with new AbilityAttack(10) {
-		set_costs(0, 0, 0)
+register_ability("Hit6", function() {
+	with new AbilityAttack(6) {
+		set_costs(0, 8, 0)
 		name = "Slammy"
-		desc = "Deal 10 damage to targeted enemy"
+		desc = "Deal 6 damage to targeted enemy"
 		sprite_index = sprIntentAttack		
 		return self
 	}
 })
+
+register_ability("Hit24", function() {
+	with new AbilityAttack(24) {
+		set_costs(0, 16, 8)
+		name = "Slammy Senior"
+		desc = "Deal 24 damage to targeted enemy"
+		sprite_index = sprIntentAttack
+		return self
+	}
+})
+

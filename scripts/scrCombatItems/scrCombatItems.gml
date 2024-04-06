@@ -87,6 +87,18 @@ function AttackItem(Damage) : CombatItem() constructor {
 	}
 }
 
+function DefendItem(Block) : CombatItem() constructor {
+	delay = 15
+	block = Block
+	
+	static act = function(runner) {
+		var t = resolve_target(target)
+		if instance_exists(t) {
+			battler_give_block(t, provider_get(block))
+		}
+	}
+}
+
 function WaitItem(duration) : CombatItem() constructor {
 	delay = duration;
 }
