@@ -66,7 +66,7 @@ turn = function() {
 turn_end = function() {
 	__turn_end()
 	if current_action = undefined {
-		bump_action()
+		//bump_action()
 	}
 }
 
