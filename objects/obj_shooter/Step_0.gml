@@ -97,18 +97,14 @@ if portal > -4 && !place_meeting(x, y, portal)portal = -4;
 
 
 //Fake Spell Casting
-if keyboard_check_pressed(ord("1")) && global.mana[MANA.RED] >= 10{
+if keyboard_check_pressed(ord("1")){
 	sound_play_pitch(snd_explo, .7);
 	scr_screenshake(10, 3, 0.2);
-	global.mana[MANA.RED] -= 10;
-	global.mana_gained[MANA.BLUE] += 5;
 }
 
-if keyboard_check_pressed(ord("2")) && global.mana[MANA.BLUE] >= 10{
+if keyboard_check_pressed(ord("2")){
 	sound_play_pitch(snd_bumper_hit, .7);
 	scr_screenshake(10, 3, 0.2);
-	global.mana[MANA.BLUE] -= 10;
-	global.mana_gained[MANA.RED] += 5;
 }
 
 if keyboard_check_pressed(ord("0")){

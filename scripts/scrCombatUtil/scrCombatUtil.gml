@@ -21,6 +21,9 @@ function battler_hurt(target, damage, source, reactable = false) {
 	with instance_create_depth(target.x, target.y, target.depth - 1, obj_fx) {
 		sprite_index = spr_hit_large
 		needs_board = false
+		
+		scr_screenshake(5, 3, 0.2)
+		sound_play_pitch(snd_bag_hit, random_range(.8, 1.2))
 	}
 }
 
