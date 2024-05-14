@@ -17,6 +17,19 @@ function mana_add(type, amount) {
 	global.mana_gained[type] += amount
 }
 
+function mana_get_color(mana){
+	switch mana {
+		case MANA.RED:
+			return #d12222
+		case MANA.BLUE:
+			return #4566d1
+		case MANA.YELLOW:
+			return #efc555
+		default:
+			return c_white	
+	}	
+}
+
 function mana_reset() {
 	for (var i = 0; i < MANA.MAX; ++i) {
 		global.mana[i] = 0

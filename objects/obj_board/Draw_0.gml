@@ -85,6 +85,16 @@ with obj_dice {
 	y += camera_y;
 }
 
+//with Gibs {
+//	x -= camera_x;
+//	y -= camera_y;
+	
+//	draw_self()
+	
+//	x += camera_x;
+//	y += camera_y;
+//}
+
 surface_reset_target()
 gpu_set_fog(false, c_black, 0, 0)
 

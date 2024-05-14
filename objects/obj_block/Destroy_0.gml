@@ -14,3 +14,9 @@ if irandom(99) < drop_chance{
 		}
 	}
 }
+
+with instance_create_layer(x, y, "Instances", Gibs){
+	image_blend = mana_get_color(other.color)
+	motion_set(random_range(60, 120), irandom_range(3, 5));
+	if !place_meeting(x, y, par_bricklike) instance_destroy(self, false);
+}
