@@ -17,4 +17,4 @@ board_bottom_bounce = -(1 + image_index);
 depth -= 2;
 lastcollision = {"x": x, "y": y}
 
-alarm[0] = 1;
+alarm[0] = 0;

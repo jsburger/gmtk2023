@@ -15,6 +15,7 @@ if (instance_exists(obj_board)) {
 			y = yprevious;
 			vspeed = board_bottom_bounce;
 			landed = true;
+			alarm[0] = 1;
 		}
 	}
 }

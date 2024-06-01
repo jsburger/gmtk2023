@@ -29,9 +29,15 @@ set_color = function(col) {
 	}
 }
 
+
+
 if instance_exists(obj_board) {
 	visible = false
 	alarm[0] = obj_board.editor ?  1 : manhatten_distance(x, y, obj_board.bbox_left, obj_board.bbox_top)/32
+}
+
+if random(10) < 1 && color == -1 && !obj_board.editor && (object_index == obj_block || object_index == obj_block_large) {
+	set_color(MANA.YELLOW);
 }
 
 if random(60) < 1 && !obj_board.editor && object_index == obj_block{
