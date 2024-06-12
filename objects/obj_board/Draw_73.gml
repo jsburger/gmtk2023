@@ -10,7 +10,7 @@ if(editor){
 	Left/Right Arrows: Cycle through levels                     T:      Reload level from file
 	Home:              Close editor
 	",
-	_str2 = "levelnamegoeshere" + "   " + string(global.level_num + 1) + "/" + string(array_length(global.levelData)) + "saved?"
+	_str2 = "levelnamegoeshere" + "   " + string(global.level_num + 1) + "/" + string(array_length(global.level_data)) + "saved?"
 	
 	var _c = c_white;
 	if global.level_changed[global.level_num] {

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scrAbilities",
   "parent":{
-    "name":"New Shit",
-    "path":"folders/Scripts/New Shit.yy",
+    "name":"Player Abilities",
+    "path":"folders/Scripts/New Shit/Combat/Player Abilities.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -7,5 +7,5 @@ repeat(1){
 		friction = .1;
 	}
 }
-global.money += value
+//global.money += value
 instance_destroy(self)

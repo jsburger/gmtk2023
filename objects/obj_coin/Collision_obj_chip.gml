@@ -7,7 +7,7 @@ repeat(1){
 		friction = .1;
 	}
 }
-global.money += value
+//global.money += value
 sound_play_pitch(sound, random_range(.8, 1.2));
 
 instance_destroy(self)

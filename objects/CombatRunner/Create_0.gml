@@ -6,6 +6,9 @@ enum PHASES {
 	END
 }
 
+
+schedule(20, function() {encounter_start()})
+
 actions = [];
 resolving_actions = [];
 
@@ -30,7 +33,7 @@ targeting = false;
 current_target = undefined;
 
 combat_started = false;
-
+combat_ending = false;
 
 #region Running Ability Logic
 
@@ -82,7 +85,7 @@ enqueue = function(action) {
 }
 
 has_actions = function() {
-	return array_length(actions) > 0 || array_length(resolving_actions) > 0
+	return (array_length(actions) > 0 || array_length(resolving_actions) > 0)
 }
 
 is_busy = function() {
@@ -104,17 +107,16 @@ do_phase_action = function(target) {
 	}
 }
 
+/// Spawn an object and add it as an enemy
 add_enemy = function(enemyObj) {
-	with instance_create_layer(0, 0, "Instances", enemyObj) {
+	with instance_create_layer(1088, 256 + 128 * array_length(enemies), "Instances", enemyObj) {
 		//if other.combat_started {
 		//	battle_start();
 		//}
-		array_push(other.enemies, self)
-		enemy_position = array_length(other.enemies)
-		
-		return self
+		return other.add_enemy_instance(self)
 	}
 }
+/// Add a created instance to CombatRunner's enemies
 add_enemy_instance = function(instance) {
 	array_push(enemies, instance)
 	instance.enemy_position = array_length(enemies)
@@ -132,5 +134,39 @@ remove_enemy = function(index) {
 	
 	array_delete(enemies, index, 1)
 	if phaseProgress >= index phaseProgress -= 1
+	
+}
+
+on_battler_die = function(battler) {
+	if instance_is(battler, EnemyBattler) {
+		//Remove actions related to this battler.
+		var filter = method(battler, function(action) {
+			return action.get_target() != self && action.owner != self;
+		})
+		array_filter_smart(actions, filter);
+		array_filter_smart(resolving_actions, filter);
+	}
+	
+	// Check for combat being over;
+	var over = true;
+	for (var i = 0; i < array_length(enemies); i++) {
+		if enemies[i].hp > 0 {
+			over = false;
+			break;
+		}
+	}
+	
+	if over {
+		end_combat();
+	}	
+}
+
+end_combat = function() {
+	actions = [];
+	resolving_actions = [];
+	
+	combat_ending = true;
+	
+	fade_to(encounter_room)
 	
 }

@@ -1,6 +1,8 @@
+
+
 function resolve_target(target) {
 	if is_int64(target) { //Enum check
-		return get_item_target(target)
+		return resolve_target(get_item_target(target));
 	}
 	if is_struct(target) {
 		if is_instanceof(target, Provider) {
@@ -14,6 +16,15 @@ function resolve_target(target) {
 
 function provider_get(value) {
 	return is_instanceof(value, Provider) ? value.get() : value;
+}
+
+function is_provider(value) {
+	return is_instanceof(value, Provider)
+}
+
+function combat_active() {
+	with CombatRunner return combat_started && !combat_ending;
+	return false;
 }
 
 function battler_hurt(target, damage, source, reactable = false) {

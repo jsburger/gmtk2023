@@ -43,7 +43,7 @@ function stop_saying_line() {
 	}
 	
 	//Prevent chatter for at least a few seconds.
-	with gamecont alarm[0] = max(room_speed * 8, alarm[0])
+	with obj_elvis alarm[0] = max(room_speed * 8, alarm[0])
 	
 	//If there is anything in the queue, start playing it.
 	var top = get_voiceline_queue().top();

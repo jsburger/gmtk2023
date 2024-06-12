@@ -6,6 +6,8 @@ get_target_info = function() {
 	}
 }
 
+on_click = function() {}
+
 
 function set_hp(h) {
 	hpmax = h
@@ -58,7 +60,12 @@ battle_start = function() {
 die = function() {
 	image_alpha = .5
 	canact = false
+	battler_died(self)
+	on_die()
 }
+
+/// Use this instead of die to override
+on_die = function() {}
 
 instance_create_layer(x, bbox_bottom + 32, layer, BattlerHealthBar, { target : other }).depth = depth - 1
 

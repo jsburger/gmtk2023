@@ -90,3 +90,10 @@ function Status(Duration, Power) constructor {
 		
 	}
 }
+
+function StatusStrength(Duration, Power) : Status(Duration, Power) constructor {
+	sprite_index = sprIntentAttack;
+	name = "Strength"
+	desc = "Increases damage dealt."
+	attack_bonus = Power;
+}

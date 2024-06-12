@@ -11,7 +11,7 @@ with(instance_create_layer(x - _xoff, y + _yoff, "Portraits", obj_prompt)){
 	creator = other.id;
 	prompt_type = 0; // Yes
 	on_pick = function(){
-		if global.money >= 100{
+		if true {
 			say_line(choose(vo_buysandwich01, vo_buysandwich02, vo_buysandwich03, vo_buysandwich04), function() {
 				schedule(5, function() {
 					say_line(vo_eat, function() {
@@ -21,7 +21,6 @@ with(instance_create_layer(x - _xoff, y + _yoff, "Portraits", obj_prompt)){
 					})			
 				})
 			})
-			global.money -= 100;
 		}
 	}
 }

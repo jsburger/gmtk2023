@@ -12,10 +12,7 @@ active = false;
 lean = 0;
 
 can_click = function() {
-	with CombatRunner {
-		return true
-	}
-	return false;
+	return combat_active();
 }
 on_click = function() {
 	if ability != undefined {

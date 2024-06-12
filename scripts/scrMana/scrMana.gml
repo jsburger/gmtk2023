@@ -10,7 +10,7 @@ global.mana = array_create(MANA.MAX)
 global.mana_gained = array_create(MANA.MAX)
 
 //Reset mana when game restarted
-add_reset_callback(mana_reset)
+on_encounter_start(mana_reset)
 
 function mana_add(type, amount) {
 	global.mana[type] += amount

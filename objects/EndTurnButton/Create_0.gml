@@ -1,5 +1,7 @@
 /// @description 
 
 on_click = function() {
-	player_turn_end()
+	if combat_active() && CombatRunner.is_player_turn {
+		player_turn_end()
+	}
 }

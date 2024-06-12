@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description 
 
 xscale = 0
 yscale = 8
@@ -15,3 +14,5 @@ if room == intro_room {
 	sound_play_pitch(s_futureelvis_appear, 1.23)
 }
 global.elvis_done = false
+
+alarm[0] = 60 * room_speed

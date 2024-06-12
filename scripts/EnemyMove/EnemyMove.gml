@@ -5,12 +5,25 @@ function EnemyMove() : CombatInterface() constructor {
 	providers = []
 	actions = []
 	
+	intent = INTENT.MISC;
+	intent_value = undefined;
+	
+	
+	static set_intent = function(_intent, _value = undefined) {
+		intent = _intent;
+		intent_value = _value;
+	}
 	
 	///Runs when the enemy picks this move at the start of player turn
-	static on_move_decided = function() { }
+	static on_move_decided = function() {
+		for(var i = 0; i < array_length(providers); i++) {
+			providers[i].on_move_decided()
+		}
+	}
 	
 	static accept_provider = function(provider) {
 		array_push(providers, provider)
+		return provider;
 	}
 	
 	/// @param {Struct.CombatItem} item
@@ -25,31 +38,12 @@ function EnemyMove() : CombatInterface() constructor {
 	}
 	
 	/// Shorthand for targeting the player with an attack
-	static hit = function(damage, useStrength = true) {
-		attack(TARGETS.PLAYER, damage, useStrength)
+	static hit = function(damage) {
+		attack(TARGETS.PLAYER, damage)
 	}
 	
-	
-}
-
-function Provider(_value) constructor {
-	
-	value = _value
-	
-	static get = function() {
-		return value;
-	}
-	
-	static on_move_decided = function() {}
-}
-
-function RangeProvider(minValue, maxValue) : Provider(minValue) constructor {
-	min_value = minValue
-	max_value = maxValue
-	
-	static on_move_decided = function() {
-		value = irandom_range(min_value, max_value)
+	/// Shorthand for getting a damage provider from input
+	static as_damage = function(value, target = TARGETS.PLAYER) {
+		return new DamageProvider(value, owner, target)
 	}
 }
-
-

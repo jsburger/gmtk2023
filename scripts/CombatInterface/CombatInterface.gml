@@ -16,12 +16,7 @@ function CombatInterface() constructor {
 	}
 
 
-	static attack = function(_target, damage, useStrength = true) {
-		if useStrength {
-			if instance_exists(owner) {
-				damage += owner.statuses.get_attack_bonus()
-			}
-		}
+	static attack = function(_target, damage) {
 		var act = new AttackItem(damage)
 		act.target = _target
 		act.owner = owner;

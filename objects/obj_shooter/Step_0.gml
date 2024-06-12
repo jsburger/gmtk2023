@@ -37,8 +37,6 @@ if can_act && button_pressed(inputs.shoot) && can_shoot && inBoard {
 		if (abs(die.y - obj_board.bbox_bottom) >  55) && (global.mana[MANA.YELLOW] > 0) {
 			with instance_create_layer(x, y, "Projectiles", obj_chip) {
 				motion_set(other.gunangle, 16)
-				//global.money -= chip_cost
-				//global.payout += chip_cost
 				global.mana[MANA.YELLOW] -= chip_cost
 			}
 			sound_play_pitch(choose(snd_chip_throw1, snd_chip_throw2), 1)

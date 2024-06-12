@@ -1,5 +1,6 @@
+/// @description Chatter
+
 {
-	
 	if !elvis_is_speaking() && !instance_exists(obj_fade_to) && irandom(2) != 0 {
 		var _snd = choose(vo_chatter01, vo_chatter02, vo_chatter03, vo_chatter04, vo_chatter05, vo_chatter06, vo_chatter07, vo_chatter08,
 						  vo_chatter09, vo_chatter10, vo_chatter11, vo_chatter12, vo_chatter13, vo_chatter14, vo_chatter15, vo_chatter16,

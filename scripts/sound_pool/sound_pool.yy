@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"scrEnemyMoves",
+  "%Name":"sound_pool",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scrEnemyMoves",
+  "name":"sound_pool",
   "parent":{
-    "name":"New Shit",
-    "path":"folders/Scripts/New Shit.yy",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

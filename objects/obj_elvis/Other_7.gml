@@ -1,6 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
-
+/// @description Stop saying line
 
 //Goes off when talk_end is done.
 if global.elvis_done == true {

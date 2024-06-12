@@ -15,7 +15,7 @@ if ability != undefined {
 		count = 0
 	for (var i = 0; i < array_length(ability.costs); i++) {
 		if ability.costs[i] > 0 {
-			draw_number_panel(bbox_right - 96, lerp(bbox_top, bbox_bottom, count/array_length(ability.costs)),
+			draw_number_panel(lerp(bbox_left, bbox_right, count/array_length(ability.costs)), bbox_top,
 				string(ability.costs[i]), colors[i], 2, .5
 			)
 			count++

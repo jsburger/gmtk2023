@@ -1,6 +1,9 @@
 /// @description 
 event_inherited();
 
+spr_icon = sprGaySquirrelIcon
+
+#region Deprecated?
 can_click = function() {
 	if instance_exists(CombatRunner) {
 		return CombatRunner.targeting
@@ -12,6 +15,7 @@ on_click = function() {
 	CombatRunner.targeted_enemy = enemy_position
 	CombatRunner.targeting = false
 }
+#endregion
 
 enemy_position = 0
 
@@ -69,5 +73,3 @@ turn_end = function() {
 		//bump_action()
 	}
 }
-
-CombatRunner.add_enemy_instance(self)

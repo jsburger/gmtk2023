@@ -14,10 +14,7 @@ if keyboard_check_pressed(vk_home) {
 	if !editor {
 		update_current_level()
 		global.round = 0
-		global.rounds = 0
 		round_start()
-		global.round = 0
-		global.money = 6000
 		
 		global.editor_buttons.for_each_object(function(i) {
 			i.visible = false
@@ -34,7 +31,7 @@ if keyboard_check_pressed(vk_home) {
 		
 		//with(par_bricklike) instance_destroy(self, false);
 		level_clear()
-		level_load_ext(global.level_num)
+		board_load(global.level_num)
 	}
 	with par_bricklike event_perform(ev_other, ev_user15);
 }
@@ -195,7 +192,7 @@ if(editor){
 		level_clear()
 		
 		add_new_level()
-		level_load_ext(array_length(global.levelData) - 1)
+		board_load(array_length(global.level_data) - 1)
 	}
 	
 	//Reload level from file
@@ -203,7 +200,7 @@ if(editor){
 		level_clear()
 		current_level = load_level_file(current_level.info.name + ".txt")
 		mark_level_changed(false)
-		level_load_ext(global.level_num)
+		board_load(global.level_num)
 	}
 	
 	//Save Level
@@ -217,6 +214,6 @@ if(editor){
 			update_current_level()
 		}
 		level_clear()
-		level_load(button_pressed(inputs.editor_left) ? -1 : 1)
+		board_cycle(button_pressed(inputs.editor_left) ? -1 : 1)
 	}
 }

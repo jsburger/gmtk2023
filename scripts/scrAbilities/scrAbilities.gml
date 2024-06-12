@@ -89,7 +89,7 @@ function AbilityAttack(Damage) : Ability() constructor {
 	damage = Damage
 	
 	static act = function() {
-		attack(CombatRunner.current_target, damage, true)
+		attack(TARGETS.AIMED, damage)
 	}
 }
 

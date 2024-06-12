@@ -1,5 +1,6 @@
 /// @description 
 
+
 with PlayerBattler other.player = self
 
 if waitTime > 0 {
