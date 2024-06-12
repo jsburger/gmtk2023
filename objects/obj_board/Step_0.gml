@@ -31,7 +31,7 @@ if keyboard_check_pressed(vk_home) {
 		
 		//with(par_bricklike) instance_destroy(self, false);
 		level_clear()
-		board_load(global.level_num)
+		level_load(global.level_num)
 	}
 	with par_bricklike event_perform(ev_other, ev_user15);
 }
@@ -192,7 +192,7 @@ if(editor){
 		level_clear()
 		
 		add_new_level()
-		board_load(array_length(global.level_data) - 1)
+		level_load(array_length(global.level_data) - 1)
 	}
 	
 	//Reload level from file
@@ -200,7 +200,7 @@ if(editor){
 		level_clear()
 		current_level = load_level_file(current_level.info.name + ".txt")
 		mark_level_changed(false)
-		board_load(global.level_num)
+		level_load(global.level_num)
 	}
 	
 	//Save Level
