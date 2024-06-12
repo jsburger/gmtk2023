@@ -11,7 +11,7 @@ function resolve_target(target) {
 		return struct_defget(target, "instance", struct_defget(target, "id", noone))
 	}
 
-	return noone
+	return target;
 }
 
 function provider_get(value) {
