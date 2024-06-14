@@ -20,10 +20,15 @@ if(editor){
 	
 	_str2 = string_replace(_str2, "levelnamegoeshere", current_level.info.name)
 	
-	draw_rectangle_color(camera_get_view_x(0), camera_get_view_y(0), camera_get_view_x(0) + string_width(_str) + 12, camera_get_view_y(0) + string_height(_str) + string_height(_str2) + 8, c_black, c_black, c_black, c_black, false)
-	draw_text(camera_get_view_x(0) + 8, camera_get_view_y(0) + 8, _str);
+	var draw_x = camera_get_view_x(0) - 300,
+		draw_y = camera_get_view_y(0),
+		draw_width = string_width(_str),
+		draw_height = string_height(_str);
+	
+	draw_rectangle_color(draw_x, draw_y, draw_x + draw_width + 12, draw_y + draw_height + string_height(_str2) + 8, c_black, c_black, c_black, c_black, false)
+	draw_text(draw_x + 8, draw_y + 8, _str);
 	 
-	draw_text_color(camera_get_view_x(0) + 8, camera_get_view_y(0) + string_height(_str) + 8, _str2, _c, _c, _c, _c, 1);
+	draw_text_color(draw_x + 8, draw_y + draw_height + 8, _str2, _c, _c, _c, _c, 1);
 	
 	_c = canplace ? c_lime : c_red;
 	if(canplace){

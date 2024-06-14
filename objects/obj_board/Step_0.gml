@@ -7,6 +7,8 @@ if become_active > 0 {
 	}
 }
 
+//trace(string("{0}, {1}", ceil((bbox_left + bbox_right)/2), (bbox_bottom)))
+
 //Toggle Editor
 if keyboard_check_pressed(vk_home) {
 	editor = !editor;
@@ -59,10 +61,12 @@ if(editor){
 		current_entity = _entity;
 		current_sprite = _sprite;
 	
-		mx = clamp((mouse_x div 16) * 16, bbox_left + TILE_MIN - 1, bbox_right - TILE_MIN - sprite_get_width(_sprite) + 1);
-		my = clamp((mouse_y div 16) * 16, bbox_top + TILE_MIN - 1, bbox_bottom - TILE_MIN - sprite_get_height(_sprite) + 1);
+		var pos = board_grid_position(mouse_x, mouse_y)
+		mx = clamp(pos.x, bbox_left + TILE_MIN - 1, bbox_right - TILE_MIN - sprite_get_width(_sprite) + 1);
+		my = clamp(pos.y, bbox_top + TILE_MIN - 1, bbox_bottom - TILE_MIN - sprite_get_height(_sprite) + 1);
 		mx += (sprite_get_xoffset(_sprite));
 		my += (sprite_get_yoffset(_sprite));
+		
 		var _place = other.entity_list[other.entity_num][other.entity_subnum];
 		obj_layer = object_get_parent(_place) == obj_cable ? 1 : 0;
 	

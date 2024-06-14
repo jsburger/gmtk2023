@@ -63,6 +63,7 @@ function get_number_index(str) {
 	switch(str) {
 		case "k": return 10
 		case "-": return 11
+		case "/": return 12
 		default: return floor(real(str))
 	}
 }

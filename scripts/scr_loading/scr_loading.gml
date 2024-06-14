@@ -2,8 +2,6 @@ randomize()
 
 levels_init()
 
-
-//Will need replacing for HTML5 build. But can retain all the same information.
 function levels_init() {
 	global.level_data = [];
 	global.level_changed = [];
@@ -19,10 +17,14 @@ function levels_init() {
 		
 	file_find_close()
 
-	foreach(files, function(filename) {
+	array_foreach(files, function(filename) {
 		
 		var json = load_level_file(filename)
-
+		
+		if level_update_format(json) {
+			level_save(json);
+		}
+		
 		array_push(global.level_data, json)
 		array_push(global.level_changed, false)
 
@@ -30,13 +32,48 @@ function levels_init() {
 	
 }
 
+#macro FORMAT_CURRENT 1
+
+function level_new_json() {
+	return {
+		info: {
+			name: "",
+			format: FORMAT_CURRENT,
+			rounds: 5
+		},
+		objects : []
+	}
+}
+
+function level_update_format(level) {
+	var format_changed = false;
+	//Version 0;
+	if !struct_exists(level.info, "format") {
+		format_changed = true;
+		//Add version
+		level.info.format = 1;
+		//Make coordinates relative to old board position and size.
+		array_foreach(level.objects, function(obj) {
+			static board_x = 416,
+				   board_y = 784;
+			obj.x -= board_x;
+			obj.y -= board_y;
+		})
+		//Add default round counter
+		level.info.rounds = 5;
+	}
+	
+	return format_changed;
+}
+
+
 function load_level_file(filename) {
 	var buffer = buffer_load(working_directory + "Levels/" + filename),
-			str = buffer_read(buffer, buffer_string);
-		buffer_delete(buffer)
+		str = buffer_read(buffer, buffer_string);
+	buffer_delete(buffer)
 		
 	var json = json_parse(str);
-	json.name = string_replace(filename, ".txt", "")
+	
 	return json;
 }
 
@@ -44,7 +81,7 @@ function load_level_file(filename) {
 function level_id_by_name(levelName) {
 	for (var i = 0; i < array_length(global.level_data); ++i) {
 		var l = global.level_data[i];
-		if string_lower(l.name) == string_lower(levelName) {
+		if string_lower(l.info.name) == string_lower(levelName) {
 			return i
 		}
 	}
@@ -79,7 +116,8 @@ function level_load(levelnumber){
 	})
 	
 	array_foreach(level.objects, function(entry) {
-		with instance_create_layer(entry.x, entry.y, "Instances", asset_get_index(entry.object_index)) {
+		var pos = transform_instance_position(entry);
+		with instance_create_layer(pos.x, pos.y, "Instances", asset_get_index(entry.object_index)) {
 			if instance_is(self, obj_cable) obj_layer = 1
 			else obj_layer = 0
 			
@@ -105,11 +143,33 @@ function jsonify_board() {
 	}
 }
 
-function jsonify_instance(inst) {
+function transform_instance_position(inst, storing = false) {
+	var r_x = 0,
+		r_y = 0;
+	var xcheck = 0;
+	if instance_exists(obj_board) {
+		xcheck = (obj_board.bbox_left + obj_board.bbox_right)/2;
+		r_x = ceil(xcheck);
+		r_y = round(obj_board.bbox_bottom);
+	}
+	
+	if storing {
+		r_x *= -1;
+		r_y *= -1;
+	}
+	
+	return {
+		"x" : inst.x + r_x,
+		"y" : inst.y + r_y
+	}
+}
 
+function jsonify_instance(inst) {
+	
+	var pos = transform_instance_position(inst, true);
 	var json = {
-		"x" : inst.x,
-		"y" : inst.y,
+		"x": pos.x,
+		"y": pos.y,
 		"object_index" : object_get_name(inst.object_index)
 	}
 	if variable_instance_exists(inst, "serialize") {
@@ -126,26 +186,24 @@ function save_current_level() {
 	update_current_level()
 	var info = current_level.info;
 	if info.name != "" {
-		save_level(info.name)
+		global.level_changed[global.level_num] = false
+		level_save(current_level)
 	}
 	else {
-		prompt_input("Save Level As:", method(self, save_level))
+		prompt_input("Save Level As:", function(name) {
+			global.level_changed[global.level_num] = false
+			current_level.info.name = name
+			level_save(current_level)
+		})
 	}
 }
+	
+function level_save(json) {
+	var name = json.info.name;
+	
+	var f = file_text_open_write(get_save_location() + name + ".txt");		
+	show_debug_message(get_save_location() + name + ".txt")
 
-function save_level(name) {
-	global.level_changed[global.level_num] = false
-	if current_level.info.name = ""
-		current_level.info.name = name
-	var json = jsonify_board(),
-		f = file_text_open_write(get_save_location() + name + ".txt");
-		
-		show_debug_message(get_save_location() + name + ".txt")
-		
-	json.info = {
-		"name": name
-	}
-		
 	file_text_write_string(f, json_stringify(json, true));
 	file_text_close(f);
 }
@@ -157,7 +215,7 @@ function update_current_level() {
 
 
 function add_new_level() {
-	array_push(global.level_data, {"objects":[], "info": {"name":""}})
+	array_push(global.level_data, level_new_json())
 	array_push(global.level_changed, true)
 }
 

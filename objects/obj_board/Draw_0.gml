@@ -1,6 +1,7 @@
 /// @description Background editor grid
 // You can write your code in this editor
-draw_sprite_ext(spr_board_bg, 0, x, y, (image_xscale - 12/TILE_MIN) * 2/3, (image_yscale - 12/TILE_MIN) * 2/3, image_angle, image_blend, image_alpha)
+var size = (32/96);
+draw_sprite_ext(spr_board_bg, 0, x, y, (image_xscale) * size, (image_yscale) * size, image_angle, image_blend, image_alpha)
 draw_self();
 draw_sprite_ext(spr_board_border, 0, x, y, 1, 1, image_angle, image_blend, image_alpha)
 
@@ -19,23 +20,24 @@ if(editor){
 		_a = i mod 2 != 0 && _c == c_black ? .3 : .6;
 		draw_set_alpha(_a);
 		draw_line_width_color(
-						bbox_left + TILE_MIN * i + TILE_MIN - 1, 
-						bbox_top + TILE_MIN - 1, 
-						bbox_left + TILE_MIN * i + TILE_MIN - 1, 
-						bbox_bottom - TILE_MIN + 2,
+						bbox_left + TILE_MIN * (i + 1), 
+						bbox_top + TILE_MIN, 
+						bbox_left + TILE_MIN * (i + 1), 
+						bbox_bottom - TILE_MIN,
 						_w, _c, _c);
 	}
 	//Horizontal lines
-	for(var i = 0; i < ((bbox_bottom - bbox_top - TILE_MIN * 2) / TILE_MIN) + 1; i++){
-		_c = i == 9 || i == 25 ? c_maroon : (i == 17 ? c_red : c_black);
-		_w = _c != c_black || i == 0 || i == 34 ? 2 : 1;
+	var height = floor((bbox_bottom - bbox_top)/TILE_MIN) - 2;
+	for(var i = 0; i <= height; i++){
+		_c = (i == round(height/4) || i == round(height * 3/4)) ? c_maroon : (i == round(height/2) ? c_red : c_black);
+		_w = (_c != c_black || i == 0 || i == height) ? 2 : 1;
 		_a = i mod 2 != 0 && _c == c_black ? .3 : .6;
 		draw_set_alpha(_a);
 		draw_line_width_color(
-						bbox_left + TILE_MIN - 1,
-						bbox_top + TILE_MIN * i + TILE_MIN - 1,
-						bbox_right - TILE_MIN + 2,
-						bbox_top + TILE_MIN * i + TILE_MIN - 1,
+						bbox_left + TILE_MIN,
+						bbox_top + TILE_MIN * (i + 1),
+						bbox_right - TILE_MIN,
+						bbox_top + TILE_MIN * (i + 1),
 						_w, _c, _c);
 	}
 	draw_set_alpha(1);
