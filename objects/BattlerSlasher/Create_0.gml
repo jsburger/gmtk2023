@@ -3,8 +3,8 @@
 // Inherit the parent event
 event_inherited();
 
+set_hp(30)
 spr_icon = sprSlasher
-
 movemode = moveOrder.LINEAR
 move_max = 10;
 arm = instance_create_depth(x - 24, y + 32, depth - 1, Blank);

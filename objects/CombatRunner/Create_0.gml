@@ -51,6 +51,7 @@ throws = 1;
 		}		
 		if !targeting {
 			run_ability()
+			//cancel_targeting()
 		}
 	}
 

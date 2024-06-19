@@ -18,7 +18,12 @@ on_click = function() {
 	if ability != undefined {
 		if ability.can_cast() {
 			with CombatRunner mount_ability(other.ability)
-			active = true;
+			if ability.needs_target{
+				active = true;	
+			}
+			else {
+				lean = 1.5	
+			}
 		}
 		else {
 			lean = -.3

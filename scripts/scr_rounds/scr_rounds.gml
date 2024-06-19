@@ -61,6 +61,7 @@ function round_start() {
 function player_turn_start() {
 	with CombatRunner is_player_turn = true
 	CombatRunner.throws = 1
+	PlayerBattler.turn_start()
 	
 	if CombatRunner.throws > 0 {
 		schedule(40, enable_shooter)

@@ -41,6 +41,7 @@ on_hurt = function(damage) {
 }
 
 turn_start = function() {
+	block = 0;
 	statuses.on_turn_start()
 }
 
