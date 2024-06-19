@@ -47,17 +47,27 @@ function level_new_json() {
 
 function level_update_format(level) {
 	var format_changed = false;
+	
 	//Version 0;
 	if !struct_exists(level.info, "format") {
 		format_changed = true;
 		//Add version
 		level.info.format = 1;
-		//Make coordinates relative to old board position and size.
 		array_foreach(level.objects, function(obj) {
+			
+			//Make coordinates relative to old board position and size.
 			static board_x = 416,
 				   board_y = 784;
 			obj.x -= board_x;
 			obj.y -= board_y;
+			
+			//If color = -1, it is pointless, so remove the serialization
+			if struct_exists(obj, "serialized_info") {
+				var s = obj.serialized_info;
+				if struct_exists(s, "color") && (s.color == -1) && (struct_names_count(s) == 1){
+					struct_remove(obj, "serialized_info")
+				}
+			}
 		})
 		//Add default round counter
 		level.info.rounds = 5;

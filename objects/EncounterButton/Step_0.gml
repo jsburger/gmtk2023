@@ -7,3 +7,4 @@ if point_in_bbox(mouse_x, mouse_y, self) {
 }
 
 lean = lerp(lean, leanMax, .07)
+if button_pressed(inputs.dash) encounter = encounter_get();

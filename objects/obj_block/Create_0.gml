@@ -55,7 +55,7 @@ image_xscale = choose(-1, 1);
 
 
 serialize = function() {
-	if colorable {
+	if colorable && color > -1 {
 		return {
 			"color": color
 		}

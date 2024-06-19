@@ -31,6 +31,8 @@ function Ability(TargetType = TARGET_TYPE.BATTLER) : CombatInterface() construct
 	desc = "Description"
 	sprite_index = spr_chip
 	
+	can_cancel = true;
+	
 	static act = function() {
 		
 	}
@@ -82,6 +84,10 @@ function Ability(TargetType = TARGET_TYPE.BATTLER) : CombatInterface() construct
 		
 	#endregion
 	
+	static dont_cancel = function() {
+		can_cancel = false;
+		return self
+	}
 	
 }
 

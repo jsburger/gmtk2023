@@ -36,7 +36,7 @@ function encounter_get() {
 
 encounter_add(
 	new Encounter("One Squirrel")
-		.with_boards("Deconstructed Cheeseburger", "Double Silo")
+		.with_boards("Full Clear Test")
 		.with_enemies(BattlerGayLittleSquirrel)
 )
 
@@ -52,4 +52,10 @@ encounter_add(
 	new Encounter("Three Squirrels")
 		.with_boards("Deconstructed Cheeseburger", "Double Silo")
 		.with_enemies(BattlerGayLittleSquirrel,  BattlerGayLittleSquirrel, BattlerGayLittleSquirrel)
+)
+
+encounter_add(
+	new Encounter("The Slasher...")
+		.with_boards("Deconstructed Cheeseburger", "Double Silo")
+		.with_enemies(BattlerSlasher)
 )

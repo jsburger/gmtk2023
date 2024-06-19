@@ -56,3 +56,10 @@ function StatusItem(_statusType, _duration, _strength) : CombatItem() constructo
 	}	
 }
 
+function FunctionItem(func) : CombatItem() constructor {
+	self.func = func;
+	
+	static act = function(runner) {
+		func()
+	}
+}

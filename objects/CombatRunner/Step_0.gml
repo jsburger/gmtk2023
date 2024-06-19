@@ -26,7 +26,7 @@ if is_player_turn && current_ability != undefined && !targeting {
 	run_ability()
 }
 
-if button_pressed(inputs.dash) && targeting == true && current_ability != undefined {
+if button_pressed(inputs.dash) && targeting == true && current_ability != undefined && current_ability.can_cancel {
 	cancel_targeting()
 }
 
@@ -41,14 +41,22 @@ while has_actions() && waitTime <= 0 {
 	}
 	//Must have actions
 	else {
-		//Move actions to resolve queue
-		array_push(resolving_actions, array_shift(actions))
+		if array_length(actions) > 0 {
+			//Move actions to resolve queue
+			array_push(resolving_actions, array_shift(actions))
+		}
+		else {
+			acting = false
+			array_shift(move_queue).act()
+			Timeline.update(false)
+			acting = true
+		}
 	}
 }
 acting = false
 
 //once actions are resolved, start player turn
-if !is_busy() && waitForPlayer == true {
+if !is_busy() && waitForPlayer == true && !combat_ending {
 	waitForPlayer = false
 	is_player_turn = true
 	round_end()

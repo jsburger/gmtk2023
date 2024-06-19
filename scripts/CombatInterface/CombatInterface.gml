@@ -21,6 +21,7 @@ function CombatInterface() constructor {
 		act.target = _target
 		act.owner = owner;
 		consume(act)
+		return act;
 	}
 	
 	static defend = function(_target, block) {
@@ -44,6 +45,13 @@ function CombatInterface() constructor {
 	
 	static effect = function(_target, sprite) {
 		
+	}
+	
+	static run = function(func) {
+		var act = new FunctionItem(func);
+		act.owner = owner;
+		consume(act)
+		return act;
 	}
 
 

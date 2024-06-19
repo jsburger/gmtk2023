@@ -11,6 +11,7 @@ schedule(20, function() {encounter_start()})
 
 actions = [];
 resolving_actions = [];
+move_queue = [];
 
 is_player_turn = true;
 phase = PHASES.BEGIN
@@ -28,21 +29,26 @@ acting = false;
 
 current_ability = undefined;
 targeting = false;
-
+post_ability = undefined;
 
 current_target = undefined;
 
 combat_started = false;
 combat_ending = false;
 
+throws = 1;
+
 #region Running Ability Logic
 
-	mount_ability = function(ability) {
+	mount_ability = function(ability, call_after = undefined) {
 		if current_ability != undefined {
 			cancel_targeting()
 		}
 		current_ability = ability
 		targeting = ability.needs_target
+		if call_after != undefined {
+			post_ability = call_after;
+		}		
 		if !targeting {
 			run_ability()
 		}
@@ -52,6 +58,10 @@ combat_ending = false;
 		//current_actor = PlayerBattler.id;
 		current_ability.act();
 		current_ability.spend_mana();
+		if post_ability != undefined {
+			post_ability();
+			post_ability = undefined;
+		}
 		current_ability = undefined;
 	}
 	
@@ -66,6 +76,7 @@ combat_ending = false;
 	cancel_targeting = function() {
 		current_ability = undefined;
 		targeting = false;
+		post_ability = undefined;
 		with AbilityButton if active {
 			active = false
 		}
@@ -84,8 +95,12 @@ enqueue = function(action) {
 	}
 }
 
+enqueue_move = function(move) {
+	array_push(move_queue, move)
+}
+
 has_actions = function() {
-	return (array_length(actions) > 0 || array_length(resolving_actions) > 0)
+	return (array_length(actions) > 0 || array_length(resolving_actions) > 0 || array_length(move_queue) > 0)
 }
 
 is_busy = function() {
@@ -137,6 +152,7 @@ remove_enemy = function(index) {
 	
 }
 
+/// @self CombatRunner
 on_battler_die = function(battler) {
 	if instance_is(battler, EnemyBattler) {
 		//Remove actions related to this battler.
@@ -145,6 +161,7 @@ on_battler_die = function(battler) {
 		})
 		array_filter_smart(actions, filter);
 		array_filter_smart(resolving_actions, filter);
+		Timeline.update()
 	}
 	
 	// Check for combat being over;
@@ -155,6 +172,7 @@ on_battler_die = function(battler) {
 			break;
 		}
 	}
+	if instance_is(battler, PlayerBattler) over = true;
 	
 	if over {
 		end_combat();

@@ -31,7 +31,8 @@ enum moveOrder {
 
 movemode = moveOrder.RANDOM
 moveProgress = 0;
-current_action = undefined;
+current_actions = [];
+move_max = 1;
 
 /// @returns {Struct.EnemyMove}
 get_next_action = function() {
@@ -50,26 +51,58 @@ get_next_action = function() {
 	}
 }
 
-bump_action = function() {
-	current_action = get_next_action()
-	current_action.on_move_decided()
+decide_actions = function() {
+	clear_actions()
+	while array_length(current_actions) < move_max {
+		array_push(current_actions, get_next_action().clone());
+	}
+	for_each_action(function(act) {
+		act.on_move_decided()
+	})
+	Timeline.update()
 }
+reroll_actions = function(count) {
+	repeat(count) {
+		var index = irandom(array_length(current_actions) - 1);
+		current_actions[index] = get_next_action().clone();
+		current_actions[index].on_move_decided();
+	}
+	Timeline.update()
+}
+
+
+for_each_action = function(func) {
+	array_foreach(current_actions, func)
+}
+has_actions = function() {
+	return array_length(current_actions) > 0;
+}
+clear_actions = function() {
+	current_actions = [];
+}
+run_actions = function() {
+	for_each_action(function(action) {		
+		CombatRunner.enqueue_move(action)
+	})
+}
+
+
 battle_start_hook = function(){}
 battle_start = function() {
 	battle_start_hook()
-	if current_action = undefined {
-		bump_action()
+	if !has_actions() {
+		decide_actions()
 	}
 }
 
 turn = function() {
-	if current_action != undefined current_action.act()
-	current_action = undefined
+	run_actions()
+	clear_actions()
 }
 
 turn_end = function() {
 	__turn_end()
-	if current_action = undefined {
-		//bump_action()
+	if !has_actions() {
+		//decide_actions()
 	}
 }

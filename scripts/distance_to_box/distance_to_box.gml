@@ -19,6 +19,7 @@ function point_in_bbox(_x, _y, inst) {
 	return point_in_rectangle(_x, _y, inst.bbox_left, inst.bbox_top, inst.bbox_right, inst.bbox_bottom)
 }
 
+/// @desc n >= _min && n <= _max
 function in_range(n, _min, _max) {
 	return n >= _min && n <= _max
 }

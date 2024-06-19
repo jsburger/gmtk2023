@@ -8,6 +8,16 @@ function EnemyMove() : CombatInterface() constructor {
 	intent = INTENT.MISC;
 	intent_value = undefined;
 	
+	timeline_entry = new TimelineEnemyMove(self);
+	
+	static clone = function() {
+		var _o = owner;
+		//owner = noone;
+		var copy = variable_clone(self);
+		//owner = _o;
+		//copy.owner = _o;
+		return copy;
+	}
 	
 	static set_intent = function(_intent, _value = undefined) {
 		intent = _intent;
@@ -39,7 +49,7 @@ function EnemyMove() : CombatInterface() constructor {
 	
 	/// Shorthand for targeting the player with an attack
 	static hit = function(damage) {
-		attack(TARGETS.PLAYER, damage)
+		return attack(TARGETS.PLAYER, damage)
 	}
 	
 	/// Shorthand for getting a damage provider from input
