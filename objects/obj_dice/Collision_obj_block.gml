@@ -31,7 +31,7 @@ if (horizontal && vertical) {
 		//Vertical Check;
 		var vert_inst = instance_position(left ? collider.bbox_left - 1 : collider.bbox_right + 1, y, obj_block);
 		if instance_exists(vert_inst) && vert_inst.can_collide {
-			collider = side_inst
+			collider = vert_inst
 		}
 	}
 }
