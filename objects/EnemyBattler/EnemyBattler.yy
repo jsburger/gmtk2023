@@ -4,6 +4,7 @@
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"EnemyBattler",
@@ -34,9 +35,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_portrait_frame",
-    "path":"sprites/spr_portrait_frame/spr_portrait_frame.yy",
+    "name":"sprEnemyFrame",
+    "path":"sprites/sprEnemyFrame/sprEnemyFrame.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"sprEnemyFrame",
+    "path":"sprites/sprEnemyFrame/sprEnemyFrame.yy",
+  },
   "visible":true,
 }

@@ -62,8 +62,8 @@ if(editor){
 		current_sprite = _sprite;
 	
 		var pos = board_grid_position(mouse_x, mouse_y)
-		mx = clamp(pos.x, bbox_left + TILE_MIN - 1, bbox_right - TILE_MIN - sprite_get_width(_sprite) + 1);
-		my = clamp(pos.y, bbox_top + TILE_MIN - 1, bbox_bottom - TILE_MIN - sprite_get_height(_sprite) + 1);
+		mx = clamp(pos.x, bbox_left + TILE_MIN, bbox_right - TILE_MIN - sprite_get_width(_sprite));
+		my = clamp(pos.y, bbox_top + TILE_MIN, bbox_bottom - TILE_MIN - sprite_get_height(_sprite));
 		mx += (sprite_get_xoffset(_sprite));
 		my += (sprite_get_yoffset(_sprite));
 		

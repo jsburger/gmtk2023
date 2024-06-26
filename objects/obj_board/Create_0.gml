@@ -42,19 +42,8 @@ entity_list = [
 /*Logic 1*/	  [obj_switch_on_d, obj_switch_on_r, obj_switch_on_u, obj_switch_on_l],
 /*Logic 2*/	  [obj_cable_h, obj_cable_v, obj_cable_ld, obj_cable_lu, obj_cable_ru, obj_cable_rd],
 /*Logic 3*/   [obj_and_gate_up, obj_and_gate_right, obj_and_gate_down, obj_and_gate_left], [obj_bridge_u, obj_bridge_r, obj_bridge_d, obj_bridge_l], [obj_lamp], [obj_block_toggle, obj_block_toggle_off],
-/*Ball*/      [obj_ballplacer]
-];
-entity_auto = [
-[0, 0], [0, 0], [0, 0],
-[0, 0], [0], [1],
-[0, 0],
-[0, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 0, 0],
-[0, 0], [1, 1],
-[2, 2, 2, 2],
-[2, 2, 2, 2, 2, 2],
-[3, 3, 3, 3], [3, 3, 3, 3], [1], [1, 1],
-[0]
+/*Ball*/      [obj_ballplacer],
+/*Battler*/   [BattlerBrick]
 ];
 entity_sprite = [
 [spr_handblock, spr_handblock_v], [spr_handblock_big, spr_handblock_big_v], [spr_handblock_metal, spr_handblock_metal_v],
@@ -66,7 +55,8 @@ entity_sprite = [
 [spr_switch_d_on, spr_switch_r_on, spr_switch_u_on, spr_switch_l_on],
 [spr_cable_lr, spr_cable_ud, spr_cable_ld, spr_cable_lu, spr_cable_ru, spr_cable_rd],
 [spr_gate_and_u, spr_gate_and_l, spr_gate_and_d, spr_gate_and_r], [spr_bridge_u, spr_bridge_r, spr_bridge_d, spr_bridge_l], [spr_lamp], [spr_handblock_toggle, spr_handblock_toggle_off],
-[spr_ball_place]
+[spr_ball_place],
+[sprEnemyFrame]
 ];
 
 mx = 0;

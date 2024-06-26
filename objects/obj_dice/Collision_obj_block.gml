@@ -81,6 +81,9 @@ if collider.object_index == obj_coin_pouch{
 	}
 }
 
+if variable_instance_exists(collider, "on_ball") {
+	collider.on_ball(self)
+}
 
 if collider.is_destructible{
 	has_bounced = true;

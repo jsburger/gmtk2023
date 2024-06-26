@@ -42,7 +42,7 @@ function encounter_start() {
 		}
 	})
 	
-	start_new_level()
+	start_new_board()
 	schedule(10, function() {round_start()})
 }
 
@@ -174,7 +174,7 @@ function make_new_board() {
 	with obj_ball {
 		clear_item()
 	}
-	schedule(8, start_new_level)
+	schedule(8, start_new_board)
 	
 }
 
@@ -187,7 +187,7 @@ function clear_item() {
 	instance_destroy(self, false);
 }
 
-function start_new_level() {
+function start_new_board() {
 	
 	global.round = 0;
 	
@@ -199,5 +199,13 @@ function start_new_level() {
 	}
 	level_load(i)
 	say_line(sound_pool("vo_startboard"), -1, false);
+	
+	var i = 0;
+	with BattlerBrick {
+		if battler == noone && i < array_length(CombatRunner.enemies){
+			battler = CombatRunner.enemies[i++]
+			battler.go_to(x, y)
+		}
+	}
 
 }

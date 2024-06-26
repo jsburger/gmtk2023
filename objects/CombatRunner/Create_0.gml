@@ -134,8 +134,10 @@ add_enemy = function(enemyObj) {
 }
 /// Add a created instance to CombatRunner's enemies
 add_enemy_instance = function(instance) {
+	static colors = [c_red, c_aqua, c_orange, c_lime];
 	array_push(enemies, instance)
-	instance.enemy_position = array_length(enemies)
+	instance.enemy_position = array_length(enemies) - 1
+	instance.bg_color = colors[instance.enemy_position]
 	return instance
 }
 

@@ -1,7 +1,20 @@
 /// @description 
 event_inherited();
 
+//Non Combat stuff
+lerp_x = x;
+lerp_y = y;
+go_to = function(_x, _y) {
+	lerp_x = _x;
+	lerp_y = _y;
+}
+
+
+//Combat stuff
 spr_icon = sprGaySquirrelIcon
+
+bg_color = c_red;
+show_owner = false;
 
 #region Deprecated?
 can_click = function() {

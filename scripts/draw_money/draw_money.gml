@@ -59,6 +59,10 @@ function draw_number_panel(_x, _y, numberString, bgColor, maxLength, scale = 1) 
 	}
 }
 
+function draw_number_panel_centered(_x, _y, numberString, bgColor, maxLength, scale = 1) {
+	draw_number_panel(_x - (24 * (maxLength - 1) * scale), _y, numberString, bgColor, maxLength, scale)
+}
+
 function get_number_index(str) {
 	switch(str) {
 		case "k": return 10

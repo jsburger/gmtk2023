@@ -1,5 +1,5 @@
 /// @description draw bg and frame
-var scale = .75;
-draw_sprite_ext(spr_portrait_bg, 0, x, y, scale, scale, 0, c_white, 1)
+draw_sprite_ext(sprEnemyBG, 0, x, y, image_xscale, image_yscale, 0, bg_color, show_owner ? .8 : .25)
+if show_owner show_owner = false
 draw_self()
-draw_sprite_ext(spr_portrait_frame, 0, x, y, scale, scale, 0, c_white, 1)
+draw_sprite_ext(sprEnemyFrame, 0, x, y, image_xscale, image_yscale, 0, c_white, 1)
