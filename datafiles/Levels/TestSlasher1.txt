@@ -1,17 +1,9 @@
 {
-  "info":{
-    "format":1.0,
-    "rounds":5.0,
-    "name":"TestSlasher1"
-  },
   "objects":[
     {
       "x":0.0,
-      "y":-264.0,
-      "serialized_info":{
-        "color":0.0
-      },
-      "object_index":"obj_block"
+      "y":-592.0,
+      "object_index":"BattlerBrick"
     },
     {
       "x":-176.0,
@@ -30,7 +22,15 @@
       "object_index":"obj_block"
     },
     {
-      "x":104.0,
+      "x":0.0,
+      "y":-264.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block"
+    },
+    {
+      "x":-72.0,
       "y":-240.0,
       "serialized_info":{
         "color":0.0
@@ -46,7 +46,7 @@
       "object_index":"obj_block_v"
     },
     {
-      "x":-72.0,
+      "x":104.0,
       "y":-240.0,
       "serialized_info":{
         "color":0.0
@@ -62,7 +62,7 @@
       "object_index":"obj_block_v"
     },
     {
-      "x":-176.0,
+      "x":0.0,
       "y":-216.0,
       "serialized_info":{
         "color":0.0
@@ -78,7 +78,7 @@
       "object_index":"obj_block"
     },
     {
-      "x":0.0,
+      "x":-176.0,
       "y":-216.0,
       "serialized_info":{
         "color":0.0
@@ -95,5 +95,10 @@
       "y":-80.0,
       "object_index":"obj_bumper"
     }
-  ]
+  ],
+  "info":{
+    "format":1.0,
+    "rounds":5.0,
+    "name":"TestSlasher1"
+  }
 }

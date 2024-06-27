@@ -36,21 +36,21 @@ function encounter_get() {
 
 encounter_add(
 	new Encounter("One Squirrel")
-		.with_boards("TestPawn1")
+		.with_boards("TestPawn1", "TestPawn2")
 		.with_enemies(BattlerGayLittleSquirrel)
 )
 
 
 encounter_add(
 	new Encounter("Two Squirrels")
-		.with_boards("TestPawn1")
+		.with_boards("TestPawn1", "TestPawn2")
 		.with_enemies(BattlerGayLittleSquirrel,  BattlerGayLittleSquirrel)
 )
 
 
 encounter_add(
 	new Encounter("Three Squirrels")
-		.with_boards("TestPawn1")
+		.with_boards("TestPawn1", "TestPawn2")
 		.with_enemies(BattlerGayLittleSquirrel,  BattlerGayLittleSquirrel, BattlerGayLittleSquirrel)
 )
 
