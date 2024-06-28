@@ -14,9 +14,10 @@ if(editor){
 	    _w = 1,
 		_a = 1;
 	//Vertical lines
-	for(var i = 0; i < ((bbox_right - bbox_left - TILE_MIN * 2) / TILE_MIN) + 1; i++){
-		_c = i ==  12 || i ==  34 ? c_navy : (i == 23 ? c_blue : c_black);
-		_w = _c != c_black || i == 0 || i == 46 ? 2 : 1;
+	var width = floor((bbox_right - bbox_left)/TILE_MIN) - 2;
+	for(var i = 0; i <= width; i++){
+		_c = (i == round(width/4) || i == round(width * 3/4)) ? c_navy : (i == round(width/2) ? c_blue : c_black);
+		_w = (_c != c_black || i == 0 || i == width) ? 2 : 1;
 		_a = i mod 2 != 0 && _c == c_black ? .3 : .6;
 		draw_set_alpha(_a);
 		draw_line_width_color(
