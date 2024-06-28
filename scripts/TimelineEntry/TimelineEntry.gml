@@ -20,7 +20,7 @@ function TimelineEnemyMove(move) : TimelineEntry() constructor {
 		intent_draw(draw_x - 64, draw_y, action.intent, action.intent_value)
 		
 		if mouse_in_rectangle(draw_x - 32, draw_y - 32, draw_x + 32, draw_y + 32) {
-			draw_textbox(draw_x + 32, draw_y, action.desc)
+			draw_textbox(draw_x - 64, draw_y - 48, action.desc)
 			action.owner.show_owner = true;
 		}
 	}
