@@ -2,7 +2,7 @@
 
 // Inherit the parent event
 event_inherited();
-set_hp(30)
+set_hp(20)
 
 movemode = moveOrder.LINEAR
 
@@ -29,6 +29,7 @@ with add_action("SYMBOL SLAM!!!") {
 	hit(damage)
 	var _form = accept_provider(new FunctionProvider(get_form));
 	color(5, _form)
+	desc = "Deal Damage equal to the \namount of Matching bricks.\nRecolor 5 bricks to \nMatching color."
 }
 
 on_turn_end = function() {
