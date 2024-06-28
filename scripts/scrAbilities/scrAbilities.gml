@@ -30,6 +30,8 @@ function Ability(TargetType = TARGET_TYPE.BATTLER) : CombatInterface() construct
 	name = "Ability"
 	desc = "Description"
 	sprite_index = spr_chip
+	image_xscale = 1
+	image_yscale = 1
 	
 	can_cancel = true;
 	
@@ -108,7 +110,7 @@ function AbilityDefend(Block) : Ability() constructor {
 	}	
 }
 
-
+/// @param {Function} func
 function FunctionAbility(func) : Ability() constructor {
 	callback = func
 	

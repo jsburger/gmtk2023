@@ -11,3 +11,7 @@ function struct_defget(struct, variable, def) {
 	}
 	return def;
 }
+
+function var_defget(inst, variable, def) {
+	return struct_defget(inst, variable, def)
+}

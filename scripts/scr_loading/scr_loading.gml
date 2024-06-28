@@ -95,7 +95,8 @@ function level_id_by_name(levelName) {
 			return i
 		}
 	}
-	return undefined
+	add_new_level().info.name = levelName;
+	return array_length(global.level_data) - 1
 }
 
 /// Used in the editor to scroll through boards
@@ -153,6 +154,7 @@ function jsonify_board() {
 	}
 }
 
+/// Transform World position to or from Board position
 function transform_instance_position(inst, storing = false) {
 	var r_x = 0,
 		r_y = 0;
@@ -225,8 +227,10 @@ function update_current_level() {
 
 
 function add_new_level() {
-	array_push(global.level_data, level_new_json())
+	var json = level_new_json()
+	array_push(global.level_data, json)
 	array_push(global.level_changed, true)
+	return json
 }
 
 function mark_level_changed(changed = true) {

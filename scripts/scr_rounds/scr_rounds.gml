@@ -25,12 +25,12 @@ function encounter_start() {
 	with CombatRunner combat_started = true;	
 	
 	var encounter = global.encounter_current;
-	
-	array_foreach(encounter.enemies, function(entry, index) {
+	for (var i = 0; i < array_length(encounter.enemies); i++) {
+		var entry = encounter.enemies[i];
 		with CombatRunner {
 			with add_enemy(entry) {
 				visible = false
-				schedule(15 * (index + 1), function() {
+				schedule(15 * (i + 1), function() {
 					visible = true;
 					with instance_create_depth(x, y, depth - 1, obj_brick_flash) {
 						sprite_index = other.sprite_index
@@ -40,7 +40,7 @@ function encounter_start() {
 				})
 			}
 		}
-	})
+	}
 	
 	start_new_board()
 	schedule(10, function() {round_start()})
@@ -200,6 +200,10 @@ function start_new_board() {
 	level_load(i)
 	say_line(sound_pool("vo_startboard"), -1, false);
 	
+	update_battler_bricks()
+}
+
+function update_battler_bricks() {
 	var i = 0;
 	with BattlerBrick {
 		if battler == noone && i < array_length(CombatRunner.enemies){
@@ -207,5 +211,4 @@ function start_new_board() {
 			battler.go_to(x, y)
 		}
 	}
-
 }

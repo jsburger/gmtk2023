@@ -26,6 +26,15 @@ function Encounter(_name) constructor {
 global.encounters = [];
 global.encounter_current = undefined;
 
+// Make all new boards required
+schedule(3, function() {
+	for (var i = 0; i < array_length(global.encounters); i++) {
+		for (var o = 0; o < array_length(global.encounters[i].boards); o++) {
+			level_id_by_name(global.encounters[i].boards[o])
+		}
+	}
+})
+
 function encounter_add(encounter) {
 	array_push(global.encounters, encounter)
 }
@@ -58,4 +67,14 @@ encounter_add(
 	new Encounter("The Slasher...")
 		.with_boards("TestSlasher1")
 		.with_enemies(BattlerSlasher)
+)
+
+encounter_add(
+	new Encounter("Casino World")
+		.with_boards("Symbols3a", "Symbols3b")
+		.with_enemies(
+			[BattlerSymbol, {form: MANA.RED}],
+			[BattlerSymbol, {form: MANA.BLUE}],
+			[BattlerSymbol, {form: MANA.YELLOW}]
+		)
 )

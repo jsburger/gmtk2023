@@ -1,4 +1,5 @@
 // Called in GlobalStep
+/// @ignore
 function Clickables_Step() {
     
     if button_pressed(inputs.shoot) {

@@ -47,7 +47,8 @@ function draw_payout(_x, _y, moneyString) {
 	draw_sprite(spr_chips, get_animation_frame(2), xsaved, _y)
 }
 
-function draw_number_panel(_x, _y, numberString, bgColor, maxLength, scale = 1) {
+function draw_number_panel(_x, _y, numberString, bgColor, maxLength = undefined, scale = 1) {
+	if maxLength == undefined maxLength = string_length(numberString);
 	var gap = 48 * scale;
 	for (var i = 0; i < maxLength; i++) {
 		draw_sprite_ext(spr_number_back, 0, _x + gap * i, _y, scale, scale, 0, bgColor, 1)
@@ -59,7 +60,7 @@ function draw_number_panel(_x, _y, numberString, bgColor, maxLength, scale = 1) 
 	}
 }
 
-function draw_number_panel_centered(_x, _y, numberString, bgColor, maxLength, scale = 1) {
+function draw_number_panel_centered(_x, _y, numberString, bgColor, maxLength = undefined, scale = 1) {
 	draw_number_panel(_x - (24 * (maxLength - 1) * scale), _y, numberString, bgColor, maxLength, scale)
 }
 

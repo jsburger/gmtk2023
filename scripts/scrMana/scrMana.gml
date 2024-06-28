@@ -6,6 +6,8 @@ enum MANA {
 	MAX //Dont use this, its just meant to represent the last value in the enum so you know how many manas there are
 }
 
+#macro MANA_NONE -1
+
 global.mana = array_create(MANA.MAX)
 global.mana_gained = array_create(MANA.MAX)
 

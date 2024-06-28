@@ -40,12 +40,12 @@ if random(10) < 1 && color == -1 && !obj_board.editor && (object_index == obj_bl
 	set_color(MANA.YELLOW);
 }
 
-if random(60) < 1 && !obj_board.editor && object_index == obj_block{
+if chance(1, 60) && !obj_board.editor && object_index == obj_block{
 	instance_create_layer(x,y,"Instances",obj_super_block);
 	drop_chance = 0;
 	instance_destroy();
 }
-if random(120) < 1 && !obj_board.editor && object_index == obj_block{
+if chance(1, 120) && !obj_board.editor && object_index == obj_block{
 	instance_create_layer(x,y,"Instances",obj_block_gold);
 	drop_chance = 0;
 	instance_destroy();

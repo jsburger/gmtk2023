@@ -125,7 +125,14 @@ do_phase_action = function(target) {
 
 /// Spawn an object and add it as an enemy
 add_enemy = function(enemyObj) {
-	with instance_create_layer(1088, 256 + 128 * array_length(enemies), "Instances", enemyObj) {
+	var inst;
+	if is_array(enemyObj) {
+		inst = instance_create_layer(1088, 256 + 128 * array_length(enemies), "Instances", enemyObj[0], enemyObj[1])
+	}
+	else {
+		inst = instance_create_layer(1088, 256 + 128 * array_length(enemies), "Instances", enemyObj)
+	}
+	with inst {
 		//if other.combat_started {
 		//	battle_start();
 		//}

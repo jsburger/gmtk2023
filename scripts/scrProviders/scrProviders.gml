@@ -50,3 +50,12 @@ function DamageProvider(innerProvider, _owner, _target) : Provider(provider_get(
 		return string(get())
 	}
 }
+
+/// @param {Function} func
+function FunctionProvider(func) : Provider(0) constructor {
+	getter = func;
+	value = func()
+	static get = function() {
+		return getter();
+	}
+}

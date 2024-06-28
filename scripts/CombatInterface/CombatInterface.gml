@@ -53,6 +53,13 @@ function CombatInterface() constructor {
 		consume(act)
 		return act;
 	}
+	
+	static color = function(count, _color) {
+		var act = new RecolorItem(count, _color);
+		act.owner = owner;
+		consume(act);
+		return act;
+	}
 
 
 }

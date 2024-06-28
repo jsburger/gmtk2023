@@ -8,7 +8,7 @@ if waitTime > 0 {
 }
 
 //Run enemy turn
-while !is_busy() && !is_player_turn {
+while !is_busy() && !is_player_turn && !waitForPlayer {
 	do_phase_action(enemies[phaseProgress])
 	if ++phaseProgress >= array_length(enemies) {
 		phaseProgress = 0

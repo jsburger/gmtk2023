@@ -112,10 +112,3 @@ turn = function() {
 	run_actions()
 	clear_actions()
 }
-
-turn_end = function() {
-	__turn_end()
-	if !has_actions() {
-		//decide_actions()
-	}
-}

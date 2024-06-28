@@ -21,6 +21,8 @@ if keyboard_check_pressed(vk_home) {
 		global.editor_buttons.for_each_object(function(i) {
 			i.visible = false
 		})
+		
+		update_battler_bricks()
 	}
 	//Enable editor
 	else{
@@ -34,8 +36,12 @@ if keyboard_check_pressed(vk_home) {
 		//with(par_bricklike) instance_destroy(self, false);
 		level_clear()
 		level_load(global.level_num)
+		with EnemyBattler {
+			go_to(1088, 256 + 128 * enemy_position)
+		}
 	}
 	with par_bricklike event_perform(ev_other, ev_user15);
+
 }
 
 if(editor){

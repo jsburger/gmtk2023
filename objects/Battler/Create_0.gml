@@ -5,13 +5,19 @@ get_target_info = function() {
 		instance: other
 	}
 }
-
+//Here because being targetable means being clickable. Will fix later. Maybe.
 on_click = function() {}
 
+hpmax = 50;
+hp = 50;
+display_health = new MeterInterpolator(function() {
+	return hp;
+});
 
 function set_hp(h) {
 	hpmax = h
 	hp = h
+	display_health.set(h);
 }
 
 set_hp(50)
@@ -49,10 +55,13 @@ turn = function() {
 	
 }
 
+/// @ignore
 turn_end = function() {
 	statuses.on_turn_end()
+	on_turn_end()
 }
-__turn_end = turn_end;
+/// Override to add behavior on turn end (after statuses)
+on_turn_end = function() {}
 
 battle_start = function() {
 	
@@ -67,6 +76,4 @@ die = function() {
 
 /// Use this instead of die to override
 on_die = function() {}
-
-instance_create_layer(x, bbox_bottom + 32, layer, BattlerHealthBar, { target : other }).depth = depth - 1
 
