@@ -5,13 +5,17 @@ event_inherited();
 set_hp(15)
 
 movemode = moveOrder.LINEAR
-
+form = var_defget(self, "form", MANA.RED)
 change_form = function(color) {
 	form = color;
 	sprite_index = sprSentientSymbolTransform;
+	spr_icon = sprSentientSymbolIconTransform;
 	image_index = 0;
 }
-change_form(var_defget(self, "form", MANA.RED))
+
+after_create = function() {
+	change_form(form);
+}
 
 var count_blocks = function() {
 	var n = 0;

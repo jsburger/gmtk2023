@@ -69,12 +69,11 @@ function RecolorItem(count, color) : CombatItem() constructor {
 	self.count = count;
 	self.color = color;
 	
-	delay = 7 * (provider_get(count) - 1)
-	
 	static act = function(runner) {
 		var n = provider_get(count);
 		if n > 0 {
-			bricks_recolor(n, provider_get(color))
+			var c = bricks_recolor(n, provider_get(color))
+			runner.waitTime += (__BRICK_RECOLOR_DELAY * (c - 1)) + 1;
 		}
 	}
 }

@@ -123,7 +123,6 @@
   "name":"gmtk2023",
   "resources":[
     {"id":{"name":"Note2","path":"notes/Note2/Note2.yy",},},
-    {"id":{"name":"running combat","path":"notes/running combat/running combat.yy",},},
     {"id":{"name":"AbilityButton","path":"objects/AbilityButton/AbilityButton.yy",},},
     {"id":{"name":"Battler","path":"objects/Battler/Battler.yy",},},
     {"id":{"name":"BattlerBrick","path":"objects/BattlerBrick/BattlerBrick.yy",},},
@@ -662,6 +661,10 @@
     {"id":{"name":"sprIntentDefend","path":"sprites/sprIntentDefend/sprIntentDefend.yy",},},
     {"id":{"name":"sprIntentMisc","path":"sprites/sprIntentMisc/sprIntentMisc.yy",},},
     {"id":{"name":"sprRoundIncrementButton","path":"sprites/sprRoundIncrementButton/sprRoundIncrementButton.yy",},},
+    {"id":{"name":"sprSentientSymbolIconBlue","path":"sprites/sprSentientSymbolIconBlue/sprSentientSymbolIconBlue.yy",},},
+    {"id":{"name":"sprSentientSymbolIconRed","path":"sprites/sprSentientSymbolIconRed/sprSentientSymbolIconRed.yy",},},
+    {"id":{"name":"sprSentientSymbolIconTransform","path":"sprites/sprSentientSymbolIconTransform/sprSentientSymbolIconTransform.yy",},},
+    {"id":{"name":"sprSentientSymbolIconYellow","path":"sprites/sprSentientSymbolIconYellow/sprSentientSymbolIconYellow.yy",},},
     {"id":{"name":"sprSentientSymbolIdleBlue","path":"sprites/sprSentientSymbolIdleBlue/sprSentientSymbolIdleBlue.yy",},},
     {"id":{"name":"sprSentientSymbolIdleRed","path":"sprites/sprSentientSymbolIdleRed/sprSentientSymbolIdleRed.yy",},},
     {"id":{"name":"sprSentientSymbolIdleYellow","path":"sprites/sprSentientSymbolIdleYellow/sprSentientSymbolIdleYellow.yy",},},
