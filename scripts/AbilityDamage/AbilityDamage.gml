@@ -20,10 +20,10 @@ register_ability("Hit24", function() {
 
 register_ability("Recolor", function() {
 	with new FunctionAbility(function() {
-		bricks_recolor(6, MANA.RED)
+		bricks_recolor(8, MANA.RED)
 	}) {
 		name = "Redify"
-		desc = "Redify 6 bricks"
+		desc = "Redify 8 bricks"
 		set_costs(3, 0, 1)
 		sprite_index = spr_portrait_bg
 		image_xscale = .35

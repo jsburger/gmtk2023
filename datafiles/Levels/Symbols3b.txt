@@ -6,15 +6,7 @@
   },
   "objects":[
     {
-      "x":144.0,
-      "serialized_info":{
-        "color":2.0
-      },
-      "y":-344.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":0.0,
+      "x":-272.0,
       "y":-624.0,
       "object_index":"BattlerBrick"
     },
@@ -24,107 +16,9 @@
       "object_index":"BattlerBrick"
     },
     {
-      "x":-272.0,
+      "x":0.0,
       "y":-624.0,
       "object_index":"BattlerBrick"
-    },
-    {
-      "x":-272.0,
-      "y":-504.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":0.0,
-      "y":-504.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":-32.0,
-      "y":-504.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":32.0,
-      "y":-504.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":-304.00006103515625,
-      "y":-504.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":239.9998779296875,
-      "y":-504.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":-240.0,
-      "y":-504.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":303.9998779296875,
-      "y":-504.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":271.9998779296875,
-      "y":-504.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":-240.0,
-      "y":-488.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":0.0,
-      "y":-488.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":303.9998779296875,
-      "y":-488.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":239.9998779296875,
-      "y":-488.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":271.9998779296875,
-      "y":-488.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":-304.00006103515625,
-      "y":-488.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":-272.0,
-      "y":-488.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":-32.0,
-      "y":-488.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":32.0,
-      "y":-488.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":271.9998779296875,
-      "serialized_info":{
-        "color":1.0
-      },
-      "y":-456.0,
-      "object_index":"obj_block"
     },
     {
       "x":-272.0,
@@ -143,6 +37,19 @@
       "object_index":"obj_block"
     },
     {
+      "x":271.9998779296875,
+      "serialized_info":{
+        "color":1.0
+      },
+      "y":-456.0,
+      "object_index":"obj_block"
+    },
+    {
+      "x":32.0,
+      "y":-448.0,
+      "object_index":"obj_block_large_v"
+    },
+    {
       "x":-304.00006103515625,
       "y":-448.0,
       "object_index":"obj_block_large_v"
@@ -153,12 +60,7 @@
       "object_index":"obj_block_large_v"
     },
     {
-      "x":32.0,
-      "y":-448.0,
-      "object_index":"obj_block_large_v"
-    },
-    {
-      "x":239.9998779296875,
+      "x":303.9998779296875,
       "y":-448.0,
       "object_index":"obj_block_large_v"
     },
@@ -168,17 +70,9 @@
       "object_index":"obj_block_large_v"
     },
     {
-      "x":303.9998779296875,
+      "x":239.9998779296875,
       "y":-448.0,
       "object_index":"obj_block_large_v"
-    },
-    {
-      "x":-272.0,
-      "serialized_info":{
-        "color":0.0
-      },
-      "y":-440.0,
-      "object_index":"obj_block"
     },
     {
       "x":271.9998779296875,
@@ -197,99 +91,12 @@
       "object_index":"obj_block"
     },
     {
-      "x":271.9998779296875,
-      "y":-408.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":303.9998779296875,
-      "y":-408.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":0.0,
-      "y":-408.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":-304.00006103515625,
-      "y":-408.0,
-      "object_index":"obj_block"
-    },
-    {
       "x":-272.0,
-      "y":-408.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "y":-440.0,
       "object_index":"obj_block"
-    },
-    {
-      "x":239.9998779296875,
-      "y":-408.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":-240.0,
-      "y":-408.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":-32.0,
-      "y":-408.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":32.0,
-      "y":-408.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":303.9998779296875,
-      "y":-392.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":239.9998779296875,
-      "y":-392.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":271.9998779296875,
-      "y":-392.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":-240.0,
-      "y":-392.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":32.0,
-      "y":-392.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":-272.0,
-      "y":-392.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":-304.00006103515625,
-      "y":-392.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":0.0,
-      "y":-392.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":-32.0,
-      "y":-392.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":-376.0,
-      "y":-352.0,
-      "object_index":"obj_block_v"
     },
     {
       "x":-392.0,
@@ -302,9 +109,22 @@
       "object_index":"obj_block_v"
     },
     {
+      "x":-376.0,
+      "y":-352.0,
+      "object_index":"obj_block_v"
+    },
+    {
       "x":391.9998779296875,
       "y":-352.0,
       "object_index":"obj_block_v"
+    },
+    {
+      "x":144.0,
+      "serialized_info":{
+        "color":2.0
+      },
+      "y":-344.0,
+      "object_index":"obj_block"
     },
     {
       "x":415.9998779296875,
@@ -335,6 +155,11 @@
       "object_index":"obj_block"
     },
     {
+      "x":-416.0,
+      "y":-328.0,
+      "object_index":"obj_block"
+    },
+    {
       "x":-352.0,
       "y":-328.0,
       "object_index":"obj_block"
@@ -346,11 +171,6 @@
     },
     {
       "x":351.9998779296875,
-      "y":-328.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":-416.0,
       "y":-328.0,
       "object_index":"obj_block"
     },
@@ -375,14 +195,22 @@
       "object_index":"obj_block"
     },
     {
+      "x":-384.0,
+      "y":-304.0,
+      "object_index":"obj_block_large"
+    },
+    {
       "x":383.9998779296875,
       "y":-304.0,
       "object_index":"obj_block_large"
     },
     {
-      "x":-384.0,
-      "y":-304.0,
-      "object_index":"obj_block_large"
+      "x":144.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "y":-280.0,
+      "object_index":"obj_block"
     },
     {
       "x":-144.0,
@@ -393,12 +221,12 @@
       "object_index":"obj_block"
     },
     {
-      "x":144.0,
+      "x":-184.0,
       "serialized_info":{
-        "color":0.0
+        "color":1.0
       },
-      "y":-280.0,
-      "object_index":"obj_block"
+      "y":-272.0,
+      "object_index":"obj_block_v"
     },
     {
       "x":104.0,
@@ -425,14 +253,6 @@
       "object_index":"obj_block_v"
     },
     {
-      "x":-184.0,
-      "serialized_info":{
-        "color":1.0
-      },
-      "y":-272.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "x":287.9998779296875,
       "serialized_info":{
         "color":2.0
@@ -487,14 +307,6 @@
       },
       "y":-264.0,
       "object_index":"obj_block"
-    },
-    {
-      "x":144.0,
-      "serialized_info":{
-        "color":0.0
-      },
-      "y":-256.0,
-      "object_index":"obj_block_large"
     },
     {
       "x":-144.0,
@@ -505,6 +317,22 @@
       "object_index":"obj_block_large"
     },
     {
+      "x":144.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "y":-256.0,
+      "object_index":"obj_block_large"
+    },
+    {
+      "x":-208.0,
+      "serialized_info":{
+        "color":1.0
+      },
+      "y":-248.0,
+      "object_index":"obj_block"
+    },
+    {
       "x":208.0001220703125,
       "serialized_info":{
         "color":0.0
@@ -524,14 +352,6 @@
       "x":79.9998779296875,
       "serialized_info":{
         "color":0.0
-      },
-      "y":-248.0,
-      "object_index":"obj_block"
-    },
-    {
-      "x":-208.0,
-      "serialized_info":{
-        "color":1.0
       },
       "y":-248.0,
       "object_index":"obj_block"
@@ -559,6 +379,11 @@
       },
       "y":-232.0,
       "object_index":"obj_block"
+    },
+    {
+      "x":-112.0,
+      "y":-224.0,
+      "object_index":"obj_block_large"
     },
     {
       "x":-176.0,
@@ -572,11 +397,6 @@
     },
     {
       "x":176.0,
-      "y":-224.0,
-      "object_index":"obj_block_large"
-    },
-    {
-      "x":-112.0,
       "y":-224.0,
       "object_index":"obj_block_large"
     }

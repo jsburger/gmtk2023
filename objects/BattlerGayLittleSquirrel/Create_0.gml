@@ -13,6 +13,7 @@ with add_action("fart") {
 	accept_provider(damage)
 	set_intent(INTENT.ATTACK, damage)
 	hit(damage)
+	desc = "Deal 4-8 Damage"
 }
 
 with add_action("pee") {
@@ -20,4 +21,5 @@ with add_action("pee") {
 	accept_provider(damage)
 	set_intent(INTENT.ATTACK, damage)
 	hit(damage)
+	desc = "Deal 12 Damage"
 }

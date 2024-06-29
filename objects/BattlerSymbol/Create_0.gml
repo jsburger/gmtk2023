@@ -2,7 +2,7 @@
 
 // Inherit the parent event
 event_inherited();
-set_hp(20)
+set_hp(15)
 
 movemode = moveOrder.LINEAR
 

@@ -78,3 +78,22 @@ encounter_add(
 			[BattlerSymbol, {form: MANA.YELLOW}]
 		)
 )
+
+encounter_add(
+	new Encounter("Two Symbols A")
+		.with_boards("Symbols2a", "Symbols2b")
+		.with_enemies(
+			[BattlerSymbol, {form: MANA.RED}],
+			[BattlerSymbol, {form: MANA.BLUE}],
+		)
+)
+
+encounter_add(
+	new Encounter("Three Symbols")
+		.with_boards("Symbols3c")
+		.with_enemies(
+			[BattlerSymbol, {form: MANA.YELLOW}],
+			[BattlerSymbol, {form: MANA.RED}],
+			[BattlerSymbol, {form: MANA.YELLOW}]
+		)		
+)
