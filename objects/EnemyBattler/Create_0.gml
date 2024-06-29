@@ -112,3 +112,6 @@ turn = function() {
 	run_actions()
 	clear_actions()
 }
+
+/// Used by CombatRunner after an enemy is spawned as part of an encounter
+after_create = function() {}

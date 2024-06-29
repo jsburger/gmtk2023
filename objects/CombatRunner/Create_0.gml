@@ -145,6 +145,9 @@ add_enemy_instance = function(instance) {
 	array_push(enemies, instance)
 	instance.enemy_position = array_length(enemies) - 1
 	instance.bg_color = colors[instance.enemy_position]
+	
+	instance.after_create()
+	
 	return instance
 }
 

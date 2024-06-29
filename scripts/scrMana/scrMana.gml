@@ -29,7 +29,19 @@ function mana_get_color(mana){
 			return #efc555
 		default:
 			return c_white	
-	}	
+	}
+}
+
+function mana_get_color_alt(mana, index) {
+	static colors = [
+		[ #d12222, #de3e59, #d13f22, #ed64a8],
+		[ #4566d1, #45b5d1, #3932c7, #5430c9],
+		[ #efc555, #9be354, #e7ef55, #ab8646]
+	];
+	if mana < MANA.MAX && mana >= MANA.RED {
+		return colors[mana][index];
+	}
+	return c_white;
 }
 
 function mana_reset() {

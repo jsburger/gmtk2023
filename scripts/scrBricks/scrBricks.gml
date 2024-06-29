@@ -1,4 +1,7 @@
+#macro __BRICK_RECOLOR_DELAY 3
+
 /// Recolors X bricks to color, preferring uncolored and differently colored bricks.
+/// @returns {Real} Amount of bricks recolored
 function bricks_recolor(count, _color) {
 	var colorable = array_build_filtered(obj_block, function(brick) {
 			return var_defget(brick, "colorable", false)
@@ -58,8 +61,8 @@ function bricks_recolor(count, _color) {
 			}
 		});
 		
-		schedule((6 * i) + 1, change)
+		schedule((__BRICK_RECOLOR_DELAY * i) + 1, change)
 	}
-	
+	return array_length(selected)
 	
 }

@@ -12,7 +12,7 @@ function Interpolator(getter, auto = __Int_auto) constructor {
 	
 	static tick = function() {
 		real_value = getter();
-		if real_value == undefined real_value = 0;
+		real_value ??= 0; //Replace undefined with 0
 		if display_value != real_value {
 			interp()
 		}
@@ -32,6 +32,19 @@ function Interpolator(getter, auto = __Int_auto) constructor {
 		display_value = i;
 		real_value = i;
 	}
+	
+}
+
+function instance_ref(inst, variable) {
+	with {
+		inst,
+		variable
+	} return function() {
+		if argument_count <= 0 {
+			return variable_instance_get(inst, variable)
+		}
+		else variable_instance_set(inst, variable, argument0)
+	}
 }
 
 /// Used for Health Bars and Mana Displays
@@ -41,5 +54,13 @@ function MeterInterpolator(getter, auto = __Int_auto) : Interpolator(getter, aut
 		var dif = display_value - real_value,
 			clmp = abs(dif) > 10 ? .5 : .25;
 		display_value -= clamp(dif, -clmp, clmp)
+	}
+}
+
+function ColorInterpolator(getter, rate = .05) : Interpolator(getter, true) constructor {
+	self.rate = rate;
+	
+	static interp = function() {
+		display_value = merge_color(display_value, real_value, rate)
 	}
 }

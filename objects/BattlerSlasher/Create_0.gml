@@ -7,13 +7,14 @@ set_hp(25)
 spr_icon = sprSlasher
 movemode = moveOrder.LINEAR
 move_max = 8;
-arm = instance_create_depth(x - 24, y + 32, depth - 1, Blank);
+arm_pos = {x: -24, y: 32}
+arm = instance_create_depth(x + arm_pos.x, y + arm_pos.y, depth - 1, Blank);
 with arm {
 	sprite_index = sprSlasherKnife
 }
 
 slash = function() {
-	arm.image_angle = 90
+	arm.image_angle = 70
 }
 
 with add_action("Slash") {
