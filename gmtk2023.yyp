@@ -120,7 +120,6 @@
   "name":"gmtk2023",
   "resources":[
     {"id":{"name":"Note2","path":"notes/Note2/Note2.yy",},},
-    {"id":{"name":"running combat","path":"notes/running combat/running combat.yy",},},
     {"id":{"name":"AbilityButton","path":"objects/AbilityButton/AbilityButton.yy",},},
     {"id":{"name":"Battler","path":"objects/Battler/Battler.yy",},},
     {"id":{"name":"BattlerBrick","path":"objects/BattlerBrick/BattlerBrick.yy",},},
