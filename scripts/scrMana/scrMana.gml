@@ -44,6 +44,14 @@ function mana_get_color_alt(mana, index) {
 	return c_white;
 }
 
+function mana_get_sum() {
+	var sum = 0;
+	for (var i = 0; i < MANA.MAX; ++i) {
+		sum = sum + global.mana[i];
+	}
+	return sum;
+}
+
 function mana_reset() {
 	for (var i = 0; i < MANA.MAX; ++i) {
 		global.mana[i] = 0

@@ -30,8 +30,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Enemies",
-    "path":"folders/Sprites/Enemies.yy",
+    "name":"Sentient Symbol",
+    "path":"folders/Sprites/Enemies/Sentient Symbol.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

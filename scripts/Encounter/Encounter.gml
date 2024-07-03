@@ -97,3 +97,9 @@ encounter_add(
 			[BattlerSymbol, {form: MANA.YELLOW}]
 		)		
 )
+
+encounter_add(
+	new Encounter("The Whale (2022)")
+		.with_boards("Whale1a")
+		.with_enemies(BattlerWhale)
+)
