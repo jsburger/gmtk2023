@@ -42,16 +42,15 @@ function WaitItem(duration) : CombatItem() constructor {
 	delay = duration;
 }
 
-function StatusItem(_statusType, _duration, _strength) : CombatItem() constructor {
+function StatusItem(_statusType, _strength) : CombatItem() constructor {
 	delay = 15
 	status = _statusType
-	duration = _duration
 	strength = _strength
 	
 	static act = function(runner) {
 		var t = resolve_target(target)
 		if instance_exists(t) {
-			t.statuses.add(new status(provider_get(duration), provider_get(strength)))
+			t.statuses.add_status(status, provider_get(strength))
 		}
 	}	
 }

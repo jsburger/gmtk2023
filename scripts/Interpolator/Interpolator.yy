@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"Interpolator",
   "isCompatibility":false,
   "isDnD":false,

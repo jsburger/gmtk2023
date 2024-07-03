@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"AbilityPlacer",
   "isCompatibility":false,
   "isDnD":false,

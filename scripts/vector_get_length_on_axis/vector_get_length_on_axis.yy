@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"vector_get_length_on_axis",
   "isCompatibility":false,
   "isDnD":false,

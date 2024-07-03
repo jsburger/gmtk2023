@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"TimelineEntry",
   "isCompatibility":false,
   "isDnD":false,

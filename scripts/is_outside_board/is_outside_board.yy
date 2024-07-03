@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"is_outside_board",
   "isCompatibility":false,
   "isDnD":false,

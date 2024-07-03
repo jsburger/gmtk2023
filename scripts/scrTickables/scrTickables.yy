@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scrTickables",
   "isCompatibility":false,
   "isDnD":false,

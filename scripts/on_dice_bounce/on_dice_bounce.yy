@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"on_dice_bounce",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scrMana",
   "isCompatibility":false,
   "isDnD":false,

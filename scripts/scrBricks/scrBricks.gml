@@ -44,7 +44,6 @@ function bricks_recolor(count, _color) {
 	}
 	
 	
-	
 	//Color the bricks
 	for (var i = 0; i < array_length(selected); i++) {
 		var change = method({color : _color, inst: selected[i]}, function() {
@@ -65,4 +64,11 @@ function bricks_recolor(count, _color) {
 	}
 	return array_length(selected)
 	
+}
+
+
+function brick_on_unfreeze(brick) {
+	with PlayerBattler {
+		with statuses.find("Freeze") knock()
+	}
 }

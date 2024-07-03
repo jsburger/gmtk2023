@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"fill_with_blocks",
   "isCompatibility":false,
   "isDnD":false,

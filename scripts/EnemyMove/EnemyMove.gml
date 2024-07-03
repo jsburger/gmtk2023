@@ -54,6 +54,11 @@ function EnemyMove() : CombatInterface() constructor {
 	
 	/// Shorthand for getting a damage provider from input
 	static as_damage = function(value, target = TARGETS.PLAYER) {
-		return new DamageProvider(value, owner, target)
+		return accept_provider(new DamageProvider(value, owner, target))
+	}
+	
+	/// Shorthand for applying freeze to the player
+	static freeze = function(value) {
+		return apply_status(TARGETS.PLAYER, "Freeze", value)
 	}
 }

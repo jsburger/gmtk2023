@@ -81,17 +81,21 @@ if collider.object_index == obj_coin_pouch{
 	}
 }
 
-if variable_instance_exists(collider, "on_ball") {
-	collider.on_ball(self)
-}
+if !collider.frozen {
+	if variable_instance_exists(collider, "on_ball") {
+		collider.on_ball(self)
+	}
 
-if collider.is_destructible{
-	has_bounced = true;
-	collider.my_health -= damage;
-	if collider.my_health <= 0{
-		instance_destroy(collider);
+	if collider.is_destructible{
+		has_bounced = true;
+		collider.my_health -= damage;
+		if collider.my_health <= 0{
+			instance_destroy(collider);
+		}
 	}
 }
-
+else {
+	collider.set_frozen(false)
+}
 
 extraspeed = 0;

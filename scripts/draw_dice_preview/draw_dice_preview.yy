@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"draw_dice_preview",
   "isCompatibility":false,
   "isDnD":false,

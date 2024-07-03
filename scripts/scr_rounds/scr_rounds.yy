@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_rounds",
   "isCompatibility":false,
   "isDnD":false,

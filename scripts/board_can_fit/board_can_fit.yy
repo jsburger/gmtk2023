@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"board_can_fit",
   "isCompatibility":false,
   "isDnD":false,

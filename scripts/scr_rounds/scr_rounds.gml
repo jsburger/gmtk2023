@@ -21,6 +21,11 @@ function encounter_start() {
 		call()
 	})
 	
+	var array = array_build(AbilityButton);
+	array_sort(array, function(a, b) {if a.y > b.y return 1 else return -1})
+	array_foreach(array, function(inst, index) {inst.ability.position = index})
+	
+	
 	global.round = 0
 	with CombatRunner combat_started = true;	
 	

@@ -35,6 +35,12 @@ function Ability(TargetType = TARGET_TYPE.BATTLER) : CombatInterface() construct
 	
 	can_cancel = true;
 	
+	modified_costs = new FrameCache(function() {
+		return calculate_ability_cost(self);
+	})
+	
+	position = 0;
+	
 	static act = function() {
 		
 	}
@@ -49,6 +55,7 @@ function Ability(TargetType = TARGET_TYPE.BATTLER) : CombatInterface() construct
 	}
 	
 	static can_cast = function() {
+		var costs = modified_costs.get();
 		for (var i = 0; i < MANA.MAX; ++i) {
 		    if global.mana[i] < costs[i] return false
 		}
@@ -56,6 +63,7 @@ function Ability(TargetType = TARGET_TYPE.BATTLER) : CombatInterface() construct
 	}
 	
 	static spend_mana = function() {
+		var costs = modified_costs.get();
 		for (var i = 0; i < MANA.MAX; ++i) {
 		    global.mana[i] -= costs[i]
 		}

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"distance_to_box",
   "isCompatibility":false,
   "isDnD":false,

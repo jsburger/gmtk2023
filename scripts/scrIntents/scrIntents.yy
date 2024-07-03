@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scrIntents",
   "isCompatibility":false,
   "isDnD":false,

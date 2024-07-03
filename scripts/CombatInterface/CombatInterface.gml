@@ -31,8 +31,8 @@ function CombatInterface() constructor {
 		consume(act)			
 	}
 	
-	static give_status = function(_target, statusType, statusDuration = 1, statusStrength = 1) {
-		var act = new StatusItem(statusType, statusDuration, statusStrength)
+	static apply_status = function(_target, statusType, statusStrength = 1) {
+		var act = new StatusItem(statusType, statusStrength)
 		act.target = _target
 		act.owner = owner;
 		consume(act)

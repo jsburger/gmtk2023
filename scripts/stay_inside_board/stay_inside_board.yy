@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"stay_inside_board",
   "isCompatibility":false,
   "isDnD":false,

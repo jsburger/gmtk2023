@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"get_animation_frame",
   "isCompatibility":false,
   "isDnD":false,

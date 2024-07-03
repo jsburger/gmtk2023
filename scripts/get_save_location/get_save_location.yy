@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"get_save_location",
   "isCompatibility":false,
   "isDnD":false,

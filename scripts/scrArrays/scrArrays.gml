@@ -34,3 +34,30 @@ function array_transfer(to, from) {
 		}
 	}
 }
+
+/// Returns an array of all values in a struct
+function struct_get_values(struct) {
+	var names = struct_get_names(struct),
+		array = array_create(array_length(names));
+	
+	for (var i = 0, l = array_length(names); i < l; i++) {
+		array[i] = struct_get(struct, names[i]);
+	}
+	return array;
+}
+
+/// Clears a struct of all keys.
+function struct_clear(struct) {
+	for (var names = struct_get_names(struct), i = 0, l = array_length(names); i < l; i++) {
+		struct_remove(struct, names[i])
+	}
+}
+
+/// Creates a new array containing arrays of the given height;
+function array_create_2d(width, height = 0) {
+	var a = array_create(width);
+	for (var i = 0; i < width; i++) {
+		a[i] = array_create(height)
+	}
+	return a;
+}

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"CombatInterface",
   "isCompatibility":false,
   "isDnD":false,

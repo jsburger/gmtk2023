@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"Clickables",
   "isCompatibility":false,
   "isDnD":false,

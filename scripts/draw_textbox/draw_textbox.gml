@@ -1,5 +1,9 @@
 function draw_textbox(_x, _y, _lines) {
-	if !is_array(_lines) _lines = [_lines]
+	static dump = [1];
+	if !is_array(_lines) {
+		dump[0] = _lines
+		_lines = dump
+	}
 	var width = 0,
 		height = 0,
 		sep = 8;

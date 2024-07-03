@@ -11,5 +11,6 @@ function time_to_frame() {
 }
 
 function sprite_get_animation_frame(sprite) {
+	if sprite_get_number(sprite) == 1 return 0;
 	return get_animation_frame(sprite_get_number(sprite), sprite_get_speed(sprite))
 }

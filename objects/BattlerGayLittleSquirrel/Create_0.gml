@@ -8,12 +8,12 @@ movemode = moveOrder.LINEAR
 
 with add_action("fart") {
 	//var damage = range(4, 6);
-	
-	var damage = new DamageProvider(new RangeProvider(4, 8), other, TARGETS.PLAYER);
+	var range = new RangeProvider(4, 8);
+	var damage = new DamageProvider(range, other, TARGETS.PLAYER);
 	accept_provider(damage)
 	set_intent(INTENT.ATTACK, damage)
 	hit(damage)
-	desc = "Deal 4-8 Damage"
+	desc = new Formatter("Deal {0} Damage", range);
 }
 
 with add_action("pee") {

@@ -11,14 +11,17 @@ if ability != undefined {
 	draw_text(bbox_left + 64, y + 8, ability.desc)
 	draw_set_color(c_white)
 	
-	var count = 0;
-	for (var i = 0; i < array_length(ability.costs); i++) {
-		if ability.costs[i] > 0 {
-			draw_number_panel(lerp(bbox_left, bbox_right, count/array_length(ability.costs)), bbox_top,
-				string(ability.costs[i]), mana_get_color(i), 2, .5
+	var count = 0,
+		costs = ability.modified_costs.get();
+	for (var i = 0; i < array_length(costs); i++) {
+		if costs[i] > 0 {
+			draw_number_panel(lerp(bbox_left, bbox_right, count/array_length(costs)), bbox_top,
+				string(costs[i]), mana_get_color(i), 2, .5
 			)
 			count++
 		}
 	}
+	
+	//draw_text(bbox_left, bbox_top - 8, string(ability.position))
 }
 x = _x
