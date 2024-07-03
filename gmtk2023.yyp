@@ -59,6 +59,7 @@
     {"$GMFolder":"","%Name":"elvis","folderPath":"folders/Sprites/ui/elvis.yy","name":"elvis","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":".txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":".txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"3-Code.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"3-Code.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Anchor (Jon).txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"Anchor (Jon).txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Balloons (Jon).txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"Balloons (Jon).txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -107,6 +108,7 @@
     {"$GMIncludedFile":"","%Name":"Symbols3c.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"Symbols3c.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"TestPawn1.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"TestPawn1.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"TestPawn2.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"TestPawn2.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"TestPawn3.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"TestPawn3.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"TestSlasher1.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"TestSlasher1.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"The 2 layers of gameplay.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"The 2 layers of gameplay.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"The first Mario Game.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"The first Mario Game.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -116,6 +118,7 @@
     {"$GMIncludedFile":"","%Name":"Vault Skillshot.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"Vault Skillshot.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Wave Dig.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"Wave Dig.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Whale1a.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"Whale1a.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"Whale2a.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"Whale2a.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Ziplock.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"Ziplock.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"SaveLocation.txt","CopyToMask":-1,"filePath":"datafiles","name":"SaveLocation.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],

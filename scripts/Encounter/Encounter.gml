@@ -59,7 +59,7 @@ encounter_add(
 
 encounter_add(
 	new Encounter("Three Squirrels")
-		.with_boards("TestPawn1", "TestPawn2")
+		.with_boards("TestPawn3")
 		.with_enemies(BattlerGayLittleSquirrel,  BattlerGayLittleSquirrel, BattlerGayLittleSquirrel)
 )
 
@@ -100,6 +100,6 @@ encounter_add(
 
 encounter_add(
 	new Encounter("The Whale (2022)")
-		.with_boards("Whale1a")
+		.with_boards("Whale1a", "Whale2a")
 		.with_enemies(BattlerWhale)
 )
