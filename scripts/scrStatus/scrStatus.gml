@@ -224,6 +224,10 @@ function StatusFreeze(Strength) : Status(Strength) constructor {
 				repeat(min(dif, array_length(bricks))) {
 					var brick = array_pop(bricks);
 					brick.set_frozen(true);
+					// Sparkle Effect
+					with (instance_create_layer(brick.x,brick.y, "FX", obj_fx)) {
+						sprite_index = spr_hit_small
+					}
 				}
 			}
 		}
