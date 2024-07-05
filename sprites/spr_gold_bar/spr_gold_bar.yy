@@ -27,8 +27,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Pickups",
-    "path":"folders/Sprites/Pickups.yy",
+    "name":"Blocks",
+    "path":"folders/Sprites/Blocks.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

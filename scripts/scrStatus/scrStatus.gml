@@ -198,7 +198,7 @@ function StatusStrength(Strength) : Status(Strength) constructor {
 status_register("Freeze", function(count) {return new StatusFreeze(count)})
 
 function StatusFreeze(Strength) : Status(Strength) constructor {
-	
+
 	name = "Frozen"
 	desc = "Increases the mana cost of abilities."
 	sprite_index = sprStatusFrost;

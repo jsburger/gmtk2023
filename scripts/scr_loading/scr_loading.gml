@@ -48,10 +48,10 @@ function level_new_json() {
 function level_update_format(level) {
 	var format_changed = false;
 	
-	//Version 0;
+	//Format 0 -> 1:
 	if !struct_exists(level.info, "format") {
 		format_changed = true;
-		//Add version
+		//Add format
 		level.info.format = 1;
 		array_foreach(level.objects, function(obj) {
 			
@@ -71,6 +71,11 @@ function level_update_format(level) {
 		})
 		//Add default round counter
 		level.info.rounds = 5;
+	}
+	
+	// Format 1 -> 2
+	if level.info.format == 1{
+	
 	}
 	
 	return format_changed;

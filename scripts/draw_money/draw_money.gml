@@ -48,7 +48,7 @@ function draw_payout(_x, _y, moneyString) {
 }
 
 function draw_number_panel(_x, _y, numberString, bgColor, maxLength = undefined, scale = 1) {
-	if maxLength == undefined maxLength = string_length(numberString);
+	maxLength ??= string_length(numberString);
 	var gap = 48 * scale;
 	for (var i = 0; i < maxLength; i++) {
 		draw_sprite_ext(spr_number_back, 0, _x + gap * i, _y, scale, scale, 0, bgColor, 1)
