@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"splitter",
-    "path":"folders/objects/blocks/logic/splitter.yy",
+    "path":"folders/Objects/blocks/logic/splitter.yy",
   },
   "parentObjectId":{
     "name":"obj_splitter",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_splitter_l",
-    "path":"sprites/spr_splitter_l/spr_splitter_l.yy",
+    "name":"sprSplitterLeft",
+    "path":"sprites/sprSplitterLeft/sprSplitterLeft.yy",
   },
   "spriteMaskId":null,
   "visible":true,

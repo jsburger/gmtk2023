@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"blocks",
-    "path":"folders/objects/blocks.yy",
+    "path":"folders/Objects/blocks.yy",
   },
   "parentObjectId":{
     "name":"obj_block",
@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_evil_block_v",
-    "path":"sprites/spr_evil_block_v/spr_evil_block_v.yy",
+    "name":"sprBrickPipebombVertical",
+    "path":"sprites/sprBrickPipebombVertical/sprBrickPipebombVertical.yy",
   },
   "spriteMaskId":null,
   "visible":true,

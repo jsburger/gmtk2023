@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"launcher",
-    "path":"folders/objects/blocks/launcher.yy",
+    "path":"folders/Objects/blocks/launcher.yy",
   },
   "parentObjectId":{
     "name":"obj_launcher",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_launcher_4",
-    "path":"sprites/spr_launcher_4/spr_launcher_4.yy",
+    "name":"sprLauncher180",
+    "path":"sprites/sprLauncher180/sprLauncher180.yy",
   },
   "spriteMaskId":null,
   "visible":true,

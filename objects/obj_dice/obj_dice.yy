@@ -17,7 +17,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"dice",
-    "path":"folders/objects/dice.yy",
+    "path":"folders/Objects/dice.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -38,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_dice_hit",
-    "path":"sprites/spr_dice_hit/spr_dice_hit.yy",
+    "name":"sprDiceHit",
+    "path":"sprites/sprDiceHit/sprDiceHit.yy",
   },
   "spriteMaskId":null,
   "visible":true,

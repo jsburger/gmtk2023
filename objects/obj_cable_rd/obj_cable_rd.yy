@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"cables",
-    "path":"folders/objects/blocks/logic/cables.yy",
+    "path":"folders/Objects/blocks/logic/cables.yy",
   },
   "parentObjectId":{
     "name":"obj_cable",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_cable_rd",
-    "path":"sprites/spr_cable_rd/spr_cable_rd.yy",
+    "name":"sprCableRightDown",
+    "path":"sprites/sprCableRightDown/sprCableRightDown.yy",
   },
   "spriteMaskId":null,
   "visible":true,

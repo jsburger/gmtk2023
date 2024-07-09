@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"fx",
-    "path":"folders/objects/fx.yy",
+    "path":"folders/Objects/fx.yy",
   },
   "parentObjectId":{
     "name":"obj_fx",
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_portal_fx",
-    "path":"sprites/spr_portal_fx/spr_portal_fx.yy",
+    "name":"sprFXPortalPurple",
+    "path":"sprites/sprFXPortalPurple/sprFXPortalPurple.yy",
   },
   "spriteMaskId":null,
   "visible":true,

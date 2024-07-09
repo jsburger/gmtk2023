@@ -13,7 +13,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"blocks",
-    "path":"folders/objects/blocks.yy",
+    "path":"folders/Objects/blocks.yy",
   },
   "parentObjectId":{
     "name":"obj_block",
@@ -37,12 +37,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_color_bumper",
-    "path":"sprites/spr_color_bumper/spr_color_bumper.yy",
+    "name":"sprColorBumperIdle",
+    "path":"sprites/sprColorBumperIdle/sprColorBumperIdle.yy",
   },
   "spriteMaskId":{
-    "name":"spr_bumper",
-    "path":"sprites/spr_bumper/spr_bumper.yy",
+    "name":"sprBumper",
+    "path":"sprites/sprBumper/sprBumper.yy",
   },
   "visible":true,
 }

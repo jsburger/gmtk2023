@@ -112,7 +112,7 @@ function Status(Strength) constructor {
 	strength = Strength;
 	
 	visible = true;
-	sprite_index = spr_chip;
+	sprite_index = sprChip;
 	name = "Status"
 	desc = "Description"
 	
@@ -226,7 +226,7 @@ function StatusFreeze(Strength) : Status(Strength) constructor {
 					brick.set_frozen(true);
 					// Sparkle Effect
 					with (instance_create_layer(brick.x,brick.y, "FX", obj_fx)) {
-						sprite_index = spr_hit_small
+						sprite_index = sprFXHitSmall
 					}
 				}
 			}

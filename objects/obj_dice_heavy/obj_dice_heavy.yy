@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"dice",
-    "path":"folders/objects/dice.yy",
+    "path":"folders/Objects/dice.yy",
   },
   "parentObjectId":{
     "name":"obj_dice",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_dice_heavy",
-    "path":"sprites/spr_dice_heavy/spr_dice_heavy.yy",
+    "name":"sprDiceHeavy",
+    "path":"sprites/sprDiceHeavy/sprDiceHeavy.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"New Shit",
-    "path":"folders/objects/New Shit.yy",
+    "path":"folders/Objects/New Shit.yy",
   },
   "parentObjectId":{
     "name":"Battler",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_portrait_frame",
-    "path":"sprites/spr_portrait_frame/spr_portrait_frame.yy",
+    "name":"sprPortraitFrame",
+    "path":"sprites/sprPortraitFrame/sprPortraitFrame.yy",
   },
   "spriteMaskId":null,
   "visible":true,

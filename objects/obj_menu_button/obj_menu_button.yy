@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"ui",
-    "path":"folders/objects/ui.yy",
+    "path":"folders/Objects/ui.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_start",
-    "path":"sprites/spr_start/spr_start.yy",
+    "name":"sprStartButton",
+    "path":"sprites/sprStartButton/sprStartButton.yy",
   },
   "spriteMaskId":null,
   "visible":true,

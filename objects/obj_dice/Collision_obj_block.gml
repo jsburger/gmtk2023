@@ -73,8 +73,8 @@ if collider.object_index == obj_coin_pouch{
 	
 	with collider{
 		switch sprite_index {
-			case spr_bag_idle_a: sprite_index = spr_bag_hurt_a; break;
-			case spr_bag_idle_b: sprite_index = spr_bag_hurt_b; break;
+			case sprCoinBagIdleA: sprite_index = sprCoinBagHurtA; break;
+			case sprCoinBagIdleB: sprite_index = sprCoinBagHurtB; break;
 		}
 
 		image_index = 0;

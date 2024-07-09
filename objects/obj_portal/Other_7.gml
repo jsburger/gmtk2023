@@ -1,3 +1,3 @@
 /// @description Insert description here
 // You can write your code in this editor
-sprite_index = spr_portal_lips_idle;
+sprite_index = sprPortalLipsIdle;

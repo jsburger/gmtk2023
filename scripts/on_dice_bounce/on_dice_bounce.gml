@@ -17,7 +17,7 @@ function on_dice_bounce(dice){
 					say_line(_snd, -1);
 				}
 				if last_bounce_patience <= 0{
-					mask_index = msknone;
+					mask_index = mskNone;
 					sound_play_pitch(snd_bag_hit, 0.5);
 					image_blend = c_dkgray;
 					repeat(6){

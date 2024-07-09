@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"ui",
-    "path":"folders/objects/ui.yy",
+    "path":"folders/Objects/ui.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_mute",
-    "path":"sprites/spr_mute/spr_mute.yy",
+    "name":"sprMuteButton",
+    "path":"sprites/sprMuteButton/sprMuteButton.yy",
   },
   "spriteMaskId":null,
   "visible":true,

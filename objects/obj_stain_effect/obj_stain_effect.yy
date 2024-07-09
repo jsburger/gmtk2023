@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"fx",
-    "path":"folders/objects/fx.yy",
+    "path":"folders/Objects/fx.yy",
   },
   "parentObjectId":{
     "name":"obj_fx",

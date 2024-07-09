@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"pickups",
-    "path":"folders/objects/pickups.yy",
+    "path":"folders/Objects/pickups.yy",
   },
   "parentObjectId":{
     "name":"obj_coin",
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_gold_bar",
-    "path":"sprites/spr_gold_bar/spr_gold_bar.yy",
+    "name":"sprBrickGold",
+    "path":"sprites/sprBrickGold/sprBrickGold.yy",
   },
   "spriteMaskId":null,
   "visible":true,

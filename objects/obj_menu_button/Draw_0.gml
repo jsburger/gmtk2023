@@ -4,4 +4,4 @@
 
 draw_self()
 
-draw_sprite(spr_title, 0, x, y - 300)
+draw_sprite(sprTitle, 0, x, y - 300)

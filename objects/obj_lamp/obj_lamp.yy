@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"logic",
-    "path":"folders/objects/blocks/logic.yy",
+    "path":"folders/Objects/blocks/logic.yy",
   },
   "parentObjectId":{
     "name":"par_logiclike",
@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_lamp",
-    "path":"sprites/spr_lamp/spr_lamp.yy",
+    "name":"sprLampOff",
+    "path":"sprites/sprLampOff/sprLampOff.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -40,10 +40,10 @@ if can_act && button_pressed(inputs.shoot) && can_shoot && inBoard {
 				global.mana[MANA.YELLOW] -= chip_cost
 			}
 			sound_play_pitch(choose(snd_chip_throw1, snd_chip_throw2), 1)
-			sprite_index = spr_hand_thanos_snap;
+			sprite_index = sprHandThanosSnap;
 			image_index = 0;
 			with obj_cuffs {
-				sprite_index = spr_cuffs_shoot
+				sprite_index = sprCuffsFire
 				image_index = 0
 			}
 		}
@@ -59,12 +59,12 @@ if can_act && button_pressed(inputs.shoot) && can_shoot && inBoard {
 		global.mana[MANA.YELLOW] += 3;
 			
 		sound_play_pitch(snd_die_throw, 1)
-		sprite_index = spr_hand_cast;
+		sprite_index = sprHandThrow;
 		has_dice = false
 		image_index = 0;
 		throw_start()
 		with obj_cuffs {
-			sprite_index = spr_cuffs_shoot
+			sprite_index = sprCuffsFire
 			image_index = 0
 		}
 	}
@@ -77,7 +77,7 @@ if can_act && button_pressed(inputs.dash) && dash_timer <= 10 && _input != 0 {
 	dash_direction = _input;
 	sound_play_pitch(choose(snd_dash1, snd_dash2), 1);
 	if !has_dice{
-		sprite_index = spr_hand_dash;
+		sprite_index = sprHandDash;
 		image_index = 0;
 	}
 }

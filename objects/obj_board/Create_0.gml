@@ -30,7 +30,7 @@ canplace = true;
 entity_num = 0;
 entity_subnum = 0;
 current_entity = obj_block;
-current_sprite = msknone;
+current_sprite = mskNone;
 obj_layer = 0;
 entity_list = [
 /*Bricks*/    [obj_block, obj_block_v], [obj_block_large, obj_block_large_v], [obj_block_metal, obj_block_metal_v],
@@ -46,16 +46,16 @@ entity_list = [
 /*Battler*/   [BattlerBrick]
 ];
 entity_sprite = [
-[spr_handblock, spr_handblock_v], [spr_handblock_big, spr_handblock_big_v], [spr_handblock_metal, spr_handblock_metal_v],
-[spr_cash_wad, spr_gold_bar], [spr_bag_idle_a], [spr_vault_idle],
-[spr_bumper, spr_color_bumper],
-[spr_portal_back_purple, spr_portal_back_yellow, spr_portal_back_orange, spr_portal_back_green, spr_portal_back_blue, spr_portal_back_gray],
-[spr_launcher_2, spr_launcher_1, spr_launcher_0, spr_launcher_7, spr_launcher_6, spr_launcher_5, spr_launcher_4, spr_launcher_3],
-[spr_evil_block, spr_evil_block_v], [spr_bomb, spr_color_bomb],
-[spr_switch_d_on, spr_switch_r_on, spr_switch_u_on, spr_switch_l_on],
-[spr_cable_lr, spr_cable_ud, spr_cable_ld, spr_cable_lu, spr_cable_ru, spr_cable_rd],
-[spr_gate_and_u, spr_gate_and_l, spr_gate_and_d, spr_gate_and_r], [spr_bridge_u, spr_bridge_r, spr_bridge_d, spr_bridge_l], [spr_lamp], [spr_handblock_toggle, spr_handblock_toggle_off],
-[spr_ball_place],
+[sprBrick, sprBrickVertical], [sprBrickLarge, sprBrickLargeVertical], [sprBrickLargeMetal, sprBrickLargeMetalVertical],
+[sprBrickCash, sprBrickGold], [sprCoinBagIdleA], [sprVaultIdle],
+[sprBumper, sprColorBumperIdle],
+[sprPortalBackPurple, sprPortalBackYellow, sprPortalBackOrange, sprPortalBackGreen, sprPortalBackBlue, sprPortalBackGray],
+[sprLauncher90, sprLauncher45, sprLauncher0, sprLauncher315, sprLauncher270, sprLauncher225, sprLauncher180, sprLauncher135],
+[sprBrickPipebomb, sprBrickPipebombVertical], [sprBomb, sprColorBomb],
+[sprSwitchDownOn, sprSwitchRightOn, sprSwitchUpOn, sprSwitchLeftOn],
+[sprCableLeftRight, sprCableUpDown, sprCableLeftDown, sprCableLeftUp, sprCableRightUp, sprCableRightDown],
+[sprANDGateUp, sprANDGateLeft, sprANDGateDown, sprANDGateRight], [sprCableBridgeUp, sprCableBridgeRight, sprCableBridgeDown, sprCableBridgeLeft], [sprLampOff], [sprBrickToggleOn, sprBrickToggleOff],
+[sprBallPlace],
 [sprEnemyFrame]
 ];
 

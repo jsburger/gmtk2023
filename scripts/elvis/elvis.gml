@@ -21,9 +21,9 @@ function start_saying_line(voice_entry) {
 	global.elvis_sound = sound_play_pitch(voice_entry.sound, 1)
 	
 	with obj_elvis {
-		sprite_index = spr_elvis_talk_start
+		sprite_index = sprElvisTalkStart
 		if voice_entry.sound == vo_eat {
-			sprite_index = spr_elvis_eat	
+			sprite_index = sprElvisEat	
 		}
 		image_index = 0
 	}
@@ -54,24 +54,24 @@ function stop_saying_line() {
 
 function getNextSprite (current_sprite) {
 	switch (current_sprite) {
-		case spr_elvis_talk_start:
-			return spr_elvis_talk_loop
-		case spr_elvis_talk_loop:
+		case sprElvisTalkStart:
+			return sprElvisTalkLoop
+		case sprElvisTalkLoop:
 			if !elvis_sound_active() {
 				global.elvis_done = true
-				return spr_elvis_talk_end
+				return sprElvisTalkEnd
 			}
-			return spr_elvis_talk_loop
-		case spr_elvis_eat:
-			return spr_elvis_talk_loop;
+			return sprElvisTalkLoop
+		case sprElvisEat:
+			return sprElvisTalkLoop;
 		default:
-			return spr_elvis_idle
+			return sprElvisIdle
 	}
 }
 
 function elvis_is_speaking() {
 	with obj_elvis {
-		if sprite_index == spr_elvis_talk_loop || sprite_index == spr_elvis_talk_end {
+		if sprite_index == sprElvisTalkLoop || sprite_index == sprElvisTalkEnd {
 			return true;
 		}
 	}

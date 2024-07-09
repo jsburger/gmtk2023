@@ -13,7 +13,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"ui",
-    "path":"folders/objects/ui.yy",
+    "path":"folders/Objects/ui.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_elvis_idle",
-    "path":"sprites/spr_elvis_idle/spr_elvis_idle.yy",
+    "name":"sprElvisIdle",
+    "path":"sprites/sprElvisIdle/sprElvisIdle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,8 +1,8 @@
 /// @description Insert description here
 event_inherited();
 direction = 270;
-spr_on = spr_switch_d_off;
-spr_off = spr_switch_d_on;
+spr_on = sprSwitchDownOff;
+spr_off = sprSwitchDownOn;
 
 with instance_create_depth(bbox_right - TILE_MIN / 2, bbox_bottom - TILE_MIN / 2, depth - 1, obj_iohelper){
 	creator = other;

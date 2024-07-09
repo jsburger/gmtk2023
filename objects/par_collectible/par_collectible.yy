@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"pickups",
-    "path":"folders/objects/pickups.yy",
+    "path":"folders/Objects/pickups.yy",
   },
   "parentObjectId":null,
   "persistent":false,

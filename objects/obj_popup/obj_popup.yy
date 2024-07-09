@@ -9,8 +9,8 @@
   "name":"obj_popup",
   "overriddenProperties":[],
   "parent":{
-    "name":"objects",
-    "path":"folders/objects.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_popup_appear",
-    "path":"sprites/spr_popup_appear/spr_popup_appear.yy",
+    "name":"sprSandwichPopupAppear",
+    "path":"sprites/sprSandwichPopupAppear/sprSandwichPopupAppear.yy",
   },
   "spriteMaskId":null,
   "visible":true,

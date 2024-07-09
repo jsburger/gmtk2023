@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"New Shit",
-    "path":"folders/objects/New Shit.yy",
+    "path":"folders/Objects/New Shit.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ability_button",
-    "path":"sprites/spr_ability_button/spr_ability_button.yy",
+    "name":"sprAbilityButton",
+    "path":"sprites/sprAbilityButton/sprAbilityButton.yy",
   },
   "spriteMaskId":null,
   "tags":[

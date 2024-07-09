@@ -13,7 +13,7 @@ alarm[0] = 10
 landed = false;
 touchedBottom = false;
 nograv = false;
-spr_hit = spr_dice_hit;
+spr_hit = sprDiceHit;
 has_bounced = false;
 pierce = 3;
 

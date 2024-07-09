@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"bricks",
-    "path":"folders/objects/blocks/bricks.yy",
+    "path":"folders/Objects/blocks/bricks.yy",
   },
   "parentObjectId":{
     "name":"obj_block",
@@ -33,12 +33,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ball",
-    "path":"sprites/spr_ball/spr_ball.yy",
+    "name":"sprBall",
+    "path":"sprites/sprBall/sprBall.yy",
   },
   "spriteMaskId":{
-    "name":"spr_handblock_toggle",
-    "path":"sprites/spr_handblock_toggle/spr_handblock_toggle.yy",
+    "name":"sprBrickToggleOn",
+    "path":"sprites/sprBrickToggleOn/sprBrickToggleOn.yy",
   },
   "visible":true,
 }

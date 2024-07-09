@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"fx",
-    "path":"folders/objects/fx.yy",
+    "path":"folders/Objects/fx.yy",
   },
   "parentObjectId":{
     "name":"obj_fx",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_dust",
-    "path":"sprites/spr_dust/spr_dust.yy",
+    "name":"sprFXDust",
+    "path":"sprites/sprFXDust/sprFXDust.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -13,8 +13,8 @@
   "name":"obj_shooter",
   "overriddenProperties":[],
   "parent":{
-    "name":"objects",
-    "path":"folders/objects.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -35,12 +35,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_hand_idle_a",
-    "path":"sprites/spr_hand_idle_a/spr_hand_idle_a.yy",
+    "name":"sprHandIdleA",
+    "path":"sprites/sprHandIdleA/sprHandIdleA.yy",
   },
   "spriteMaskId":{
-    "name":"msk_hand",
-    "path":"sprites/msk_hand/msk_hand.yy",
+    "name":"mskHand",
+    "path":"sprites/mskHand/mskHand.yy",
   },
   "visible":true,
 }

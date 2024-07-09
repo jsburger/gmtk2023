@@ -5,7 +5,7 @@ bounciness = 0
 
 gunangle = 0
 friction = .5
-sprite_index = spr_hand_idle_a
+sprite_index = sprHandIdleA
 
 dash_timer = 0;
 dash_direction = 0;

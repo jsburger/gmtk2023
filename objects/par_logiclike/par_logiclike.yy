@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"logic",
-    "path":"folders/objects/blocks/logic.yy",
+    "path":"folders/Objects/blocks/logic.yy",
   },
   "parentObjectId":{
     "name":"obj_block",

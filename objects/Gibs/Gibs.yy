@@ -13,7 +13,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"pickups",
-    "path":"folders/objects/pickups.yy",
+    "path":"folders/Objects/pickups.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprBrickGibs",
-    "path":"sprites/sprBrickGibs/sprBrickGibs.yy",
+    "name":"sprFXBrickGibs",
+    "path":"sprites/sprFXBrickGibs/sprFXBrickGibs.yy",
   },
   "spriteMaskId":null,
   "visible":true,

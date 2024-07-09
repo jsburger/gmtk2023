@@ -1,7 +1,7 @@
 /// @description Insert description here
 event_inherited();
-spr_on = spr_lamp_on;
-spr_off = spr_lamp;
+spr_on = sprLampOn;
+spr_off = sprLampOff;
 my_health = 99999;
 is_destructible = false;
 can_collide = false;

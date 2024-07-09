@@ -13,7 +13,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"logic",
-    "path":"folders/objects/blocks/logic.yy",
+    "path":"folders/Objects/blocks/logic.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_io_helper",
-    "path":"sprites/spr_io_helper/spr_io_helper.yy",
+    "name":"sprIOIndicator",
+    "path":"sprites/sprIOIndicator/sprIOIndicator.yy",
   },
   "spriteMaskId":null,
   "visible":true,

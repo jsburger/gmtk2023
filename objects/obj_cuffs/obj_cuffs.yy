@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"ui",
-    "path":"folders/objects/ui.yy",
+    "path":"folders/Objects/ui.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_cuffs_idle",
-    "path":"sprites/spr_cuffs_idle/spr_cuffs_idle.yy",
+    "name":"sprCuffsIdle",
+    "path":"sprites/sprCuffsIdle/sprCuffsIdle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

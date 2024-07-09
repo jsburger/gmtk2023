@@ -16,7 +16,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"portals",
-    "path":"folders/objects/blocks/portals.yy",
+    "path":"folders/Objects/blocks/portals.yy",
   },
   "parentObjectId":{
     "name":"par_bricklike",
@@ -40,8 +40,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_portal_lips_idle",
-    "path":"sprites/spr_portal_lips_idle/spr_portal_lips_idle.yy",
+    "name":"sprPortalLipsIdle",
+    "path":"sprites/sprPortalLipsIdle/sprPortalLipsIdle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

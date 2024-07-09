@@ -17,7 +17,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"pickups",
-    "path":"folders/objects/pickups.yy",
+    "path":"folders/Objects/pickups.yy",
   },
   "parentObjectId":{
     "name":"par_collectible",
@@ -41,8 +41,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_coin",
-    "path":"sprites/spr_coin/spr_coin.yy",
+    "name":"sprCoin",
+    "path":"sprites/sprCoin/sprCoin.yy",
   },
   "spriteMaskId":null,
   "visible":true,

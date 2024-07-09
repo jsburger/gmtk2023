@@ -15,7 +15,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"switches",
-    "path":"folders/objects/blocks/logic/switches.yy",
+    "path":"folders/Objects/blocks/logic/switches.yy",
   },
   "parentObjectId":{
     "name":"par_logiclike",

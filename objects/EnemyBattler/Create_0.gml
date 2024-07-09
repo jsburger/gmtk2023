@@ -11,7 +11,7 @@ go_to = function(_x, _y) {
 
 
 //Combat stuff
-spr_icon = sprGaySquirrelIcon
+spr_icon = sprGayLittleSquirrelIcon
 
 bg_color = c_red;
 show_owner = false;

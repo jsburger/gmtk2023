@@ -13,7 +13,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"board",
-    "path":"folders/objects/board.yy",
+    "path":"folders/Objects/board.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_board",
-    "path":"sprites/spr_board/spr_board.yy",
+    "name":"sprBoard",
+    "path":"sprites/sprBoard/sprBoard.yy",
   },
   "spriteMaskId":null,
   "tags":[

@@ -77,7 +77,7 @@ function enable_shooter() {
 	with obj_shooter {
 		has_dice = true
 		can_shoot = true
-		sprite_index = spr_hand_idle_a;
+		sprite_index = sprHandIdleA;
 	}
 }
 

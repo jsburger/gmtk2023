@@ -4,7 +4,7 @@ register_ability("PlaceBomb", function() {
 	with new AbilityPlacer(obj_bomb) {
 		name = "Bomb Placer"
 		desc = "Place a Bomb"
-		sprite_index = spr_bomb
+		sprite_index = sprBomb
 		set_costs(12, 4, 0)
 		return self
 	}
@@ -14,7 +14,7 @@ register_ability("PlaceBlock", function() {
 	with new AbilityPlacer(obj_block) {
 		name = "Block Placer"
 		desc = "Place a Block"
-		sprite_index = spr_handblock
+		sprite_index = sprBrick
 		set_cost(MANA.BLUE, 1)		
 		return self
 	}
@@ -23,7 +23,7 @@ register_ability("PlaceSquirrel", function() {
 	with new AbilityPlacer(obj_squirrel_brick) {
 		name = "Squirrel Placer"
 		desc = "Place Gay Little Squirrel"
-		sprite_index = spr_gay_little_squirrel
+		sprite_index = sprGayLittleSquirrel
 		set_cost(MANA.RED, 0)		
 		return self
 	}

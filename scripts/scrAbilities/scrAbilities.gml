@@ -29,7 +29,7 @@ function Ability(TargetType = TARGET_TYPE.BATTLER) : CombatInterface() construct
 	
 	name = "Ability"
 	desc = "Description"
-	sprite_index = spr_chip
+	sprite_index = sprChip
 	image_xscale = 1
 	image_yscale = 1
 	

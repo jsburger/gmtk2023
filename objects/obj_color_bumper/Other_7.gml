@@ -2,5 +2,5 @@
 // You can write your code in this editor
 
 switch sprite_index{
-	default: sprite_index = spr_color_bumper; break;
+	default: sprite_index = sprColorBumperIdle; break;
 }

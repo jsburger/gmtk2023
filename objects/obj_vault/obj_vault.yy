@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"logic",
-    "path":"folders/objects/blocks/logic.yy",
+    "path":"folders/Objects/blocks/logic.yy",
   },
   "parentObjectId":{
     "name":"par_logiclike",
@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_vault_idle",
-    "path":"sprites/spr_vault_idle/spr_vault_idle.yy",
+    "name":"sprVaultIdle",
+    "path":"sprites/sprVaultIdle/sprVaultIdle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

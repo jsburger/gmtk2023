@@ -12,8 +12,8 @@
   "name":"obj_explosion_radius",
   "overriddenProperties":[],
   "parent":{
-    "name":"objects",
-    "path":"folders/objects.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -34,12 +34,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_explosion_radius",
-    "path":"sprites/spr_explosion_radius/spr_explosion_radius.yy",
+    "name":"sprFXExplosionRadius",
+    "path":"sprites/sprFXExplosionRadius/sprFXExplosionRadius.yy",
   },
   "spriteMaskId":{
-    "name":"msk_explosion",
-    "path":"sprites/msk_explosion/msk_explosion.yy",
+    "name":"mskExplosion",
+    "path":"sprites/mskExplosion/mskExplosion.yy",
   },
   "visible":true,
 }

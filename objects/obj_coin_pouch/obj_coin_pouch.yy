@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"blocks",
-    "path":"folders/objects/blocks.yy",
+    "path":"folders/Objects/blocks.yy",
   },
   "parentObjectId":{
     "name":"obj_block",
@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_bag_idle_a",
-    "path":"sprites/spr_bag_idle_a/spr_bag_idle_a.yy",
+    "name":"sprCoinBagIdleA",
+    "path":"sprites/sprCoinBagIdleA/sprCoinBagIdleA.yy",
   },
   "spriteMaskId":null,
   "visible":true,

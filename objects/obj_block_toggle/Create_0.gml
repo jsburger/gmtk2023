@@ -1,7 +1,7 @@
 /// @description Insert description here
 event_inherited();
-spr_on = spr_handblock_toggle;
-spr_off = spr_handblock_toggle_off;
+spr_on = sprBrickToggleOn;
+spr_off = sprBrickToggleOff;
 my_health = 99999;
 is_destructible = false;
 input = true;

@@ -10,8 +10,8 @@
   "name":"obj_chip_effect",
   "overriddenProperties":[],
   "parent":{
-    "name":"objects",
-    "path":"folders/objects.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_chip",
-    "path":"sprites/spr_chip/spr_chip.yy",
+    "name":"sprChip",
+    "path":"sprites/sprChip/sprChip.yy",
   },
   "spriteMaskId":null,
   "visible":true,

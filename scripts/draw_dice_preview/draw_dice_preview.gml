@@ -4,7 +4,7 @@
 function draw_dice_preview(_x, _y, gunangle) {
 	draw_set_alpha(.8)
 	with instance_create_layer(_x, _y, layer, obj_fx) {
-		mask_index = spr_dice_hit
+		mask_index = sprDiceHit
 		image_angle = 0;
 		
 		bounciness = .8
@@ -129,7 +129,7 @@ function draw_dice_preview(_x, _y, gunangle) {
 			draw_line_width_color(points[i].x, points[i].y, points[i - 1].x, points[i - 1].y, 3, c_white, c_white)
 		}
 		
-		draw_sprite(spr_preview_end, 0, x, y)
+		draw_sprite(sprPreviewEnd, 0, x, y)
 		draw_set_alpha(1)
 		
 		instance_destroy()

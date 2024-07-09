@@ -4,7 +4,7 @@ instance_create_depth(x, y, depth - 15, obj_explosion_radius);
 
 with instance_create_layer(x, y, "Board", obj_stain_effect){
 	depth -= 1;
-	sprite_index = spr_explosion_mark_small;
+	sprite_index = sprFXExplosionMarkSmall;
 	image_index = random(image_number);
 }
 

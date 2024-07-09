@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"ui",
-    "path":"folders/objects/ui.yy",
+    "path":"folders/Objects/ui.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_round_label",
-    "path":"sprites/spr_round_label/spr_round_label.yy",
+    "name":"sprRoundLabel",
+    "path":"sprites/sprRoundLabel/sprRoundLabel.yy",
   },
   "spriteMaskId":null,
   "visible":true,

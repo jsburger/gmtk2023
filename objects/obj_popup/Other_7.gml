@@ -1,9 +1,9 @@
 {
 	image_index = 0;
-	if sprite_index == spr_popup_appear{
-		sprite_index = spr_popup_loop;	
+	if sprite_index == sprSandwichPopupAppear{
+		sprite_index = sprSandwichPopupLoop;	
 	}
-	if sprite_index = spr_popup_end{
+	if sprite_index = sprSandwichPopupDisappear{
 		instance_destroy();
 		exit;
 	}

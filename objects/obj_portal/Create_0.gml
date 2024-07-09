@@ -5,8 +5,8 @@ if instance_exists(obj_board) {
 	alarm[0] = obj_board.editor ?  1 : manhatten_distance(x, y, obj_board.bbox_left, obj_board.bbox_top)/32
 }
 index = 0;
-spr_back = spr_portal_back_purple;
-spr_fx = spr_portal_fx;
+spr_back = sprPortalBackPurple;
+spr_fx = sprFXPortalPurple;
 
 teleport = function(instance, portal = self) {
 	var target = -4;
@@ -15,9 +15,9 @@ teleport = function(instance, portal = self) {
 	}
 	
 	if instance.object_index != obj_fx{
-		portal.sprite_index = spr_portal_lips_close;
+		portal.sprite_index = sprPortalLipsClose;
 		portal.image_index = 0;
-		target.sprite_index = spr_portal_lips_open;
+		target.sprite_index = sprPortalLipsOpen;
 		target.image_index = 0;
 	}
 	

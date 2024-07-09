@@ -83,8 +83,8 @@ if(editor){
 				mask_index = _sprite;
 		
 				//Lazy fix, sorry:
-				if _sprite == spr_ball {	
-					_sprite = spr_bomb;
+				if _sprite == sprBall {	
+					_sprite = sprBomb;
 					mask_index = _sprite;
 				}
 				sprite_index = mask_index;

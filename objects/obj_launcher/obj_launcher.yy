@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"launcher",
-    "path":"folders/objects/blocks/launcher.yy",
+    "path":"folders/Objects/blocks/launcher.yy",
   },
   "parentObjectId":{
     "name":"par_bricklike",
@@ -36,8 +36,8 @@
   "solid":false,
   "spriteId":null,
   "spriteMaskId":{
-    "name":"spr_bumper",
-    "path":"sprites/spr_bumper/spr_bumper.yy",
+    "name":"sprBumper",
+    "path":"sprites/sprBumper/sprBumper.yy",
   },
   "visible":true,
 }

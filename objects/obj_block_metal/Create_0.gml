@@ -9,4 +9,4 @@ is_destructible = false;
 drop_amount = 0;
 colorable = false;
 
-spr_frozen = sprBrickBigFrozen
+spr_frozen = sprBrickLargeOverlayFrozen

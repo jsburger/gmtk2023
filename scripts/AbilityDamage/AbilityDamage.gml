@@ -25,7 +25,7 @@ register_ability("Recolor", function() {
 		name = "Redify"
 		desc = "Redify 8 bricks"
 		set_costs(3, 0, 1)
-		sprite_index = spr_portrait_bg
+		sprite_index = sprPortraitBg
 		image_xscale = .35
 		image_yscale = .35
 		set_targets(TARGET_TYPE.NONE)

@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"portals",
-    "path":"folders/objects/blocks/portals.yy",
+    "path":"folders/Objects/blocks/portals.yy",
   },
   "parentObjectId":{
     "name":"obj_portal",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_portal",
-    "path":"sprites/spr_portal/spr_portal.yy",
+    "name":"sprPortal",
+    "path":"sprites/sprPortal/sprPortal.yy",
   },
   "spriteMaskId":null,
   "visible":true,

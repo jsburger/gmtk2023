@@ -10,8 +10,8 @@
   "name":"obj_prompt",
   "overriddenProperties":[],
   "parent":{
-    "name":"objects",
-    "path":"folders/objects.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_prompt_appear",
-    "path":"sprites/spr_prompt_appear/spr_prompt_appear.yy",
+    "name":"sprSandwichPopupButtonAppear",
+    "path":"sprites/sprSandwichPopupButtonAppear/sprSandwichPopupButtonAppear.yy",
   },
   "spriteMaskId":null,
   "visible":true,

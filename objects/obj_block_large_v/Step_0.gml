@@ -3,6 +3,6 @@
 
 switch my_health{
 
-	default: sprite_index = spr_handblock_big_v; break;
-	case 1: sprite_index = spr_handblock_big_broken_v; break;
+	default: sprite_index = sprBrickLargeVertical; break;
+	case 1: sprite_index = sprBrickLargeVerticalBroken; break;
 }

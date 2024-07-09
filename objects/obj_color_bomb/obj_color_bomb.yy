@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"blocks",
-    "path":"folders/objects/blocks.yy",
+    "path":"folders/Objects/blocks.yy",
   },
   "parentObjectId":{
     "name":"par_logiclike",
@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_color_bomb",
-    "path":"sprites/spr_color_bomb/spr_color_bomb.yy",
+    "name":"sprColorBomb",
+    "path":"sprites/sprColorBomb/sprColorBomb.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -50,7 +50,7 @@ function bricks_recolor(count, _color) {
 			inst.set_color(color);
 			with inst {
 				with (instance_create_layer(random_range(bbox_left, bbox_right), random_range(bbox_top, bbox_bottom), "FX", obj_fx)) {
-					sprite_index = spr_splat
+					sprite_index = sprFXSplat
 		
 					var rand_scale = random_range(0.5, 1.5);
 					image_xscale = rand_scale;

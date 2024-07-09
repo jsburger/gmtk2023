@@ -45,7 +45,7 @@
   "origin":4,
   "parent":{
     "name":"Whale",
-    "path":"folders/Sprites/Enemies/Whale.yy",
+    "path":"folders/Sprites/Characters/Enemies/Whale.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

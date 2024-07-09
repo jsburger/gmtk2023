@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"ui",
-    "path":"folders/objects/ui.yy",
+    "path":"folders/Objects/ui.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_logo_loop",
-    "path":"sprites/spr_logo_loop/spr_logo_loop.yy",
+    "name":"sprLogoLoop",
+    "path":"sprites/sprLogoLoop/sprLogoLoop.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -4,7 +4,7 @@ is_destructible = false;
 image_xscale = 1;
 
 active = false;
-spr_off = spr_switch_u_off;
-spr_on = spr_switch_u_on;
+spr_off = sprSwitchUpOff;
+spr_on = sprSwitchUpOn;
 input = false;
 can_output = true;

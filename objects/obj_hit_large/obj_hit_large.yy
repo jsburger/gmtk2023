@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"fx",
-    "path":"folders/objects/fx.yy",
+    "path":"folders/Objects/fx.yy",
   },
   "parentObjectId":{
     "name":"obj_fx",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_hit_large",
-    "path":"sprites/spr_hit_large/spr_hit_large.yy",
+    "name":"sprFXHitLarge",
+    "path":"sprites/sprFXHitLarge/sprFXHitLarge.yy",
   },
   "spriteMaskId":null,
   "visible":true,

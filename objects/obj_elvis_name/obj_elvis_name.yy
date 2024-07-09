@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"ui",
-    "path":"folders/objects/ui.yy",
+    "path":"folders/Objects/ui.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_name_future_elvis",
-    "path":"sprites/spr_name_future_elvis/spr_name_future_elvis.yy",
+    "name":"sprNameFutureElvis",
+    "path":"sprites/sprNameFutureElvis/sprNameFutureElvis.yy",
   },
   "spriteMaskId":null,
   "visible":true,

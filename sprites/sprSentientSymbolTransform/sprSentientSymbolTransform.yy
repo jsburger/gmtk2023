@@ -31,7 +31,7 @@
   "origin":4,
   "parent":{
     "name":"Sentient Symbol",
-    "path":"folders/Sprites/Enemies/Sentient Symbol.yy",
+    "path":"folders/Sprites/Characters/Enemies/Sentient Symbol.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

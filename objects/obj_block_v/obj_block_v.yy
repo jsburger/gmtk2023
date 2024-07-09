@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"bricks",
-    "path":"folders/objects/blocks/bricks.yy",
+    "path":"folders/Objects/blocks/bricks.yy",
   },
   "parentObjectId":{
     "name":"obj_block",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_handblock_v",
-    "path":"sprites/spr_handblock_v/spr_handblock_v.yy",
+    "name":"sprBrickVertical",
+    "path":"sprites/sprBrickVertical/sprBrickVertical.yy",
   },
   "spriteMaskId":null,
   "visible":true,

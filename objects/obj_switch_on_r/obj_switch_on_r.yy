@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"switches",
-    "path":"folders/objects/blocks/logic/switches.yy",
+    "path":"folders/Objects/blocks/logic/switches.yy",
   },
   "parentObjectId":{
     "name":"obj_switch",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_switch_r_on",
-    "path":"sprites/spr_switch_r_on/spr_switch_r_on.yy",
+    "name":"sprSwitchRightOn",
+    "path":"sprites/sprSwitchRightOn/sprSwitchRightOn.yy",
   },
   "spriteMaskId":null,
   "visible":true,

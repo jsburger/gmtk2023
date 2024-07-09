@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"blocks",
-    "path":"folders/objects/blocks.yy",
+    "path":"folders/Objects/blocks.yy",
   },
   "parentObjectId":null,
   "persistent":false,

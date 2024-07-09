@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"bridge",
-    "path":"folders/objects/blocks/logic/bridge.yy",
+    "path":"folders/Objects/blocks/logic/bridge.yy",
   },
   "parentObjectId":{
     "name":"obj_bridge_u",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_bridge_r",
-    "path":"sprites/spr_bridge_r/spr_bridge_r.yy",
+    "name":"sprCableBridgeRight",
+    "path":"sprites/sprCableBridgeRight/sprCableBridgeRight.yy",
   },
   "spriteMaskId":null,
   "visible":true,

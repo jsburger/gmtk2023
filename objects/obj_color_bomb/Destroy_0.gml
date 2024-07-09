@@ -7,7 +7,7 @@ with (instance_create_depth(x, y, depth - 15, obj_color_explosion)) {
 
 with instance_create_layer(x, y, "Board", obj_stain_effect){
 	depth -= 1;
-	sprite_index = spr_splat_stain;
+	sprite_index = sprFXSplatStain;
 	image_blend = mana_get_color(other.color);
 }
 

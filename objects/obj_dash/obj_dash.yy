@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"fx",
-    "path":"folders/objects/fx.yy",
+    "path":"folders/Objects/fx.yy",
   },
   "parentObjectId":{
     "name":"obj_fx",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_dash",
-    "path":"sprites/spr_dash/spr_dash.yy",
+    "name":"sprFXDash",
+    "path":"sprites/sprFXDash/sprFXDash.yy",
   },
   "spriteMaskId":null,
   "visible":true,

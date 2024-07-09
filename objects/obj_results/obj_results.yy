@@ -14,7 +14,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"ui",
-    "path":"folders/objects/ui.yy",
+    "path":"folders/Objects/ui.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_profits",
-    "path":"sprites/spr_profits/spr_profits.yy",
+    "name":"sprProfits",
+    "path":"sprites/sprProfits/sprProfits.yy",
   },
   "spriteMaskId":null,
   "visible":true,

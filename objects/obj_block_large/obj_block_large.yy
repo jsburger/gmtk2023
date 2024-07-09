@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"bricks",
-    "path":"folders/objects/blocks/bricks.yy",
+    "path":"folders/Objects/blocks/bricks.yy",
   },
   "parentObjectId":{
     "name":"obj_block",
@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_handblock_big",
-    "path":"sprites/spr_handblock_big/spr_handblock_big.yy",
+    "name":"sprBrickLarge",
+    "path":"sprites/sprBrickLarge/sprBrickLarge.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"gmtk2023",
-    "path":"gmtk2023.yyp",
+    "name":"Paint Button",
+    "path":"folders/Sprites/Editor/Paint Button.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

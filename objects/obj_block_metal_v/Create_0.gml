@@ -3,4 +3,4 @@
 // Inherit the parent event
 event_inherited();
 
-spr_frozen = sprBrickBigFrozenV
+spr_frozen = sprBrickLargeVerticalOverlayFrozen

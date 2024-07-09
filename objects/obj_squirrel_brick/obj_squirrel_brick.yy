@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"bricks",
-    "path":"folders/objects/blocks/bricks.yy",
+    "path":"folders/Objects/blocks/bricks.yy",
   },
   "parentObjectId":{
     "name":"obj_block",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_gay_little_squirrel",
-    "path":"sprites/spr_gay_little_squirrel/spr_gay_little_squirrel.yy",
+    "name":"sprGayLittleSquirrel",
+    "path":"sprites/sprGayLittleSquirrel/sprGayLittleSquirrel.yy",
   },
   "spriteMaskId":null,
   "visible":true,

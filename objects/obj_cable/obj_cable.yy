@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"cables",
-    "path":"folders/objects/blocks/logic/cables.yy",
+    "path":"folders/Objects/blocks/logic/cables.yy",
   },
   "parentObjectId":{
     "name":"par_logiclike",

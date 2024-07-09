@@ -33,7 +33,7 @@ nexthurt = current_time;
 
 #region Freezing
 	freezable = true;
-	spr_frozen = sprBrickFrozen;
+	spr_frozen = sprBrickOverlayFrozen;
 	spr_frozen_index = 0;
 	frozen = false;
 	/// Cleaning prevents the function from calling brick_unfreeze, which would create a loop

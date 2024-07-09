@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"blocks",
-    "path":"folders/objects/blocks.yy",
+    "path":"folders/Objects/blocks.yy",
   },
   "parentObjectId":{
     "name":"obj_block",
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_cash_wad",
-    "path":"sprites/spr_cash_wad/spr_cash_wad.yy",
+    "name":"sprBrickCash",
+    "path":"sprites/sprBrickCash/sprBrickCash.yy",
   },
   "spriteMaskId":null,
   "visible":true,

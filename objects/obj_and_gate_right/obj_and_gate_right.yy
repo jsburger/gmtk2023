@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"AND gate",
-    "path":"folders/objects/blocks/logic/AND gate.yy",
+    "path":"folders/Objects/blocks/logic/AND gate.yy",
   },
   "parentObjectId":{
     "name":"obj_and_gate_up",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_gate_and_l",
-    "path":"sprites/spr_gate_and_l/spr_gate_and_l.yy",
+    "name":"sprANDGateLeft",
+    "path":"sprites/sprANDGateLeft/sprANDGateLeft.yy",
   },
   "spriteMaskId":null,
   "visible":true,

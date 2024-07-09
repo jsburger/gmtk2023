@@ -13,7 +13,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"pickups",
-    "path":"folders/objects/pickups.yy",
+    "path":"folders/Objects/pickups.yy",
   },
   "parentObjectId":{
     "name":"par_collectible",
@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_banknote",
-    "path":"sprites/spr_banknote/spr_banknote.yy",
+    "name":"sprBill",
+    "path":"sprites/sprBill/sprBill.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,7 +1,7 @@
 /// @description Background editor grid
 // You can write your code in this editor
 var size = (32/96);
-draw_sprite_ext(spr_board_bg, 0, x, y, (image_xscale) * size, (image_yscale) * size, image_angle, image_blend, image_alpha)
+draw_sprite_ext(sprBoardBg, 0, x, y, (image_xscale) * size, (image_yscale) * size, image_angle, image_blend, image_alpha)
 draw_self();
 //draw_sprite_ext(spr_board_border, 0, x, y, 1, 1, image_angle, image_blend, image_alpha)
 

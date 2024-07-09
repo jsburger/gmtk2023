@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"pickups",
-    "path":"folders/objects/pickups.yy",
+    "path":"folders/Objects/pickups.yy",
   },
   "parentObjectId":{
     "name":"obj_coin",
@@ -34,12 +34,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_tooth",
-    "path":"sprites/spr_tooth/spr_tooth.yy",
+    "name":"sprTooth",
+    "path":"sprites/sprTooth/sprTooth.yy",
   },
   "spriteMaskId":{
-    "name":"spr_coin",
-    "path":"sprites/spr_coin/spr_coin.yy",
+    "name":"sprCoin",
+    "path":"sprites/sprCoin/sprCoin.yy",
   },
   "visible":true,
 }

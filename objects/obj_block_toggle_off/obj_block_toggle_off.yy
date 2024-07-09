@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"logic",
-    "path":"folders/objects/blocks/logic.yy",
+    "path":"folders/Objects/blocks/logic.yy",
   },
   "parentObjectId":{
     "name":"par_logiclike",
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_handblock_toggle_off",
-    "path":"sprites/spr_handblock_toggle_off/spr_handblock_toggle_off.yy",
+    "name":"sprBrickToggleOff",
+    "path":"sprites/sprBrickToggleOff/sprBrickToggleOff.yy",
   },
   "spriteMaskId":null,
   "visible":true,
