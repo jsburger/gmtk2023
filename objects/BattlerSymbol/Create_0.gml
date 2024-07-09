@@ -33,6 +33,7 @@ with add_action("SYMBOL SLAM!!!") {
 	hit(damage)
 	var _form = accept_provider(new FunctionProvider(get_form));
 	color(5, _form)
+	wait(25)
 	desc = "Deal Damage equal to the \namount of Matching bricks.\nRecolor 5 bricks to \nMatching color."
 }
 

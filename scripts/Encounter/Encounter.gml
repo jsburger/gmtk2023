@@ -45,7 +45,7 @@ function encounter_get() {
 
 encounter_add(
 	new Encounter("One Squirrel")
-		.with_boards("TestPawn1", "TestPawn2")
+		.with_boards("TestColumns1")
 		.with_enemies(BattlerGayLittleSquirrel)
 )
 
@@ -95,6 +95,14 @@ encounter_add(
 			[BattlerSymbol, {form: MANA.YELLOW}],
 			[BattlerSymbol, {form: MANA.RED}],
 			[BattlerSymbol, {form: MANA.YELLOW}]
+		)		
+)
+
+encounter_add(
+	new Encounter("One Symbol")
+		.with_boards("TestCastle1")
+		.with_enemies(
+			[BattlerSymbol, {form: MANA.BLUE}]
 		)		
 )
 
