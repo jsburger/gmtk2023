@@ -195,15 +195,19 @@ function StatusStrength(Strength) : Status(Strength) constructor {
 	}
 }
 
+function StatusTickable(Strength) : Status(Strength) constructor {
+	static on_add = function() {
+		tickable_register(self, owner)
+	}
+}
+
 status_register("Freeze", function(count) {return new StatusFreeze(count)})
 
-function StatusFreeze(Strength) : Status(Strength) constructor {
+function StatusFreeze(Strength) : StatusTickable(Strength) constructor {
 
 	name = "Frozen"
 	desc = "Increases the mana cost of abilities."
 	sprite_index = sprStatusFrost;
-	
-	tickable_register(self)
 	
 	static tick = function() {
 		if strength > 0 {

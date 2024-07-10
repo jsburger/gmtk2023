@@ -11,11 +11,11 @@ nexthurt = current_time;
 	color = -1
 	mana_amount = 1
 	set_color = function(col) {
-		if !in_range(col, -1, MANA.MAX - 1) exit
+		if !in_range(col, MANA_NONE, MANA.MAX - 1) exit
 		color = col
 		//Dearest Kram, you may replace these with honest recolors if you would like. I was in a hurry.
 		switch col {
-			case -1:
+			case MANA_NONE:
 				image_blend = c_white
 				break
 			case MANA.RED:

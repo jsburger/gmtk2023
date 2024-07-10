@@ -10,7 +10,7 @@ on_click = function() {}
 
 hpmax = 50;
 hp = 50;
-display_health = new MeterInterpolator(function() {
+display_health = new MeterInterpolator(self, function() {
 	return hp;
 });
 hpsize = 2;

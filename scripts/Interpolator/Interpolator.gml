@@ -1,14 +1,14 @@
 #macro __Int_auto true
 
 /// @Ingore
-function Interpolator(getter, auto = __Int_auto) constructor {
+function Interpolator(owner, getter, auto = __Int_auto) constructor {
 	self.getter = getter;
 	var base_value = getter();
 	
 	display_value = base_value;
 	real_value = base_value;
 	
-	if auto tickable_register(self);
+	if auto tickable_register(self, owner);
 	
 	static tick = function() {
 		real_value = getter();
@@ -48,7 +48,7 @@ function instance_ref(inst, variable) {
 }
 
 /// Used for Health Bars and Mana Displays
-function MeterInterpolator(getter, auto = __Int_auto) : Interpolator(getter, auto) constructor {
+function MeterInterpolator(owner, getter, auto = __Int_auto) : Interpolator(owner, getter, auto) constructor {
 	
 	static interp = function() {
 		var dif = display_value - real_value,
@@ -57,7 +57,7 @@ function MeterInterpolator(getter, auto = __Int_auto) : Interpolator(getter, aut
 	}
 }
 
-function ColorInterpolator(getter, rate = .05) : Interpolator(getter, true) constructor {
+function ColorInterpolator(owner, getter, rate = .05) : Interpolator(owner, getter, true) constructor {
 	self.rate = rate;
 	
 	static interp = function() {
