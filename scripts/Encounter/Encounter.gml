@@ -65,7 +65,7 @@ encounter_add(
 
 encounter_add(
 	new Encounter("The Slasher...")
-		.with_boards("TestSlasher1")
+		.with_boards("TestSlasher1", "TestSlasher2")
 		.with_enemies(BattlerSlasher)
 )
 
@@ -80,30 +80,18 @@ encounter_add(
 )
 
 encounter_add(
-	new Encounter("Symbol, Sentry")
+	new Encounter("Two Symbols")
 		.with_boards("Symbols2a", "Symbols2b")
 		.with_enemies(
-			BattlerSentry,
-			[BattlerSymbol, {form: MANA.BLUE}],
+			[BattlerSymbol, {form: MANA.YELLOW}],
+			[BattlerSymbol, {form: MANA.BLUE}]
 		)
 )
 
 encounter_add(
-	new Encounter("Three Symbols")
-		.with_boards("Symbols3c")
-		.with_enemies(
-			[BattlerSymbol, {form: MANA.YELLOW}],
-			[BattlerSymbol, {form: MANA.RED}],
-			[BattlerSymbol, {form: MANA.YELLOW}]
-		)		
-)
-
-encounter_add(
-	new Encounter("One Symbol")
+	new Encounter("One Tomato")
 		.with_boards("TestCastle1")
-		.with_enemies(
-			[BattlerSymbol, {form: MANA.BLUE}]
-		)		
+		.with_enemies(BattlerTomato)		
 )
 
 encounter_add(
@@ -116,4 +104,16 @@ encounter_add(
 	new Encounter("STS Sentries")
 		.with_boards("Sentry1a")
 		.with_enemies(BattlerSentry, BattlerSentry)	
+)
+
+encounter_add(
+	new Encounter("Three Dolphins")
+		.with_boards("TestBirds")
+		.with_enemies(BattlerDolphin, BattlerDolphin, BattlerDolphin)	
+)
+
+encounter_add(
+	new Encounter("Two Dolphins")
+		.with_boards("TestDolphin2a")
+		.with_enemies(BattlerDolphin, BattlerDolphin)	
 )

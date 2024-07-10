@@ -14,7 +14,7 @@ with add_action("fart") {
 	set_intent(INTENT.ATTACK, damage)
 	hit(damage)
 	block(4)
-	desc = new Formatter("Deal {0} Damage", range);
+	desc = new Formatter("Deal {0} Damage.\nAdd 4 Shield.", range);
 }
 
 with add_action("pee") {

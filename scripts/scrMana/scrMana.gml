@@ -53,6 +53,16 @@ function mana_get_sum() {
 	return sum;
 }
 
+function mana_get_highest() {
+	var highest = 0;
+	for (var i = 0; i < MANA.MAX; ++i) {
+		if (global.mana[i] > highest){
+			highest = global.mana[i];	
+		}
+	}
+	return highest;
+}
+
 function mana_reset() {
 	for (var i = 0; i < MANA.MAX; ++i) {
 		global.mana[i] = 0

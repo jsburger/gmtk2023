@@ -1,160 +1,160 @@
 {
   "info":{
-    "name":"TestWindow1",
     "format":1.0,
-    "rounds":5.0
+    "rounds":5.0,
+    "name":"TestWindow1"
   },
   "objects":[
     {
+      "x":264.0,
+      "y":-640.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block_v"
+    },
+    {
+      "x":24.0,
+      "y":-640.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block_v"
+    },
+    {
+      "x":-216.0,
+      "y":-640.0,
       "serialized_info":{
         "color":1.0
       },
-      "x":-216.0,
-      "y":-640.0,
       "object_index":"obj_block_v"
     },
     {
-      "serialized_info":{
-        "color":0.0
-      },
       "x":264.0,
-      "y":-640.0,
-      "object_index":"obj_block_v"
-    },
-    {
+      "y":-608.0,
       "serialized_info":{
         "color":0.0
       },
-      "x":24.0,
-      "y":-640.0,
       "object_index":"obj_block_v"
     },
     {
+      "x":24.0,
+      "y":-608.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block_v"
+    },
+    {
+      "x":-216.0,
+      "y":-608.0,
       "serialized_info":{
         "color":1.0
       },
-      "x":-216.0,
-      "y":-608.0,
       "object_index":"obj_block_v"
     },
     {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":264.0,
-      "y":-608.0,
-      "object_index":"obj_block_v"
-    },
-    {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":24.0,
-      "y":-608.0,
-      "object_index":"obj_block_v"
-    },
-    {
-      "serialized_info":{
-        "color":0.0
-      },
       "x":248.0,
       "y":-592.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":0.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
       "x":8.0,
       "y":-592.0,
+      "serialized_info":{
+        "color":0.0
+      },
       "object_index":"obj_block_v"
     },
     {
-      "serialized_info":{
-        "color":1.0
-      },
       "x":-232.0,
       "y":-592.0,
-      "object_index":"obj_block_v"
-    },
-    {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":240.0,
-      "y":-568.0,
-      "object_index":"obj_block"
-    },
-    {
       "serialized_info":{
         "color":1.0
       },
-      "x":-240.0,
-      "y":-568.0,
-      "object_index":"obj_block"
-    },
-    {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":0.0,
-      "y":-568.0,
-      "object_index":"obj_block"
-    },
-    {
-      "serialized_info":{
-        "color":1.0
-      },
-      "x":-240.0,
-      "y":-552.0,
-      "object_index":"obj_block"
-    },
-    {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":240.0,
-      "y":-552.0,
-      "object_index":"obj_block"
-    },
-    {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":0.0,
-      "y":-552.0,
-      "object_index":"obj_block"
-    },
-    {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":-8.0,
-      "y":-528.0,
       "object_index":"obj_block_v"
     },
     {
+      "x":-240.0,
+      "y":-568.0,
+      "serialized_info":{
+        "color":1.0
+      },
+      "object_index":"obj_block"
+    },
+    {
+      "x":0.0,
+      "y":-568.0,
       "serialized_info":{
         "color":0.0
       },
+      "object_index":"obj_block"
+    },
+    {
+      "x":240.0,
+      "y":-568.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block"
+    },
+    {
+      "x":-240.0,
+      "y":-552.0,
+      "serialized_info":{
+        "color":1.0
+      },
+      "object_index":"obj_block"
+    },
+    {
+      "x":240.0,
+      "y":-552.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block"
+    },
+    {
+      "x":0.0,
+      "y":-552.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block"
+    },
+    {
       "x":232.0,
       "y":-528.0,
-      "object_index":"obj_block_v"
-    },
-    {
-      "serialized_info":{
-        "color":1.0
-      },
-      "x":-248.0,
-      "y":-528.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":0.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
+      "x":-248.0,
+      "y":-528.0,
+      "serialized_info":{
+        "color":1.0
+      },
+      "object_index":"obj_block_v"
+    },
+    {
+      "x":-8.0,
+      "y":-528.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block_v"
+    },
+    {
       "x":-24.0,
       "y":-512.0,
+      "serialized_info":{
+        "color":0.0
+      },
       "object_index":"obj_block_v"
     },
     {
@@ -163,581 +163,571 @@
       "object_index":"BattlerBrick"
     },
     {
+      "x":216.0,
+      "y":-512.0,
       "serialized_info":{
         "color":0.0
       },
-      "x":216.0,
-      "y":-512.0,
       "object_index":"obj_block_v"
     },
     {
+      "x":-264.0,
+      "y":-512.0,
       "serialized_info":{
         "color":1.0
       },
-      "x":-264.0,
-      "y":-512.0,
       "object_index":"obj_block_v"
     },
     {
-      "x":-128.0,
-      "y":-496.0,
-      "object_index":"obj_portal"
-    },
-    {
+      "x":216.0,
+      "y":-480.0,
       "serialized_info":{
         "color":0.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
+      "x":-264.0,
+      "y":-480.0,
+      "serialized_info":{
+        "color":1.0
+      },
+      "object_index":"obj_block_v"
+    },
+    {
       "x":-24.0,
       "y":-480.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":0.0
       },
-      "x":216.0,
-      "y":-480.0,
       "object_index":"obj_block_v"
     },
     {
-      "serialized_info":{
-        "color":1.0
-      },
-      "x":-264.0,
-      "y":-480.0,
-      "object_index":"obj_block_v"
-    },
-    {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":-8.0,
-      "y":-464.0,
-      "object_index":"obj_block_v"
-    },
-    {
-      "serialized_info":{
-        "color":1.0
-      },
       "x":-248.0,
       "y":-464.0,
+      "serialized_info":{
+        "color":1.0
+      },
       "object_index":"obj_block_v"
     },
     {
-      "serialized_info":{
-        "color":0.0
-      },
       "x":232.0,
       "y":-464.0,
+      "serialized_info":{
+        "color":0.0
+      },
       "object_index":"obj_block_v"
     },
     {
+      "x":-8.0,
+      "y":-464.0,
       "serialized_info":{
-        "color":1.0
+        "color":0.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
       "x":-240.0,
       "y":-440.0,
-      "object_index":"obj_block"
-    },
-    {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":0.0,
-      "y":-440.0,
-      "object_index":"obj_block"
-    },
-    {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":240.0,
-      "y":-440.0,
-      "object_index":"obj_block"
-    },
-    {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":0.0,
-      "y":-424.0,
-      "object_index":"obj_block"
-    },
-    {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":240.0,
-      "y":-424.0,
-      "object_index":"obj_block"
-    },
-    {
       "serialized_info":{
         "color":1.0
       },
+      "object_index":"obj_block"
+    },
+    {
+      "x":0.0,
+      "y":-440.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block"
+    },
+    {
+      "x":240.0,
+      "y":-440.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block"
+    },
+    {
+      "x":240.0,
+      "y":-424.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block"
+    },
+    {
       "x":-240.0,
       "y":-424.0,
-      "object_index":"obj_block"
-    },
-    {
       "serialized_info":{
         "color":1.0
       },
+      "object_index":"obj_block"
+    },
+    {
+      "x":0.0,
+      "y":-424.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block"
+    },
+    {
       "x":-40.0,
       "y":-400.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":1.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
       "x":-200.0,
       "y":-400.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":1.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
       "x":40.0,
       "y":-400.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":1.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
       "x":200.0,
       "y":-400.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":1.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
       "x":-120.0,
       "y":-400.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":1.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
       "x":120.0,
       "y":-400.0,
+      "serialized_info":{
+        "color":1.0
+      },
       "object_index":"obj_block_v"
     },
     {
-      "serialized_info":{
-        "color":1.0
-      },
-      "x":-80.0,
-      "y":-384.0,
-      "object_index":"obj_block_large"
-    },
-    {
-      "serialized_info":{
-        "color":1.0
-      },
-      "x":-240.0,
-      "y":-384.0,
-      "object_index":"obj_block_large_v"
-    },
-    {
-      "serialized_info":{
-        "color":1.0
-      },
-      "x":-160.0,
-      "y":-384.0,
-      "object_index":"obj_block_large"
-    },
-    {
-      "serialized_info":{
-        "color":1.0
-      },
-      "x":160.0,
-      "y":-384.0,
-      "object_index":"obj_block_large"
-    },
-    {
-      "serialized_info":{
-        "color":1.0
-      },
-      "x":-216.0,
-      "y":-384.0,
-      "object_index":"obj_block_v"
-    },
-    {
-      "serialized_info":{
-        "color":1.0
-      },
-      "x":240.0,
-      "y":-384.0,
-      "object_index":"obj_block_large_v"
-    },
-    {
-      "serialized_info":{
-        "color":1.0
-      },
-      "x":80.0,
-      "y":-384.0,
-      "object_index":"obj_block_large"
-    },
-    {
-      "serialized_info":{
-        "color":1.0
-      },
-      "x":-24.0,
-      "y":-384.0,
-      "object_index":"obj_block_v"
-    },
-    {
-      "serialized_info":{
-        "color":1.0
-      },
-      "x":24.0,
-      "y":-384.0,
-      "object_index":"obj_block_v"
-    },
-    {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":0.0,
-      "y":-384.0,
-      "object_index":"obj_block_large_v"
-    },
-    {
-      "serialized_info":{
-        "color":1.0
-      },
       "x":216.0,
       "y":-384.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":1.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
+      "x":0.0,
+      "y":-384.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block_large_v"
+    },
+    {
+      "x":24.0,
+      "y":-384.0,
+      "serialized_info":{
+        "color":1.0
+      },
+      "object_index":"obj_block_v"
+    },
+    {
+      "x":-24.0,
+      "y":-384.0,
+      "serialized_info":{
+        "color":1.0
+      },
+      "object_index":"obj_block_v"
+    },
+    {
+      "x":80.0,
+      "y":-384.0,
+      "serialized_info":{
+        "color":1.0
+      },
+      "object_index":"obj_block_large"
+    },
+    {
+      "x":240.0,
+      "y":-384.0,
+      "serialized_info":{
+        "color":1.0
+      },
+      "object_index":"obj_block_large_v"
+    },
+    {
+      "x":-216.0,
+      "y":-384.0,
+      "serialized_info":{
+        "color":1.0
+      },
+      "object_index":"obj_block_v"
+    },
+    {
+      "x":160.0,
+      "y":-384.0,
+      "serialized_info":{
+        "color":1.0
+      },
+      "object_index":"obj_block_large"
+    },
+    {
+      "x":-160.0,
+      "y":-384.0,
+      "serialized_info":{
+        "color":1.0
+      },
+      "object_index":"obj_block_large"
+    },
+    {
+      "x":-240.0,
+      "y":-384.0,
+      "serialized_info":{
+        "color":1.0
+      },
+      "object_index":"obj_block_large_v"
+    },
+    {
+      "x":-80.0,
+      "y":-384.0,
+      "serialized_info":{
+        "color":1.0
+      },
+      "object_index":"obj_block_large"
+    },
+    {
       "x":-40.0,
       "y":-368.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":1.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
       "x":40.0,
       "y":-368.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":1.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
       "x":-200.0,
       "y":-368.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":1.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
       "x":200.0,
       "y":-368.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":1.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
       "x":120.0,
       "y":-368.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":1.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
       "x":-120.0,
       "y":-368.0,
+      "serialized_info":{
+        "color":1.0
+      },
       "object_index":"obj_block_v"
     },
     {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":0.0,
-      "y":-344.0,
-      "object_index":"obj_block"
-    },
-    {
-      "serialized_info":{
-        "color":1.0
-      },
       "x":240.0,
       "y":-344.0,
+      "serialized_info":{
+        "color":1.0
+      },
       "object_index":"obj_block"
     },
     {
-      "serialized_info":{
-        "color":0.0
-      },
       "x":-240.0,
       "y":-344.0,
-      "object_index":"obj_block"
-    },
-    {
       "serialized_info":{
         "color":0.0
       },
+      "object_index":"obj_block"
+    },
+    {
+      "x":0.0,
+      "y":-344.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block"
+    },
+    {
       "x":0.0,
       "y":-328.0,
-      "object_index":"obj_block"
-    },
-    {
       "serialized_info":{
         "color":0.0
       },
+      "object_index":"obj_block"
+    },
+    {
       "x":-240.0,
       "y":-328.0,
-      "object_index":"obj_block"
-    },
-    {
-      "serialized_info":{
-        "color":1.0
-      },
-      "x":240.0,
-      "y":-328.0,
-      "object_index":"obj_block"
-    },
-    {
-      "serialized_info":{
-        "color":1.0
-      },
-      "x":248.0,
-      "y":-304.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":0.0
       },
+      "object_index":"obj_block"
+    },
+    {
+      "x":240.0,
+      "y":-328.0,
+      "serialized_info":{
+        "color":1.0
+      },
+      "object_index":"obj_block"
+    },
+    {
       "x":8.0,
       "y":-304.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":0.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
       "x":-232.0,
       "y":-304.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":0.0
       },
-      "x":-216.0,
-      "y":-288.0,
       "object_index":"obj_block_v"
     },
     {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":24.0,
-      "y":-288.0,
-      "object_index":"obj_block_v"
-    },
-    {
+      "x":248.0,
+      "y":-304.0,
       "serialized_info":{
         "color":1.0
       },
-      "x":264.0,
-      "y":-288.0,
       "object_index":"obj_block_v"
     },
     {
+      "x":24.0,
+      "y":-288.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block_v"
+    },
+    {
+      "x":264.0,
+      "y":-288.0,
+      "serialized_info":{
+        "color":1.0
+      },
+      "object_index":"obj_block_v"
+    },
+    {
+      "x":-216.0,
+      "y":-288.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block_v"
+    },
+    {
+      "x":-112.0,
+      "y":-272.0,
       "serialized_info":{
         "color":2.0
       },
-      "x":-112.0,
-      "y":-272.0,
       "object_index":"obj_color_bumper"
     },
     {
-      "x":128.0,
-      "y":-272.0,
-      "object_index":"obj_portal"
-    },
-    {
-      "serialized_info":{
-        "color":1.0
-      },
       "x":264.0,
       "y":-256.0,
+      "serialized_info":{
+        "color":1.0
+      },
       "object_index":"obj_block_v"
     },
     {
-      "serialized_info":{
-        "color":0.0
-      },
       "x":24.0,
       "y":-256.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":0.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
       "x":-216.0,
       "y":-256.0,
-      "object_index":"obj_block_v"
-    },
-    {
-      "serialized_info":{
-        "color":1.0
-      },
-      "x":248.0,
-      "y":-240.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":0.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
       "x":8.0,
       "y":-240.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":0.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
       "x":-232.0,
       "y":-240.0,
+      "serialized_info":{
+        "color":0.0
+      },
       "object_index":"obj_block_v"
     },
     {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":-240.0,
-      "y":-216.0,
-      "object_index":"obj_block"
-    },
-    {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":0.0,
-      "y":-216.0,
-      "object_index":"obj_block"
-    },
-    {
+      "x":248.0,
+      "y":-240.0,
       "serialized_info":{
         "color":1.0
       },
-      "x":240.0,
-      "y":-216.0,
-      "object_index":"obj_block"
-    },
-    {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":0.0,
-      "y":-200.0,
-      "object_index":"obj_block"
-    },
-    {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":-240.0,
-      "y":-200.0,
-      "object_index":"obj_block"
-    },
-    {
-      "serialized_info":{
-        "color":1.0
-      },
-      "x":240.0,
-      "y":-200.0,
-      "object_index":"obj_block"
-    },
-    {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":-8.0,
-      "y":-176.0,
       "object_index":"obj_block_v"
     },
     {
+      "x":0.0,
+      "y":-216.0,
       "serialized_info":{
         "color":0.0
       },
+      "object_index":"obj_block"
+    },
+    {
+      "x":240.0,
+      "y":-216.0,
+      "serialized_info":{
+        "color":1.0
+      },
+      "object_index":"obj_block"
+    },
+    {
+      "x":-240.0,
+      "y":-216.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block"
+    },
+    {
+      "x":0.0,
+      "y":-200.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block"
+    },
+    {
+      "x":-240.0,
+      "y":-200.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block"
+    },
+    {
+      "x":240.0,
+      "y":-200.0,
+      "serialized_info":{
+        "color":1.0
+      },
+      "object_index":"obj_block"
+    },
+    {
       "x":-248.0,
       "y":-176.0,
+      "serialized_info":{
+        "color":0.0
+      },
       "object_index":"obj_block_v"
     },
     {
-      "serialized_info":{
-        "color":1.0
-      },
       "x":232.0,
       "y":-176.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":1.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
+      "x":-8.0,
+      "y":-176.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block_v"
+    },
+    {
       "x":216.0,
       "y":-160.0,
-      "object_index":"obj_block_v"
-    },
-    {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":-264.0,
-      "y":-160.0,
-      "object_index":"obj_block_v"
-    },
-    {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":-24.0,
-      "y":-160.0,
-      "object_index":"obj_block_v"
-    },
-    {
-      "serialized_info":{
-        "color":0.0
-      },
-      "x":-264.0,
-      "y":-128.0,
-      "object_index":"obj_block_v"
-    },
-    {
       "serialized_info":{
         "color":1.0
       },
-      "x":216.0,
-      "y":-128.0,
       "object_index":"obj_block_v"
     },
     {
+      "x":-264.0,
+      "y":-160.0,
       "serialized_info":{
         "color":0.0
       },
+      "object_index":"obj_block_v"
+    },
+    {
+      "x":-24.0,
+      "y":-160.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block_v"
+    },
+    {
+      "x":216.0,
+      "y":-128.0,
+      "serialized_info":{
+        "color":1.0
+      },
+      "object_index":"obj_block_v"
+    },
+    {
       "x":-24.0,
       "y":-128.0,
+      "serialized_info":{
+        "color":0.0
+      },
+      "object_index":"obj_block_v"
+    },
+    {
+      "x":-264.0,
+      "y":-128.0,
+      "serialized_info":{
+        "color":0.0
+      },
       "object_index":"obj_block_v"
     }
   ]
