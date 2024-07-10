@@ -80,10 +80,10 @@ encounter_add(
 )
 
 encounter_add(
-	new Encounter("Two Symbols A")
+	new Encounter("Symbol, Sentry")
 		.with_boards("Symbols2a", "Symbols2b")
 		.with_enemies(
-			[BattlerSymbol, {form: MANA.RED}],
+			BattlerSentry,
 			[BattlerSymbol, {form: MANA.BLUE}],
 		)
 )
@@ -110,4 +110,10 @@ encounter_add(
 	new Encounter("The Whale (2022)")
 		.with_boards("Whale1a", "Whale2a")
 		.with_enemies(BattlerWhale)
+)
+
+encounter_add(
+	new Encounter("STS Sentries")
+		.with_boards("Sentry1a")
+		.with_enemies(BattlerSentry, BattlerSentry)	
 )

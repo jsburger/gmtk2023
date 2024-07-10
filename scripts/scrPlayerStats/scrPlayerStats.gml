@@ -18,6 +18,7 @@ function ability_grant(ability) {
 }
 
 ability_grant("Hit6")
-ability_grant("Hit24")
-ability_grant("Recolor")
 ability_grant("Block6")
+ability_grant("Recolor")
+//ability_grant("Hit24")
+ability_grant("PlaceBomb")
