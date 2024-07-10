@@ -15,6 +15,7 @@ if other.active == true {
 	
 	if other.color > -1 {
 		mana_add(other.color, other.mana_amount)
+		repeat(other.mana_amount) mana_effect_create(other.x, other.y, other.color)
 	}
 }
 else {

@@ -13,6 +13,7 @@ with add_action("fart") {
 	accept_provider(damage)
 	set_intent(INTENT.ATTACK, damage)
 	hit(damage)
+	block(4)
 	desc = new Formatter("Deal {0} Damage", range);
 }
 

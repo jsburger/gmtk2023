@@ -61,6 +61,7 @@ function draw_number_panel(_x, _y, numberString, bgColor, maxLength = undefined,
 }
 
 function draw_number_panel_centered(_x, _y, numberString, bgColor, maxLength = undefined, scale = 1) {
+	maxLength ??= string_length(numberString);
 	draw_number_panel(_x - (24 * (maxLength - 1) * scale), _y, numberString, bgColor, maxLength, scale)
 }
 

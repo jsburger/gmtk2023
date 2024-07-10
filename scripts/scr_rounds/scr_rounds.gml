@@ -66,9 +66,10 @@ function round_start() {
 }
 
 function player_turn_start() {
-	with CombatRunner is_player_turn = true
+	CombatRunner.is_player_turn = true
 	CombatRunner.throws = 1
 	PlayerBattler.turn_start()
+	
 	
 	if CombatRunner.throws > 0 {
 		schedule(40, enable_shooter)
@@ -76,6 +77,12 @@ function player_turn_start() {
 }
 
 function enable_shooter() {
+	
+	mana_add(MANA.YELLOW, 3)
+	with obj_shooter {
+		repeat(3) mana_effect_create(x, y, MANA.YELLOW)
+	}
+	
 	with obj_shooter {
 		has_dice = true
 		can_shoot = true

@@ -54,9 +54,6 @@ if can_act && button_pressed(inputs.shoot) && can_shoot && inBoard {
 			motion_set(other.gunangle, 18)
 			other.die = id;
 		}
-		
-		
-		global.mana[MANA.YELLOW] += 3;
 			
 		sound_play_pitch(sndDieThrow, 1)
 		sprite_index = sprHandThrow;

@@ -57,6 +57,20 @@ function MeterInterpolator(owner, getter, auto = __Int_auto) : Interpolator(owne
 	}
 }
 
+function BlockInterpolator(owner, getter, auto = __Int_auto) : MeterInterpolator(owner, getter, auto) constructor {
+	
+	static interp = function() {
+		if real_value < display_value {
+			display_value = real_value
+		}
+		else {
+			var dif = display_value - real_value,
+				clmp = abs(dif) > 10 ? .5 : .25;
+			display_value -= clamp(dif, -clmp, clmp)
+		}
+	}
+}
+
 function ColorInterpolator(owner, getter, rate = .05) : Interpolator(owner, getter, true) constructor {
 	self.rate = rate;
 	

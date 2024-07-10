@@ -29,6 +29,9 @@ function set_hp(h) {
 set_hp(50)
 
 block = 0
+block_display = new BlockInterpolator(self, function() {
+	return block;
+})
 
 statuses = new StatusHolder(self);
 

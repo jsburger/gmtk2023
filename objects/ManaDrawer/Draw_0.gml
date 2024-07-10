@@ -8,8 +8,9 @@ var xoff = 0,
 	gap = 100;
 
 for(var i = MANA.RED; i < MANA.MAX; i++) {
-	draw_number_panel(delta_x + gap * i, y - 34, string(global.mana_gained[i]), mana_get_color(i), 2, .5)
-	draw_number_panel(draw_x + gap * i, y, string(global.mana[i]), mana_get_color(i), 2)
+	var color = merge_color(mana_get_color(i), c_white, blink[i]/3)
+	draw_number_panel(delta_x + gap * i, y - 34, string(global.mana_gained[i]), color, 2, .5)
+	draw_number_panel(draw_x + gap * i, y, string(global.mana[i]), color, 2)
 }
 
 //draw_text(x, y, global.mana[MANA.RED]);

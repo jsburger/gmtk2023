@@ -24,11 +24,15 @@ function CombatInterface() constructor {
 		return act;
 	}
 	
-	static defend = function(_target, block) {
-		var act = new DefendItem(block)
+	static defend = function(_target, amount) {
+		var act = new DefendItem(amount)
 		act.target = _target
 		act.owner = owner;
 		consume(act)			
+	}
+	
+	static block = function(amount) {
+		defend(TARGETS.SELF, amount)
 	}
 	
 	static apply_status = function(_target, statusType, statusStrength = 1) {

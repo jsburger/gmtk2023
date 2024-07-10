@@ -17,6 +17,7 @@ on_encounter_start(mana_reset)
 function mana_add(type, amount) {
 	global.mana[type] += amount
 	global.mana_gained[type] += amount
+	with ManaDrawer blink[type] = 1
 }
 
 function mana_get_color(mana){
@@ -55,5 +56,13 @@ function mana_get_sum() {
 function mana_reset() {
 	for (var i = 0; i < MANA.MAX; ++i) {
 		global.mana[i] = 0
+	}
+}
+
+function mana_effect_create(x, y, color) {
+	with instance_create_layer(x, y, "FX", effectManaGained) {
+		image_blend = mana_get_color(color)
+		self.color = color
+		return self
 	}
 }
