@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"voBuySandwich3",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":1.938866,
+  "name":"voBuySandwich3",
+  "parent":{
+    "name":"Buy Sandwich",
+    "path":"folders/Voice lines/Buy Sandwich.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"voBuySandwich3.ogg",
+  "type":0,
+  "volume":1.0,
+}

@@ -13,12 +13,11 @@ function on_dice_bounce(dice){
 				last_bounce_patience --;
 				last_bounce_patience_frame = current_time + 1000;
 				if last_bounce_patience <= 8 && _last_patience > 8{
-					var _snd = choose(vo_impatient01,vo_impatient02,vo_impatient03,vo_impatient04,vo_impatient05);
-					say_line(_snd, -1);
+					say_line(sound_pool("voImpatient"), -1);
 				}
 				if last_bounce_patience <= 0{
 					mask_index = mskNone;
-					sound_play_pitch(snd_bag_hit, 0.5);
+					sound_play_pitch(sndCoinBagHit, 0.5);
 					image_blend = c_dkgray;
 					repeat(6){
 						with(instance_create_layer(x, y, "Projectiles", obj_hit_medium)){
@@ -29,7 +28,7 @@ function on_dice_bounce(dice){
 						}
 					}
 					if _last_patience > 0{
-						say_line(vo_impatient04,-1);	
+						say_line(voImpatient4,-1);	
 					}
 				}
 			}else last_bounce_patience = min(16,last_bounce_patience);

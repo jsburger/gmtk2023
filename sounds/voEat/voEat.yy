@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"voEat",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":4.260862,
+  "name":"voEat",
+  "parent":{
+    "name":"Voice lines",
+    "path":"folders/Voice lines.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"voEat.ogg",
+  "type":0,
+  "volume":1.0,
+}

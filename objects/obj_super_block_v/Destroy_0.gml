@@ -1,5 +1,5 @@
 event_inherited();
-sound_play_pitch(snd_explo, 1);
+sound_play_pitch(sndExplosion, 1);
 var list = ds_list_create();
 
 scr_screenshake(10, 2, 0.2);

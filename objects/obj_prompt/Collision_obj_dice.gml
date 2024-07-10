@@ -6,7 +6,7 @@
 		on_dice_bounce(id)	
 	}
 	mask_index = mskNone;
-	sound_play_pitch(snd_bumper_hit, random_range(0.8,1.2));
+	sound_play_pitch(sndBumperHit, random_range(0.8,1.2));
 	with(obj_prompt){
 		mask_index = mskNone;
 		sprite_index = sprSandwichPopupButtonDisappear;

@@ -56,11 +56,11 @@ instance_create_layer(collision.x, collision.y, "FX", obj_hit_small);
 on_dice_bounce(self);
 
 var _metal = !collider.is_destructible;
-sound_play_pitch(_metal ? snd_hitmetal : snd_die_hit_peg, _metal ? 1.6 * random_range(0.8, 1.2): random_range(0.8, 1.2));
+sound_play_pitch(_metal ? sndDieHitMetal : sndDieHitBrick, _metal ? 1.6 * random_range(0.8, 1.2): random_range(0.8, 1.2));
 
 if collider.object_index == obj_coin_pouch{
 
-	sound_play_pitch(collider.my_health > 1 ? snd_bag_hit : snd_bag_open, random_range(1.2, 1.4));
+	sound_play_pitch(collider.my_health > 1 ? sndCoinBagHit : sndCoinBagOpen, random_range(1.2, 1.4));
 
 	repeat(3){
 		with instance_create_layer(collider.x, collider.bbox_top - 13, "Instances", obj_coin){

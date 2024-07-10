@@ -108,7 +108,7 @@ if(editor){
 			//Place bricks
 			if button_check(inputs.shoot){
 				if canplace{
-					sound_play_pitch(snd_die_hit_peg, random_range(1.7, 3));
+					sound_play_pitch(sndDieHitBrick, random_range(1.7, 3));
 			
 					with instance_create_layer(mx,my,"Instances",_entity){
 						obj_layer = other.obj_layer;
@@ -145,7 +145,7 @@ if(editor){
 								}
 							   instance_destroy(_list[| i], false);
 					   
-							   sound_play_pitch(snd_die_throw, random_range(3, 4));
+							   sound_play_pitch(sndDieThrow, random_range(3, 4));
 							}
 					    }
 						mark_level_changed()

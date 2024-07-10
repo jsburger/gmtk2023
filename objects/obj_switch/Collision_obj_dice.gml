@@ -17,7 +17,7 @@ if !active{
 			break;
 	}
 	if active {
-		sound_play_pitch(choose(snd_switch01, snd_switch02), 1)
+		sound_play_pitch(choose(sndSwitch1, sndSwitch2), 1)
 	}
 	event_perform(ev_other, ev_user1);
 }

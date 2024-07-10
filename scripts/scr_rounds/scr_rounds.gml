@@ -113,7 +113,7 @@ function throw_end() {
 
 function throw_resolve() {
 	if check_fullclear() {
-		say_line(sound_pool("vo_fullclear"))
+		say_line(sound_pool("voFullClear"))
 		make_new_board()
 		CombatRunner.throws++
 	}
@@ -203,7 +203,7 @@ function start_new_board() {
 		i = level_id_by_name(board);
 	}
 	level_load(i)
-	say_line(sound_pool("vo_startboard"), -1, false);
+	say_line(sound_pool("voBoardStart"), -1, false);
 	
 	update_battler_bricks()
 }

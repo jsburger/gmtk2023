@@ -9,7 +9,7 @@ nograv = false;
 if other.active == true {	
 	other.sprite_index = sprColorBumperHit;
 	other.image_index = 0;
-	sound_play_pitch(snd_coin_big, random_range(.8, 1.2));
+	sound_play_pitch(sndCoinBig, random_range(.8, 1.2));
 	
 	other.bounces--;
 	
@@ -18,7 +18,7 @@ if other.active == true {
 	}
 }
 else {
-	sound_play_pitch(snd_hitmetal, random_range(.8, 1.2));
+	sound_play_pitch(sndDieHitMetal, random_range(.8, 1.2));
 }
 
 

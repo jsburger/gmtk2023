@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"voFullClear2",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":5.08517,
+  "name":"voFullClear2",
+  "parent":{
+    "name":"Full Clear",
+    "path":"folders/Voice lines/Full Clear.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"voFullClear2.ogg",
+  "type":0,
+  "volume":1.0,
+}

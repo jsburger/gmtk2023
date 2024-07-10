@@ -8,7 +8,7 @@ if point_in_rectangle(mouse_x, mouse_y, bbox_left, bbox_top, bbox_right, bbox_bo
 			audio_stop_sound(music)
 		}
 		else {
-			music = audio_play_sound(snd_zeincore, 0, 1)
+			music = audio_play_sound(musZeinCore, 0, 1)
 		}
 		playing = !playing
 	}

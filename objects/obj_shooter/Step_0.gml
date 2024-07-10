@@ -39,7 +39,7 @@ if can_act && button_pressed(inputs.shoot) && can_shoot && inBoard {
 				motion_set(other.gunangle, 16)
 				global.mana[MANA.YELLOW] -= chip_cost
 			}
-			sound_play_pitch(choose(snd_chip_throw1, snd_chip_throw2), 1)
+			sound_play_pitch(choose(sndChipThrow1, sndChipThrow2), 1)
 			sprite_index = sprHandThanosSnap;
 			image_index = 0;
 			with obj_cuffs {
@@ -58,7 +58,7 @@ if can_act && button_pressed(inputs.shoot) && can_shoot && inBoard {
 		
 		global.mana[MANA.YELLOW] += 3;
 			
-		sound_play_pitch(snd_die_throw, 1)
+		sound_play_pitch(sndDieThrow, 1)
 		sprite_index = sprHandThrow;
 		has_dice = false
 		image_index = 0;
@@ -75,7 +75,7 @@ var _input = button_check(inputs.right) - button_check(inputs.left)
 if can_act && button_pressed(inputs.dash) && dash_timer <= 10 && _input != 0 {
 	dash_timer = 20;
 	dash_direction = _input;
-	sound_play_pitch(choose(snd_dash1, snd_dash2), 1);
+	sound_play_pitch(choose(sndDash1, sndDash2), 1);
 	if !has_dice{
 		sprite_index = sprHandDash;
 		image_index = 0;
@@ -96,12 +96,12 @@ if portal > -4 && !place_meeting(x, y, portal)portal = -4;
 
 //Fake Spell Casting
 if keyboard_check_pressed(ord("1")){
-	sound_play_pitch(snd_explo, .7);
+	sound_play_pitch(sndExplosion, .7);
 	scr_screenshake(10, 3, 0.2);
 }
 
 if keyboard_check_pressed(ord("2")){
-	sound_play_pitch(snd_bumper_hit, .7);
+	sound_play_pitch(sndBumperHit, .7);
 	scr_screenshake(10, 3, 0.2);
 }
 

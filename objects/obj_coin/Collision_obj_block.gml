@@ -61,5 +61,5 @@ with par_logiclike if !can_collide x -= 10000
 if makeParticle with instance_create_layer(collision.x, collision.y, "FX", obj_hit_small){
 	image_xscale *= .75;
 	image_yscale *= .75;
-	sound_play_pitch(snd_coin_quiet, 1.4 * random_range(.8, 1.3));
+	sound_play_pitch(sndCoinQuiet, 1.4 * random_range(.8, 1.3));
 }

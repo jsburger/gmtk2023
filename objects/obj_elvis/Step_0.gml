@@ -6,14 +6,14 @@ if waitforvoiceline > 0 {
 	waitforvoiceline -= 1
 	if waitforvoiceline <= 0 {
 		if room == intro_room{
-			say_line(vo_intro, function() {
+			say_line(voIntro, function() {
 				with instance_create_depth(x, y, depth + 2, obj_fade_to) {
 					destination = a_roominit;
 				}
 			})
 		}else if room == end_room{
 			var _win = true;
-			say_line(_win ? vo_endgame_win : vo_endgame_lose, function() {
+			say_line(_win ? voEndgameWin : voEndgaemLose, function() {
 					game_end();
 				}
 			);

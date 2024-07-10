@@ -7,7 +7,7 @@ if(other.image_blend != c_dkgray){
 			instance_create_layer(x, y, "FX", obj_hit_large)
 			vspeed = -11;
 			hspeed = sign(other.hspeed) * 2;
-			sound_play_pitch(choose(snd_dash_hit1, snd_dash_hit2), random_range(.9, 1.1));
+			sound_play_pitch(choose(sndDashHit1, sndDashHit2), random_range(.9, 1.1));
 			on_dice_bounce(self);
 			y -= 10
 			//maxspeed += 0.5;

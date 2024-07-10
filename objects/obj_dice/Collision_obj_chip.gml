@@ -11,7 +11,7 @@ on_dice_bounce(self)
 motion_add(90, speed * 0.125);
 vspeed = min(vspeed, -9);
 nograv = false;
-sound_play_pitch(snd_die_hit_peg, random_range(0.8, 1.2));
+sound_play_pitch(sndDieHitBrick, random_range(0.8, 1.2));
 
 instance_create_layer((x + other.x) / 2, (y + other.y) / 2, "FX", obj_hit_medium);
 

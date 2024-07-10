@@ -4,6 +4,6 @@
 if my_health <= 1{
 	if sprite_index != sprBombLit{
 		sprite_index = sprBombLit;
-		sound_play_pitch(snd_fuse, 1);	
+		sound_play_pitch(sndBombLit, 1);	
 	}
 }

@@ -22,7 +22,7 @@ function start_saying_line(voice_entry) {
 	
 	with obj_elvis {
 		sprite_index = sprElvisTalkStart
-		if voice_entry.sound == vo_eat {
+		if voice_entry.sound == voEat {
 			sprite_index = sprElvisEat	
 		}
 		image_index = 0

@@ -5,4 +5,4 @@ image_speed = 0
 image_blend = c_gray
 clicked = false
 
-ambience = audio_play_sound(s_ambient_casino, 0, 1)
+ambience = audio_play_sound(musCasinoAmbience, 0, 1)

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"voBoardStart10",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":4.168277,
+  "name":"voBoardStart10",
+  "parent":{
+    "name":"Board Start",
+    "path":"folders/Voice lines/Board Start.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"voBoardStart10.ogg",
+  "type":0,
+  "volume":1.0,
+}

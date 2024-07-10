@@ -34,7 +34,7 @@ function battler_hurt(target, damage, source, reactable = false) {
 		needs_board = false
 		
 		scr_screenshake(5, 3, 0.2)
-		sound_play_pitch(snd_bag_hit, random_range(.8, 1.2))
+		sound_play_pitch(sndCoinBagHit, random_range(.8, 1.2))
 	}
 }
 

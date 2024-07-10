@@ -12,11 +12,11 @@ with(instance_create_layer(x - _xoff, y + _yoff, "Portraits", obj_prompt)){
 	prompt_type = 0; // Yes
 	on_pick = function(){
 		if true {
-			say_line(choose(vo_buysandwich01, vo_buysandwich02, vo_buysandwich03, vo_buysandwich04), function() {
+			say_line(sound_pool("voBuySandwich"), function() {
 				schedule(5, function() {
-					say_line(vo_eat, function() {
+					say_line(voEat, function() {
 						schedule(5, function() {
-							sound_play_pitch(snd_double, 1.5);	
+							sound_play_pitch(sndDouble, 1.5);	
 						})
 					})			
 				})

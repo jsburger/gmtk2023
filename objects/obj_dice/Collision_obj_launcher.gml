@@ -11,6 +11,6 @@ other.image_index = 0;
 nograv = true;
 launcher = other.id;
 
-sound_play_pitch(snd_bumper_hit, random_range(.8, 1.2));
+sound_play_pitch(sndBumperHit, random_range(.8, 1.2));
 
 on_dice_bounce(self)

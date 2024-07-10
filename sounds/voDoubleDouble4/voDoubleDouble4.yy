@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"voDoubleDouble4",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":5.10839,
+  "name":"voDoubleDouble4",
+  "parent":{
+    "name":"Double or Nothing 2",
+    "path":"folders/Voice lines/Double or Nothing 2.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"voDoubleDouble4.ogg",
+  "type":0,
+  "volume":1.0,
+}
