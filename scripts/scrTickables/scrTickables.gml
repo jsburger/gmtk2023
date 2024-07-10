@@ -1,6 +1,6 @@
 /// @ignore
 function Tickables_Step() {
-	static structs = [];
+	var structs = tickable_register.structs;
 	for (var i = 0, l = array_length(structs); i < l; i++) {
 		if instance_exists(structs[i].owner) {
 			structs[i].struct.tick()
@@ -14,7 +14,8 @@ function Tickables_Step() {
 }
 
 function tickable_register(struct, owner) {
-	array_push(Tickables_Step.structs, instance_binder(owner, struct))
+	static structs = [];
+	array_push(structs, instance_binder(owner, struct))
 }
 
 function instance_binder(owner, struct) {

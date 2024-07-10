@@ -10,8 +10,8 @@
   "name":"Timeline",
   "overriddenProperties":[],
   "parent":{
-    "name":"New Shit",
-    "path":"folders/Objects/New Shit.yy",
+    "name":"board",
+    "path":"folders/Objects/board.yy",
   },
   "parentObjectId":null,
   "persistent":false,

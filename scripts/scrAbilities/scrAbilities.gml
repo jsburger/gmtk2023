@@ -16,6 +16,10 @@ function ability_get_register() {
 function ability_get_prototype(name) {
 	return ability_get_register()[? name]
 }
+function ability_get(name) {
+	var proto = ability_get_prototype(name);
+	return proto();
+}
 
 
 function Ability(TargetType = TARGET_TYPE.BATTLER) : CombatInterface() constructor {

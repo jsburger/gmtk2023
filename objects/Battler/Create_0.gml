@@ -15,11 +15,15 @@ display_health = new MeterInterpolator(self, function() {
 });
 hpsize = 2;
 
+function set_hp_max(h) {
+	hpmax = h;
+	hpsize = string_length(string(h));
+}
+
 function set_hp(h) {
-	hpmax = h
+	set_hp_max(h);
 	hp = h
 	display_health.set(h);
-	hpsize = string_length(h);
 }
 
 set_hp(50)

@@ -10,8 +10,8 @@
   "name":"CombatRunner",
   "overriddenProperties":[],
   "parent":{
-    "name":"New Shit",
-    "path":"folders/Objects/New Shit.yy",
+    "name":"Combat",
+    "path":"folders/Objects/Combat.yy",
   },
   "parentObjectId":null,
   "persistent":false,

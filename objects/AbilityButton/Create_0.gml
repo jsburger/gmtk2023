@@ -1,8 +1,10 @@
 /// @description 
 setup = function() {
-	var prototype = ability_get_prototype(ability_key)
-	if prototype != undefined {
-		ability = prototype()
+	if is_string(ability) && string_length(ability) > 0 {
+		var prototype = ability_get_prototype(ability_key)
+		if prototype != undefined {
+			ability = prototype()
+		}
 	}
 }
 
@@ -10,6 +12,7 @@ ability = undefined;
 setup()
 active = false;
 lean = 0;
+position = 0;
 
 can_click = function() {
 	return combat_active();
