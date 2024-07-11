@@ -806,6 +806,7 @@
     {"id":{"name":"sprFXPortalOrange","path":"sprites/sprFXPortalOrange/sprFXPortalOrange.yy",},},
     {"id":{"name":"sprFXPortalPurple","path":"sprites/sprFXPortalPurple/sprFXPortalPurple.yy",},},
     {"id":{"name":"sprFXPortalYellow","path":"sprites/sprFXPortalYellow/sprFXPortalYellow.yy",},},
+    {"id":{"name":"sprFXShield","path":"sprites/sprFXShield/sprFXShield.yy",},},
     {"id":{"name":"sprFXSparkle","path":"sprites/sprFXSparkle/sprFXSparkle.yy",},},
     {"id":{"name":"sprFXSplat","path":"sprites/sprFXSplat/sprFXSplat.yy",},},
     {"id":{"name":"sprFXSplatStain","path":"sprites/sprFXSplatStain/sprFXSplatStain.yy",},},
