@@ -1,17 +1,17 @@
 {
   "info":{
     "format":1.0,
-    "name":"TestSlasher2",
-    "rounds":5.0
+    "rounds":5.0,
+    "name":"TestSlasher2"
   },
   "objects":[
     {
-      "x":368.0,
+      "x":336.0,
       "y":-672.0,
       "object_index":"obj_portal_1"
     },
     {
-      "x":-352.0,
+      "x":-336.0,
       "y":-672.0,
       "object_index":"obj_portal"
     },
@@ -78,7 +78,7 @@
       "object_index":"obj_block"
     },
     {
-      "x":224.0,
+      "x":-224.0,
       "y":-216.0,
       "serialized_info":{
         "color":0.0
@@ -86,7 +86,7 @@
       "object_index":"obj_block"
     },
     {
-      "x":-224.0,
+      "x":224.0,
       "y":-216.0,
       "serialized_info":{
         "color":0.0
@@ -104,19 +104,14 @@
       "object_index":"obj_block_metal_v"
     },
     {
-      "x":-432.0,
-      "y":-128.0,
-      "object_index":"obj_portal_1"
-    },
-    {
       "x":432.0,
       "y":-128.0,
       "object_index":"obj_portal"
     },
     {
       "x":-432.0,
-      "y":-80.0,
-      "object_index":"obj_block_metal"
+      "y":-128.0,
+      "object_index":"obj_portal_1"
     },
     {
       "x":0.0,
@@ -125,6 +120,11 @@
     },
     {
       "x":432.0,
+      "y":-80.0,
+      "object_index":"obj_block_metal"
+    },
+    {
+      "x":-432.0,
       "y":-80.0,
       "object_index":"obj_block_metal"
     },
