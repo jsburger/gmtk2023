@@ -134,11 +134,18 @@ function level_load(levelnumber){
 	array_foreach(level.objects, function(entry) {
 		var pos = transform_instance_position(entry);
 		with instance_create_layer(pos.x, pos.y, "Instances", asset_get_index(entry.object_index)) {
+			//Old
 			if instance_is(self, obj_cable) obj_layer = 1
 			else obj_layer = 0
 			
+			//Old
 			if variable_struct_exists(entry, "serialized_info") {
 				deserialize(entry.serialized_info)
+			}
+			
+			//New
+			if variable_struct_exists(entry, "data") {
+				serializer.read(entry.data)
 			}
 		}
 	})
@@ -152,6 +159,9 @@ function jsonify_board() {
 		array_push(objects, jsonify_instance(self))
 	}
 	with obj_ball {
+		array_push(objects, jsonify_instance(self))
+	}
+	with parBoardObject {
 		array_push(objects, jsonify_instance(self))
 	}
 	return {
@@ -189,11 +199,17 @@ function jsonify_instance(inst) {
 		"y": pos.y,
 		"object_index" : object_get_name(inst.object_index)
 	}
+	// Old
 	if variable_instance_exists(inst, "serialize") {
 		var s = inst.serialize()
 		if s != undefined json.serialized_info = s
 	}
-	
+	// New
+	if variable_instance_exists(inst, "serializer") {
+		var s = inst.serializer.write();
+		if array_length(struct_get_names(s)) > 0 json.data = s;
+		//if s != undefined json.data = s;
+	}
 	return json
 }
 
@@ -245,6 +261,7 @@ function mark_level_changed(changed = true) {
 function level_clear() {
 	with(par_collectible) instance_destroy(self, false);
 	with(par_bricklike) instance_destroy(self, false);
+	with parBoardObject instance_destroy(self, false);
 }
 
 //function level_init_old(){

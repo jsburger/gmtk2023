@@ -16,6 +16,8 @@ serializer.add_var_layer(self, "launch_direction", set_launch_direction);
 
 can_walk_back_ball = false;
 ball_bounce = function(ball) {
+	
+	ball.nograv = true;
 	if (ball.launcher != id) {
 		ball.launcher = id;
 		with ball {
@@ -24,7 +26,6 @@ ball_bounce = function(ball) {
 			motion_set(other.launch_direction, maxspeed)
 		}
 		ball.just_launched = true;
-		ball.nograv = true;
 	}
 }
 

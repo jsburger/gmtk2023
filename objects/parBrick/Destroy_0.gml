@@ -1,6 +1,6 @@
 /// @description 
 
-if mana_amount > 0 {
+if mana_amount > 0 && is_mana(color) {
 	mana_add(color, mana_amount)
 	mana_effect_create(x, y, color, mana_amount)
 }

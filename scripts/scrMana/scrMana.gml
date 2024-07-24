@@ -21,7 +21,10 @@ function mana_add(type, amount) {
 }
 
 function is_mana(color) {
-	return in_range(color, MANA_NONE, MANA.MAX);
+	return in_range_exc(color, MANA_NONE, MANA.MAX);
+}
+function is_valid_color(color) {
+	return color >= MANA_NONE && color < MANA.MAX;
 }
 
 function mana_get_color(mana){

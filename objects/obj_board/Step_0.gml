@@ -101,7 +101,7 @@ if(editor){
 				    }
 				}
 				ds_list_destroy(_list);
-		
+				if place_meeting(x, y, parBoardObject) other.canplace = false;
 				instance_destroy();
 			}
 
@@ -151,7 +151,12 @@ if(editor){
 						mark_level_changed()
 					}
 					ds_list_destroy(_list);
-		
+
+					with parBoardObject if place_meeting(x, y, other) {
+						instance_destroy(self, false);
+						mark_level_changed()
+					}
+						
 					instance_destroy();
 				}
 				with(collision_point(mx,my,par_bricklike,0,1)){
@@ -164,7 +169,7 @@ if(editor){
 	
 	if mode = editorMode.paint {
 		if point_in_bbox(mouse_x, mouse_y, self) && (button_check(inputs.shoot) || button_check(inputs.mouse_right)) {
-			var n = instance_nearest(mouse_x, mouse_y, par_bricklike);
+			var n = instance_nearest(mouse_x, mouse_y, parBoardObject);
 			if instance_exists(n) {
 				if variable_instance_defget(n, "colorable", false) {
 					var col = button_check(inputs.shoot) ? paintcolor : -1;

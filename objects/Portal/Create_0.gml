@@ -22,6 +22,7 @@ serializer.add_layer("portal_index", function() {return index}, set_index)
 can_walk_back_ball = false;
 last_target = noone;
 ball_bounce = function(ball) {
+	if ball.portal == id exit
 	var target = noone;
 	with Portal if id != other.id {
 		if index = other.index {
@@ -29,7 +30,7 @@ ball_bounce = function(ball) {
 		}
 	}
 	
-	if instance_exists(target) && ball.portal != target.id {
+	if instance_exists(target) {
 		last_target = target;
 		ball.x = target.x;
 		ball.y = target.y;

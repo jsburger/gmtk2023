@@ -1,5 +1,5 @@
 /// @description 
 
-if damage > 1 {
+if damage > 0 {
 	brick_hit(other, damage, self)
 }

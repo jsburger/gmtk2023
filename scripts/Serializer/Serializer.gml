@@ -39,7 +39,7 @@ function Serializer(_owner) constructor {
 			var value = struct_get(data, names[i]),
 				reader = struct_get(layers, names[i]);
 			if value != undefined {
-				reader(value)
+				reader.from_struct(value)
 			}
 		}
 		//array_foreach(data, function(element, index) {

@@ -165,6 +165,12 @@ function check_fullclear() {
 				break
 			}
 		}
+		with parBoardObject {
+			if can_take_damage {
+				fullclear = false
+				break
+			}
+		}
 		with obj_vault {
 			if !unloaded {
 				fullclear = false
@@ -188,6 +194,7 @@ function make_new_board() {
 	with obj_ball {
 		clear_item()
 	}
+	with parBoardObject clear_item()
 	schedule(8, start_new_board)
 	
 }

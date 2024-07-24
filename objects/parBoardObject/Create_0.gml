@@ -29,7 +29,7 @@
 	color = MANA_NONE;
 
 	set_color = function(col) {
-		if !in_range(col, MANA_NONE, MANA.MAX - 1) exit
+		if !is_valid_color(col) exit
 		color = col
 		switch col {
 			case MANA_NONE:
@@ -51,9 +51,7 @@
 		function() {
 			if is_mana(color) return color;
 		},
-		function(data) {
-			if is_mana(data) set_color(data)
-		}
+		function(data) {set_color(data)}
 	)
 	
 #endregion

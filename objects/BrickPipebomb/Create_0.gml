@@ -8,7 +8,7 @@ flip;
 beeped = false;
 is_vertical = false;
 
-
+hp = 2
 on_hurt = function(damage) {
 	image_speed = 1;
 	if !beeped {
@@ -22,7 +22,7 @@ get_rectangle = function() {
 		x1: bbox_left - 6,
 		y1: board_top,
 		x2: bbox_right + 6,
-		y2: board_bottom;
+		y2: board_bottom
 	}
 	return {
 		x1: board_left,

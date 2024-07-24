@@ -25,7 +25,7 @@ set_color = function(col) {
 }
 
 update_color = function() {
-	image_blend = merge_color(base_color, c_dkgray, bounces/bounces_max);
+	image_blend = merge_color(base_color, c_dkgray, 1 - (bounces/bounces_max));
 }
 
 ball_bounce = function(ball) {
