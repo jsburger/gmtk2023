@@ -26,8 +26,14 @@ while(vspeed > max_fallspeed){
 }
 
 //Portal reset
-if portal > -4 && !place_meeting(x, y, portal){portal = -4}
-if launcher > -4 && !place_meeting(x, y, launcher){launcher = -4}
+if instance_exists(portal) && !place_meeting(x, y, portal) {
+	portal = noone
+	just_portal = false;
+}
+if instance_exists(launcher) && !place_meeting(x, y, launcher) {
+	launcher = noone
+	just_launched = false;
+}
 
 if pierce <= 0 {
 	image_blend = c_white;	

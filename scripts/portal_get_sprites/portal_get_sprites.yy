@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"portal_get_sprites",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"portal_get_sprites",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

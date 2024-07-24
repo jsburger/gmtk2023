@@ -1,0 +1,71 @@
+Portals
+Launchers
+Bumpers
+Coin Bags
+Bricks
+Bombs
+Switches
+Wires
+
+Ball:
+	Block damage and HP damage are different
+	Has pierce, pierce is used when the collider is destroyed.
+	Is_preview: Dictates whether or not the ball is physical and colliders should react to it
+	
+
+Board Objects
+	Collide with ball, affect the ball in some way
+	Have reactions upon collision
+	Do NOT attract statuses
+	May occasionally be colored
+	Cannot be "hit", can be destroyed, but doesn't interact with pierce
+
+Bricks
+	Collide with the ball, affect the ball in some way
+	Can take damage upon collision
+	DO attract statuses
+	(Most) have health, are intended to interact with damage systems
+		(Can be hit, can die, can interact with pierce)
+	Can be colored
+	
+	
+Being Frozen (Burnt, Poisoned, etc) COMMON STATUSES
+
+Taking Damage (bomb included)
+Bouncing (Solid collision/Normal Collision. Bumpers)
+Reaction to ball (Bumper animating, Color Bumber giving mana)
+Forms Surfaces
+
+
+Brick 
+	Takes Damage
+	Accepts Statuses
+	Bounces ball (Rectangle Normal)
+	Has ball reaction (Create impact particle and go thok)
+	Does form surfaces
+
+Metal Brick
+	Does NOT take damage
+	Does NOT accept statuses
+	Bounces Ball (rectangle)
+	Has ball reaction (Create impact particle and go tink)
+	Does form surfaces
+
+Bumper
+	No damage
+	No status
+	Bumper Collision (apply extra force)
+	Reaction (Animate, play sound)
+	Does not form surfaces
+
+Portals
+	No damage
+	No status
+	Portal Collision (Move to paired portal)
+	Reaction (Play eat animation)
+	Does not form surfaces
+	
+
+	
+
+

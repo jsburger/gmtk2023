@@ -4,6 +4,11 @@
 //width = 600
 //height = 700
 
+#macro board_top obj_board.bbox_top
+#macro board_bottom obj_board.bbox_bottom
+#macro board_left obj_board.bbox_left
+#macro board_right obj_board.bbox_right
+
 become_active = false;
 //Allows the shooter to act
 active = false;

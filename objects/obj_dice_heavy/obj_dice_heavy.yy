@@ -12,8 +12,8 @@
     "path":"folders/Objects/dice.yy",
   },
   "parentObjectId":{
-    "name":"obj_dice",
-    "path":"objects/obj_dice/obj_dice.yy",
+    "name":"Ball",
+    "path":"objects/Ball/Ball.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

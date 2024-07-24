@@ -78,7 +78,7 @@ with par_collectible {
 	y += camera_y;
 }
 
-with obj_dice {
+with Ball {
 	x -= camera_x;
 	y -= camera_y;
 	

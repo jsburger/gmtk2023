@@ -5,7 +5,7 @@ if (instance_exists(obj_board)) {
 	if bbox_bottom > obj_board.bbox_bottom{
 		if (touchedBottom){
 			if bbox_bottom > obj_board.bbox_bottom + 128{
-				if object_index == obj_dice {
+				if object_index == Ball {
 					throw_end()
 					instance_destroy()
 					exit;

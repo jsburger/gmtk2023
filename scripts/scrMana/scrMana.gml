@@ -20,6 +20,10 @@ function mana_add(type, amount) {
 	with ManaDrawer blink[type] = 1
 }
 
+function is_mana(color) {
+	return in_range(color, MANA_NONE, MANA.MAX);
+}
+
 function mana_get_color(mana){
 	switch mana {
 		case MANA.RED:
@@ -69,10 +73,17 @@ function mana_reset() {
 	}
 }
 
-function mana_effect_create(x, y, color) {
-	with instance_create_layer(x, y, "FX", effectManaGained) {
-		image_blend = mana_get_color(color)
-		self.color = color
-		return self
+function mana_effect_create(x, y, color, count) {
+	repeat(count) {
+		with instance_create_layer(x, y, "FX", effectManaGained) {
+			image_blend = mana_get_color(color)
+			self.color = color
+			return self
+		}
 	}
+}
+
+function mana_give_at(x, y, color, count) {
+	mana_add(color, count);
+	mana_effect_create(x, y, color, count);
 }

@@ -211,11 +211,11 @@ function StatusFreeze(Strength) : StatusTickable(Strength) constructor {
 	
 	static tick = function() {
 		if strength > 0 {
-			var frozen = array_build_filtered(obj_block, function(inst) {return inst.frozen})
+			var frozen = array_build_filtered(obj_block, function(inst) {return inst.is_frozen})
 			if array_length(frozen) < strength {
 				// Gather freezable bricks
 				var bricks = array_build_filtered(obj_block, function(inst) {
-					return inst.freezable && !inst.frozen;
+					return inst.freezable && !inst.is_frozen;
 				}),
 					dif = strength - array_length(frozen);
 				// Exit early if no bricks to freeze
@@ -240,7 +240,7 @@ function StatusFreeze(Strength) : StatusTickable(Strength) constructor {
 	static on_remove = function() {
 		if strength > 0 {
 			with obj_block {
-				if frozen {
+				if is_frozen {
 					set_frozen(false, true)
 				}
 			}

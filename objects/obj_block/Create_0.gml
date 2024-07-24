@@ -35,12 +35,12 @@ nexthurt = current_time;
 	freezable = true;
 	spr_frozen = sprBrickOverlayFrozen;
 	spr_frozen_index = 0;
-	frozen = false;
+	is_frozen = false;
 	/// Cleaning prevents the function from calling brick_unfreeze, which would create a loop
 	set_frozen = function(value, cleaning = false) {
-		if value != frozen {
-			frozen = value;
-			if frozen {
+		if value != is_frozen {
+			is_frozen = value;
+			if is_frozen {
 				spr_frozen_index = irandom(sprite_get_number(spr_frozen) - 1);
 			}
 			else if !cleaning {

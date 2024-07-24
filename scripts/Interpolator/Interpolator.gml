@@ -35,18 +35,6 @@ function Interpolator(owner, getter, auto = __Int_auto) constructor {
 	
 }
 
-function instance_ref(inst, variable) {
-	with {
-		inst,
-		variable
-	} return function() {
-		if argument_count <= 0 {
-			return variable_instance_get(inst, variable)
-		}
-		else variable_instance_set(inst, variable, argument0)
-	}
-}
-
 /// Used for Health Bars and Mana Displays
 function MeterInterpolator(owner, getter, auto = __Int_auto) : Interpolator(owner, getter, auto) constructor {
 	

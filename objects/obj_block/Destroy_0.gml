@@ -3,7 +3,7 @@
 if drop_chance > 0 {
 	if color > -1 {
 		mana_add(color, mana_amount)
-		mana_effect_create(x, y, color)
+		mana_effect_create(x, y, color, mana_amount)
 	}
 }
 

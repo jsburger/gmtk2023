@@ -81,7 +81,7 @@ if collider.object_index == obj_coin_pouch{
 	}
 }
 
-if !collider.frozen {
+if !collider.is_frozen {
 	if variable_instance_exists(collider, "on_ball") {
 		collider.on_ball(self)
 	}

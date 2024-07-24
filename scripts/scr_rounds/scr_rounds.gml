@@ -80,7 +80,7 @@ function enable_shooter() {
 	
 	mana_add(MANA.YELLOW, 3)
 	with obj_shooter {
-		repeat(3) mana_effect_create(x, y, MANA.YELLOW)
+		mana_effect_create(x, y, MANA.YELLOW, 3)
 	}
 	
 	with obj_shooter {

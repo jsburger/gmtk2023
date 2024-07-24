@@ -72,3 +72,23 @@ function brick_on_unfreeze(brick) {
 		with statuses.find("Freeze") knock()
 	}
 }
+
+/// Returns if the brick was actually damaged
+function brick_hit(brick, damage, source) {
+	if brick.is_frozen {
+		brick.set_frozen(false)
+		return false;
+	}
+	if brick.can_take_damage {
+		//Hit brick
+		brick.hp -= damage;
+		brick.on_hurt(damage, source);
+	
+		if brick.hp <= 0 {
+			instance_destroy(brick)
+		}
+		
+		return true;
+	}
+	return false;
+}
