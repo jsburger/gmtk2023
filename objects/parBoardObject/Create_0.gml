@@ -59,6 +59,11 @@
 #region Ball Logic
 	#region Collision
 		can_collide = true;
+		
+		can_ball_collide = function(ball) {
+			return true;
+		}
+		
 		can_walk_back_ball = true;
 		/// Called ONLY to move the ball upon impact. Do NOT add sound effects here.
 		ball_bounce = function(ball) {}

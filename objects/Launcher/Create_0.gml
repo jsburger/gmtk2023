@@ -14,27 +14,24 @@ set_launch_direction = function(dir) {
 
 serializer.add_var_layer(self, "launch_direction", set_launch_direction);
 
+can_ball_collide = function(ball) {
+	return ball.launcher != id;
+}
 can_walk_back_ball = false;
 ball_bounce = function(ball) {
 	
 	ball.nograv = true;
-	if (ball.launcher != id) {
-		ball.launcher = id;
-		with ball {
-			x = other.x;
-			y = other.y;
-			motion_set(other.launch_direction, maxspeed)
-		}
-		ball.just_launched = true;
+	ball.launcher = id;
+	with ball {
+		x = other.x;
+		y = other.y;
+		motion_set(other.launch_direction, maxspeed)
 	}
 }
 
 on_ball_impact = function(ball, collision_x, collision_y) {
-	if ball.just_launched {
-		ball.just_launched = false;
-		instance_create_layer(ball.x, ball.y, "FX", obj_hit_small);
-		var sound = ball.is_coin ? sndBumperHitQuiet : sndBumperHit;
-		sound_play_random(sound)
-		sprite_change(spr_launch)
-	}
+	instance_create_layer(ball.x, ball.y, "FX", obj_hit_small);
+	var sound = ball.is_coin ? sndBumperHitQuiet : sndBumperHit;
+	sound_play_random(sound)
+	sprite_change(spr_launch)
 }

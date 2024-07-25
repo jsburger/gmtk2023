@@ -1,6 +1,7 @@
 /// @description 
 var collider = other;
 if image_blend = c_dkgray || !collider.can_collide exit;
+if !(collider.can_ball_collide(self)) exit;
 
 // Walk back until not colliding any more
 if (collider.can_walk_back_ball) {

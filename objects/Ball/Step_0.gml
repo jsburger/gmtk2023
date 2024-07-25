@@ -28,11 +28,9 @@ while(vspeed > max_fallspeed){
 //Portal reset
 if instance_exists(portal) && !place_meeting(x, y, portal) {
 	portal = noone
-	just_portal = false;
 }
 if instance_exists(launcher) && !place_meeting(x, y, launcher) {
 	launcher = noone
-	just_launched = false;
 }
 
 if pierce <= 0 {

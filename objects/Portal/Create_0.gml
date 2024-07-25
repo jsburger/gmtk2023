@@ -19,10 +19,13 @@ set_index = function(i) {
 
 serializer.add_layer("portal_index", function() {return index}, set_index)
 
+can_ball_collide = function(ball) {
+	return ball.portal != id;
+}
+
 can_walk_back_ball = false;
 last_target = noone;
 ball_bounce = function(ball) {
-	if ball.portal == id exit
 	var target = noone;
 	with Portal if id != other.id {
 		if index = other.index {
@@ -35,40 +38,10 @@ ball_bounce = function(ball) {
 		ball.x = target.x;
 		ball.y = target.y;
 		ball.portal = target.id;
-		ball.just_portal = true;
 	}
 }
 
 on_ball_impact = function(ball, collision_x, collision_y) {
-	if ball.just_portal {
-		ball.just_portal = false;
-		
-		sprite_change(spr_close)
-		with last_target sprite_change(spr_open)
-	}
-}
-
-teleport = function(instance, portal = self) {
-	var target = noone;
-	with Portal {
-		if (index == portal.index && id != portal.id)
-			target = self;
-	}
-	
-	if instance.object_index != obj_fx {
-		portal.sprite_index = portal.spr_close;
-		portal.image_index = 0;
-		target.sprite_index = target.spr_open;
-		target.image_index = 0;
-	}
-	
-	if instance_exists(target) {
-		if instance.portal != id {
-			instance.x = target.x;
-			instance.y = target.y;
-			instance.portal = target.id;
-			return true
-		}
-	}
-	return false
+	sprite_change(spr_close)
+	with last_target sprite_change(spr_open)
 }
