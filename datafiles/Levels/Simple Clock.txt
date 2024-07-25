@@ -1,14 +1,9 @@
 {
-  "info":{
-    "format":1.0,
-    "name":"Simple Clock",
-    "rounds":5.0
-  },
   "objects":[
     {
       "x":288.0,
       "y":-328.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":256.0,
@@ -118,292 +113,292 @@
     {
       "x":0.0,
       "y":-184.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":16.0,
       "y":-152.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-16.0,
       "y":-152.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-24.0,
       "y":-176.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-16.0,
       "y":-200.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":16.0,
       "y":-200.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":24.0,
       "y":-176.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-96.0,
       "y":-152.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-64.0,
       "y":-152.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":64.0,
       "y":-152.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":96.0,
       "y":-152.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":104.0,
       "y":-176.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":88.0,
       "y":-176.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":72.0,
       "y":-176.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":56.0,
       "y":-176.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-56.0,
       "y":-176.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-72.0,
       "y":-176.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-88.0,
       "y":-176.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-104.0,
       "y":-176.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-64.0,
       "y":-200.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":64.0,
       "y":-200.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":96.0,
       "y":-200.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-80.0,
       "y":-224.0,
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":80.0,
       "y":-224.0,
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":344.0,
       "y":-176.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":328.0,
       "y":-176.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":336.0,
       "y":-152.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":312.0,
       "y":-160.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":312.0,
       "y":-192.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":336.0,
       "y":-200.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-336.0,
       "y":-136.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-312.0,
       "y":-144.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-344.0,
       "y":-160.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-328.0,
       "y":-160.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-312.0,
       "y":-176.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-336.0,
       "y":-184.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-272.0,
       "y":-136.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-240.0,
       "y":-136.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-232.0,
       "y":-160.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-248.0,
       "y":-160.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-264.0,
       "y":-160.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-280.0,
       "y":-160.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-272.0,
       "y":-184.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-240.0,
       "y":-184.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":240.0,
       "y":-152.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":272.0,
       "y":-152.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":232.0,
       "y":-176.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":248.0,
       "y":-176.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":264.0,
       "y":-176.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":280.0,
       "y":-176.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":240.0,
       "y":-200.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":256.0,
       "y":-224.0,
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":-256.0,
       "y":-208.0,
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":-208.0,
       "y":-312.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-240.0,
       "y":-312.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-272.0,
       "y":-312.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-304.0,
       "y":-312.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-288.0,
       "y":-328.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":256.0,
@@ -413,72 +408,72 @@
     {
       "x":208.0,
       "y":-312.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":240.0,
       "y":-312.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":272.0,
       "y":-312.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":304.0,
       "y":-312.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":224.0,
       "y":-328.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":288.0,
       "y":-352.0,
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":224.0,
       "y":-352.0,
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":224.0,
       "y":-376.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":256.0,
       "y":-376.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":288.0,
       "y":-376.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":304.0,
       "y":-392.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":272.0,
       "y":-392.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":240.0,
       "y":-392.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":208.0,
       "y":-392.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-256.0,
@@ -488,52 +483,52 @@
     {
       "x":-224.0,
       "y":-328.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-288.0,
       "y":-352.0,
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":-224.0,
       "y":-352.0,
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":-224.0,
       "y":-376.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-256.0,
       "y":-376.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-288.0,
       "y":-376.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-304.0,
       "y":-392.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-272.0,
       "y":-392.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-240.0,
       "y":-392.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-208.0,
       "y":-392.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":0.0,
@@ -543,172 +538,172 @@
     {
       "x":48.0,
       "y":-320.0,
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":-48.0,
       "y":-320.0,
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":32.0,
       "y":-344.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":80.0,
       "y":-360.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":88.0,
       "y":-336.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":88.0,
       "y":-304.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-88.0,
       "y":-336.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-88.0,
       "y":-304.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-32.0,
       "y":-344.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-80.0,
       "y":-360.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-104.0,
       "y":-352.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-104.0,
       "y":-320.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":104.0,
       "y":-352.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":104.0,
       "y":-320.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":96.0,
       "y":-376.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-96.0,
       "y":-376.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-64.0,
       "y":-296.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-32.0,
       "y":-296.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":32.0,
       "y":-296.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":64.0,
       "y":-296.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":104.0,
       "y":-288.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":80.0,
       "y":-280.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":48.0,
       "y":-280.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-48.0,
       "y":-280.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-80.0,
       "y":-280.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-104.0,
       "y":-288.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-304.0,
       "y":-496.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":-208.0,
       "y":-496.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":-192.0,
       "y":-544.00003051757812,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":-320.0,
       "y":-544.00003051757812,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":320.0,
       "y":-544.00003051757812,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":192.0,
       "y":-544.00003051757812,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":304.0,
       "y":-496.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":208.0,
       "y":-496.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":0.0,
@@ -1055,5 +1050,10 @@
       "y":-528.0,
       "object_index":"obj_ballplacer"
     }
-  ]
+  ],
+  "info":{
+    "format":2.0,
+    "name":"Simple Clock",
+    "rounds":5.0
+  }
 }

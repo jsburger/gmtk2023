@@ -1,39 +1,34 @@
 {
-  "info":{
-    "format":1.0,
-    "name":"Pachinko",
-    "rounds":5.0
-  },
   "objects":[
     {
       "x":304.0,
       "y":-208.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":304.0,
       "y":-144.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":-304.0,
       "y":-144.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":-304.0,
       "y":-208.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":112.0,
       "y":-192.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":-112.0,
       "y":-192.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":0.0,
@@ -53,102 +48,102 @@
     {
       "x":-16.0,
       "y":-184.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":48.0,
       "y":-232.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":16.0,
       "y":-472.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-16.0,
       "y":-472.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":48.0,
       "y":-296.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":16.0,
       "y":-168.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-48.0,
       "y":-184.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-176.0,
       "y":-536.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-48.0,
       "y":-232.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":208.0,
       "y":-472.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":80.0,
       "y":-168.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":48.0,
       "y":-344.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":352.0,
       "y":-128.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":352.0,
       "y":-176.0,
-      "object_index":"obj_bumper"
+      "object_index":"Bumper"
     },
     {
       "x":-64.0,
       "y":-320.0,
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":-208.0,
       "y":-472.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":80.0,
       "y":-184.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":112.0,
       "y":-504.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":176.0,
       "y":-520.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-352.0,
       "y":-496.0,
-      "object_index":"obj_bumper"
+      "object_index":"Bumper"
     },
     {
       "x":208.0,
@@ -158,47 +153,47 @@
     {
       "x":-112.0,
       "y":-504.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":0.0,
       "y":-288.0,
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":-80.0,
       "y":-184.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":64.0,
       "y":-320.0,
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":-16.0,
       "y":-168.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-352.0,
       "y":-176.0,
-      "object_index":"obj_bumper"
+      "object_index":"Bumper"
     },
     {
       "x":-16.0,
       "y":-456.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-48.0,
       "y":-344.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":16.0,
       "y":-184.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-208.0,
@@ -208,102 +203,107 @@
     {
       "x":-160.0,
       "y":-272.0,
-      "object_index":"obj_bumper"
+      "object_index":"Bumper"
     },
     {
       "x":-80.0,
       "y":-168.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":48.0,
       "y":-168.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":352.0,
       "y":-496.0,
-      "object_index":"obj_bumper"
+      "object_index":"Bumper"
     },
     {
       "x":16.0,
       "y":-456.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":160.0,
       "y":-272.0,
-      "object_index":"obj_bumper"
+      "object_index":"Bumper"
     },
     {
       "x":48.0,
       "y":-184.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-48.0,
       "y":-168.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-352.0,
       "y":-128.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":-48.0,
       "y":-296.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":312.0,
       "y":-320.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":200.0,
       "y":-320.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":256.0,
       "y":-320.0,
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":216.0,
       "y":-320.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":296.0,
       "y":-320.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-312.0,
       "y":-320.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-296.0,
       "y":-320.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-200.0,
       "y":-320.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-216.0,
       "y":-320.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-256.0,
       "y":-320.0,
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     }
-  ]
+  ],
+  "info":{
+    "format":2.0,
+    "name":"Pachinko",
+    "rounds":5.0
+  }
 }

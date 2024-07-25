@@ -1,124 +1,119 @@
 {
-  "info":{
-    "format":1.0,
-    "name":"Double Silo",
-    "rounds":5.0
-  },
   "objects":[
     {
       "x":288.0,
       "y":-544.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":272.0,
       "y":-496.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":304.0,
       "y":-496.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":-288.0,
       "y":-544.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":-304.0,
       "y":-496.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":-272.0,
       "y":-496.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":-64.0,
       "y":-544.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":0.0,
       "y":-544.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":64.0,
       "y":-544.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":-112.0,
       "y":-528.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":-144.0,
       "y":-528.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":360.0,
       "y":-320.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-360.0,
       "y":-320.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":320.0,
       "y":-304.0,
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":-304.0,
       "y":-328.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-144.0,
       "y":-344.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-144.0,
       "y":-376.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-192.0,
       "y":-240.0,
-      "object_index":"obj_bumper"
+      "object_index":"Bumper"
     },
     {
       "x":192.0,
       "y":-192.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":-336.0,
       "y":-328.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":304.0,
       "y":-328.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":192.0,
       "y":-544.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":-192.0,
       "y":-544.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":-192.0,
@@ -128,32 +123,32 @@
     {
       "x":-192.0,
       "y":-192.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":192.0,
       "y":-240.0,
-      "object_index":"obj_bumper"
+      "object_index":"Bumper"
     },
     {
       "x":144.0,
       "y":-344.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":256.0,
       "y":-320.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":128.0,
       "y":-320.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":144.0,
       "y":-376.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":192.0,
@@ -163,102 +158,102 @@
     {
       "x":-144.0,
       "y":-408.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":144.0,
       "y":-408.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-320.0,
       "y":-304.0,
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":336.0,
       "y":-328.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-240.0,
       "y":-464.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":-240.0,
       "y":-528.00003051757812,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":-288.0,
       "y":-448.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":-240.0,
       "y":-208.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":-240.0,
       "y":-272.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":-256.0,
       "y":-320.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":-128.0,
       "y":-320.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":-144.0,
       "y":-208.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":-144.0,
       "y":-272.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":144.0,
       "y":-272.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":144.0,
       "y":-208.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":240.0,
       "y":-272.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":240.0,
       "y":-208.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":240.0,
       "y":-528.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":240.0,
       "y":-464.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":288.0,
       "y":-448.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":336.0,
@@ -283,52 +278,52 @@
     {
       "x":-128.0,
       "y":-480.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":144.0,
       "y":-528.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":112.0,
       "y":-528.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":128.0,
       "y":-480.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":144.0,
       "y":-440.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-144.0,
       "y":-440.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-80.0,
       "y":-312.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":80.0,
       "y":-312.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":56.0,
       "y":-320.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-56.0,
       "y":-320.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":80.0,
@@ -343,42 +338,47 @@
     {
       "x":-336.0,
       "y":-464.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":-336.0,
       "y":-528.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":336.0,
       "y":-464.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":336.0,
       "y":-528.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":-272.0,
       "y":-408.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-272.0,
       "y":-360.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":272.0,
       "y":-360.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":272.0,
       "y":-408.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     }
-  ]
+  ],
+  "info":{
+    "format":2.0,
+    "name":"Double Silo",
+    "rounds":5.0
+  }
 }

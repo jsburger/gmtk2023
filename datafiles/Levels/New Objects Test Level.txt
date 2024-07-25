@@ -319,7 +319,7 @@
   ],
   "info":{
     "name":"New Objects Test Level",
-    "format":1.0,
+    "format":2.0,
     "rounds":5.0
   }
 }

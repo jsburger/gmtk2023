@@ -3,132 +3,138 @@
     {
       "x":-400.0,
       "y":-688.0,
-      "object_index":"obj_portal"
+      "data":{
+        "portal_index":0.0
+      },
+      "object_index":"Portal"
     },
     {
       "x":400.0,
       "y":-688.0,
-      "object_index":"obj_portal_1"
+      "data":{
+        "portal_index":1.0
+      },
+      "object_index":"Portal"
     },
     {
       "x":368.0,
       "y":-608.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":432.0,
       "y":-608.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":-368.0,
       "y":-608.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":-432.0,
       "y":-608.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":-200.0,
       "y":-592.0,
-      "serialized_info":{
+      "data":{
         "color":0.0
       },
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":200.0,
       "y":-592.0,
-      "serialized_info":{
+      "data":{
         "color":0.0
       },
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-168.0,
       "y":-576.0,
-      "serialized_info":{
+      "data":{
         "color":0.0
       },
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-232.0,
       "y":-576.0,
-      "serialized_info":{
+      "data":{
         "color":0.0
       },
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":232.0,
       "y":-576.0,
-      "serialized_info":{
+      "data":{
         "color":0.0
       },
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":168.0,
       "y":-576.0,
-      "serialized_info":{
+      "data":{
         "color":0.0
       },
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":128.0,
       "y":-568.0,
-      "serialized_info":{
+      "data":{
         "color":0.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-128.0,
       "y":-568.0,
-      "serialized_info":{
+      "data":{
         "color":0.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-272.0,
       "y":-568.0,
-      "serialized_info":{
+      "data":{
         "color":0.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":272.0,
       "y":-568.0,
-      "serialized_info":{
+      "data":{
         "color":0.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-224.0,
       "y":-536.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-176.0,
       "y":-536.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":176.0,
       "y":-536.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":224.0,
       "y":-536.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":400.0,
@@ -148,363 +154,369 @@
     {
       "x":272.0,
       "y":-504.0,
-      "serialized_info":{
+      "data":{
         "color":0.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-128.0,
       "y":-504.0,
-      "serialized_info":{
+      "data":{
         "color":0.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":128.0,
       "y":-504.0,
-      "serialized_info":{
+      "data":{
         "color":0.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-272.0,
       "y":-504.0,
-      "serialized_info":{
+      "data":{
         "color":0.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":200.0,
       "y":-480.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-200.0,
       "y":-480.0,
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":168.0,
       "y":-464.0,
-      "serialized_info":{
+      "data":{
         "color":0.0
       },
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":232.0,
       "y":-464.0,
-      "serialized_info":{
+      "data":{
         "color":0.0
       },
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-168.0,
       "y":-464.0,
-      "serialized_info":{
+      "data":{
         "color":0.0
       },
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-232.0,
       "y":-464.0,
-      "serialized_info":{
+      "data":{
         "color":0.0
       },
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":48.0,
       "y":-448.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":-48.0,
       "y":-448.0,
-      "object_index":"obj_block_metal"
+      "object_index":"BrickLargeMetal"
     },
     {
       "x":0.0,
       "y":-432.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":48.0,
       "y":-400.0,
-      "object_index":"obj_portal_1"
+      "data":{
+        "portal_index":1.0
+      },
+      "object_index":"Portal"
     },
     {
       "x":-48.0,
       "y":-400.0,
-      "object_index":"obj_portal"
+      "data":{
+        "portal_index":0.0
+      },
+      "object_index":"Portal"
     },
     {
       "x":0.0,
       "y":-368.0,
-      "object_index":"obj_block_metal_v"
+      "object_index":"BrickLargeMetalV"
     },
     {
       "x":128.0,
       "y":-360.0,
-      "serialized_info":{
+      "data":{
         "color":2.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-128.0,
       "y":-360.0,
-      "serialized_info":{
+      "data":{
         "color":2.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":256.0,
       "y":-312.0,
-      "serialized_info":{
+      "data":{
         "color":2.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-256.0,
       "y":-312.0,
-      "serialized_info":{
+      "data":{
         "color":2.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-16.0,
       "y":-296.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":16.0,
       "y":-296.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":40.0,
       "y":-288.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-40.0,
       "y":-288.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":64.0,
       "y":-280.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-64.0,
       "y":-280.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":0.0,
       "y":-272.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":48.0,
       "y":-264.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-48.0,
       "y":-264.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":96.0,
       "y":-256.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":-96.0,
       "y":-256.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":-144.0,
       "y":-248.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":144.0,
       "y":-248.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":48.0,
       "y":-248.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-48.0,
       "y":-248.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-168.0,
       "y":-240.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":168.0,
       "y":-240.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-192.0,
       "y":-232.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":128.0,
       "y":-232.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-128.0,
       "y":-232.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":192.0,
       "y":-232.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     },
     {
       "x":-152.0,
       "y":-224.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":152.0,
       "y":-224.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":208.0,
       "y":-208.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":-168.0,
       "y":-208.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":168.0,
       "y":-208.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block_v"
+      "object_index":"BrickNormalV"
     },
     {
       "x":-208.0,
       "y":-208.0,
-      "serialized_info":{
+      "data":{
         "color":1.0
       },
-      "object_index":"obj_block_large"
+      "object_index":"BrickLarge"
     },
     {
       "x":0.0,
       "y":-192.0,
-      "object_index":"obj_bumper"
+      "object_index":"Bumper"
     }
   ],
   "info":{
-    "format":1.0,
+    "format":2.0,
     "name":"Symbols3c",
     "rounds":3.0
   }

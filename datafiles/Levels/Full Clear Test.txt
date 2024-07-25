@@ -1,14 +1,14 @@
 {
-  "info":{
-    "name":"Full Clear Test",
-    "format":1.0,
-    "rounds":5.0
-  },
   "objects":[
     {
       "x":-96.0,
       "y":-296.0,
-      "object_index":"obj_block"
+      "object_index":"BrickNormal"
     }
-  ]
+  ],
+  "info":{
+    "name":"Full Clear Test",
+    "format":2.0,
+    "rounds":5.0
+  }
 }
