@@ -100,8 +100,8 @@ function level_update_format(level) {
 				"obj_bumper": "Bumper",
 				"obj_color_bomb": "ColorBomb",
 				"obj_color_bumper": "ColorBumper",
-				"obj_super_block": "BrickPipeBomb",
-				"obj_super_block_v" : "BrickPipeBombV"
+				"obj_super_block": "BrickPipebomb",
+				"obj_super_block_v" : "BrickPipebombV"
 			}
 			
 			if struct_exists(map, obj.object_index) {
@@ -135,7 +135,7 @@ function level_update_format(level) {
 				obj.data = {"portal_index" : index}
 			}
 			
-		}
+		})
 	}
 	
 	return format_changed;
@@ -193,7 +193,9 @@ function level_load(levelnumber){
 	
 	array_foreach(level.objects, function(entry) {
 		var pos = transform_instance_position(entry);
-		with instance_create_layer(pos.x, pos.y, "Instances", asset_get_index(entry.object_index)) {
+		var obj = asset_get_index(entry.object_index);
+		if obj == -1 trace("UNABLE TO FIND OBJECT FOR :" + entry.object_index)
+		else with instance_create_layer(pos.x, pos.y, "Instances", obj) {
 			//Old
 			if instance_is(self, obj_cable) obj_layer = 1
 			else obj_layer = 0
