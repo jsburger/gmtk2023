@@ -32,7 +32,7 @@ function levels_init() {
 	
 }
 
-#macro FORMAT_CURRENT 1
+#macro FORMAT_CURRENT 2
 
 function level_new_json() {
 	return {
@@ -74,8 +74,68 @@ function level_update_format(level) {
 	}
 	
 	// Format 1 -> 2
-	if level.info.format == 1{
-	
+	if (level.info.format == 1) {
+		format_changed = true
+		// Brick Refactor
+		level.info.format = 2;
+		
+		array_foreach(level.objects, function(obj) {
+			// Migrate from serialzied_info to data
+			if struct_exists(obj, "serialized_info") {
+				var s = obj.serialized_info;
+				struct_remove(obj, "serialized_info");
+				struct_set(obj, "data", s);
+			}
+			
+			
+			// Switch out objects for new ones
+			static map = {
+				"obj_block": "BrickNormal",
+				"obj_block_large": "BrickLarge",
+				"obj_block_large_v": "BrickLargeV",
+				"obj_block_metal": "BrickLargeMetal",
+				"obj_block_metal_v": "BrickLargeMetalV",
+				"obj_block_v": "BrickNormalV",
+				"obj_bomb": "Bomb",
+				"obj_bumper": "Bumper",
+				"obj_color_bomb": "ColorBomb",
+				"obj_color_bumper": "ColorBumper",
+				"obj_super_block": "BrickPipeBomb",
+				"obj_super_block_v" : "BrickPipeBombV"
+			}
+			
+			if struct_exists(map, obj.object_index) {
+				obj.object_index = struct_get(map, obj.object_index)
+			}
+			
+			// Special case: Launcher
+			if string_count("obj_launcher", obj.object_index) {
+				var last = string_replace(obj.object_index, "obj_launcher_", ""),
+					dir = 90;
+				switch last {
+					case "d" : dir = 270; break;
+					case "dl": dir = 225; break;
+					case "dr": dir = 315; break;
+					case "l" : dir = 180; break;
+					case "r" : dir =   0; break;
+					case "u" : dir =  90; break;
+					case "ul": dir = 135; break;
+					case "ur": dir =  45; break;
+				}
+				obj.object_index = "Launcher";
+				obj.data = {"launch_direction" : dir};
+			}
+			
+			// Special case: Portal
+			if string_count("obj_portal", obj.object_index) {
+				var index = string_digits(obj.object_index)
+				if string_length(index) > 0 index = real(index);
+				else index = 0;
+				obj.object_index = "Portal"
+				obj.data = {"portal_index" : index}
+			}
+			
+		}
 	}
 	
 	return format_changed;
