@@ -56,37 +56,25 @@ surface_set_target(surface)
 draw_clear_alpha(c_black,0);
 gpu_set_fog(true, c_white, 0, 0)
 
-with par_bricklike {
-	if visible {
-		x -= camera_x;
-		y -= camera_y;
-	
-		event_perform(ev_draw, ev_draw_normal)
-	
-		x += camera_x;
-		y += camera_y;
-	}
-}
+
+matrix_set(matrix_world, matrix_build(-camera_x, -camera_y, 0, 0, 0, 0, 1, 1, 1))
 
 with par_collectible {
-	x -= camera_x;
-	y -= camera_y;
-	
 	draw_self()
-	
-	x += camera_x;
-	y += camera_y;
 }
 
 with Ball {
-	x -= camera_x;
-	y -= camera_y;
-	
 	draw_self()
-	
-	x += camera_x;
-	y += camera_y;
 }
+
+with parBoardObject {
+	if visible {
+		event_perform(ev_draw, ev_draw_normal)
+	}
+}
+
+
+matrix_set(matrix_world, matrix_build_identity())
 
 //with Gibs {
 //	x -= camera_x;
