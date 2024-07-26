@@ -16,6 +16,6 @@ with add_action("Attack") {
 
 with add_action("Drain") {
 	set_intent(INTENT.DEBUFF)
-	color(6, MANA_NONE)
+	recolor(6, MANA_NONE)
 	desc = "Uncolor 6 Bricks"
 }

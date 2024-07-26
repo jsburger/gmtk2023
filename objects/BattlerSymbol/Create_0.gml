@@ -18,11 +18,7 @@ after_create = function() {
 }
 
 var count_blocks = function() {
-	var n = 0;
-	with obj_block if color == other.form {
-		n++
-	};
-	return n;
+	return bricks_with_color(form)
 }
 var get_form = function() {
 	return form;
@@ -32,7 +28,7 @@ with add_action("SYMBOL SLAM!!!") {
 	set_intent(INTENT.ATTACK, damage)
 	hit(damage)
 	var _form = accept_provider(new FunctionProvider(get_form));
-	color(5, _form)
+	recolor(5, _form)
 	wait(25)
 	desc = "Deal Damage equal to the \namount of Matching bricks.\nRecolor 5 bricks to \nMatching color."
 }

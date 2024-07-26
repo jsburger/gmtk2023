@@ -1,4 +1,9 @@
 {
+  "info":{
+    "name":"TestBirds",
+    "format":2.0,
+    "rounds":5.0
+  },
   "objects":[
     {
       "x":0.0,
@@ -899,10 +904,5 @@
       },
       "object_index":"BrickNormal"
     }
-  ],
-  "info":{
-    "name":"TestBirds",
-    "format":2.0,
-    "rounds":5.0
-  }
+  ]
 }

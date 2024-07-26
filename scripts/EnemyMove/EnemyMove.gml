@@ -59,6 +59,6 @@ function EnemyMove() : CombatInterface() constructor {
 	
 	/// Shorthand for applying freeze to the player
 	static freeze = function(value) {
-		return apply_status(TARGETS.PLAYER, "Freeze", value)
+		return apply_status(TARGETS.PLAYER, STATUS.FREEZE, value)
 	}
 }

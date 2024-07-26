@@ -58,7 +58,7 @@ function CombatInterface() constructor {
 		return act;
 	}
 	
-	static color = function(count, _color) {
+	static recolor = function(count, _color) {
 		var act = new RecolorItem(count, _color);
 		act.owner = owner;
 		consume(act);

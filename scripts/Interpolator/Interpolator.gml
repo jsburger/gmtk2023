@@ -48,7 +48,7 @@ function MeterInterpolator(owner, getter, auto = __Int_auto) : Interpolator(owne
 function BlockInterpolator(owner, getter, auto = __Int_auto) : MeterInterpolator(owner, getter, auto) constructor {
 	
 	static interp = function() {
-		if real_value < display_value {
+		if real_value > display_value {
 			display_value = real_value
 		}
 		else {

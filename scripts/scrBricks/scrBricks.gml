@@ -3,8 +3,8 @@
 /// Recolors X bricks to color, preferring uncolored and differently colored bricks.
 /// @returns {Real} Amount of bricks recolored
 function bricks_recolor(count, _color) {
-	var colorable = array_build_filtered(obj_block, function(brick) {
-			return var_defget(brick, "colorable", false)
+	var colorable = array_build_filtered(parBoardObject, function(brick) {
+			return brick.colorable;
 		}),
 		colorless = array_filter(colorable, function(brick) {
 			return brick.color == MANA_NONE;
@@ -66,10 +66,16 @@ function bricks_recolor(count, _color) {
 	
 }
 
+function bricks_with_color(color) {
+	var n = 0;
+	with parBoardObject if self.color == color n++;
+	return n
+}
+
 
 function brick_on_unfreeze(brick) {
 	with PlayerBattler {
-		with statuses.find("Freeze") knock()
+		with statuses.find(STATUS.FREEZE) knock()
 	}
 }
 

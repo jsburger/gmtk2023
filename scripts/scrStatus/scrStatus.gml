@@ -89,11 +89,12 @@ function StatusHolder(creator) constructor {
 }
 
 function status_register(name, statusFactory) {
-	static statuses = ds_map_create();
-	ds_map_add(statuses, name, statusFactory)
+	static _statuses = ds_map_create();
+	ds_map_add(_statuses, name, statusFactory)
+	return name;
 }
 function status_get_registry() {
-	return status_register.statuses;
+	return status_register._statuses;
 }
 function status_get_prototype(name) {
 	return status_get_registry()[? name]
@@ -105,7 +106,8 @@ function status_get(name, count) {
 	return s;
 }
 
-
+global.statuses = {}
+#macro STATUS global.statuses
 
 
 function Status(Strength) constructor {
@@ -183,7 +185,7 @@ function Status(Strength) constructor {
 	}
 }
 
-status_register("Strength", function(count) {return new StatusStrength(count)})
+STATUS.STRENGTH = status_register("Strength", function(count) {return new StatusStrength(count)})
 
 function StatusStrength(Strength) : Status(Strength) constructor {
 	sprite_index = sprIntentAttack;
@@ -201,7 +203,8 @@ function StatusTickable(Strength) : Status(Strength) constructor {
 	}
 }
 
-status_register("Freeze", function(count) {return new StatusFreeze(count)})
+STATUS.FREEZE = status_register("Freeze", function(count) {return new StatusFreeze(count)})
+
 
 function StatusFreeze(Strength) : StatusTickable(Strength) constructor {
 
@@ -211,11 +214,11 @@ function StatusFreeze(Strength) : StatusTickable(Strength) constructor {
 	
 	static tick = function() {
 		if strength > 0 {
-			var frozen = array_build_filtered(obj_block, function(inst) {return inst.is_frozen})
+			var frozen = array_build_filtered(parBoardObject, function(inst) {return inst.is_frozen})
 			if array_length(frozen) < strength {
 				// Gather freezable bricks
-				var bricks = array_build_filtered(obj_block, function(inst) {
-					return inst.freezable && !inst.is_frozen;
+				var bricks = array_build_filtered(parBoardObject, function(inst) {
+					return inst.can_freeze && !inst.is_frozen;
 				}),
 					dif = strength - array_length(frozen);
 				// Exit early if no bricks to freeze
@@ -239,7 +242,7 @@ function StatusFreeze(Strength) : StatusTickable(Strength) constructor {
 	
 	static on_remove = function() {
 		if strength > 0 {
-			with obj_block {
+			with parBoardObject {
 				if is_frozen {
 					set_frozen(false, true)
 				}
