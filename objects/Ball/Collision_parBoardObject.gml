@@ -2,6 +2,7 @@
 var collider = other;
 if image_blend = c_dkgray || !collider.can_collide exit;
 if !(collider.can_ball_collide(self)) exit;
+if is_ghost && array_contains(ghost_pierce_list, collider.id) exit;
 
 // Walk back until not colliding any more
 if (collider.can_walk_back_ball) {
@@ -41,6 +42,8 @@ if instance_is(collider, parBrick) {
 	}
 }
 
+if is_ghost && array_contains(ghost_pierce_list, collider.id) exit;
+
 // Reset variables
 nograv = false;
 extraspeed = 0;
@@ -52,7 +55,7 @@ var collision = {
 };
 
 var damaged = false;
-if damage > 0 {
+if damage > 0 && !is_ghost {
 	damaged = brick_hit(collider, damage, self);
 }
 
@@ -64,6 +67,16 @@ if damaged {
 		pierce -= 1;
 	}
 }
+//Ghost piercing
+if bounce && is_ghost && collider.can_take_damage {
+	var contains = array_contains(ghost_pierce_list, collider.id);
+	if pierce > 0 && collider.hp <= damage && !contains {
+		array_push(ghost_pierce_list, collider.id);
+		pierce -= 1;
+		bounce = false;
+	}
+}
+
 //Bounce off
 if bounce {
 	collider.ball_bounce(self);

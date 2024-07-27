@@ -9,7 +9,7 @@ spr_hit = sprBumperHit;
 
 ball_bounce = function(ball) {
 	var dir = point_direction(x, y, ball.x, ball.y);
-	with ball motion_set(dir, speed);
+	with ball motion_set(dir, abs(speed));
 	ball.extraspeed = 3;
 }
 

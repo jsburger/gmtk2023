@@ -30,3 +30,4 @@ canmove = true;
 
 is_coin = false;
 is_ghost = false; //Used for ball preview
+ghost_pierce_list = [];
