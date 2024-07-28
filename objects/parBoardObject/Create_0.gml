@@ -79,7 +79,7 @@
 		
 		#endregion
 	ghost_hits = 0; //Used to track how many times a ghost has collided with an instance.
-	
+	fullclear_ignore = false; // If an object can take damage, but shouldn't count against full clears.
 	#endregion
 	
 #endregion

@@ -5,6 +5,7 @@ event_inherited();
 
 hp = 50;
 can_take_damage = true;
+fullclear_ignore = true;
 
 battler = noone;
 
