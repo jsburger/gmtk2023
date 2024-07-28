@@ -1,8 +1,7 @@
 function board_can_fit(object, _x, _y) {
 	var sprite = object_get_mask(object);
 	if sprite == -1 sprite = object_get_sprite(object)
-	var pos = board_grid_position(_x, _y),
-		test_layer = object_is_ancestor(object, obj_cable) ? 1 : 0;
+	var pos = board_grid_position(_x, _y);
 	
 	var box_left   = pos.x + sprite_get_bbox_left(sprite),
 		box_top    = pos.y + sprite_get_bbox_top(sprite),
@@ -16,13 +15,13 @@ function board_can_fit(object, _x, _y) {
 	
 	if instance_exists(collision_rectangle(
 		box_left, box_top, box_right, box_bottom,
-		par_bricklike, true, false
+		parBoardObject, true, false
 	)) {
 		var list = ds_list_create(),
-			count = collision_rectangle_list(box_left, box_top, box_right, box_bottom, par_bricklike, true, false, list, false),
+			count = collision_rectangle_list(box_left, box_top, box_right, box_bottom, parBoardObject, true, false, list, false),
 			found = false;
 		for (var i = 0; i < count; i++) {
-			if list[| i].obj_layer == test_layer {
+			if true {
 				found = true;
 				break
 			}
