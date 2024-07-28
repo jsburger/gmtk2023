@@ -4,6 +4,8 @@
 event_inherited();
 shuffle;
 
+stops_preview = false;
+
 spr_idle = sprBumper;
 spr_hit = sprBumperHit;
 

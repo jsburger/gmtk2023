@@ -3,6 +3,8 @@
 // Inherit the parent event
 event_inherited();
 
+stops_preview = false;
+
 launch_direction = 90;
 spr_idle = sprLauncherIdle;
 spr_launch = sprLauncherFire;

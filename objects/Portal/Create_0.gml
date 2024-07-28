@@ -24,6 +24,8 @@ can_ball_collide = function(ball) {
 }
 
 can_walk_back_ball = false;
+stops_preview = false;
+
 last_target = noone;
 ball_bounce = function(ball) {
 	var target = noone;

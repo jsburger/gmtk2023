@@ -20,7 +20,10 @@ function draw_dice_preview(_x, _y, gunangle) {
 		var tries = 0 + is_ball,
 			xLast = x,
 			yLast = y,
-			maxTries = is_ball ? 50 : 3000;
+			maxTries = is_ball ? 30 : 3000;
+			
+		var segments = 2;
+		
 		while (tries <= maxTries) {
 			tries += 1
 			if tries != 1 {
@@ -67,6 +70,7 @@ function draw_dice_preview(_x, _y, gunangle) {
 				//yLast = y
 			}
 			
+			
 			//Collisions
 			if place_meeting(x, y, parBoardObject) {
 				var list = ds_list_create(),
@@ -75,16 +79,25 @@ function draw_dice_preview(_x, _y, gunangle) {
 					var brick = list[| i];
 					if instance_exists(brick) && place_meeting(x, y, brick) {
 						
+						var lastx = x,
+							lasty = y,
+							lastPierce = pierce;
+							
 						with brick with other 
 							event_perform(ev_collision, parBoardObject)
 							
 						if has_bounced {
 							if array_length(points) mod 2 == 1 {
-								array_push(points, {"x": x, "y": y})
+								if instance_is(brick, Portal) array_push(points, {x: lastx, y: lasty})
+								else array_push(points, {x, y})
 							}
-							array_push(points, {"x": x, "y": y})
+							array_push(points, {x, y})
 							xLast = x;
 							yLast = y;
+							if brick.stops_preview && (ball_filter(self, brick) || lastPierce <= 0) {
+								//tries = max(maxTries - 30, tries)
+								segments -= 1;
+							}
 						}
 					}
 				}
@@ -95,46 +108,8 @@ function draw_dice_preview(_x, _y, gunangle) {
 				//	with other event_perform(ev_collision, parBoardObject)
 				//}
 			}
-			//var list = ds_list_create()
-			//var bricks = instance_place_list(x, y, par_bricklike, list, false);
-			//var shouldBreak = false;
-			//for (var i = 0; i < bricks; i++) {
-			//	var brick = list[| i];
-			//	if instance_exists(brick) && brick.can_collide {
-			//		if instance_is(brick, obj_portal) {
-			//			var tpX = x, tpY = y;
-			//			if brick.teleport(self) {
-			//				if array_length(points) mod 2 == 1 {
-			//					array_push(points, {"x": tpX, "y": tpY})
-			//				}
-			//				array_push(points, {"x": x, "y": y})
-			//				xLast = x
-			//				yLast = y
-			//			}
-			//		}
-			//		else if instance_is(brick, obj_launcher) {
-			//			if brick != launcher {
-			//				nograv = true
-			//				launcher = brick
-			//				if array_length(points) mod 2 == 1 {
-			//					array_push(points, {"x": x, "y": y})
-			//				}
-			//				array_push(points, {"x": brick.x, "y": brick.y})
-			//				motion_set(brick.direction, maxspeed)
-			//				x = brick.x
-			//				y = brick.y
-			//				xLast = x
-			//				yLast = y
-			//			}
-			//		}
-			//		else {
-			//			shouldBreak = true
-			//			break;
-			//		}
-			//	}
-			//}
-			//ds_list_destroy(list)
-			//if shouldBreak break;
+			if segments <= 0 break
+			
 			//End Step
 			if stay_inside_board() {
 				break;
