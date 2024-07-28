@@ -1,7 +1,7 @@
 
 // Dont make a million of these, I still need to add a prototype system. Like the technical kind of prototype.
 register_ability("PlaceBomb", function() {
-	with new AbilityPlacer(obj_bomb) {
+	with new AbilityPlacer(Bomb) {
 		name = "Bomb Placer"
 		desc = "Place a Bomb"
 		sprite_index = sprBomb
@@ -11,7 +11,7 @@ register_ability("PlaceBomb", function() {
 })
 
 register_ability("PlaceBlock", function() {
-	with new AbilityPlacer(obj_block) {
+	with new AbilityPlacer(BrickNormal) {
 		name = "Block Placer"
 		desc = "Place a Block"
 		sprite_index = sprBrick
