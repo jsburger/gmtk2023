@@ -3,17 +3,17 @@
 // Inherit the parent event
 event_inherited();
 
-colorable = false;
-mana_amount = 0;
-is_destructible = false;
-drop_chance = 0;
-drop_amount = 0;
-my_health = 50;
+hp = 50;
+can_take_damage = true;
 
 battler = noone;
 
-on_ball = function(ball) {
+on_hurt = function(damage, source) {
 	if instance_exists(battler) {
-		battler_hurt(battler, ball.damage, ball, false)
+		battler_hurt(battler, damage, source, false)
 	}
+	hp += damage
 }
+
+ball_bounce = method(self, bounce_rectangular);
+on_ball_impact = method(self, impact_normal);

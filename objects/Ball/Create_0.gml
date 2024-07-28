@@ -27,7 +27,7 @@ launcher = noone;
 
 canmove = true;
 
+rotation = 0; //Visual only image_angle
 
 is_coin = false;
 is_ghost = false; //Used for ball preview
-ghost_pierce_list = [];

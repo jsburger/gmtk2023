@@ -437,6 +437,7 @@
     {"id":{"name":"AbilityDefend","path":"scripts/AbilityDefend/AbilityDefend.yy",},},
     {"id":{"name":"AbilityPlacer","path":"scripts/AbilityPlacer/AbilityPlacer.yy",},},
     {"id":{"name":"add_move","path":"scripts/add_move/add_move.yy",},},
+    {"id":{"name":"ball_filter","path":"scripts/ball_filter/ball_filter.yy",},},
     {"id":{"name":"battler_died","path":"scripts/battler_died/battler_died.yy",},},
     {"id":{"name":"board_can_fit","path":"scripts/board_can_fit/board_can_fit.yy",},},
     {"id":{"name":"bounce_rectangular","path":"scripts/bounce_rectangular/bounce_rectangular.yy",},},

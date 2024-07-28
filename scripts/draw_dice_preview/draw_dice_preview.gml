@@ -3,17 +3,25 @@
 
 function draw_dice_preview(_x, _y, gunangle) {
 	draw_set_alpha(.8)
+	with parBoardObject ghost_hits = 0;
 	with instance_create_layer(_x, _y, layer, Ball) {
 		is_ghost = true;
 		
-		motion_set(gunangle, 18)
+		var is_ball = instance_is(other, Ball);
+		if is_ball {
+			motion_set(other.direction, other.speed)
+			vars_apply(other)
+			is_ghost = true;
+		}
+		else motion_set(gunangle, 18)
 		
 		var points = [{"x": x, "y":y}];
 		
-		var tries = 0,
+		var tries = 0 + is_ball,
 			xLast = x,
-			yLast = y;
-		while (tries <= 200) {
+			yLast = y,
+			maxTries = is_ball ? 50 : 3000;
+		while (tries <= maxTries) {
 			tries += 1
 			if tries != 1 {
 				event_perform(ev_step, ev_step_normal)
@@ -33,7 +41,7 @@ function draw_dice_preview(_x, _y, gunangle) {
 			    x += hspeed;
 			    y += vspeed;
 			}
-			//TODO: seed throw rng so this is consistent
+			// Shouldn't really matter.
 			if alarm[0] > 0 && false {
 				alarm[0] -= 1;
 				if alarm[0] == 0 {
@@ -66,8 +74,18 @@ function draw_dice_preview(_x, _y, gunangle) {
 				for (var i = 0; i < bricks; i++) {
 					var brick = list[| i];
 					if instance_exists(brick) && place_meeting(x, y, brick) {
+						
 						with brick with other 
 							event_perform(ev_collision, parBoardObject)
+							
+						if has_bounced {
+							if array_length(points) mod 2 == 1 {
+								array_push(points, {"x": x, "y": y})
+							}
+							array_push(points, {"x": x, "y": y})
+							xLast = x;
+							yLast = y;
+						}
 					}
 				}
 				ds_list_destroy(list)

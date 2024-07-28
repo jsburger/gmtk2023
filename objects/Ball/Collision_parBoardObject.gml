@@ -1,8 +1,8 @@
 /// @description 
+has_bounced = false;
 var collider = other;
 if image_blend = c_dkgray || !collider.can_collide exit;
-if !(collider.can_ball_collide(self)) exit;
-if is_ghost && array_contains(ghost_pierce_list, collider.id) exit;
+if !ball_filter(self, collider) exit;
 
 // Walk back until not colliding any more
 if (collider.can_walk_back_ball) {
@@ -29,20 +29,18 @@ if instance_is(collider, parBrick) {
 	if (horizontal && vertical) {
 		//Horizontal check;
 		var side_inst = instance_position(x, top ? collider.bbox_top - 1 : collider.bbox_bottom + 1, parBrick);
-		if instance_exists(side_inst) && side_inst.can_collide {
+		if instance_exists(side_inst) && side_inst.can_collide && ball_filter(self, side_inst) {
 			collider = side_inst
 		}
 		else {
 			//Vertical Check;
 			var vert_inst = instance_position(left ? collider.bbox_left - 1 : collider.bbox_right + 1, y, parBrick);
-			if instance_exists(vert_inst) && vert_inst.can_collide {
+			if instance_exists(vert_inst) && vert_inst.can_collide && ball_filter(self, vert_inst) {
 				collider = vert_inst
 			}
 		}
 	}
 }
-
-if is_ghost && array_contains(ghost_pierce_list, collider.id) exit;
 
 // Reset variables
 nograv = false;
@@ -68,14 +66,16 @@ if damaged {
 	}
 }
 //Ghost piercing
+if is_ghost collider.ghost_hits += 1;
+
 if bounce && is_ghost && collider.can_take_damage {
-	var contains = array_contains(ghost_pierce_list, collider.id);
-	if pierce > 0 && collider.hp <= damage && !contains {
-		array_push(ghost_pierce_list, collider.id);
+	if pierce > 0 && (((collider.hp / damage) + collider.is_frozen) <= collider.ghost_hits) {
+		//array_push(ghost_pierce_list, collider.id);
 		pierce -= 1;
 		bounce = false;
 	}
 }
+
 
 //Bounce off
 if bounce {
@@ -85,3 +85,4 @@ if bounce {
 if !is_ghost collider.on_ball_impact(self, collision.x, collision.y)
 
 on_dice_bounce(self);
+has_bounced = true;

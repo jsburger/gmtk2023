@@ -5,7 +5,7 @@ function bounce_rectangular(ball) {
 	with ball {
 		motion_add(dir, vector_get_length_on_axis(speed, direction, dir + 180) * 2)
 		//JANK
-		if (vspeed < 0 && speed > 2) vspeed = min(vspeed, -4);
+		if keyboard_check(ord("Q")) if (vspeed < 0 && speed > 2) vspeed = min(vspeed, -4);
 	}
 	
 }

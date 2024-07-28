@@ -13,8 +13,8 @@
     "path":"folders/Objects/Combat.yy",
   },
   "parentObjectId":{
-    "name":"obj_block",
-    "path":"objects/obj_block/obj_block.yy",
+    "name":"parBoardObject",
+    "path":"objects/parBoardObject/parBoardObject.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

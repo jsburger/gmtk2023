@@ -78,8 +78,7 @@
 			on_hurt = function(damage) {};
 		
 		#endregion
-
-		
+	ghost_hits = 0; //Used to track how many times a ghost has collided with an instance.
 	
 	#endregion
 	

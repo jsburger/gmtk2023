@@ -1,8 +1,8 @@
 {
   "info":{
+    "format":2.0,
     "rounds":5.0,
-    "name":"TestBirds",
-    "format":2.0
+    "name":"TestBirds"
   },
   "objects":[
     {
