@@ -3,6 +3,7 @@
 // Inherit the parent event
 event_inherited();
 
+scr_screenshake(10, 2, 0.2);
 sound_play(sndExplosion);
 
 var list = ds_list_create(),

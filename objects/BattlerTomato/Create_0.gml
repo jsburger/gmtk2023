@@ -12,16 +12,16 @@ with add_action("Bite") {
 	accept_provider(damage)
 	set_intent(INTENT.ATTACK, damage)
 	hit(damage)
-	recolor(10, MANA.RED)
+	recolor(12, MANA.RED)
 
-	desc = new Formatter("Deal {0} Damage.\nRecolor 10 Bricks Red.", range);
+	desc = new Formatter("Deal {0} Damage.\nRecolor 12 Bricks Red.", range);
 }
 
 with add_action("Splat") {
 	set_intent(INTENT.BLOCK, 10)
 	block(10)
-	recolor(10, MANA.RED)
-	desc = "Add 10 Shield.\nRecolor 10 Bricks Red."
+	recolor(12, MANA.RED)
+	desc = "Add 10 Shield.\nRecolor 12 Bricks Red."
 }
 
 
