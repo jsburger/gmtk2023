@@ -117,3 +117,9 @@ encounter_add(
 		.with_boards("TestDolphin2a")
 		.with_enemies(BattlerDolphin, BattlerDolphin)	
 )
+
+encounter_add(
+	new Encounter("One Singer, One Tomato")
+		.with_boards("TestCover1")
+		.with_enemies(BattlerSinger, BattlerTomato)
+)

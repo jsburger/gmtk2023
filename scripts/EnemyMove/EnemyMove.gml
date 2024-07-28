@@ -61,4 +61,9 @@ function EnemyMove() : CombatInterface() constructor {
 	static freeze = function(value) {
 		return apply_status(TARGETS.PLAYER, STATUS.FREEZE, value)
 	}
+	
+	/// Shorthand for applying strength to self
+	static buff_strength = function(value) {
+		return apply_status(TARGETS.SELF, STATUS.STRENGTH, value)
+	}
 }
