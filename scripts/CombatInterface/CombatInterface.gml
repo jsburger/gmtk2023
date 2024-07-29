@@ -58,6 +58,7 @@ function CombatInterface() constructor {
 		return act;
 	}
 	
+	/// @func recolor
 	static recolor = function(count, _color) {
 		var act = new RecolorItem(count, _color);
 		act.owner = owner;

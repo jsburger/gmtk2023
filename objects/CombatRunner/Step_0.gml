@@ -17,8 +17,17 @@ while !is_busy() && !is_player_turn && !waitForPlayer {
 		if phase > PHASES.END {
 			phase = PHASES.BEGIN
 			waitForPlayer = true
+			run_round_end = true;
 			break
 		}
+	}
+}
+
+// Run board object scripts after enemy attacks are completely resolved
+if run_round_end && !is_busy() {
+	run_round_end = false;
+	with parBoardObject if on_round_end != undefined {
+		on_round_end()
 	}
 }
 

@@ -17,6 +17,8 @@ is_player_turn = true;
 phase = PHASES.BEGIN
 phaseProgress = 0
 waitForPlayer = false
+run_round_end = false;
+
 
 player = noone;
 enemies = [];
@@ -147,6 +149,8 @@ add_enemy_instance = function(instance) {
 	instance.bg_color = colors[instance.enemy_position]
 	
 	instance.after_create()
+	
+	obj_board.accept_objects_from(instance)
 	
 	return instance
 }

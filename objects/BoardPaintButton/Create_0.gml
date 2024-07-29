@@ -1,6 +1,6 @@
 /// @description 
 
-for (var i = 0; i <= MANA.MAX; i++) {
+for (var i = 0; i <= COLORS.GREEN; i++) {
 	with instance_create_depth(bbox_left + (sprite_width + 1) * (i / MANA.MAX), bbox_bottom + 1, depth, BoardPaintSubButton) {
 		color = i - 1
 		image_index = i

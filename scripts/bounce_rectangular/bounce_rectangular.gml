@@ -15,3 +15,12 @@ function impact_normal(ball, collision_x, collision_y) {
 	
 	instance_create_layer(collision_x, collision_y, "FX", obj_hit_small);
 }
+
+function bounce_circular(ball) {
+	var	dir = point_direction(x, y, ball.x, ball.y);
+	
+	with ball {
+		motion_add(dir, vector_get_length_on_axis(speed, direction, dir + 180) * 2)
+	}
+	
+}

@@ -25,10 +25,16 @@ if(editor){
 		draw_width = string_width(_str),
 		draw_height = string_height(_str);
 	
-	draw_rectangle_color(draw_x, draw_y, draw_x + draw_width + 12, draw_y + draw_height + string_height(_str2) + 8, c_black, c_black, c_black, c_black, false)
-	draw_text(draw_x + 8, draw_y + 8, _str);
-	 
-	draw_text_color(draw_x + 8, draw_y + draw_height + 8, _str2, _c, _c, _c, _c, 1);
+	var show = keyboard_check(vk_tab)
+	if show {
+		draw_rectangle_color(draw_x, draw_y, draw_x + draw_width + 12, draw_y + draw_height + string_height(_str2) + 8, c_black, c_black, c_black, c_black, false)
+		draw_text(draw_x + 8, draw_y + 8, _str);
+		
+		draw_text_color(draw_x + 8, draw_y + draw_height + 8, _str2, _c, _c, _c, _c, 1);
+	}
+	else {
+		draw_textbox(draw_x + 8, draw_y + 8, _str2)
+	}
 	
 	_c = canplace ? c_lime : c_red;
 	if(canplace){

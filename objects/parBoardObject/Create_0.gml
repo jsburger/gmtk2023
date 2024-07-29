@@ -31,25 +31,12 @@
 	set_color = function(col) {
 		if !is_valid_color(col) exit
 		color = col
-		switch col {
-			case MANA_NONE:
-				image_blend = c_white
-				break
-			case MANA.RED:
-				image_blend = #d12222
-				break
-			case MANA.BLUE:
-				image_blend = #4566d1
-				break
-			case MANA.YELLOW:
-				image_blend = #efc555
-				break
-		}
+		image_blend = mana_get_color(col)
 	}
 	
 	serializer.add_layer("color",
 		function() {
-			if is_mana(color) return color;
+			if is_valid_color(color) && color > MANA_NONE return color;
 		},
 		function(data) {set_color(data)}
 	)
@@ -119,4 +106,12 @@
 		can_poison = false;
 	#endregion
 	
+#endregion
+
+#region Timeline Hints
+	timeline_entry = undefined;
+#endregion
+
+#region Round integration
+	on_round_end = undefined;
 #endregion

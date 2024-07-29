@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"add_move",
+  "%Name":"add_action",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"add_move",
+  "name":"add_action",
   "parent":{
     "name":"Enemy Moves",
     "path":"folders/Scripts/New Shit/Combat/Enemy Moves.yy",

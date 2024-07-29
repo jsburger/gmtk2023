@@ -52,11 +52,29 @@ if(editor){
 
 		if mouse_wheel_up(){
 			entity_num --;
-			if entity_num < 0 entity_num = array_length(entity_list) - 1;	
+			if entity_num < 0 entity_num = array_length(entity_list) - 1;
+			entity_subnum = 0;
 		}
 		if mouse_wheel_down(){
 			entity_num ++;
-			if entity_num >= array_length(entity_list) entity_num = 0;	
+			if entity_num >= array_length(entity_list) entity_num = 0;
+			entity_subnum = 0;
+		}
+		
+		
+		//Block pick
+		if mouse_check_button_pressed(mb_middle) {
+			var inst = instance_position(mouse_x, mouse_y, parBoardObject);
+			if instance_exists(inst) {
+				for (var i = 0; i < array_length(entity_list); i++) {
+					for (var o = 0; o < array_length(entity_list[i]); o++) {
+						if entity_list[i][o] == inst.object_index {
+							entity_num = i;
+							entity_subnum = o;
+						}
+					}
+				}
+			}
 		}
 	
 		if entity_subnum < 0 entity_subnum = (array_length(entity_list[entity_num]) - 1);

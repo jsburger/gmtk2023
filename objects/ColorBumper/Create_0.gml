@@ -39,9 +39,9 @@ on_ball_impact = function(ball, collision_x, collision_y) {
 
 	if !ball.is_coin {
 		if bounces > 0 {
-			bounces -= 1;
-			update_color();
-			if is_mana(color) {
+			if is_valid_mana(color) {
+				bounces -= 1;
+				update_color();
 				mana_give_at(x, y, color, mana_amount);
 			}
 			sprite_change(spr_hit)
