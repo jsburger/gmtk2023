@@ -1,7 +1,7 @@
 {
   "$GMSprite":"",
   "%Name":"sprBrickLargeMetalVertical",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":63,
   "bbox_left":0,
   "bbox_right":31,
@@ -12,20 +12,20 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"23bf72f6-e853-4213-8d7b-f2928f8ace1a","name":"23bf72f6-e853-4213-8d7b-f2928f8ace1a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"46900463-feb7-400e-a54a-32ba8e553727","name":"46900463-feb7-400e-a54a-32ba8e553727","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"47a32667-fb2f-49d7-95d4-334843d9c9f1","name":"47a32667-fb2f-49d7-95d4-334843d9c9f1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"e6517558-cdec-4709-9071-1a3d6ebb9f94","name":"e6517558-cdec-4709-9071-1a3d6ebb9f94","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"bc7590f7-f7d2-409d-b365-7e68dc75f0b0","name":"bc7590f7-f7d2-409d-b365-7e68dc75f0b0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"f0d0fdc6-c353-4fa2-81fc-6650e1e56ff1","name":"f0d0fdc6-c353-4fa2-81fc-6650e1e56ff1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":64,
+  "height":68,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"33673b50-6ba9-4008-b0a0-537d4202d846","blendMode":0,"displayName":"default","isLocked":false,"name":"33673b50-6ba9-4008-b0a0-537d4202d846","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"77861953-99c6-4276-b65d-87765ef513db","blendMode":0,"displayName":"default","isLocked":false,"name":"77861953-99c6-4276-b65d-87765ef513db","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sprBrickLargeMetalVertical",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Large Metal Brick",
     "path":"folders/Sprites/Level Objects/Bricks/Large Metal Brick.yy",
@@ -52,7 +52,7 @@
     "eventStubScript":null,
     "eventToFunction":{},
     "length":3.0,
-    "lockOrigin":false,
+    "lockOrigin":true,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
       "Keyframes":[],
@@ -71,14 +71,14 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"23bf72f6-e853-4213-8d7b-f2928f8ace1a","path":"sprites/sprBrickLargeMetalVertical/sprBrickLargeMetalVertical.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"5b4152b1-79b2-4c30-8f4e-a646d1a6dcbf","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e6517558-cdec-4709-9071-1a3d6ebb9f94","path":"sprites/sprBrickLargeMetalVertical/sprBrickLargeMetalVertical.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"b51b1f72-3f5a-4ed4-b4ab-3da56e774dbc","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"46900463-feb7-400e-a54a-32ba8e553727","path":"sprites/sprBrickLargeMetalVertical/sprBrickLargeMetalVertical.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"a3b6159e-d929-4db7-9d78-71c9731dbf6c","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"bc7590f7-f7d2-409d-b365-7e68dc75f0b0","path":"sprites/sprBrickLargeMetalVertical/sprBrickLargeMetalVertical.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"07474de6-9f69-4a8e-be5f-bed2a97c8b62","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"47a32667-fb2f-49d7-95d4-334843d9c9f1","path":"sprites/sprBrickLargeMetalVertical/sprBrickLargeMetalVertical.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"870a8736-27b2-4f0e-81f0-975bbd5f4ff5","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f0d0fdc6-c353-4fa2-81fc-6650e1e56ff1","path":"sprites/sprBrickLargeMetalVertical/sprBrickLargeMetalVertical.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"812eb5f2-f3fa-40d5-b230-81e093fcba74","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
