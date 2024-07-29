@@ -5,6 +5,7 @@ event_inherited();
 set_hp(40)
 
 movemode = moveOrder.RANDOM_STACK
+spr_icon = sprSentryIcon
 
 with add_action("Attack") {
 	var damage = 10;

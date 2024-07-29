@@ -4,7 +4,7 @@
 event_inherited();
 
 set_hp(25)
-spr_icon = sprSlasher
+spr_icon = sprSlasherIcon
 movemode = moveOrder.LINEAR
 move_max = 20;
 arm_pos = {x: -24, y: 32}

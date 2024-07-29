@@ -5,6 +5,7 @@ event_inherited();
 set_hp(50)
 
 movemode = moveOrder.LINEAR
+spr_icon = sprSingerIcon
 
 with add_action("Scream") {
 	var damage = new DamageProvider(1, other, TARGETS.PLAYER)

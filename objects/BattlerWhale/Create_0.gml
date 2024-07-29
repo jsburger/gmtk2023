@@ -6,6 +6,7 @@ set_hp(120)
 
 movemode = moveOrder.RANDOM
 move_max = 3;
+spr_icon = sprWhaleIcon
 
 with add_action("All In!!") {
 	var damage = as_damage(new FunctionProvider(mana_get_sum));

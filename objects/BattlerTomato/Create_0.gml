@@ -5,6 +5,7 @@ event_inherited();
 set_hp(50)
 
 movemode = moveOrder.LINEAR
+spr_icon = sprTomatoIcon
 
 with add_action("Bite") {
 	var range = new RangeProvider(6, 12);
