@@ -123,3 +123,9 @@ encounter_add(
 		.with_boards("TestCover1")
 		.with_enemies(BattlerSinger, BattlerTomato)
 )
+
+encounter_add(
+	new Encounter("Scary Monster...")
+		.with_boards("TestDemon1")
+		.with_enemies(BattlerDemon)
+)

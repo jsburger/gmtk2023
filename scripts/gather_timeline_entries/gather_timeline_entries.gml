@@ -13,4 +13,12 @@ function gather_timeline_entries(input) {
 			}
 		}
 	}
+	with Timeline {
+		if ds_map_size(object_hints) > 0 {
+			// This function modifies the array directly, but is marked pure for some stupid reason
+			// Oddly enough, there is no "unused variable" warning.
+			var a = ds_map_values_to_array(object_hints, [])
+			array_transfer(input, a)
+		}
+	}
 }

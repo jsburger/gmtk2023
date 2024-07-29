@@ -8,6 +8,12 @@ enum MANA {
 
 #macro MANA_NONE -1
 
+enum COLORS {
+	RED, BLUE, YELLOW,
+	PURPLE, GREEN, ORANGE,
+	MAX
+}
+
 global.mana = array_create(MANA.MAX)
 global.mana_gained = array_create(MANA.MAX)
 
@@ -15,16 +21,44 @@ global.mana_gained = array_create(MANA.MAX)
 on_encounter_start(mana_reset)
 
 function mana_add(type, amount) {
-	global.mana[type] += amount
-	global.mana_gained[type] += amount
-	with ManaDrawer blink[type] = 1
+	with EnemyBattler if variable_instance_exists(self, "on_mana_gained") {
+		on_mana_gained(type, amount)
+	}
+	if is_extra_color(type) {		
+		var decompose = color_decompose(type);
+		for (var i = 0; i <= 1; i++) {
+			mana_add(decompose[i], amount)
+		}
+	}
+	else {
+		global.mana[type] += amount
+		global.mana_gained[type] += amount
+		with ManaDrawer blink[type] = 1
+	}
 }
 
+/// If a color is mana, IE Red, Blue, Yellow
 function is_mana(color) {
 	return in_range_exc(color, MANA_NONE, MANA.MAX);
 }
+/// If a color can be CONVERTED to mana; IE Red, Orange, Blue, Purple
+function is_valid_mana(color) {
+	return in_range_exc(color, MANA_NONE, COLORS.MAX);
+}
 function is_valid_color(color) {
-	return color >= MANA_NONE && color < MANA.MAX;
+	return color >= MANA_NONE && color < COLORS.MAX;
+}
+function is_extra_color(color) {
+	return color >= COLORS.PURPLE && color < COLORS.MAX;
+}
+
+function color_decompose(color) {
+	switch color {
+		case COLORS.PURPLE: return [COLORS.RED, COLORS.BLUE];
+		case COLORS.GREEN: return [COLORS.YELLOW, COLORS.BLUE];
+		case COLORS.ORANGE: return [COLORS.RED, COLORS.YELLOW];
+		default: return color;
+	}
 }
 
 function mana_get_color(mana){
@@ -35,6 +69,12 @@ function mana_get_color(mana){
 			return #4566d1
 		case MANA.YELLOW:
 			return #efc555
+		case COLORS.PURPLE:
+			return #7633a6
+		case COLORS.GREEN:
+			return #22b14c
+		case COLORS.ORANGE:
+			return #db6b32
 		default:
 			return c_white	
 	}
@@ -87,6 +127,14 @@ function mana_effect_create(x, y, color, count) {
 }
 
 function mana_give_at(x, y, color, count) {
-	mana_add(color, count);
-	mana_effect_create(x, y, color, count);
+	if is_extra_color(color) {
+		var decompose = color_decompose(color);
+		for (var i = 0; i <= 1; i++) {
+			mana_give_at(x, y, decompose[i], count)
+		}
+	}
+	else {
+		mana_add(color, count);
+		mana_effect_create(x, y, color, count);
+	}
 }

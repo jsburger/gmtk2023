@@ -19,6 +19,7 @@ function EnemyMove() : CombatInterface() constructor {
 		return copy;
 	}
 	
+	/// @func set_intent
 	static set_intent = function(_intent, _value = undefined) {
 		intent = _intent;
 		intent_value = _value;
@@ -31,6 +32,7 @@ function EnemyMove() : CombatInterface() constructor {
 		}
 	}
 	
+	/// @func accept_provider
 	static accept_provider = function(provider) {
 		array_push(providers, provider)
 		return provider;
@@ -47,11 +49,13 @@ function EnemyMove() : CombatInterface() constructor {
 		})
 	}
 	
+	/// @func hit
 	/// Shorthand for targeting the player with an attack
 	static hit = function(damage) {
 		return attack(TARGETS.PLAYER, damage)
 	}
 	
+	/// @func as_damage
 	/// Shorthand for getting a damage provider from input
 	static as_damage = function(value, target = TARGETS.PLAYER) {
 		return accept_provider(new DamageProvider(value, owner, target))

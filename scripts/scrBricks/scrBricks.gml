@@ -1,8 +1,14 @@
+enum SORTING {
+	BEFORE = 1,
+	EQUAL = 0,
+	AFTER = -1
+}
+
 #macro __BRICK_RECOLOR_DELAY 3
 
 /// Recolors X bricks to color, preferring uncolored and differently colored bricks.
 /// @returns {Real} Amount of bricks recolored
-function bricks_recolor(count, _color) {
+function bricks_recolor(count, _color, sorter = undefined) {
 	var colorable = array_build_filtered(parBoardObject, function(brick) {
 			return brick.colorable;
 		}),
@@ -13,6 +19,7 @@ function bricks_recolor(count, _color) {
 	//Build array of bricks to color
 	var selected = [];
 	if array_length(colorless) <= count || (_color == MANA_NONE) {
+		// Take all colorless bricks available
 		if _color != MANA_NONE selected = colorless;
 		// Need more bricks, use differently colored ones
 		if array_length(selected) < count {
@@ -28,18 +35,32 @@ function bricks_recolor(count, _color) {
 			}
 			// Otherwise, take as many as needed
 			else {
-				var shuffled = array_shuffle(different_colors);
+				var source;
+				if sorter == undefined {
+					source = array_shuffle(different_colors);
+				}
+				else {
+					array_sort(different_colors, sorter)
+					source = different_colors
+				}
 				repeat dif {
-					array_push(selected, array_pop(different_colors))
+					array_push(selected, array_pop(source))
 				}
 			}
 		}
 	}
 	// More colorless bricks than count
 	else {
-		var shuffled = array_shuffle(colorless);
+		var source;
+		if sorter == undefined {
+			source = array_shuffle(colorless);
+		}
+		else {
+			source = colorless
+			array_sort(colorless, sorter)
+		}
 		repeat count {
-			array_push(selected, array_pop(shuffled))
+			array_push(selected, array_pop(source))
 		}
 	}
 	

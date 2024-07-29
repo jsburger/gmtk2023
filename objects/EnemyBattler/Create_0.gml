@@ -9,6 +9,7 @@ go_to = function(_x, _y) {
 	lerp_y = _y;
 }
 
+extra_objects = []; //Used by the Editor to get associated objects.
 
 //Combat stuff
 spr_icon = sprGayLittleSquirrelIcon
