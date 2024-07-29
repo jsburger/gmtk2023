@@ -18,6 +18,6 @@ with add_action("All In!!") {
 
 with add_action("Raise") {
 	set_intent(INTENT.DEBUFF)
-	freeze(5);
-	desc = "Apply 5 Freeze"
+	freeze(4);
+	desc = "Apply 4 Freeze"
 }

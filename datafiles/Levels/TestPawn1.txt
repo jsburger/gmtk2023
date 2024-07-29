@@ -1,5 +1,122 @@
 {
+  "info":{
+    "format":2.0,
+    "rounds":4.0,
+    "name":"TestPawn1"
+  },
   "objects":[
+    {
+      "x":416.0,
+      "y":-328.0,
+      "data":{
+        "color":2.0
+      },
+      "object_index":"BrickNormal"
+    },
+    {
+      "x":-416.0,
+      "y":-328.0,
+      "data":{
+        "color":2.0
+      },
+      "object_index":"BrickNormal"
+    },
+    {
+      "x":24.0,
+      "y":-464.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormalV"
+    },
+    {
+      "x":0.0,
+      "y":-440.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormal"
+    },
+    {
+      "x":-24.0,
+      "y":-464.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormalV"
+    },
+    {
+      "x":0.0,
+      "y":-488.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormal"
+    },
+    {
+      "x":120.0,
+      "y":-464.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormalV"
+    },
+    {
+      "x":104.0,
+      "y":-464.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormalV"
+    },
+    {
+      "x":-120.0,
+      "y":-464.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormalV"
+    },
+    {
+      "x":-104.0,
+      "y":-464.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormalV"
+    },
+    {
+      "x":112.0,
+      "y":-440.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormal"
+    },
+    {
+      "x":112.0,
+      "y":-488.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormal"
+    },
+    {
+      "x":-112.0,
+      "y":-488.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormal"
+    },
+    {
+      "x":-112.0,
+      "y":-440.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormal"
+    },
     {
       "x":240.0,
       "y":-480.0,
@@ -19,22 +136,6 @@
       "object_index":"BrickNormal"
     },
     {
-      "x":88.0,
-      "y":-464.0,
-      "data":{
-        "color":1.0
-      },
-      "object_index":"BrickNormalV"
-    },
-    {
-      "x":-88.0,
-      "y":-464.0,
-      "data":{
-        "color":1.0
-      },
-      "object_index":"BrickNormalV"
-    },
-    {
       "x":136.0,
       "y":-464.0,
       "data":{
@@ -44,6 +145,22 @@
     },
     {
       "x":-136.0,
+      "y":-464.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormalV"
+    },
+    {
+      "x":88.0,
+      "y":-464.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormalV"
+    },
+    {
+      "x":-88.0,
       "y":-464.0,
       "data":{
         "color":1.0
@@ -171,14 +288,6 @@
       "object_index":"BrickNormal"
     },
     {
-      "x":224.0,
-      "y":-384.0,
-      "data":{
-        "color":1.0
-      },
-      "object_index":"BrickLarge"
-    },
-    {
       "x":-224.0,
       "y":-384.0,
       "data":{
@@ -193,6 +302,22 @@
         "color":1.0
       },
       "object_index":"BrickLarge"
+    },
+    {
+      "x":224.0,
+      "y":-384.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickLarge"
+    },
+    {
+      "x":-64.0,
+      "y":-376.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickNormal"
     },
     {
       "x":-128.0,
@@ -259,31 +384,7 @@
       "object_index":"BrickNormal"
     },
     {
-      "x":-64.0,
-      "y":-376.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickNormal"
-    },
-    {
-      "x":128.0,
-      "y":-376.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickNormal"
-    },
-    {
-      "x":160.0,
-      "y":-376.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickNormal"
-    },
-    {
-      "x":288.0,
+      "x":352.0,
       "y":-376.0,
       "data":{
         "color":0.0
@@ -299,8 +400,32 @@
       "object_index":"BrickNormal"
     },
     {
-      "x":352.0,
+      "x":288.0,
       "y":-376.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickNormal"
+    },
+    {
+      "x":160.0,
+      "y":-376.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickNormal"
+    },
+    {
+      "x":128.0,
+      "y":-376.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickNormal"
+    },
+    {
+      "x":64.0,
+      "y":-296.0,
       "data":{
         "color":0.0
       },
@@ -371,14 +496,6 @@
       "object_index":"BrickNormal"
     },
     {
-      "x":64.0,
-      "y":-296.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickNormal"
-    },
-    {
       "x":224.0,
       "y":-296.0,
       "data":{
@@ -427,6 +544,14 @@
       "object_index":"BrickNormal"
     },
     {
+      "x":112.0,
+      "y":-288.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickLarge"
+    },
+    {
       "x":-112.0,
       "y":-288.0,
       "data":{
@@ -444,14 +569,6 @@
     },
     {
       "x":-336.0,
-      "y":-288.0,
-      "data":{
-        "color":1.0
-      },
-      "object_index":"BrickLarge"
-    },
-    {
-      "x":112.0,
       "y":-288.0,
       "data":{
         "color":1.0
@@ -578,10 +695,5 @@
       },
       "object_index":"BrickNormal"
     }
-  ],
-  "info":{
-    "format":2.0,
-    "name":"TestPawn1",
-    "rounds":5.0
-  }
+  ]
 }
