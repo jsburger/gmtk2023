@@ -24,7 +24,7 @@ var setup_trash = function(move) {
 	move.run(function() {
 		var m = board_column_max();
 		for (var i = 0; i < m; i++)
-			place_trash_bricks(i, undefined, 1)
+			place_trash_bricks(i, BrickTrash, 1)
 	})
 	move.wait(10)
 };
@@ -35,20 +35,24 @@ with add_action("BAR") {
 	var damage = as_damage(3);
 	hit(damage)
 	set_intent(INTENT.ATTACK, damage);
+	
+	wait(10)
 }
 
 with add_action("JACKPOT!") {
 	var damage = as_damage(new FunctionProvider(jackpot_damage));
 	hit(damage);
 	set_intent(INTENT.ATTACK, "??")
-	desc = "25% chance to deal 25 damage.\nDouble this chance for any upcoming JACKPOTS."
+	desc = "25% chance to deal 20 damage.\nDouble this chance for any upcoming JACKPOTS."
 	
 	run(increase_odds)
+	wait(10)
 }
 
 with add_action("RESPIN") {
-	var b = 10;
+	var b = 8;
 	block(b);
 	set_intent(INTENT.BLOCK, b)
 	desc = string("Gain {0} block", b);
+	wait(10)
 }

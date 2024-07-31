@@ -6,6 +6,22 @@
       "object_index":"BattlerBrick"
     },
     {
+      "x":408.0,
+      "y":-464.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickNormalV"
+    },
+    {
+      "x":424.0,
+      "y":-464.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickNormalV"
+    },
+    {
       "x":-424.0,
       "y":-464.0,
       "data":{
@@ -22,54 +38,6 @@
       "object_index":"BrickNormalV"
     },
     {
-      "x":408.0,
-      "y":-464.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickNormalV"
-    },
-    {
-      "x":72.0,
-      "y":-464.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickNormalV"
-    },
-    {
-      "x":424.0,
-      "y":-464.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickNormalV"
-    },
-    {
-      "x":-72.0,
-      "y":-464.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickNormalV"
-    },
-    {
-      "x":-240.0,
-      "y":-456.0,
-      "data":{
-        "color":2.0
-      },
-      "object_index":"BrickNormal"
-    },
-    {
-      "x":-96.0,
-      "y":-456.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickNormal"
-    },
-    {
       "x":240.0,
       "y":-456.0,
       "data":{
@@ -78,10 +46,10 @@
       "object_index":"BrickNormal"
     },
     {
-      "x":96.0,
+      "x":-240.0,
       "y":-456.0,
       "data":{
-        "color":0.0
+        "color":2.0
       },
       "object_index":"BrickNormal"
     },
@@ -166,6 +134,19 @@
       "object_index":"BrickNormal"
     },
     {
+      "x":0.0,
+      "y":-400.0,
+      "object_index":"BrickLargeMetal"
+    },
+    {
+      "x":64.0,
+      "y":-400.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickLarge"
+    },
+    {
       "x":408.0,
       "y":-400.0,
       "data":{
@@ -204,19 +185,6 @@
         "color":1.0
       },
       "object_index":"BrickNormalV"
-    },
-    {
-      "x":0.0,
-      "y":-400.0,
-      "object_index":"BrickLargeMetal"
-    },
-    {
-      "x":64.0,
-      "y":-400.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickLarge"
     },
     {
       "x":272.0,
@@ -299,18 +267,10 @@
       "object_index":"BrickNormal"
     },
     {
-      "x":296.0,
+      "x":168.0,
       "y":-320.0,
       "data":{
         "color":0.0
-      },
-      "object_index":"BrickNormalV"
-    },
-    {
-      "x":-296.0,
-      "y":-320.0,
-      "data":{
-        "color":1.0
       },
       "object_index":"BrickNormalV"
     },
@@ -323,7 +283,15 @@
       "object_index":"BrickNormalV"
     },
     {
-      "x":168.0,
+      "x":-296.0,
+      "y":-320.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormalV"
+    },
+    {
+      "x":296.0,
       "y":-320.0,
       "data":{
         "color":0.0
@@ -591,6 +559,6 @@
   "info":{
     "name":"TestBandit1",
     "format":2.0,
-    "rounds":5.0
+    "rounds":4.0
   }
 }
