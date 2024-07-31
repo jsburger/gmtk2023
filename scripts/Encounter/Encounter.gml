@@ -129,3 +129,9 @@ encounter_add(
 		.with_boards("TestDemon1")
 		.with_enemies(BattlerDemon)
 )
+
+encounter_add(
+	new Encounter("The One Armed Bandit")
+		.with_boards("TestToothpaste1")
+		.with_enemies(BattlerOneArmedBandit)
+)

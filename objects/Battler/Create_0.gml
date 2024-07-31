@@ -37,13 +37,22 @@ statuses = new StatusHolder(self);
 
 canact = true
 
+/// @ignore
+/// @param {Struct.DamageInfo} damage
+enemy_hurt = function(damage) {}
 hurt = function(damage) {
-	block -= damage
+	block -= damage;
+	var unblocked = 0;
 	if block < 0 {
 		hp += block
+		unblocked = -block;
 		block = 0
 	}
-	on_hurt(damage)
+	var info = new DamageInfo(damage, unblocked);
+	on_hurt(info)
+	if instance_is(self, EnemyBattler) {
+		enemy_hurt(info)
+	}
 	if hp <= 0 {
 		hp = 0
 		die()
@@ -51,7 +60,8 @@ hurt = function(damage) {
 }
 
 /// Use this for hooks rather than hurt
-on_hurt = function(damage) {
+/// @param {Struct.DamageInfo} info
+on_hurt = function(info) {
 	
 }
 
@@ -64,6 +74,7 @@ turn = function() {
 	
 }
 
+/// @func turn_end
 /// @ignore
 turn_end = function() {
 	statuses.on_turn_end()

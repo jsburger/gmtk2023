@@ -119,3 +119,54 @@ function brick_hit(brick, damage, source) {
 	}
 	return false;
 }
+
+function board_column_max() {
+	return ceil((board_right - board_left)/(2 * TILE_MIN)) - 2;
+}
+function board_column_random() {
+	return irandom(board_column_max())
+}
+
+function place_trash_bricks(column, object = BrickNormal, offset = 0) {
+	var _x = board_left + TILE_MIN + (2 * TILE_MIN * column) + offset * TILE_MIN,
+		_y = board_top + (2 * TILE_MIN);
+		
+	var collision = collision_rectangle(_x, _y, _x + (2 * TILE_MIN), board_bottom, parBoardObject, false, false);
+	if !instance_exists(collision) exit;
+	
+	var list = ds_list_create();
+	var found = false,
+		_xright = _x + (2 * TILE_MIN) - 2,
+		can_place = false;
+	while _y < board_bottom {
+		var count = collision_rectangle_list(_x, _y, _xright, _y + TILE_MIN - 1, parBoardObject, true, false, list, false);
+		found = false;
+		for (var i = 0; i < count; i++) {
+			var entry = list[| i];
+			if entry.can_collide {
+				found = true;
+				break;
+			}
+		}
+		if can_place == false {
+			if found {
+				found = false;
+			}
+			else {
+				can_place = true;
+			}
+		}
+		ds_list_clear(list);
+		if found break;
+		_y += TILE_MIN;
+	}
+	ds_list_destroy(list);
+	
+	var placement = board_placement_position(object, _x, _y - TILE_MIN);
+	if found && can_place {
+		instance_create_layer(_x, _y - TILE_MIN, "FX", effectDropTrail)
+		with instance_create_layer(placement.x, placement.y, "Instances", object) {
+			//alarm[0] = x/32
+		}
+	}
+}

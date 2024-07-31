@@ -1,18 +1,23 @@
 {
   "$GMObject":"",
-  "%Name":"BoardPaintSubButton",
+  "%Name":"effectDropTrail",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"BoardPaintSubButton",
+  "name":"effectDropTrail",
   "overriddenProperties":[],
   "parent":{
-    "name":"board",
-    "path":"folders/Objects/board.yy",
+    "name":"fx",
+    "path":"folders/Objects/fx.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_fx",
+    "path":"objects/obj_fx/obj_fx.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,14 +35,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sprBoardPaintSubButton",
-    "path":"sprites/sprBoardPaintSubButton/sprBoardPaintSubButton.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
-  "tags":[
-    "Clickable",
-    "EditorButton",
-  ],
-  "visible":false,
+  "visible":true,
 }

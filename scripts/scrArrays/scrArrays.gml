@@ -61,3 +61,21 @@ function array_create_2d(width, height = 0) {
 	}
 	return a;
 }
+
+/// Returns an array of COUNT non-repeating numbers up to MAX, includes 0, does not include MAX
+function random_numbers(count, max_number) {
+	var indices = array_create(max_number);
+	for (var i = 0; i < max_number; i++) {
+		indices[i] = i;
+	}
+	array_shuffle_ext(indices);
+	var ret = [];
+	for (var i = 0; i < count; i++) {
+		var index = i mod max_number;
+		array_push(ret, indices[index])
+		if index == 0 && i > 0 {
+			array_shuffle_ext(indices)
+		}
+	}
+	return ret
+}

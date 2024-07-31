@@ -1,9 +1,8 @@
 /// @description 
 
 for (var i = 0; i <= COLORS.GREEN; i++) {
-	with instance_create_depth(bbox_left + (sprite_width + 1) * (i / MANA.MAX), bbox_bottom + 1, depth, BoardPaintSubButton) {
+	with instance_create_depth(bbox_right + 1, bbox_top + (24 * image_yscale) * i, depth, BoardPaintSubButton) {
 		color = i - 1
-		image_index = i
 		visible = other.visible
 		image_xscale = other.image_xscale
 		image_yscale = other.image_yscale

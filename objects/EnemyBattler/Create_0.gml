@@ -1,6 +1,8 @@
 /// @description 
 event_inherited();
 
+mask_index = sprEnemyFrame;
+
 //Non Combat stuff
 lerp_x = x;
 lerp_y = y;
@@ -47,6 +49,7 @@ movemode = moveOrder.RANDOM
 moveProgress = 0;
 current_actions = [];
 move_max = 1;
+move_rerolls = 0;
 
 /// @returns {Struct.EnemyMove}
 get_next_action = function() {
@@ -76,14 +79,25 @@ decide_actions = function() {
 	Timeline.update()
 }
 reroll_actions = function(count) {
-	repeat(count) {
-		var index = irandom(array_length(current_actions) - 1);
+	var indices = random_numbers(count, array_length(current_actions));
+	for (var i = 0; i < count; i++) {
+		var index = indices[i];
 		current_actions[index] = get_next_action().clone();
 		current_actions[index].on_move_decided();
 	}
 	Timeline.update()
 }
 
+/// @param {Struct.DamageInfo} info
+/// @desc Called in hurt() to run enemy specific logic. Do not override.
+/// @ignore
+enemy_hurt = function(info) {
+	if info.unblocked_damage > 0 {
+		if move_rerolls > 0 {
+			reroll_actions(min(move_rerolls, move_max))
+		}
+	}
+}
 
 for_each_action = function(func) {
 	array_foreach(current_actions, func)

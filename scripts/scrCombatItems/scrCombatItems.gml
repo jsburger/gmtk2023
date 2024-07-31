@@ -57,6 +57,7 @@ function StatusItem(_statusType, _strength) : CombatItem() constructor {
 
 function FunctionItem(func) : CombatItem() constructor {
 	self.func = func;
+	delay = 0;
 	
 	static act = function(runner) {
 		func()

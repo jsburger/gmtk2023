@@ -28,6 +28,7 @@ function combat_active() {
 }
 
 function battler_hurt(target, damage, source, reactable = false) {
+	if damage <= 0 exit;
 	target.hurt(damage)
 	with instance_create_depth(target.x, target.y, target.depth - 1, obj_fx) {
 		sprite_index = sprFXHitLarge

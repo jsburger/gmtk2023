@@ -1,18 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"BoardPaintSubButton",
+  "%Name":"BattlerOneArmedBandit",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"BoardPaintSubButton",
+  "name":"BattlerOneArmedBandit",
   "overriddenProperties":[],
   "parent":{
-    "name":"board",
-    "path":"folders/Objects/board.yy",
+    "name":"Battlers",
+    "path":"folders/Objects/Battlers.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"EnemyBattler",
+    "path":"objects/EnemyBattler/EnemyBattler.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,13 +33,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprBoardPaintSubButton",
-    "path":"sprites/sprBoardPaintSubButton/sprBoardPaintSubButton.yy",
+    "name":"sprOneArmedBanditIdle",
+    "path":"sprites/sprOneArmedBanditIdle/sprOneArmedBanditIdle.yy",
   },
   "spriteMaskId":null,
-  "tags":[
-    "Clickable",
-    "EditorButton",
-  ],
-  "visible":false,
+  "visible":true,
 }

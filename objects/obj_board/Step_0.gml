@@ -202,13 +202,13 @@ if(editor){
 	
 	
 	if button_pressed(inputs.editor_translate_down) {
-		with par_bricklike {
+		with parBoardObject {
 			y += TILE_HEIGHT
 		}
 		mark_level_changed()
 	}
 	if button_pressed(inputs.editor_translate_up) {
-		with par_bricklike {
+		with parBoardObject {
 			y -= TILE_HEIGHT
 		}
 		mark_level_changed()

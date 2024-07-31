@@ -209,6 +209,10 @@ function level_load(levelnumber){
 			if variable_struct_exists(entry, "data") {
 				serializer.read(entry.data)
 			}
+			
+			if !obj_board.editor && instance_is(self, parBoardObject) {
+				alarm[0] = manhatten_distance(x, y, obj_board.bbox_left, obj_board.bbox_top)/32
+			}
 		}
 	})
 	

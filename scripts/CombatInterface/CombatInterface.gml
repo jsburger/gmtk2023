@@ -31,6 +31,8 @@ function CombatInterface() constructor {
 		consume(act)			
 	}
 	
+	/// @func block
+	/// Gives block to self
 	static block = function(amount) {
 		defend(TARGETS.SELF, amount)
 	}
