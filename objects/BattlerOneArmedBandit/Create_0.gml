@@ -12,7 +12,7 @@ on_turn_end = function() {
 	odds = 25;
 }
 var jackpot_damage = function() {
-	if chance(odds, 100) return 25;
+	if chance(odds, 100) return 20;
 	return 0;
 }
 
@@ -32,7 +32,7 @@ var setup_trash = function(move) {
 with add_action("BAR") {
 	desc = "Suck them bones dry, kid"
 	setup_trash(self)
-	var damage = as_damage(5);
+	var damage = as_damage(3);
 	hit(damage)
 	set_intent(INTENT.ATTACK, damage);
 }
