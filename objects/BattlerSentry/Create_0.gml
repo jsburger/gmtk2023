@@ -8,11 +8,11 @@ movemode = moveOrder.RANDOM_STACK
 spr_icon = sprSentryIcon
 
 with add_action("Attack") {
-	var damage = 10;
+	var damage = 8;
 	set_intent(INTENT.ATTACK, damage)
 	hit(damage)
 
-	desc = "Deal 10 Damage."
+	desc = "Deal 8 Damage."
 }
 
 with add_action("Drain") {

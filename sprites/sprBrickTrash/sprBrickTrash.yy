@@ -48,8 +48,8 @@
   },
   "origin":9,
   "parent":{
-    "name":"Garbage Brick",
-    "path":"folders/Sprites/Level Objects/Bricks/Garbage Brick.yy",
+    "name":"Trash Brick",
+    "path":"folders/Sprites/Level Objects/Bricks/Trash Brick.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

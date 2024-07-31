@@ -59,7 +59,7 @@ current_entity = BrickNormal;
 current_sprite = mskNone;
 obj_layer = 0;
 entity_list = [
-/*Bricks*/    [BrickNormal, BrickNormalV], [BrickLarge, BrickLargeV], [BrickLargeMetal, BrickLargeMetalV],
+/*Bricks*/    [BrickNormal, BrickNormalV], [BrickGlow, BrickGlowV], [BrickLarge, BrickLargeV], [BrickLargeMetal, BrickLargeMetalV],
 /*Movement 1*/[Bumper, ColorBumper],
 /*Movement 2*/[Portal],
 /*Movement 3*/[Launcher],
@@ -67,7 +67,7 @@ entity_list = [
 /*Battler*/   [BattlerBrick]
 ];
 entity_sprite = [
-[sprBrick, sprBrickVertical], [sprBrickLarge, sprBrickLargeVertical], [sprBrickLargeMetal, sprBrickLargeMetalVertical],
+[sprBrick, sprBrickVertical], [sprBrickGlowOn, sprBrickGlowOnVertical], [sprBrickLarge, sprBrickLargeVertical], [sprBrickLargeMetal, sprBrickLargeMetalVertical],
 [sprBumper, sprColorBumperIdle],
 [sprPortalBackPurple],
 [sprLauncher90],
