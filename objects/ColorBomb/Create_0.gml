@@ -5,8 +5,7 @@ event_inherited();
 
 colorable = true;
 
-can_take_damage = true;
-hp = 1;
+set_hp(1);
 
 ball_bounce = method(self, bounce_rectangular);
 

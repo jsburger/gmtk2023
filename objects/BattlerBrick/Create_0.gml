@@ -3,8 +3,7 @@
 // Inherit the parent event
 event_inherited();
 
-hp = 50;
-can_take_damage = true;
+set_hp(50)
 fullclear_ignore = true;
 
 battler = noone;

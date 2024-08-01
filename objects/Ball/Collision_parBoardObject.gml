@@ -66,7 +66,7 @@ if damaged {
 	}
 }
 //Ghost piercing
-if is_ghost collider.ghost_hits += 1;
+if (is_ghost && !collider.ghost_immune) collider.ghost_hits += 1;
 
 if bounce && is_ghost && collider.can_take_damage {
 	if pierce > 0 && (((collider.hp / damage) + collider.is_frozen) <= collider.ghost_hits) {

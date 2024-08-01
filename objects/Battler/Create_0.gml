@@ -8,7 +8,7 @@ get_target_info = function() {
 //Here because being targetable means being clickable. Will fix later. Maybe.
 on_click = function() {}
 
-hpmax = 50;
+hp_max = 50;
 hp = 50;
 display_health = new MeterInterpolator(self, function() {
 	return hp;
@@ -16,7 +16,7 @@ display_health = new MeterInterpolator(self, function() {
 hpsize = 2;
 
 function set_hp_max(h) {
-	hpmax = h;
+	hp_max = h;
 	hpsize = string_length(string(h));
 }
 

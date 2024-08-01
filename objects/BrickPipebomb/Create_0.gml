@@ -8,7 +8,7 @@ flip;
 beeped = false;
 is_vertical = false;
 
-hp = 2
+set_hp(2)
 on_hurt = function(damage) {
 	image_speed = 1;
 	if !beeped {

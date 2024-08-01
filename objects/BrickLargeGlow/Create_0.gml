@@ -5,5 +5,5 @@ event_inherited();
 
 spr_off = sprBrickLargeGlowOff
 
-mana_amount = 2;
+set_hp(5)
 setup_freeze(sprBrickLargeOverlayFrozen)

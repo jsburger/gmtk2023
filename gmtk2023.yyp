@@ -29,6 +29,7 @@
     {"$GMFolder":"","%Name":"fx","folderPath":"folders/Objects/fx.yy","name":"fx","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"New Blocks","folderPath":"folders/Objects/New Blocks.yy","name":"New Blocks","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Bricks","folderPath":"folders/Objects/New Blocks/Bricks.yy","name":"Bricks","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Glow Bricks","folderPath":"folders/Objects/New Blocks/Bricks/Glow Bricks.yy","name":"Glow Bricks","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Enemy Specific","folderPath":"folders/Objects/New Blocks/Enemy Specific.yy","name":"Enemy Specific","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"pickups","folderPath":"folders/Objects/pickups.yy","name":"pickups","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"ui","folderPath":"folders/Objects/ui.yy","name":"ui","resourceType":"GMFolder","resourceVersion":"2.0",},

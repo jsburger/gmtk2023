@@ -3,8 +3,6 @@
 // Inherit the parent event
 event_inherited();
 
-hp = 2;
-
 ball_bounce = method(self, bounce_circular);
 on_ball_impact = method(self, impact_normal);
 

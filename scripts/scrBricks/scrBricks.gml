@@ -89,8 +89,17 @@ function bricks_recolor(count, _color, sorter = undefined) {
 
 function bricks_with_color(color) {
 	var n = 0;
-	with parBoardObject if self.color == color n++;
+	with parBoardObject if colorable && self.color == color n++;
 	return n
+}
+
+function brick_status_clear(brick) {
+	with brick {
+		if is_frozen {
+			// Clean off frozen without reducing freeze;
+			set_frozen(false, true)
+		}
+	}
 }
 
 
@@ -102,6 +111,7 @@ function brick_on_unfreeze(brick) {
 
 /// Returns if the brick was actually damaged
 function brick_hit(brick, damage, source) {
+	if damage <= 0 return false;
 	if brick.is_frozen {
 		brick.set_frozen(false)
 		return false;

@@ -8,8 +8,8 @@
   "name":"BrickGlowV",
   "overriddenProperties":[],
   "parent":{
-    "name":"Bricks",
-    "path":"folders/Objects/New Blocks/Bricks.yy",
+    "name":"Glow Bricks",
+    "path":"folders/Objects/New Blocks/Bricks/Glow Bricks.yy",
   },
   "parentObjectId":{
     "name":"BrickGlow",

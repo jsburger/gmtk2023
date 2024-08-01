@@ -218,7 +218,7 @@ function StatusFreeze(Strength) : StatusTickable(Strength) constructor {
 			if array_length(frozen) < strength {
 				// Gather freezable bricks
 				var bricks = array_build_filtered(parBoardObject, function(inst) {
-					return inst.can_freeze && !inst.is_frozen;
+					return !inst.status_immune && inst.can_freeze && !inst.is_frozen;
 				}),
 					dif = strength - array_length(frozen);
 				// Exit early if no bricks to freeze
@@ -254,10 +254,10 @@ function StatusFreeze(Strength) : StatusTickable(Strength) constructor {
 	/// @param {Struct.AbilityCostModifier} modifier
 	static modify_ability_cost = function(modifier) {
 		var position = modifier.ability.position + 1,
-			posmax = 5,
-			index = strength mod posmax,
-			base = strength div posmax;
-		if position <= index {
+			posmax = array_length(global.player_stats.abilities),
+			index = strength mod posmax, //How many abilities are in a partial lap
+			base = strength div posmax; //How many laps the freeze count makes
+		if position <= index { //If this is in a partial lap
 			base += 1;
 		}
 		if base > 0 {

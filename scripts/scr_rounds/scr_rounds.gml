@@ -166,7 +166,7 @@ function check_fullclear() {
 			}
 		}
 		with parBoardObject {
-			if can_take_damage && !fullclear_ignore {
+			if (can_take_damage && !fullclear_ignore) || fullclear_forced {
 				fullclear = false
 				break
 			}

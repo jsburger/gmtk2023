@@ -58,21 +58,37 @@
 		on_ball_impact = function(ball, collision_x, collision_y) {}
 
 		snd_impact = sndDieHitBrick;
-		#region Damage
-			can_take_damage = false;
-			hp = 1;
-			
-			on_hurt = function(damage) {};
 		
-		#endregion
-	ghost_hits = 0; //Used to track how many times a ghost has collided with an instance.
-	stops_preview = true;
-	fullclear_ignore = false; // If an object can take damage, but shouldn't count against full clears.
+		ghost_hits = 0; //Used to track how many times a ghost has collided with an instance.
+		ghost_immune = false; //Prevents the object from accruing ghost hits, meaning it doesnt get pierced
+		stops_preview = true;
+	
+	#endregion
+	
+	#region Damage
+		
+		can_take_damage = false;
+		hp = 1;
+		hp_max = 1;
+			
+		on_hurt = function(damage) {};
+			
+		/// Sets HP, Max HP, and can_take_damage to true;
+		function set_hp(h) {
+			hp = h;
+			hp_max = h;
+			can_take_damage = true;
+		};
+		
+		fullclear_ignore = false; // If an object can take damage, but shouldn't count against full clears.
+		fullclear_forced = false; // If an object can't take damage, but should count against full clears.
+	
 	#endregion
 	
 #endregion
 
 #region Statuses
+	status_immune = false; //Overrides individual variables like can_freeze
 	#region Freeze
 		can_freeze = false;
 		spr_frozen = sprBrickOverlayFrozen;
@@ -89,7 +105,7 @@
 					brick_on_unfreeze(self)
 				}
 			}
-		}
+		};
 		
 		function setup_freeze(sprite) {
 			can_freeze = true;
