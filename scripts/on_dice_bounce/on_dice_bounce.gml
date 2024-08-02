@@ -4,8 +4,10 @@ function on_dice_bounce(dice){
 //	dice.vspeed -= 2
 	dice.hit_timer = 30;
 	dice.sprite_index = dice.spr_hit;
-	dice.image_index += choose(1,1,2);
-	dice.image_speed += 0.5;
+	if !dice.is_rolling() {
+		dice.image_index += choose(1,1,2);
+		dice.image_speed += 0.5;
+	}
 	with(dice) if patience_enable && !is_ghost {
 		if last_bounce_patience_frame < current_time{
 			if point_distance(x,y,last_bounce_coords[0],last_bounce_coords[1]) < TILE_WIDTH{

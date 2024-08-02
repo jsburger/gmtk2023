@@ -5,18 +5,12 @@ if image_blend = c_dkgray || !collider.can_collide exit;
 if !ball_filter(self, collider) exit;
 
 // Walk back until not colliding any more
+var walk_distance = 0;
 if (collider.can_walk_back_ball) {
-	var prev_dir = point_direction(x, y, xprevious, yprevious),
-		walk_x = lengthdir_x(1, prev_dir),
-		walk_y = lengthdir_y(1, prev_dir),
-		tries = 0,
-		dist = point_distance(x, y, xprevious, yprevious);
-	while place_meeting(x, y, collider) && (tries++ < dist) {
-		x += walk_x;
-		y += walk_y;
-	}
+	walk_distance += walk_back_collision(self, collider);
 }
 // Check for "surfaces" created by bricks
+var collider_changed = false;
 if instance_is(collider, parBrick) {
 	// Check for outer bounds
 	var left = x < collider.bbox_left,
@@ -27,18 +21,33 @@ if instance_is(collider, parBrick) {
 		vertical = top || bottom;
 	//Outside the brick's surface bounds
 	if (horizontal && vertical) {
-		//Horizontal check;
-		var side_inst = instance_position(x, top ? collider.bbox_top - 1 : collider.bbox_bottom + 1, parBrick);
+		//Horizontal check, colliding from the side;
+		var side_inst = instance_position(left ? collider.bbox_left + 1 : collider.bbox_right - 1, 
+			top ? collider.bbox_top - 1 : collider.bbox_bottom + 1,
+			parBrick);
 		if instance_exists(side_inst) && side_inst.can_collide && ball_filter(self, side_inst) {
 			collider = side_inst
+			collider_changed = true;
 		}
 		else {
-			//Vertical Check;
-			var vert_inst = instance_position(left ? collider.bbox_left - 1 : collider.bbox_right + 1, y, parBrick);
+			//Vertical Check, colliding from the top;
+			var vert_inst = instance_position(
+				left ? collider.bbox_left - 1 : collider.bbox_right + 1,
+				top ? collider.bbox_top + 1 : collider.bbox_bottom - 1,
+				parBrick);
 			if instance_exists(vert_inst) && vert_inst.can_collide && ball_filter(self, vert_inst) {
 				collider = vert_inst
+				collider_changed = true;
 			}
 		}
+	}
+}
+
+//Walk back again
+if collider_changed {
+	with collider collider = self; //Converts ID reference to Instance reference. Prevents crash.
+	if (collider.can_walk_back_ball) {
+		walk_distance += walk_back_collision(self, collider)
 	}
 }
 
@@ -53,7 +62,7 @@ var collision = {
 };
 
 var damaged = false;
-if damage > 0 && !is_ghost {
+if damage > 0 && !is_ghost && ball_can_damage(self, collider) {
 	damaged = brick_hit(collider, damage, self);
 }
 
@@ -66,7 +75,10 @@ if damaged {
 	}
 }
 //Ghost piercing
-if (is_ghost && !collider.ghost_immune) collider.ghost_hits += 1;
+if (is_ghost && !collider.ghost_immune && ball_can_damage(self, collider)) {
+	collider.ghost_hits += 1;
+	rolled_on_collider = collider.id;
+}
 
 if bounce && is_ghost && collider.can_take_damage {
 	if pierce > 0 && (((collider.hp / damage) + collider.is_frozen) <= collider.ghost_hits) {
@@ -82,7 +94,15 @@ if bounce {
 	collider.ball_bounce(self);
 }
 
-if !is_ghost collider.on_ball_impact(self, collision.x, collision.y)
+if walk_distance > 0 {
+	x += lengthdir_x(walk_distance, direction);
+	y += lengthdir_y(walk_distance, direction);
+}
+
+if !is_ghost && ball_can_damage(self, collider) {
+	collider.on_ball_impact(self, collision.x, collision.y)
+	rolled_on_collider = collider.id;
+}
 
 on_dice_bounce(self);
 has_bounced = true;

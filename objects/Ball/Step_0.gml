@@ -11,8 +11,13 @@ else {
 }
 gravity *= nograv ? 0 : 1;
 
-if (hit_timer && !--hit_timer){
-	image_speed = clamp(0, image_speed - 1, 4);
+if is_rolling() {
+	image_speed = 0;
+	if alarm[0] > 0 alarm[0] += 1;
+	rotation += arc_length_to_degrees(speed, 25/2) * -sign(hspeed)
+}
+else if (hit_timer && !--hit_timer){
+	image_speed = clamp(image_speed - 1, 0, 4);
 	if(image_speed){
 		hit_timer = 10;	
 	}

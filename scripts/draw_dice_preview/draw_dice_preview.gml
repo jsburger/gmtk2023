@@ -12,6 +12,13 @@ function draw_dice_preview(_x, _y, gunangle) {
 			motion_set(other.direction, other.speed)
 			vars_apply(other)
 			is_ghost = true;
+			var vars = variable_instance_get_names(self);
+			for (var i = 0; i < array_length(vars); i++) {
+				if is_method(variable_instance_get(self, vars[i])) {
+					//trace(vars[i])
+					variable_instance_set(self, vars[i], method(self, variable_instance_get(self, vars[i])))
+				}
+			}
 		}
 		else motion_set(gunangle, 18)
 		

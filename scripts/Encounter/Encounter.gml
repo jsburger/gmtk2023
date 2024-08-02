@@ -135,3 +135,5 @@ encounter_add(
 		.with_boards("TestBandit1", "TestBandit2", "TestSmile1")
 		.with_enemies(BattlerOneArmedBandit)
 )
+//global.encounters = [];
+//encounter_add(new Encounter("Collision Test").with_boards("CollisionTester"))

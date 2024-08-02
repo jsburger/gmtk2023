@@ -39,7 +39,7 @@ function level_new_json() {
 		info: {
 			name: "",
 			format: FORMAT_CURRENT,
-			rounds: 5
+			rounds: 3
 		},
 		objects : []
 	}

@@ -17,7 +17,7 @@ spr_hit = sprDiceHit;
 has_bounced = false;
 pierce = 3;
 
-patience_enable = false;
+patience_enable = true;
 last_bounce_coords = [x,y];
 last_bounce_patience = 16;
 last_bounce_patience_frame = current_time;
@@ -31,3 +31,8 @@ rotation = 0; //Visual only image_angle
 
 is_coin = false;
 is_ghost = false; //Used for ball preview
+
+is_rolling = function() {
+	return abs(vspeed) < 2 && instance_exists(rolled_on_collider) && distance_to_object(rolled_on_collider) < 5;
+}
+rolled_on_collider = noone;
