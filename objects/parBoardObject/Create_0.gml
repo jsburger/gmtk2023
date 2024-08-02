@@ -56,7 +56,8 @@
 		ball_bounce = function(ball) {}
 		/// Called after bouncing. Used for things like Effects
 		on_ball_impact = function(ball, collision_x, collision_y) {}
-
+		bounciness = 1;
+		
 		snd_impact = sndDieHitBrick;
 		
 		ghost_hits = 0; //Used to track how many times a ghost has collided with an instance.
