@@ -470,6 +470,7 @@
     {"id":{"name":"AbilityPlacer","path":"scripts/AbilityPlacer/AbilityPlacer.yy",},},
     {"id":{"name":"add_action","path":"scripts/add_action/add_action.yy",},},
     {"id":{"name":"arc_length_to_degrees","path":"scripts/arc_length_to_degrees/arc_length_to_degrees.yy",},},
+    {"id":{"name":"ball_bounce_on_normal","path":"scripts/ball_bounce_on_normal/ball_bounce_on_normal.yy",},},
     {"id":{"name":"ball_filter","path":"scripts/ball_filter/ball_filter.yy",},},
     {"id":{"name":"battler_died","path":"scripts/battler_died/battler_died.yy",},},
     {"id":{"name":"board_can_fit","path":"scripts/board_can_fit/board_can_fit.yy",},},

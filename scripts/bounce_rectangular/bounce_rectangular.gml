@@ -3,7 +3,7 @@ function bounce_rectangular(ball) {
 
 	var dir = point_direction(collision.x,collision.y, ball.x, ball.y);
 	with ball {
-		motion_add(dir, vector_get_length_on_axis(speed, direction, dir + 180) * 2)
+		ball_bounce_on_normal(ball, self, dir);
 		//JANK
 		if keyboard_check(ord("Q")) if (vspeed < 0 && speed > 2) vspeed = min(vspeed, -4);
 	}
@@ -20,7 +20,7 @@ function bounce_circular(ball) {
 	var	dir = point_direction(x, y, ball.x, ball.y);
 	
 	with ball {
-		motion_add(dir, vector_get_length_on_axis(speed, direction, dir + 180) * 2)
+		ball_bounce_on_normal(ball, self, dir)
 	}
 	
 }
