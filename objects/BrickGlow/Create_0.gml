@@ -4,6 +4,7 @@
 event_inherited();
 
 set_hp(1);
+snd_impact = sndDieHitMetal;
 
 super = {
 	set_color
@@ -11,7 +12,7 @@ super = {
 
 set_color = function(col) {
 	super.set_color(col);
-	image_blend = merge_color(image_blend, c_white, .3);
+	image_blend = merge_color(image_blend, c_white, .5);
 }
 
 on = true;
@@ -27,8 +28,8 @@ disable = function() {
 	can_take_damage = false;
 	
 	sprite_index = spr_off;
+	//snd_impact = sndDieHitMetal;
 	on = false;
-	snd_impact = sndDieHitMetal;
 	
 	brick_status_clear(self)
 }
@@ -38,11 +39,12 @@ enable = function() {
 	can_take_damage = true;
 	
 	sprite_index = spr_on;
+	//snd_impact = sndCoinBig;
 	on = true;
-	snd_impact = sndCoinBig;
 }
 
 on_hurt = function(damage) {
+	sound_play_random(sndCoinBig);
 	if is_valid_mana(color) {
 		var dam = damage;
 		if hp < 0 dam += hp;

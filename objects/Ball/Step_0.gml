@@ -44,3 +44,5 @@ if pierce <= 0 {
 else {
 	image_blend = c_red;	
 }
+
+if !is_rolling() rolled_on_collider = noone;
