@@ -15,5 +15,7 @@ on_hurt = function(damage, source) {
 	hp += damage
 }
 
+bounciness = .8;
+
 ball_bounce = method(self, bounce_rectangular);
 on_ball_impact = method(self, impact_normal);
