@@ -119,6 +119,12 @@ encounter_add(
 )
 
 encounter_add(
+	new Encounter("Singer")
+		.with_boards("TestDuality1", "TestDuality2")
+		.with_enemies(BattlerSinger)
+)
+
+encounter_add(
 	new Encounter("One Singer, One Tomato")
 		.with_boards("TestCover1")
 		.with_enemies(BattlerSinger, BattlerTomato)
@@ -135,5 +141,13 @@ encounter_add(
 		.with_boards("TestBandit1", "TestBandit2", "TestSmile1")
 		.with_enemies(BattlerOneArmedBandit)
 )
+
+encounter_add(
+	new Encounter("Dolphin, Sentry")
+		.with_boards("TestDuos1")
+		.with_enemies(BattlerDolphin, BattlerSentry)	
+)
+
+
 //global.encounters = [];
 //encounter_add(new Encounter("Collision Test").with_boards("CollisionTester"))

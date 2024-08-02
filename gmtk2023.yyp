@@ -217,6 +217,8 @@
     {"$GMIncludedFile":"","%Name":"TestDolphin2a.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"TestDolphin2a.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"TestDolphin2b.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"TestDolphin2b.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"TestDuality1.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"TestDuality1.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"TestDuality2.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"TestDuality2.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"TestDuos1.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"TestDuos1.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"TestGlow1.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"TestGlow1.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"TestInvaders1.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"TestInvaders1.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"TestLayers1.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"TestLayers1.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
