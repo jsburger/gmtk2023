@@ -131,4 +131,5 @@
 
 #region Round integration
 	on_round_end = undefined;
+	on_throw_end = undefined;
 #endregion

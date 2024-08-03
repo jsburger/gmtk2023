@@ -80,16 +80,24 @@ if(editor){
 		if entity_subnum < 0 entity_subnum = (array_length(entity_list[entity_num]) - 1);
 		if entity_subnum > (array_length(entity_list[entity_num]) - 1) entity_subnum = 0;
 	
-		var _entity = entity_list[entity_num][abs(entity_subnum) mod array_length(entity_list[entity_num])],
-			_sprite = entity_sprite[entity_num][abs(entity_subnum) mod array_length(entity_sprite[entity_num])];
+		var _entity = entity_list[entity_num][entity_subnum],
+			_sprite = object_get_sprite(_entity),
+			mask = object_get_mask(_entity);
+		if mask == -1 mask = _sprite;
 		current_entity = _entity;
 		current_sprite = _sprite;
 	
-		var pos = board_grid_position(mouse_x, mouse_y)
-		mx = clamp(pos.x, bbox_left + TILE_MIN, bbox_right - TILE_MIN - sprite_get_width(_sprite));
-		my = clamp(pos.y, bbox_top + TILE_MIN, bbox_bottom - TILE_MIN - sprite_get_height(_sprite));
-		mx += (sprite_get_xoffset(_sprite));
-		my += (sprite_get_yoffset(_sprite));
+		var pos = board_grid_position(mouse_x, mouse_y),
+			right = sprite_get_bbox_right(  mask) + 1,
+			left  = sprite_get_bbox_left(   mask),
+			top   = sprite_get_bbox_top(    mask),
+			bottom = sprite_get_bbox_bottom(mask) + 1,
+			xoff = sprite_get_xoffset(mask),
+			yoff = sprite_get_yoffset(mask);
+		mx = clamp(pos.x + (xoff mod TILE_MIN), bbox_left + TILE_MIN + (xoff - left), bbox_right - TILE_MIN - (right - xoff));
+		my = clamp(pos.y + (yoff mod TILE_MIN), bbox_top + TILE_MIN + (yoff - top), bbox_bottom - TILE_MIN - (bottom - yoff));
+		//mx += (sprite_get_xoffset(_sprite) mod TILE_MIN);
+		//my += (sprite_get_yoffset(_sprite) mod TILE_MIN);
 		
 		var _place = other.entity_list[other.entity_num][other.entity_subnum];
 		obj_layer = object_get_parent(_place) == obj_cable ? 1 : 0;
@@ -98,14 +106,14 @@ if(editor){
 			//Collision
 			with instance_create_layer(mx, my, layer, obj_placer){
 				//obj_placer handels the canplace variable
-				mask_index = _sprite;
+				mask_index = mask;
 		
 				//Lazy fix, sorry:
 				if _sprite == sprBall {	
 					_sprite = sprBomb;
 					mask_index = _sprite;
 				}
-				sprite_index = mask_index;
+				sprite_index = sprite;
 		
 				other.canplace = true;
 				var _list = ds_list_create(),

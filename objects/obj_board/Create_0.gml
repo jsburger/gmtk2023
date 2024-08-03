@@ -60,19 +60,12 @@ current_sprite = mskNone;
 obj_layer = 0;
 entity_list = [
 /*Bricks*/    [BrickNormal, BrickNormalV], [BrickLarge, BrickLargeV], [BrickGlow, BrickGlowV], [BrickLargeGlow, BrickLargeGlowV], [BrickLargeMetal, BrickLargeMetalV],
+			  [BrickHidden, BrickHiddenV],
 /*Movement 1*/[Bumper, ColorBumper],
 /*Movement 2*/[Portal],
 /*Movement 3*/[Launcher],
 /*Explosives*/[BrickPipebomb, BrickPipebombV], [Bomb, ColorBomb],
 /*Battler*/   [BattlerBrick]
-];
-entity_sprite = [
-[sprBrick, sprBrickVertical],  [sprBrickLarge, sprBrickLargeVertical], [sprBrickGlowOn, sprBrickGlowOnVertical], [sprBrickLargeGlowOn, sprBrickLargeGlowOnVertical], [sprBrickLargeMetal, sprBrickLargeMetalVertical],
-[sprBumper, sprColorBumperIdle],
-[sprPortalBackPurple],
-[sprLauncher90],
-[sprBrickPipebomb, sprBrickPipebombVertical], [sprBomb, sprColorBomb],
-[sprEnemyFrame]
 ];
 
 accepted_enemies = [];
@@ -91,9 +84,10 @@ accept_objects_from = function(inst) {
 	
 	if !(array_contains(accepted_enemies, inst.object_index)) {
 		var objects = inst.extra_objects;
+		if array_length(objects) <= 0 exit;
 		
 		array_push(accepted_enemies, inst.object_index);
 		array_push(entity_list, objects)
-		array_push(entity_sprite, array_map(objects, object_get_sprite))
+		//array_push(entity_sprite, array_map(objects, object_get_sprite))
 	}
 }

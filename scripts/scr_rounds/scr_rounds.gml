@@ -104,6 +104,13 @@ function throw_start(){
 
 function throw_end() {
 	with obj_shooter can_shoot = false;
+	
+	var enders = array_build_filtered(parBoardObject, function(i) {return i.on_throw_end != undefined});
+	array_sort(enders, sort_y)
+	for (var i = 0; i < array_length(enders); i++) {
+		enders[i].on_throw_end()
+	}
+	
 	if global.mana_gained[MANA.RED] > 0 {
 		schedule(15, function() {
 			CombatRunner.mount_ability(new AbilityAttack(global.mana_gained[MANA.RED]).dont_cancel(),
