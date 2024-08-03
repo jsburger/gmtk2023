@@ -20,7 +20,7 @@ if (instance_exists(obj_board)) {
 				with SafetyNet deactivate()
 			}
 			y = yprevious;
-			vspeed = -3;
+			vspeed = -5;
 			on_dice_bounce(self);
 			nograv = false
 		}

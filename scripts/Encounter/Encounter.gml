@@ -148,6 +148,12 @@ encounter_add(
 		.with_enemies(BattlerDolphin, BattlerSentry)	
 )
 
+encounter_add(
+	new Encounter("High Rollers")
+		.with_boards("TestBumperTown1")
+		.with_enemies(BattlerHighRoller, BattlerHighRoller, BattlerHighRoller, BattlerHighRoller)	
+)
+
 
 //global.encounters = [];
 //encounter_add(new Encounter("Collision Test").with_boards("CollisionTester"))
