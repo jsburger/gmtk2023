@@ -4,6 +4,7 @@
 event_inherited();
 set_hp(30)
 
+//size = ENEMY_SIZE.SMALL;
 movemode = moveOrder.LINEAR
 
 with add_action("fart") {

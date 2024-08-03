@@ -2,8 +2,8 @@
 event_inherited();
 
 enum ENEMY_SIZE {
-	NORMAL,
-	SMALL
+	SMALL,
+	NORMAL
 }
 
 mask_index = sprEnemyFrame;

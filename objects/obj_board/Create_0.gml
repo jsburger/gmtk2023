@@ -65,7 +65,7 @@ entity_list = [
 /*Movement 2*/[Portal],
 /*Movement 3*/[Launcher],
 /*Explosives*/[BrickPipebomb, BrickPipebombV], [Bomb, ColorBomb],
-/*Battler*/   [BattlerBrick]
+/*Battler*/   [BattlerBrick], [BattlerBrickSmall]
 ];
 
 accepted_enemies = [];
