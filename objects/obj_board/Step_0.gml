@@ -113,7 +113,7 @@ if(editor){
 					_sprite = sprBomb;
 					mask_index = _sprite;
 				}
-				sprite_index = sprite;
+				sprite_index = _sprite;
 		
 				other.canplace = true;
 				var _list = ds_list_create(),
