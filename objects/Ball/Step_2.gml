@@ -17,7 +17,7 @@ if (instance_exists(obj_board)) {
 		}
 		else {
 			if ++touchedBottom {
-				with SafetyNet visible = false;
+				with SafetyNet deactivate()
 			}
 			y = yprevious;
 			vspeed = -3;

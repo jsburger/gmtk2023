@@ -980,6 +980,7 @@
     {"id":{"name":"sprRoundIndicator","path":"sprites/sprRoundIndicator/sprRoundIndicator.yy",},},
     {"id":{"name":"sprRoundLabel","path":"sprites/sprRoundLabel/sprRoundLabel.yy",},},
     {"id":{"name":"sprSafetyNet","path":"sprites/sprSafetyNet/sprSafetyNet.yy",},},
+    {"id":{"name":"sprSafetyNetHurt","path":"sprites/sprSafetyNetHurt/sprSafetyNetHurt.yy",},},
     {"id":{"name":"sprSandwichPopupAppear","path":"sprites/sprSandwichPopupAppear/sprSandwichPopupAppear.yy",},},
     {"id":{"name":"sprSandwichPopupButtonAppear","path":"sprites/sprSandwichPopupButtonAppear/sprSandwichPopupButtonAppear.yy",},},
     {"id":{"name":"sprSandwichPopupButtonDisappear","path":"sprites/sprSandwichPopupButtonDisappear/sprSandwichPopupButtonDisappear.yy",},},

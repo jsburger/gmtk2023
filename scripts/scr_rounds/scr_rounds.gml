@@ -89,10 +89,12 @@ function enable_shooter() {
 		sprite_index = sprHandIdleA;
 	}
 	
-	with SafetyNet visible = true;
+	
 }
 
 function throw_start(){
+	
+	with SafetyNet activate();
 	CombatRunner.throws -= 1;
 	if instance_exists(obj_ballplacer) with obj_ballplacer instance_destroy();
 	if instance_exists(obj_ball) with obj_ball canmove = true;
