@@ -88,6 +88,8 @@ function enable_shooter() {
 		can_shoot = true
 		sprite_index = sprHandIdleA;
 	}
+	
+	with SafetyNet visible = true;
 }
 
 function throw_start(){

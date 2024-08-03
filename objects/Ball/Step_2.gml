@@ -16,7 +16,9 @@ if (instance_exists(obj_board)) {
 			}
 		}
 		else {
-			touchedBottom++;
+			if ++touchedBottom {
+				with SafetyNet visible = false;
+			}
 			y = yprevious;
 			vspeed = -3;
 			on_dice_bounce(self);

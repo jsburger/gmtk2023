@@ -424,6 +424,7 @@
     {"id":{"name":"parCommonBrick","path":"objects/parCommonBrick/parCommonBrick.yy",},},
     {"id":{"name":"PlayerBattler","path":"objects/PlayerBattler/PlayerBattler.yy",},},
     {"id":{"name":"Portal","path":"objects/Portal/Portal.yy",},},
+    {"id":{"name":"SafetyNet","path":"objects/SafetyNet/SafetyNet.yy",},},
     {"id":{"name":"Timeline","path":"objects/Timeline/Timeline.yy",},},
     {"id":{"name":"encounter_room","path":"rooms/encounter_room/encounter_room.yy",},},
     {"id":{"name":"end_room","path":"rooms/end_room/end_room.yy",},},
