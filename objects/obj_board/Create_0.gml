@@ -75,6 +75,8 @@ entity_sprite = [
 [sprEnemyFrame]
 ];
 
+accepted_enemies = [];
+
 mx = 0;
 my = 0;
 
@@ -86,12 +88,12 @@ mode = editorMode.build
 paintcolor = -1
 
 accept_objects_from = function(inst) {
-	var last = array_last(entity_list),
-		objects = inst.extra_objects;
-	for (var i = 0; i < array_length(objects); i++) {
-		if !array_contains(last, objects[i]) {
-			array_push(last, objects[i])
-			array_push(array_last(entity_sprite), object_get_sprite(objects[i]))
-		}
+	
+	if !(array_contains(accepted_enemies, inst.object_index)) {
+		var objects = inst.extra_objects;
+		
+		array_push(accepted_enemies, inst.object_index);
+		array_push(entity_list, objects)
+		array_push(entity_sprite, array_map(objects, object_get_sprite))
 	}
 }

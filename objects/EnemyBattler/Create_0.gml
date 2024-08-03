@@ -1,6 +1,11 @@
 /// @description 
 event_inherited();
 
+enum ENEMY_SIZE {
+	NORMAL,
+	SMALL
+}
+
 mask_index = sprEnemyFrame;
 
 //Non Combat stuff
@@ -16,6 +21,10 @@ extra_objects = []; //Used by the Editor to get associated objects.
 //Combat stuff
 spr_icon = sprGayLittleSquirrelIcon
 
+spr_frame = sprEnemyFrame;
+spr_bg = sprEnemyBg;
+
+size = ENEMY_SIZE.NORMAL;
 bg_color = c_red;
 show_owner = false;
 

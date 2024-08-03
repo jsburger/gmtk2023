@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"replace_with_pipebomb",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"replace_with_pipebomb",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

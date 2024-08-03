@@ -7,6 +7,8 @@ set_hp(50)
 fullclear_ignore = true;
 
 battler = noone;
+size = ENEMY_SIZE.NORMAL;
+spr_bg = sprEnemyBg;
 
 on_hurt = function(damage, source) {
 	if instance_exists(battler) {

@@ -225,11 +225,17 @@ function start_new_board() {
 }
 
 function update_battler_bricks() {
-	var i = 0;
-	with BattlerBrick {
-		if battler == noone && i < array_length(CombatRunner.enemies){
-			battler = CombatRunner.enemies[i++]
+	for (var i = 0; i < array_length(CombatRunner.enemies); i++) {
+		var enemy = CombatRunner.enemies[i];
+		with BattlerBrick if size == enemy.size && !instance_exists(battler) {
+			battler = enemy
 			battler.go_to(x, y)
+			var mask = mask_index == -1 ? sprite_index : mask_index;
+			battler.mask_index = mask;
+			battler.spr_frame = sprite_index;
+			battler.spr_bg = spr_bg;
+			
+			break;
 		}
 	}
 }
