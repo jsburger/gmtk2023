@@ -60,7 +60,7 @@ current_sprite = mskNone;
 obj_layer = 0;
 entity_list = [
 /*Bricks*/    [BrickNormal, BrickNormalV], [BrickLarge, BrickLargeV], [BrickGlow, BrickGlowV], [BrickLargeGlow, BrickLargeGlowV], [BrickLargeMetal, BrickLargeMetalV],
-			  [BrickHidden, BrickHiddenV],
+			  [BrickHidden, BrickHiddenV], [BrickLargeHidden, BrickLargeHiddenV],
 /*Movement 1*/[Bumper, ColorBumper],
 /*Movement 2*/[Portal],
 /*Movement 3*/[Launcher],

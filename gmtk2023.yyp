@@ -286,6 +286,8 @@
     {"id":{"name":"BrickLarge","path":"objects/BrickLarge/BrickLarge.yy",},},
     {"id":{"name":"BrickLargeGlow","path":"objects/BrickLargeGlow/BrickLargeGlow.yy",},},
     {"id":{"name":"BrickLargeGlowV","path":"objects/BrickLargeGlowV/BrickLargeGlowV.yy",},},
+    {"id":{"name":"BrickLargeHidden","path":"objects/BrickLargeHidden/BrickLargeHidden.yy",},},
+    {"id":{"name":"BrickLargeHiddenV","path":"objects/BrickLargeHiddenV/BrickLargeHiddenV.yy",},},
     {"id":{"name":"BrickLargeMetal","path":"objects/BrickLargeMetal/BrickLargeMetal.yy",},},
     {"id":{"name":"BrickLargeMetalV","path":"objects/BrickLargeMetalV/BrickLargeMetalV.yy",},},
     {"id":{"name":"BrickLargeV","path":"objects/BrickLargeV/BrickLargeV.yy",},},
