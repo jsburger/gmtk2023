@@ -99,9 +99,29 @@ function brick_status_clear(brick) {
 			// Clean off frozen without reducing freeze;
 			set_frozen(false, true)
 		}
+		if is_burning {
+			set_burning(false);
+		}
 	}
 }
 
+function brick_can_burn(brick) {
+	return !brick.status_immune && brick.can_burn && !brick.is_burning && !brick.is_frozen;
+}
+
+function bricks_burn(count) {
+	var burnable = array_build_filtered(parBoardObject, brick_can_burn);
+	
+	array_shuffle_ext(burnable)
+	for (var i = 0; i < min(count, array_length(burnable)); i++) {
+		burnable[i].set_burning(true);
+	}
+}
+
+function brick_can_freeze(brick) {
+	return !brick.status_immune && brick.can_freeze && !brick.is_frozen
+		&& !brick.is_burning;
+}
 
 function brick_on_unfreeze(brick) {
 	with PlayerBattler {

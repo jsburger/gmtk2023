@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SpriteSet",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SpriteSet",
+  "parent":{
+    "name":"Classes",
+    "path":"folders/Scripts/Classes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

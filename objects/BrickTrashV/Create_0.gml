@@ -2,5 +2,5 @@
 
 // Inherit the parent event
 event_inherited();
-setup_freeze(sprBrickVerticalOverlayFrozen)
+setup_freeze(sprBrickVerticalFrozen)
 

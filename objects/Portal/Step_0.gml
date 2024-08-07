@@ -1,6 +1,8 @@
 /// @description 
 board_object_exit;
 
+event_inherited();
+
 if chance(1, 13) {
 	var dist = random_range(32, 64), ang = random(360);
 	with instance_create_layer(x + lengthdir_x(dist, ang), y + lengthdir_y(dist, ang), "FX", obj_portal_fx) {

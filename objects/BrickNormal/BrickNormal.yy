@@ -36,6 +36,9 @@
     "name":"sprBrick",
     "path":"sprites/sprBrick/sprBrick.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"mskBrick",
+    "path":"sprites/mskBrick/mskBrick.yy",
+  },
   "visible":true,
 }

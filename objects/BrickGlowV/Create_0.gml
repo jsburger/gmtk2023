@@ -5,4 +5,4 @@ event_inherited();
 
 spr_off = sprBrickGlowOffVertical
 
-setup_freeze(sprBrickVerticalOverlayFrozen)
+setup_freeze(sprBrickVerticalFrozen)

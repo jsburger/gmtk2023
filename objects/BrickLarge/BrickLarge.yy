@@ -36,6 +36,9 @@
     "name":"sprBrickLarge",
     "path":"sprites/sprBrickLarge/sprBrickLarge.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"mskBrickLarge",
+    "path":"sprites/mskBrickLarge/mskBrickLarge.yy",
+  },
   "visible":true,
 }

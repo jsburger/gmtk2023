@@ -6,4 +6,4 @@ if random(60) < 1 && !obj_board.editor && object_index == obj_block_v{
 	instance_destroy();
 }
 
-spr_frozen = sprBrickVerticalOverlayFrozen;
+spr_frozen = sprBrickVerticalFrozen;

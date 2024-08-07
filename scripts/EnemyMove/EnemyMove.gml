@@ -70,4 +70,13 @@ function EnemyMove() : CombatInterface() constructor {
 	static buff_strength = function(value) {
 		return apply_status(TARGETS.SELF, STATUS.STRENGTH, value)
 	}
+	
+	static burn = function(value) {
+		var func = method({value}, function() {
+			bricks_burn(value)
+		}),
+			item = run(func);
+		item.delay = 15;
+		return item;
+	}
 }

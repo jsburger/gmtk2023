@@ -102,6 +102,10 @@ if walk_distance > 0 {
 if !is_ghost && ball_can_damage(self, collider) {
 	collider.on_ball_impact(self, collision.x, collision.y)
 	rolled_on_collider = collider.id;
+	
+	if !is_ghost && !is_coin && collider.is_burning {
+		PlayerBattler.statuses.add_status(STATUS.BURN, 1)
+	}
 }
 
 on_dice_bounce(self);

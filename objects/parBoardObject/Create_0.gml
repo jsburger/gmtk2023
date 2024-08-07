@@ -24,6 +24,10 @@
 
 #endregion
 
+#region Sprites
+	sprite_set = undefined;
+#endregion
+
 #region Coloring
 	colorable = false;
 	color = MANA_NONE;
@@ -92,7 +96,7 @@
 	status_immune = false; //Overrides individual variables like can_freeze
 	#region Freeze
 		can_freeze = false;
-		spr_frozen = sprBrickOverlayFrozen;
+		spr_frozen = sprBrickFrozen;
 		spr_frozen_index = 0;
 		is_frozen = false;
 		/// Cleaning prevents the function from calling brick_unfreeze, which would create a loop
@@ -117,6 +121,32 @@
 	
 	#region Burn
 		can_burn = false;
+		is_burning = false;
+		burn_prev_sprite = undefined;
+		set_burning = function(value) {
+			if value != is_burning {
+				is_burning = value;
+				// Burn
+				if is_burning {
+					if sprite_set == undefined {
+						burn_prev_sprite = sprite_index;
+						sprite_index = burn_sprite_get(sprite_index);
+					}
+					else {
+						sprite_set.refresh()
+					}
+				}
+				//Unburn
+				else {
+					if sprite_set == undefined {
+						sprite_index = burn_prev_sprite;
+					}
+					else {
+						sprite_set.refresh()
+					}
+				}
+			}
+		}
 	#endregion
 	
 	#region Poison

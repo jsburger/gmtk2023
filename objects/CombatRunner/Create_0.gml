@@ -65,6 +65,12 @@ throws = 1;
 			post_ability();
 			post_ability = undefined;
 		}
+		
+		if !struct_exists(current_ability, "is_normal_ass_attack") {
+			with Battler {
+				statuses.on_ability_used();
+			}
+		}
 		current_ability = undefined;
 	}
 	

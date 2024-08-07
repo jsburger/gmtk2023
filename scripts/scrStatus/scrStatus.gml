@@ -25,7 +25,7 @@ function StatusHolder(creator) constructor {
 	
 	#macro __status_loop for (var statuses = struct_get_values(status_map), i = 0, l = array_length(statuses); i < l; i++)
 	
-	static on_turn_end = function() {		
+	static on_turn_end = function() {
 		__status_loop {
 		    var s = statuses[i];
 			var finished = s.on_turn_end();
@@ -40,6 +40,15 @@ function StatusHolder(creator) constructor {
 		__status_loop {
 		    var s = statuses[i];
 			s.on_turn_start();
+		}
+	}
+	
+	static on_ability_used = function() {
+		__status_loop {
+			var s = statuses[i];
+			if struct_exists(s, "after_ability_used") {
+				s.after_ability_used()
+			}
 		}
 	}
 	
@@ -217,9 +226,7 @@ function StatusFreeze(Strength) : StatusTickable(Strength) constructor {
 			var frozen = array_build_filtered(parBoardObject, function(inst) {return inst.is_frozen})
 			if array_length(frozen) < strength {
 				// Gather freezable bricks
-				var bricks = array_build_filtered(parBoardObject, function(inst) {
-					return !inst.status_immune && inst.can_freeze && !inst.is_frozen;
-				}),
+				var bricks = array_build_filtered(parBoardObject, brick_can_freeze),
 					dif = strength - array_length(frozen);
 				// Exit early if no bricks to freeze
 				if array_length(bricks) <= 0 {
@@ -266,5 +273,22 @@ function StatusFreeze(Strength) : StatusTickable(Strength) constructor {
 			}
 		}
 	}
-	
 }
+
+function StatusBurn(count) : Status(count) constructor {
+	sprite_index = sprStatusBurn;
+	name = "Burned";
+	desc = new Formatter("YOUVE BEEN BURNED!!!! \nTAKE {0} DAMAGE WHEN YOU CAST SPELLS!", new FunctionProvider( function() {return strength}))
+	
+	static after_ability_used = function() {
+		static interface = new CombatInterface();
+		interface.run(function(){battler_hurt(CombatRunner.player, strength, self, true)})
+	}
+	
+	static on_turn_end = function() {
+		strength = 0;
+		return true;
+	}
+}
+STATUS.BURN = status_register("Burn", function(count){return new StatusBurn(count)})
+

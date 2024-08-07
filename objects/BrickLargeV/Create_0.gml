@@ -3,5 +3,11 @@
 // Inherit the parent event
 event_inherited();
 
-spr_damaged = sprBrickLargeVerticalBroken
-setup_freeze(sprBrickLargeVerticalOverlayFrozen)
+brick_properties(BrickLargeV, function() {
+	return new BrickHelper().vertical().large().statuses(true, true, true)
+})
+
+sprite_set = new SpriteSet(self, {
+	spr_idle : sprite_index,
+	spr_damaged : sprBrickLargeVerticalBroken
+})

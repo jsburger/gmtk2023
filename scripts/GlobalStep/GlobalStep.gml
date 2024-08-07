@@ -14,5 +14,5 @@ function global_step() {
 	current_frame += 1;
 	
 	Clickables_Step()
-	Tickables_Step()
+	Tickables_Step()	
 }

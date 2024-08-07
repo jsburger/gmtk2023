@@ -117,7 +117,9 @@ function throw_end() {
 	
 	if global.mana_gained[MANA.RED] > 0 {
 		schedule(15, function() {
-			CombatRunner.mount_ability(new AbilityAttack(global.mana_gained[MANA.RED]).dont_cancel(),
+			var ability = new AbilityAttack(global.mana_gained[MANA.RED]).dont_cancel();
+				ability.is_normal_ass_attack = true;
+			CombatRunner.mount_ability(ability,
 			function() {
 				CombatRunner.enqueue(new FunctionItem(throw_resolve))
 			})
@@ -147,6 +149,7 @@ function player_turn_end() {
 	
 	if combat_active() {
 		with CombatRunner {
+			player.turn_end();
 			is_player_turn = false;
 			waitTime += 10;
 		}

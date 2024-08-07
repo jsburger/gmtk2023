@@ -20,7 +20,7 @@ spr_off = sprBrickGlowOff;
 spr_on = sprite_index;
 
 ghost_immune = true;
-setup_freeze(sprBrickOverlayFrozen)
+setup_freeze(sprBrickFrozen)
 
 disable = function() {
 	colorable = false;
