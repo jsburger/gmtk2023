@@ -154,6 +154,18 @@ encounter_add(
 		.with_enemies(BattlerHighRoller, BattlerHighRoller, BattlerHighRoller, BattlerHighRoller)	
 )
 
+encounter_add(
+	new Encounter("Smoker")
+		.with_boards("TestShelves1")
+		.with_enemies(BattlerSmoker)	
+)
+
+encounter_add(
+	new Encounter("Smoker, High Rollers")
+		.with_boards("TestHybrid1", "TestHybrid2")
+		.with_enemies(BattlerSmoker, BattlerHighRoller, BattlerHighRoller)	
+)
+
 
 //global.encounters = [];
 //encounter_add(new Encounter("Collision Test").with_boards("CollisionTester"))

@@ -19,6 +19,7 @@ spawn_object = BrickNormal;
 activate = function() {
 	active = true;
 	sprite_index = spr_found;
+	sound_play_random(sndBill2);
 }
 
 
