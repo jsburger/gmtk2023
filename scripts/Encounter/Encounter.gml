@@ -107,12 +107,6 @@ encounter_add(
 )
 
 encounter_add(
-	new Encounter("Three Dolphins")
-		.with_boards("TestBirds")
-		.with_enemies(BattlerDolphin, BattlerDolphin, BattlerDolphin)	
-)
-
-encounter_add(
 	new Encounter("Two Dolphins")
 		.with_boards("TestDolphin2a")
 		.with_enemies(BattlerDolphin, BattlerDolphin)	
@@ -164,6 +158,12 @@ encounter_add(
 	new Encounter("Smoker, High Rollers")
 		.with_boards("TestHybrid1", "TestHybrid2")
 		.with_enemies(BattlerSmoker, BattlerHighRoller, BattlerHighRoller)	
+)
+
+encounter_add(
+	new Encounter("Smoker, Dolphin")
+		.with_boards("TestPyramid1")
+		.with_enemies(BattlerSmoker, BattlerDolphin)	
 )
 
 
