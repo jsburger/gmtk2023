@@ -24,9 +24,11 @@ var get_form = function() {
 	return form;
 }
 with add_action("SYMBOL SLAM!!!") {
+	//var damage = as_damage(new FunctionProvider(count_blocks));
 	var damage = as_damage(new FunctionProvider(count_blocks));
-	set_intent(INTENT.ATTACK, damage)
-	hit(damage)
+	set_intent(INTENT.DEBUFF, damage)
+	//hit(damage)
+	poison(damage)
 	var _form = accept_provider(new FunctionProvider(get_form));
 	recolor(5, _form)
 	wait(25)
