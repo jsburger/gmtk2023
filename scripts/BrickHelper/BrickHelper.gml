@@ -48,6 +48,9 @@ function BrickHelper(_large = false, _vertical = false) constructor {
 			var overlay = freeze_overlay_get(is_large, is_vertical);
 			brick.setup_freeze(overlay);			
 		}
+		if can_poison {
+			brick.setup_poison(poison_overlay_get(is_large, is_vertical))
+		}
 		if can_burn {
 			brick.can_burn = true;
 		}
@@ -76,6 +79,17 @@ function freeze_overlay_get(is_large = false, is_vertical = false) {
 	else {
 		if is_vertical return sprBrickVerticalFrozen;
 		return sprBrickFrozen;
+	}
+}
+
+function poison_overlay_get(is_large = false, is_vertical = false) {
+	if is_large {
+		if is_vertical return sprPoisonOverlayLargeVertical;
+		return sprPoisonOverlayLarge;
+	}
+	else {
+		if is_vertical return sprPoisonOverlayVertical;
+		return sprPoisonOverlay;
 	}
 }
 

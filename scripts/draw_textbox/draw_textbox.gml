@@ -12,6 +12,9 @@ function draw_textbox(_x, _y, _lines) {
 		height += string_height(_lines[i]);
 		if i > 0 height += sep
 	}
+	if _x + width > cam_right {
+		_x -= (_x + width) - cam_right
+	}
 	
 	var padding = 2;
 	draw_rectangle_simple(_x, _y, _x + width + 2 * padding, _y + height + 2 * padding, c_black, .6);

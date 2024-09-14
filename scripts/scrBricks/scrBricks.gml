@@ -102,33 +102,61 @@ function brick_status_clear(brick) {
 		if is_burning {
 			set_burning(false);
 		}
+		if is_poisoned {
+			
+			set_poisoned(false, true)
+		}
 	}
 }
 
-function brick_can_burn(brick) {
-	return !brick.status_immune && brick.can_burn && !brick.is_burning && !brick.is_frozen;
-}
-
-function bricks_burn(count) {
-	var burnable = array_build_filtered(parBoardObject, brick_can_burn);
+#region Statuses
+	/// Returns if the brick is burning, frozen, or poisoned
+	function brick_has_status(brick) {
+		return brick.is_burning || brick.is_frozen || brick.is_poisoned;
+	}
 	
-	array_shuffle_ext(burnable)
-	for (var i = 0; i < min(count, array_length(burnable)); i++) {
-		burnable[i].set_burning(true);
+	#region Burn
+	function brick_can_burn(brick) {
+		return !brick.status_immune && brick.can_burn && !brick_has_status(brick);
 	}
-}
 
-function brick_can_freeze(brick) {
-	return !brick.status_immune && brick.can_freeze && !brick.is_frozen
-		&& !brick.is_burning;
-}
-
-function brick_on_unfreeze(brick) {
-	with PlayerBattler {
-		with statuses.find(STATUS.FREEZE) knock()
+	function bricks_burn(count) {
+		var burnable = array_build_filtered(parBoardObject, brick_can_burn);
+	
+		array_shuffle_ext(burnable)
+		for (var i = 0; i < min(count, array_length(burnable)); i++) {
+			burnable[i].set_burning(true);
+		}
 	}
-}
+	#endregion
 
+	#region Freeze
+	function brick_can_freeze(brick) {
+		return !brick.status_immune && brick.can_freeze && !brick_has_status(brick);
+	}
+
+	function brick_on_unfreeze(brick) {
+		with PlayerBattler {
+			with statuses.find(STATUS.FREEZE) knock()
+		}
+	}
+	#endregion
+	
+	#region Poison
+	function brick_can_poison(brick) {
+		return !brick.status_immune && brick.can_poison && !brick_has_status(brick);
+	}
+	
+	function brick_lose_poison(brick) {
+		with PlayerBattler {
+			with statuses.find(STATUS.POISON) knock();
+		}
+	}
+	
+	#endregion
+#endregion
+
+/// Damages a brick.
 /// Returns if the brick was actually damaged
 function brick_hit(brick, damage, source) {
 	if damage <= 0 return false;
@@ -142,12 +170,22 @@ function brick_hit(brick, damage, source) {
 		brick.on_hurt(damage, source);
 	
 		if brick.hp <= 0 {
+			
+			brick_killed_by_damage(brick)
+			
 			instance_destroy(brick)
 		}
 		
 		return true;
 	}
 	return false;
+}
+
+/// Run when a board object is destroyed by damage
+function brick_killed_by_damage(brick) {
+	if brick.is_poisoned {
+		brick.set_poisoned(false)
+	}
 }
 
 function board_column_max() {

@@ -66,6 +66,11 @@ function EnemyMove() : CombatInterface() constructor {
 		return apply_status(TARGETS.PLAYER, STATUS.FREEZE, value)
 	}
 	
+	/// Shorthand for applying poison to the player
+	static poison = function(value) {
+		return apply_status(TARGETS.PLAYER, STATUS.POISON, value)
+	}
+	
 	/// Shorthand for applying strength to self
 	static buff_strength = function(value) {
 		return apply_status(TARGETS.SELF, STATUS.STRENGTH, value)
@@ -73,8 +78,8 @@ function EnemyMove() : CombatInterface() constructor {
 	
 	static burn = function(value) {
 		var func = method({value}, function() {
-			bricks_burn(value)
-		}),
+				bricks_burn(value)
+			}),
 			item = run(func);
 		item.delay = 15;
 		return item;

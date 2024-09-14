@@ -27,7 +27,7 @@ function combat_active() {
 	return false;
 }
 
-function battler_hurt(target, damage, source, reactable = false) {
+function battler_hurt(target, damage, source, reactable = true) {
 	if damage <= 0 exit;
 	target.hurt(damage)
 	with instance_create_depth(target.x, target.y, target.depth - 1, obj_fx) {

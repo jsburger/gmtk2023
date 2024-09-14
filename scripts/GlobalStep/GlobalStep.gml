@@ -14,5 +14,8 @@ function global_step() {
 	current_frame += 1;
 	
 	Clickables_Step()
-	Tickables_Step()	
+	Tickables_Step()
+	
+	//static interface = new CombatInterface();
+	//if keyboard_check_pressed(ord("B")) interface.apply_status(TARGETS.PLAYER, STATUS.POISON, 1)
 }

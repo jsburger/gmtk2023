@@ -5,6 +5,16 @@ global.player_stats = {
 	abilities: []
 }
 
+function player_get_hp() {
+	if instance_exists(PlayerBattler) return PlayerBattler.hp;
+	return global.player_stats.hp
+}
+
+/// Sets the player's current health, including its corresponding battler
+function player_set_hp(n) {
+	global.player_stats.hp = n;
+	with PlayerBattler hp = n;
+}
 
 
 /// Give the player an ability. Accepts Ability instances or a String name

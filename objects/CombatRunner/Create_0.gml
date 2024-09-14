@@ -182,8 +182,8 @@ on_battler_die = function(battler) {
 		var filter = method(battler, function(action) {
 			return action.get_target() != self && action.owner != self;
 		})
-		array_filter_smart(actions, filter);
-		array_filter_smart(resolving_actions, filter);
+		array_filter_resize(actions, filter);
+		array_filter_resize(resolving_actions, filter);
 		Timeline.update()
 	}
 	
@@ -209,5 +209,7 @@ end_combat = function() {
 	combat_ending = true;
 	
 	fade_to(encounter_room)
+	// Test code to reset player health when they "die"
+	if player_get_hp() <= 0 player_set_hp(50)
 	
 }

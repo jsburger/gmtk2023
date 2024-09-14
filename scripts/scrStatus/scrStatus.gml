@@ -9,11 +9,11 @@ function StatusHolder(creator) constructor {
 			status.on_stack(strength);
 		}
 		else {
-			var status = status_get(status_key, strength)
+			var status = status_get(status_key, strength);
 			status.set_owner(owner)
-			status.on_add()
 			status.set_holder(self);
 			struct_set(status_map, status_key, status)
+			status.add()
 		}
 		return self
 	}
@@ -108,6 +108,7 @@ function status_get_registry() {
 function status_get_prototype(name) {
 	return status_get_registry()[? name]
 }
+/// @returns {Struct.Status}
 function status_get(name, count) {
 	var factory = status_get_prototype(name);
 	var s = factory(count)
@@ -135,6 +136,11 @@ function Status(Strength) constructor {
 	// Controls if the status ticks down every turn
 	is_timer = false;
 	
+	// Generic use provider for getting effect strength
+	strength_provider = new FunctionProvider(function() {return strength})
+	
+	timeline_entry = undefined;
+	
 	static set_owner = function(Owner) {
 		owner = Owner
 	}
@@ -150,6 +156,7 @@ function Status(Strength) constructor {
 			var h = holder.ref;
 			h.status_remove(key)
 		}
+		if timeline_entry != undefined Timeline.update()
 	}
 	
 	static knock = function() {
@@ -183,9 +190,13 @@ function Status(Strength) constructor {
 	}
 	static __on_turn_start_internal = on_turn_start
 
-	static on_add = function() {
-		
+	/// Called by statusHolder to initialize the status
+	static add = function() {
+		on_add()
+		if timeline_entry != undefined Timeline.update();
 	}
+	/// Run when a status is added to a holder, not when it is stacked.
+	static on_add = function() {}
 	static on_remove = function() {
 		
 	}
@@ -278,11 +289,11 @@ function StatusFreeze(Strength) : StatusTickable(Strength) constructor {
 function StatusBurn(count) : Status(count) constructor {
 	sprite_index = sprStatusBurn;
 	name = "Burned";
-	desc = new Formatter("YOUVE BEEN BURNED!!!! \nTAKE {0} DAMAGE WHEN YOU CAST SPELLS!", new FunctionProvider( function() {return strength}))
+	desc = new Formatter("YOUVE BEEN BURNED!!!! \nTAKE {0} DAMAGE WHEN YOU CAST SPELLS!", strength_provider)
 	
 	static after_ability_used = function() {
 		static interface = new CombatInterface();
-		interface.run(function(){battler_hurt(CombatRunner.player, strength, self, true)})
+		interface.run(function(){battler_hurt(CombatRunner.player, strength, self)})
 	}
 	
 	static on_turn_end = function() {
@@ -292,3 +303,57 @@ function StatusBurn(count) : Status(count) constructor {
 }
 STATUS.BURN = status_register("Burn", function(count){return new StatusBurn(count)})
 
+
+function StatusPoison(count) : StatusTickable(count) constructor {
+	sprite_index = sprStatusPoison;
+	name = "Poisoned"
+	desc = new Formatter("Take {0} Damage at the end of your turn.\nBreak poisoned bricks to reduce this!", strength_provider)
+	
+	timeline_entry = new TimelineBoardNote(sprite_index, desc)
+	
+	static on_turn_end = function() {
+		static interface = new CombatInterface();
+		interface.owner = self;
+		interface.attack(CombatRunner.player, strength)
+		//battler_hurt(PlayerBattler, strength, self);
+	}
+	
+	static on_remove = function() {
+		if strength > 0 {
+			with parBoardObject {
+				if is_poisoned {
+					set_poisoned(false, true)
+				}
+			}
+		}
+		strength = 0;
+	}
+	
+	static tick = function() {
+		if strength > 0 {
+			var poisoned = array_build_filtered(parBoardObject, function(inst) {return inst.is_poisoned})
+			if array_length(poisoned) < strength {
+				// Gather poisonable bricks
+				var bricks = array_build_filtered(parBoardObject, brick_can_poison),
+					dif = strength - array_length(poisoned);
+				// Exit early if no bricks to poison
+				if array_length(bricks) <= 0 {
+					exit;
+				}
+				// Randomize array order
+				array_shuffle_ext(bricks)
+				// Poison bricks
+				repeat(min(dif, array_length(bricks))) {
+					var brick = array_pop(bricks);
+					brick.set_poisoned(true);
+					// Sparkle Effect
+					with (instance_create_layer(brick.x,brick.y, "FX", obj_fx)) {
+						sprite_index = sprFXHitSmall
+					}
+				}
+			}
+		}
+	}
+	
+}
+STATUS.POISON = status_register("Poisoned", function(count){return new StatusPoison(count)})

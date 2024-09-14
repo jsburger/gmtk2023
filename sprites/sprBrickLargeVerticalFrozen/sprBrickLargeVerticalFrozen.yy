@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Brick Overlays",
-    "path":"folders/Sprites/Level Objects/Bricks/Brick Overlays.yy",
+    "name":"Frozen",
+    "path":"folders/Sprites/Level Objects/Bricks/Brick Overlays/Frozen.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

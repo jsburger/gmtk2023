@@ -29,6 +29,8 @@
 #macro cam_height camera_get_view_height(view_camera[0])
 #macro cam_center_x (cam_x + cam_width/2)
 #macro cam_center_y (cam_y + cam_height/2)
+#macro cam_right (cam_x + cam_width)
+#macro cam_bottom (cam_y + cam_height)
 
 become_active = false;
 //Allows the shooter to act

@@ -151,6 +151,27 @@
 	
 	#region Poison
 		can_poison = false;
+		
+		spr_poison = sprPoisonOverlay;
+		spr_poison_index = 0;
+		is_poisoned = false;
+		/// Cleaning prevents the function from calling brick_lose_poison, which would create a loop
+		set_poisoned = function(value, cleaning = false) {
+			if value != is_poisoned {
+				is_poisoned = value;
+				if is_poisoned {
+					spr_poison_index = image_random(spr_poison);
+				}
+				else if !cleaning {
+					brick_lose_poison(self)
+				}
+			}
+		};
+		
+		function setup_poison(sprite) {
+			can_poison = true;
+			spr_poison = sprite
+		};
 	#endregion
 	
 #endregion

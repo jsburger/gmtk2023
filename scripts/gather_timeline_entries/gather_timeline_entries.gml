@@ -1,4 +1,13 @@
 function gather_timeline_entries(input) {
+	//Statuses
+	with Battler {
+		var entries = statuses.filter(function(status) {return status.timeline_entry != undefined});
+		for (var i = 0; i < array_length(entries); i++) {
+			array_push(input, entries[i].timeline_entry)
+		}
+	}
+	
+	//Attacks
 	with CombatRunner {
 		
 		for (var i = 0; i < array_length(move_queue); i++) {
@@ -13,6 +22,8 @@ function gather_timeline_entries(input) {
 			}
 		}
 	}
+	
+	//Board hints
 	with Timeline {
 		if ds_map_size(object_hints) > 0 {
 			// This function modifies the array directly, but is marked pure for some stupid reason

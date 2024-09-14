@@ -3,7 +3,7 @@ function array_random(array) {
 }
 
 /// Mutates and resizes an array
-function array_filter_smart(array, filter) {
+function array_filter_resize(array, filter) {
 	array_resize(array, array_filter_ext(array, filter))
 }
 
