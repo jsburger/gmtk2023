@@ -13,6 +13,7 @@ setup()
 active = false;
 lean = 0;
 position = 0;
+playSound = true;
 
 can_click = function() {
 	return combat_active();
