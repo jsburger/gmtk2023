@@ -253,6 +253,8 @@ function StatusFreeze(Strength) : StatusTickable(Strength) constructor {
 					with (instance_create_layer(brick.x,brick.y, "FX", obj_fx)) {
 						sprite_index = sprFXHitSmall
 					}
+				// Play Sound
+				sound_play_pitch(sndApplyFreeze, random_range(.9, 1.1));
 				}
 			}
 		}
@@ -294,6 +296,8 @@ function StatusBurn(count) : Status(count) constructor {
 	static after_ability_used = function() {
 		static interface = new CombatInterface();
 		interface.run(function(){battler_hurt(CombatRunner.player, strength, self)})
+		// Play Sound
+		sound_play_pitch(sndBurn, random_range(.9, 1.1));		
 	}
 	
 	static on_turn_end = function() {
@@ -315,6 +319,7 @@ function StatusPoison(count) : StatusTickable(count) constructor {
 		static interface = new CombatInterface();
 		interface.owner = self;
 		interface.attack(CombatRunner.player, strength)
+		sound_play_pitch(sndPoison, random_range(.9, 1.1));
 		//battler_hurt(PlayerBattler, strength, self);
 	}
 	
@@ -348,9 +353,11 @@ function StatusPoison(count) : StatusTickable(count) constructor {
 					brick.set_poisoned(true);
 					// Sparkle Effect
 					with (instance_create_layer(brick.x,brick.y, "FX", obj_fx)) {
-						sprite_index = sprFXHitSmall
+						sprite_index = sprFXPuffSmall
 					}
 				}
+				// Play Sound
+				sound_play_pitch(sndApplyPoison, random_range(.9, 1.1));
 			}
 		}
 	}

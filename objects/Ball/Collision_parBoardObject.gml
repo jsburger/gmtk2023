@@ -105,6 +105,8 @@ if !is_ghost && ball_can_damage(self, collider) {
 	
 	if !is_ghost && !is_coin && collider.is_burning {
 		PlayerBattler.statuses.add_status(STATUS.BURN, 1)
+		// Play Sound
+		sound_play_pitch(sndFire, random_range(.8, 1.2));
 	}
 }
 

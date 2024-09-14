@@ -69,6 +69,8 @@ function bricks_recolor(count, _color, sorter = undefined) {
 	for (var i = 0; i < array_length(selected); i++) {
 		var change = method({color : _color, inst: selected[i]}, function() {
 			inst.set_color(color);
+			// Play Sound
+			sound_play_pitch(choose(sndColor1, sndColor2, sndColor3, sndColor4), random_range(.9, 1.1));
 			with inst {
 				with (instance_create_layer(random_range(bbox_left, bbox_right), random_range(bbox_top, bbox_bottom), "FX", obj_fx)) {
 					sprite_index = sprFXSplat
@@ -121,11 +123,18 @@ function brick_status_clear(brick) {
 	}
 
 	function bricks_burn(count) {
+		// Play Sound
+		sound_play_pitch(sndApplyBurn, random_range(.9, 1.01));	
+		
 		var burnable = array_build_filtered(parBoardObject, brick_can_burn);
 	
 		array_shuffle_ext(burnable)
 		for (var i = 0; i < min(count, array_length(burnable)); i++) {
 			burnable[i].set_burning(true);
+			with (instance_create_layer(burnable[i].x,burnable[i].y, "FX", obj_fx)) {
+				sprite_index = sprFXPuffSmall
+				image_blend = c_orange
+			}			
 		}
 	}
 	#endregion
@@ -184,6 +193,19 @@ function brick_hit(brick, damage, source) {
 /// Run when a board object is destroyed by damage
 function brick_killed_by_damage(brick) {
 	if brick.is_poisoned {
+		//Play sound
+		sound_play_pitch(choose(sndGooDeath1, sndGooDeath2, sndGooDeath3), random_range(.9, 1.1));	
+		
+		with (instance_create_layer(brick.x, brick.y, "FX", obj_fx)) {
+			sprite_index = sprFXSplat
+		
+			var rand_scale = random_range(0.5, 1.5);
+			image_xscale = rand_scale;
+			image_yscale = rand_scale;
+			image_blend = mana_get_color(brick.color);
+		}	
+	
+		
 		brick.set_poisoned(false)
 	}
 }

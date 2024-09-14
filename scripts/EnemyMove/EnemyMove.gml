@@ -76,7 +76,7 @@ function EnemyMove() : CombatInterface() constructor {
 		return apply_status(TARGETS.SELF, STATUS.STRENGTH, value)
 	}
 	
-	static burn = function(value) {
+	static burn = function(value) {	
 		var func = method({value}, function() {
 				bricks_burn(value)
 			}),
