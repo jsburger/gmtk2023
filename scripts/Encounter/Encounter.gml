@@ -65,7 +65,7 @@ encounter_add(
 
 encounter_add(
 	new Encounter("The Slasher...")
-		.with_boards("TestSlasher1", "TestSlasher2")
+		.with_boards("TestSlasher1", "TestSlasher2", "TestSlasher3", "TestSlasher4", "TestSlasher5")
 		.with_enemies(BattlerSlasher)
 )
 
@@ -164,6 +164,12 @@ encounter_add(
 	new Encounter("Smoker, Dolphin")
 		.with_boards("TestPyramid1")
 		.with_enemies(BattlerSmoker, BattlerDolphin)	
+)
+
+encounter_add(
+	new Encounter("Old People")
+		.with_boards("TestHybrid1")
+		.with_enemies(BattlerSmoker, BattlerOldPerson, BattlerOldPerson)	
 )
 
 

@@ -7,7 +7,12 @@ repeat(1){
 		friction = .1;
 	}
 }
-//global.money += value
+
+if mana_amount > 0 && is_valid_mana(color) {
+	mana_add(color, mana_amount)
+	mana_effect_create(x, y, color, mana_amount)
+}
+
 sound_play_pitch(sound, random_range(.8, 1.2));
 
 instance_destroy(self)

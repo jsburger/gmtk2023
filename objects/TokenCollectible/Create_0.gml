@@ -7,14 +7,21 @@ hit_timer = 0;
 maxspeed = 16
 image_speed = 1;
 landed = false;
-value = 10;
-maxfade = round(room_speed * 2.5);
+maxfade = round(room_speed);
 fade = maxfade;
 portal = -4;
 sound = sndCoin
 board_bottom_bounce = -5;
 depth -= 2;
-alarm[0] = 1
+
 mana_amount = 1;
 colorable = true;
+color = MANA_NONE;
+
+set_color = function(col) {
+	if !is_valid_color(col) exit
+	color = col
+	image_blend = mana_get_color(col)
+}
+
 lastcollision = {"x": x, "y": y}
