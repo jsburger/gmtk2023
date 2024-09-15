@@ -64,11 +64,11 @@ function color_decompose(color) {
 function mana_get_color(mana){
 	switch mana {
 		case MANA.RED:
-			return #d12222
+			return #aa392c
 		case MANA.BLUE:
-			return #4566d1
+			return #447ea5
 		case MANA.YELLOW:
-			return #efc555
+			return #cdb163
 		case COLORS.PURPLE:
 			return #7633a6
 		case COLORS.GREEN:
@@ -76,7 +76,7 @@ function mana_get_color(mana){
 		case COLORS.ORANGE:
 			return #db6b32
 		default:
-			return c_white	
+			return #919a9f	
 	}
 }
 
@@ -89,7 +89,7 @@ function mana_get_color_alt(mana, index) {
 	if mana < MANA.MAX && mana >= MANA.RED {
 		return colors[mana][index];
 	}
-	return c_white;
+	return #919a9f;
 }
 
 function mana_get_sum() {
