@@ -167,9 +167,9 @@ encounter_add(
 )
 
 encounter_add(
-	new Encounter("Old People")
-		.with_boards("TestHybrid1")
-		.with_enemies(BattlerSmoker, BattlerOldPerson, BattlerOldPerson)	
+	new Encounter("Old People, Bar Fly")
+		.with_boards("TestSandwich1")
+		.with_enemies(BattlerBarFly, BattlerOldPerson, BattlerOldPerson)	
 )
 
 

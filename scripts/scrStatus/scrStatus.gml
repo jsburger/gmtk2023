@@ -208,7 +208,7 @@ function Status(Strength) constructor {
 STATUS.STRENGTH = status_register("Strength", function(count) {return new StatusStrength(count)})
 
 function StatusStrength(Strength) : Status(Strength) constructor {
-	sprite_index = sprIntentAttack;
+	sprite_index = sprStatusStrength;
 	name = "Strength"
 	desc = "Increases damage dealt."
 	

@@ -37,6 +37,15 @@ function mana_add(type, amount) {
 	}
 }
 
+function mana_subtract_all(amount) {
+	for (var i = 0; i < MANA.MAX; ++i) {
+		if global.mana[i] >= amount {
+			global.mana[i] -= amount
+			with ManaDrawer blink[i] = 1
+		}
+	}
+}
+
 /// If a color is mana, IE Red, Blue, Yellow
 function is_mana(color) {
 	return in_range_exc(color, MANA_NONE, MANA.MAX);
