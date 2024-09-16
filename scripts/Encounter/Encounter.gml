@@ -172,6 +172,12 @@ encounter_add(
 		.with_enemies(BattlerBarFly, BattlerOldPerson, BattlerOldPerson)	
 )
 
+encounter_add(
+	new Encounter("Old People")
+		.with_boards("TestSlots1", "TestSlots2")
+		.with_enemies(BattlerOldPerson, BattlerOldPerson)	
+)
+
 
 //global.encounters = [];
 //encounter_add(new Encounter("Collision Test").with_boards("CollisionTester"))

@@ -43,6 +43,9 @@ function mana_subtract_all(amount) {
 			global.mana[i] -= amount
 			with ManaDrawer blink[i] = 1
 		}
+		else {
+			global.mana[i] = 0;	
+		}
 	}
 }
 

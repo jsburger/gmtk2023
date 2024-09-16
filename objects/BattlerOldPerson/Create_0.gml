@@ -9,7 +9,7 @@ spr_icon = sprOldPersonIcon
 size = ENEMY_SIZE.SMALL;
 
 var reduce = function(){
-	mana_subtract_all(2)
+	mana_subtract_all(4)
 }
 
 with add_action("Lose") {
@@ -23,8 +23,8 @@ with add_action("Lose") {
 }
 
 with add_action("Drain") {
-	set_intent(INTENT.DEBUFF, 2)
+	set_intent(INTENT.DEBUFF, 4)
 	run(reduce);
 	buff_strength(2);
-	desc = "Reduce all Mana by 2\nGain 2 Strength."
+	desc = "Reduce all Mana by 4\nGain 2 Strength."
 }
