@@ -100,11 +100,11 @@ encounter_add(
 		.with_enemies(BattlerWhale)
 )
 
-encounter_add(
-	new Encounter("STS Sentries")
-		.with_boards("Sentry1a")
-		.with_enemies(BattlerSentry, BattlerSentry)	
-)
+//encounter_add(
+//	new Encounter("STS Sentries")
+//		.with_boards("Sentry1a")
+//		.with_enemies(BattlerSentry, BattlerSentry)	
+//)
 
 encounter_add(
 	new Encounter("Two Dolphins")
@@ -136,11 +136,11 @@ encounter_add(
 		.with_enemies(BattlerOneArmedBandit)
 )
 
-encounter_add(
-	new Encounter("Dolphin, Sentry")
-		.with_boards("TestDuos1")
-		.with_enemies(BattlerDolphin, BattlerSentry)	
-)
+//encounter_add(
+//	new Encounter("Dolphin, Sentry")
+//		.with_boards("TestDuos1")
+//		.with_enemies(BattlerDolphin, BattlerSentry)	
+//)
 
 encounter_add(
 	new Encounter("High Rollers")
