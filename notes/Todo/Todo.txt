@@ -5,8 +5,8 @@ Add and implement RandomSources.
 Add global save serializers to be used in scripts.
 Add ArrayBuilder for filter chaining and backtracking.
 Rework Player abilities. They're really clunky.
-Rewrite CombatActions to handle multiple targets.
+[[[Rewrite CombatActions to handle multiple targets.]]] DONE
 TargetProvider. RoundResetFunctionProvider.
-Targets.ALL, Targets.NOT_ME, Targets.OTHER_ENEMIES, Targets.ALL_ENEMIES
+[[[Targets.ALL, Targets.NOT_ME, Targets.OTHER_ENEMIES, Targets.ALL_ENEMIES]]] DONE
 Rewrite enemy moves to use factories instead (wrap the code creation in a function) (fixes clone error)
 Hoverable/clickable structs.

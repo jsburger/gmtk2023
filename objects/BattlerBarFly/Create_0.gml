@@ -23,3 +23,14 @@ with add_action("Rounds") {
 	
 	desc = "Apply 4 Freeze.\nApply 4 Poison."
 }
+
+/* example
+with add_action("Slap") {
+	desc = "Deal 3 damage to all other enemies.\nGain 100 block";
+	multitarget(TARGETS.OTHER_ENEMIES, function(target) {
+		var damage = as_damage(3);
+		attack(target, damage)
+	})
+	block(100)
+}
+*/
