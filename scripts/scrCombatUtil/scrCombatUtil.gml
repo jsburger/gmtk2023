@@ -47,6 +47,9 @@ function battler_hurt(target, damage, source, reactable = true) {
 		scr_screenshake(5, 3, 0.2)
 		sound_play_pitch(sndCoinBagHit, random_range(.8, 1.2))
 	}
+	with instance_create_layer(target.x, target.y, "FX", effectDamagePopup) {
+		self.damage = -damage
+	}
 }
 
 function battler_give_block(target, block) {

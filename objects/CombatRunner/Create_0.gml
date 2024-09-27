@@ -205,6 +205,7 @@ on_battler_die = function(battler) {
 end_combat = function() {
 	actions = [];
 	resolving_actions = [];
+	move_queue = [];
 	
 	combat_ending = true;
 	

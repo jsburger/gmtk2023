@@ -111,6 +111,19 @@ function AbilityAttack(Damage) : Ability() constructor {
 	static act = function() {
 		attack(TARGETS.AIMED, damage)
 	}
+	
+	static draw_target = function(origin_x, origin_y, hovered_target) {
+		draw_line_width_color(origin_x, origin_y, mouse_x, mouse_y, 3, c_white, c_red)
+		var _x = mouse_x, _y = mouse_y
+		if (accepts_target(hovered_target)) {
+			_x = hovered_target.instance.x;
+			_y = hovered_target.instance.bbox_top + 24
+			draw_sprite_auto(sprAttackTarget, hovered_target.instance.x, hovered_target.instance.y)
+		}
+		font_push(fntBig, fa_center, fa_bottom)
+		draw_text_transformed(_x, _y, -damage, 1.5, 1.5, 0)
+		font_pop()
+	}
 }
 
 function AbilityDefend(Block) : Ability() constructor {

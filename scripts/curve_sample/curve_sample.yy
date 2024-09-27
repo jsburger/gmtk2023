@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"curve_sample",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"curve_sample",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

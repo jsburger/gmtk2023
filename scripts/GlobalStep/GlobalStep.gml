@@ -8,6 +8,15 @@ global.currentFrame = 0;
 
 #macro trace show_debug_message
 
+global.font = font_add_sprite_ext(sprLimestockFontBig,
+	".!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~",
+	true, 2
+)
+draw_set_font(global.font)
+
+#macro fntBig global.font
+#macro fntSmall _fontLimestock
+ 
 
 function global_step() {
 	
