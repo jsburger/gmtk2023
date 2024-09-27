@@ -10,4 +10,4 @@
 
 
 	// Draw statuses
-	statuses.draw(bbox_left, bbox_bottom + 64)
+	statuses.draw(bbox_left, bbox_bottom + 32)

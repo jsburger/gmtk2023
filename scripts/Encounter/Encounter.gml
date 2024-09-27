@@ -65,7 +65,7 @@ encounter_add(
 
 encounter_add(
 	new Encounter("The Slasher...")
-		.with_boards("TestSlasher1", "TestSlasher2")
+		.with_boards("TestSlasher1", "TestSlasher2", "TestSlasher3", "TestSlasher4", "TestSlasher5")
 		.with_enemies(BattlerSlasher)
 )
 
@@ -100,11 +100,11 @@ encounter_add(
 		.with_enemies(BattlerWhale)
 )
 
-encounter_add(
-	new Encounter("STS Sentries")
-		.with_boards("Sentry1a")
-		.with_enemies(BattlerSentry, BattlerSentry)	
-)
+//encounter_add(
+//	new Encounter("STS Sentries")
+//		.with_boards("Sentry1a")
+//		.with_enemies(BattlerSentry, BattlerSentry)	
+//)
 
 encounter_add(
 	new Encounter("Two Dolphins")
@@ -136,11 +136,11 @@ encounter_add(
 		.with_enemies(BattlerOneArmedBandit)
 )
 
-encounter_add(
-	new Encounter("Dolphin, Sentry")
-		.with_boards("TestDuos1")
-		.with_enemies(BattlerDolphin, BattlerSentry)	
-)
+//encounter_add(
+//	new Encounter("Dolphin, Sentry")
+//		.with_boards("TestDuos1")
+//		.with_enemies(BattlerDolphin, BattlerSentry)	
+//)
 
 encounter_add(
 	new Encounter("High Rollers")
@@ -164,6 +164,18 @@ encounter_add(
 	new Encounter("Smoker, Dolphin")
 		.with_boards("TestPyramid1")
 		.with_enemies(BattlerSmoker, BattlerDolphin)	
+)
+
+encounter_add(
+	new Encounter("Old People, Bar Fly")
+		.with_boards("TestSandwich1")
+		.with_enemies(BattlerBarFly, BattlerOldPerson, BattlerOldPerson)	
+)
+
+encounter_add(
+	new Encounter("Old People")
+		.with_boards("TestSlots1", "TestSlots2")
+		.with_enemies(BattlerOldPerson, BattlerOldPerson)	
 )
 
 

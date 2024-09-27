@@ -14,7 +14,7 @@ can_collide = false;
 spr_found = sprBrickHiddenFound;
 active = false;
 spawn_object = BrickNormal;
-
+image_blend = c_white;
 
 activate = function() {
 	active = true;

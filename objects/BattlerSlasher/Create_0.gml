@@ -3,7 +3,7 @@
 // Inherit the parent event
 event_inherited();
 
-set_hp(25)
+set_hp(30)
 spr_icon = sprSlasherIcon
 movemode = moveOrder.LINEAR
 move_max = 20;

@@ -1,4 +1,9 @@
 {
+  "info":{
+    "format":2.0,
+    "rounds":5.0,
+    "name":"TestSlasher2"
+  },
   "objects":[
     {
       "x":336.0,
@@ -42,6 +47,22 @@
       "object_index":"BrickLargeMetalV"
     },
     {
+      "x":224.0,
+      "y":-320.0,
+      "data":{
+        "color":2.0
+      },
+      "object_index":"Token"
+    },
+    {
+      "x":-224.0,
+      "y":-320.0,
+      "data":{
+        "color":2.0
+      },
+      "object_index":"Token"
+    },
+    {
       "x":0.0,
       "y":-272.0,
       "object_index":"BrickLargeMetalV"
@@ -79,7 +100,7 @@
       "object_index":"BrickNormal"
     },
     {
-      "x":-224.0,
+      "x":224.0,
       "y":-216.0,
       "data":{
         "color":0.0
@@ -87,7 +108,7 @@
       "object_index":"BrickNormal"
     },
     {
-      "x":224.0,
+      "x":-224.0,
       "y":-216.0,
       "data":{
         "color":0.0
@@ -121,6 +142,11 @@
       "object_index":"Portal"
     },
     {
+      "x":-432.0,
+      "y":-80.0,
+      "object_index":"BrickLargeMetal"
+    },
+    {
       "x":0.0,
       "y":-80.0,
       "object_index":"BrickLargeMetalV"
@@ -131,19 +157,9 @@
       "object_index":"BrickLargeMetal"
     },
     {
-      "x":-432.0,
-      "y":-80.0,
-      "object_index":"BrickLargeMetal"
-    },
-    {
       "x":0.0,
       "y":-32.0,
       "object_index":"BrickLargeMetal"
     }
-  ],
-  "info":{
-    "format":2.0,
-    "name":"TestSlasher2",
-    "rounds":5.0
-  }
+  ]
 }

@@ -5,6 +5,7 @@ event_inherited();
 
 set_hp(1);
 snd_impact = sndDieHitMetal;
+image_blend = c_white;
 
 super = {
 	set_color
