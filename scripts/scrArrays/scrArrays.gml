@@ -26,7 +26,7 @@ function array_build_filtered(object, filter) {
 	return a;
 }
 
-/// Takes all items from from and puts them in to
+/// Takes all items from From and puts them in To
 function array_transfer(to, from) {
 	if array_length(from) > 0 {
 		repeat(array_length(from)) {
@@ -51,6 +51,11 @@ function struct_clear(struct) {
 	for (var names = struct_get_names(struct), i = 0, l = array_length(names); i < l; i++) {
 		struct_remove(struct, names[i])
 	}
+}
+
+/// Clears an array of all values
+function array_clear(array) {
+	array_delete(array, 0, array_length(array))
 }
 
 /// Creates a new array containing arrays of the given height;
@@ -78,4 +83,19 @@ function random_numbers(count, max_number) {
 		}
 	}
 	return ret
+}
+
+/// Returns a random entry from an array, excluding one index from the possible results
+function array_random_excluding(array, excluded_index) {
+	var rand = irandom(array_length(array) - 2);
+	if rand >= excluded_index {
+		rand += 1;
+	}
+	return array[rand];
+}
+
+function array_clone_shallow(array) {
+	var c = [];
+	array_copy(c, 0, array, 0, array_length(array))
+	return c;
 }

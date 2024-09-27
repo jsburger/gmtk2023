@@ -49,6 +49,12 @@ function EnemyMove() : CombatInterface() constructor {
 		})
 	}
 	
+	static multitarget = function(targets, func) {
+		var item = new MultiTargetItem(owner, targets, func);
+		consume(item);
+		return item;
+	}
+	
 	/// @func hit
 	/// Shorthand for targeting the player with an attack
 	static hit = function(damage) {
@@ -83,5 +89,15 @@ function EnemyMove() : CombatInterface() constructor {
 			item = run(func);
 		item.delay = 15;
 		return item;
+	}
+}
+
+
+function EnemyMoveMultiTarget(owner) : EnemyMove() constructor {
+	delete timeline_entry;
+	set_owner(owner);
+	
+	static consume = function(action) {
+		CombatRunner.enqueue(action)
 	}
 }

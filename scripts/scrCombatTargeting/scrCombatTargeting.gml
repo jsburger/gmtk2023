@@ -2,10 +2,14 @@ enum TARGETS {
 	PLAYER,
 	NOONE,
 	AIMED,
-	ABOVE,
-	BELOW,
-	RANDOM,
+	RANDOM_OTHER_ENEMY,
+	RANDOM_ENEMY,
 	SELF,
+	//Multi targets
+	ALL,
+	NOT_ME,
+	OTHER_ENEMIES,
+	ALL_ENEMIES,
 	
 	MAX
 }
@@ -20,34 +24,38 @@ function get_item_target(targetType) {
 			case TARGETS.AIMED:
 				if is_player_turn return current_target;
 				return player
-			case TARGETS.ABOVE:
-				if is_player_turn {
-					if targeted_enemy != 0 
-						return enemies[targeted_enemy - 1]
-					return noone
-				}
-				if current_enemy != 0 {
-					return enemies[current_enemy - 1]
-				}
-				return noone
-			case TARGETS.BELOW:
-				if is_player_turn {
-					if targeted_enemy != (array_length(enemies) - 1) 
-						return enemies[targeted_enemy + 1]
-					return noone
-				}
-				if current_enemy != (array_length(enemies) - 1) {
-					return enemies[current_enemy + 1]
-				}
-				return noone
-			case TARGETS.RANDOM:
-				if is_player_turn {
-					return enemies[irandom(array_length(enemies) - 1)]
-				}
-				return player
 			case TARGETS.SELF:
 				if is_player_turn return player
-				return enemies[current_enemy]
+				return enemies[current_enemy];
+			case TARGETS.RANDOM_ENEMY:
+				return enemies[irandom(array_length(enemies) - 1)];
+			case TARGETS.RANDOM_OTHER_ENEMY:
+				return array_random_excluding(enemies, current_enemy);
+			case TARGETS.ALL:
+				var c = [player];
+				array_copy(c, 1, enemies, 0, array_length(enemies));
+				return c;
+			case TARGETS.NOT_ME:
+				if is_player_turn {
+					return array_clone_shallow(enemies);
+				}
+				var a = [player];
+				for (var i = 0; i < array_length(enemies); i++) {
+					if i != current_enemy {
+						array_push(a, enemies[i])
+					}
+				}
+				return a;
+			case TARGETS.OTHER_ENEMIES:
+				var a = [];
+				for (var i = 0; i < array_length(enemies); i++) {
+					if i != current_enemy {
+						array_push(a, enemies[i])
+					}
+				}
+				return a;
+			case TARGETS.ALL_ENEMIES:
+				return array_clone_shallow(enemies)
 		}
 	}
 	return targetType

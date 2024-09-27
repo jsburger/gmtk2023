@@ -78,3 +78,22 @@ function RecolorItem(count, color) : CombatItem() constructor {
 		}
 	}
 }
+
+function MultiTargetItem(owner, targets, func) : CombatItem() constructor {
+	self.targets = targets;
+	self.func = func;
+	self.owner = owner;
+	delay = 0;
+	
+	static act = function(runner) {
+		var t = resolve_multitarget(targets);
+		if !is_array(t) exit;
+		var interface = new EnemyMoveMultiTarget(owner),
+			call = method(interface, func);
+		for (var i = 0; i < array_length(t); i++) {
+			if instance_exists(t[i]) {
+				call(t[i])
+			}
+		}
+	}
+}

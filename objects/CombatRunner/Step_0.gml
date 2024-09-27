@@ -48,6 +48,12 @@ while has_actions() && waitTime <= 0 {
 		var action = array_shift(resolving_actions);
 		action.act(self);
 		waitTime += action.delay;
+		// Move items out of the "hot" queue into the normal one after something is finished running.
+		var length = array_length(resolving_actions);
+		if length > 0 {
+			actions = array_concat(resolving_actions, actions)
+			array_clear(actions)
+		}
 	}
 	//Must have actions
 	else {

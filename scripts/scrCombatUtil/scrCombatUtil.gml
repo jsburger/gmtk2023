@@ -2,6 +2,9 @@
 
 function resolve_target(target) {
 	if is_int64(target) { //Enum check
+		if target >= TARGETS.ALL && target <= TARGETS.ALL_ENEMIES {
+			show_message("Multitarget used in a single target function! Fix that, it doesn't work!")
+		}
 		return resolve_target(get_item_target(target));
 	}
 	if is_struct(target) {
@@ -12,6 +15,13 @@ function resolve_target(target) {
 	}
 
 	return target;
+}
+
+function resolve_multitarget(target) {
+	if is_int64(target) {
+		return resolve_target(get_item_target(target))
+	}
+	return resolve_target(target);
 }
 
 function provider_get(value) {

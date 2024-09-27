@@ -23,4 +23,3 @@ with add_action("Rounds") {
 	
 	desc = "Apply 4 Freeze.\nApply 4 Poison."
 }
-
