@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"curve_sample",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Math",
+    "path":"folders/Scripts/Math.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

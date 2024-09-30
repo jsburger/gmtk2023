@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scrTickables",
   "parent":{
-    "name":"New Shit",
-    "path":"folders/Scripts/New Shit.yy",
+    "name":"Systems",
+    "path":"folders/Scripts/Systems.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

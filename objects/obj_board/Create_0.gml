@@ -32,6 +32,10 @@
 #macro cam_right (cam_x + cam_width)
 #macro cam_bottom (cam_y + cam_height)
 
+#macro TILE_WIDTH 32
+#macro TILE_HEIGHT 16
+#macro TILE_MIN 16
+
 become_active = false;
 //Allows the shooter to act
 active = false;

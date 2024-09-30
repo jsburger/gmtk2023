@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scrMana",
   "parent":{
-    "name":"New Shit",
-    "path":"folders/Scripts/New Shit.yy",
+    "name":"Combat",
+    "path":"folders/Scripts/Combat.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

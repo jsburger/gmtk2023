@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scrArrays",
   "parent":{
-    "name":"New Shit",
-    "path":"folders/Scripts/New Shit.yy",
+    "name":"Util",
+    "path":"folders/Scripts/Util.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

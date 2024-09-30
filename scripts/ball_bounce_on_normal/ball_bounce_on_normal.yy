@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"ball_bounce_on_normal",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Collision",
+    "path":"folders/Scripts/Collision.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

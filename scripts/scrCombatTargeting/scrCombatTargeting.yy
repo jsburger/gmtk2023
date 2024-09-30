@@ -6,7 +6,7 @@
   "name":"scrCombatTargeting",
   "parent":{
     "name":"Combat",
-    "path":"folders/Scripts/New Shit/Combat.yy",
+    "path":"folders/Scripts/Combat.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

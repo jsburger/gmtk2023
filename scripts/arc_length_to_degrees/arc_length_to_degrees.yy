@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"arc_length_to_degrees",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Math",
+    "path":"folders/Scripts/Math.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

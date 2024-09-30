@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"vector_get_length_on_axis",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Collision",
+    "path":"folders/Scripts/Collision.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

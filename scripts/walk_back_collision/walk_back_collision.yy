@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"walk_back_collision",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Collision",
+    "path":"folders/Scripts/Collision.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
