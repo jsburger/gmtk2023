@@ -8,7 +8,7 @@ if progress <= 6 {
 var blink = (progress > (1 sec)) && progress mod 10 < 2;
 
 font_push(fntBig, fa_center)
-if !blink draw_text_transformed(x, y + offset, damage, 2, 2, tilt);
+if !blink draw_text_transformed(x, y + offset, damage, 1.5, 1.5, tilt);
 font_pop()
 
 if progress <= 6 {
