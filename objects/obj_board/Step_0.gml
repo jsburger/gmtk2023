@@ -23,6 +23,8 @@ if keyboard_check_pressed(vk_home) {
 		})
 		
 		update_battler_bricks()
+		
+		with obj_cuffs visible = true;
 	}
 	//Enable editor
 	else{
@@ -39,6 +41,8 @@ if keyboard_check_pressed(vk_home) {
 		with EnemyBattler {
 			go_to(1088, 256 + 128 * enemy_position)
 		}
+		
+		with obj_cuffs visible = false;
 	}
 	with par_bricklike event_perform(ev_other, ev_user15);
 
@@ -48,6 +52,7 @@ if(editor){
 	with(par_collectible) instance_destroy(self, false);
 	
 	if mode = editorMode.build {
+		/*
 		entity_subnum += button_pressed(inputs.turn_right) - button_pressed(inputs.turn_left);
 
 		if mouse_wheel_up(){
@@ -60,23 +65,80 @@ if(editor){
 			if entity_num >= array_length(entity_list) entity_num = 0;
 			entity_subnum = 0;
 		}
-		
+		*/
+		var scroll = mouse_wheel_down() - mouse_wheel_up();
+		if scroll != 0 {
+			current_placer().reset();
+			placer_index = array_wrap_index(placers, placer_index + scroll)
+		}
+		var rotate = button_pressed(inputs.turn_right) - button_pressed(inputs.turn_left);
+		if rotate != 0 {
+			current_placer().cycle(rotate);
+		}
 		
 		//Block pick
 		if mouse_check_button_pressed(mb_middle) {
 			var inst = instance_position(mouse_x, mouse_y, parBoardObject);
 			if instance_exists(inst) {
-				for (var i = 0; i < array_length(entity_list); i++) {
-					for (var o = 0; o < array_length(entity_list[i]); o++) {
-						if entity_list[i][o] == inst.object_index {
-							entity_num = i;
-							entity_subnum = o;
-						}
-					}
+				//for (var i = 0; i < array_length(entity_list); i++) {
+				//	for (var o = 0; o < array_length(entity_list[i]); o++) {
+				//		if entity_list[i][o] == inst.object_index {
+				//			entity_num = i;
+				//			entity_subnum = o;
+				//		}
+				//	}
+				//}
+				
+				var index = array_find_index(placers, method(inst, function(placer) {return placer.try_match(self)}));
+				if index != -1 placer_index = index;
+			}
+		}
+		
+		var placer = current_placer();
+		if point_in_bbox(mouse_x, mouse_y, self) {
+			if button_pressed(inputs.shoot) {
+				clicked = true;
+				clicked_x = mouse_x;
+				clicked_y = mouse_y;
+				placer.on_click();
+				
+			}
+			else {
+				if !button_check(inputs.shoot) {
+					clicked = false
+					placer.on_release()
+				}
+				else {
+					placer.on_hold(clicked_x, clicked_y);
+					clicked_x = mouse_x;
+					clicked_y = mouse_y;
+				}
+			}
+			if button_pressed(inputs.dash) {
+				right_clicked = true;
+				right_clicked_x = mouse_x;
+				right_clicked_y = mouse_y;
+				placer.on_right_click();
+				
+			}
+			else {
+				if !button_check(inputs.dash) {
+					right_clicked = false
+					placer.on_right_click_release()
+				}
+				else {
+					placer.on_right_click_hold(right_clicked_x, right_clicked_y);
+					right_clicked_x = mouse_x;
+					right_clicked_y = mouse_y;
 				}
 			}
 		}
-	
+		else {
+			if clicked clicked = false;
+			if right_clicked right_clicked = false;
+		}
+		
+		/*
 		if entity_subnum < 0 entity_subnum = (array_length(entity_list[entity_num]) - 1);
 		if entity_subnum > (array_length(entity_list[entity_num]) - 1) entity_subnum = 0;
 	
@@ -190,7 +252,7 @@ if(editor){
 					mark_level_changed()
 				}
 			}
-		}
+		}*/
 	}
 	
 	if mode = editorMode.paint {

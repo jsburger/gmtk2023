@@ -67,6 +67,9 @@ function getInput(inputName, inputType) {
 		case(inputs.editor_translate_up):
 			keys = [vk_up]
 			break 
+		case(inputs.editor_modifier):
+			keys = [vk_shift]
+			break
 		
 		case (inputs.menu_use):
 			keys = [mb_left]
@@ -145,7 +148,8 @@ enum inputs {
 	editor_new,
 	editor_reload,
 	editor_translate_up,
-	editor_translate_down
+	editor_translate_down,
+	editor_modifier
 }
 
 enum inputTypes {

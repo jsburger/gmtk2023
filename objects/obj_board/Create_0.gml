@@ -64,16 +64,46 @@ entity_subnum = 0;
 current_entity = BrickNormal;
 current_sprite = mskNone;
 obj_layer = 0;
+
+
+clicked = false;
+clicked_x = 0;
+clicked_y = 0;
+
+right_clicked = false;
+right_clicked_x = 0;
+right_clicked_y = 0;
+
+
 entity_list = [
 /*Bricks*/    [BrickNormal, BrickNormalV], [BrickLarge, BrickLargeV], [BrickGlow, BrickGlowV], [BrickLargeGlow, BrickLargeGlowV], [BrickLargeMetal, BrickLargeMetalV],
 			  [BrickHidden, BrickHiddenV], [BrickLargeHidden, BrickLargeHiddenV],
 /*Movement 1*/[Bumper, ColorBumper],
-/*Movement 2*/[Portal],
-/*Movement 3*/[Launcher],
+/*Movement 2*/ new PortalPlacer(),
+/*Movement 3*/ new LauncherPlacer(),
 /*Explosives*/[BrickPipebomb, BrickPipebombV], [Bomb, ColorBomb],
 /*Other*/     [Token],
 /*Battler*/   [BattlerBrick], [BattlerBrickSmall]
 ];
+
+process_object = function(obj) {
+	if !is_struct(obj) {
+		return new ObjectPlacer(obj)
+	}
+	else {
+		return obj
+	}
+}
+
+placers = [];
+placer_index = 0;
+for (var i = 0; i < array_length(entity_list); i++) {
+	placers[i] = process_object(entity_list[i])
+}
+
+current_placer = function() {
+	return placers[placer_index]
+}
 
 accepted_enemies = [];
 
@@ -87,6 +117,7 @@ enum editorMode {
 mode = editorMode.build
 paintcolor = -1
 
+
 accept_objects_from = function(inst) {
 	
 	if !(array_contains(accepted_enemies, inst.object_index)) {
@@ -94,7 +125,7 @@ accept_objects_from = function(inst) {
 		if array_length(objects) <= 0 exit;
 		
 		array_push(accepted_enemies, inst.object_index);
-		array_push(entity_list, objects)
+		array_push(placers, process_object(objects))
 		//array_push(entity_sprite, array_map(objects, object_get_sprite))
 	}
 }

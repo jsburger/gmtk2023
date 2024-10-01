@@ -7,6 +7,9 @@ global.currentFrame = 0;
 #macro current_frame global.currentFrame
 
 #macro trace show_debug_message
+//Turns arguments into a local array named args
+#macro arguments_pack var args = array_create(argument_count); for (var i = 0; i < argument_count; ++i) {args[i] = argument[i]}
+
 
 global.font = font_add_sprite_ext(sprLimestockFontBig,
 	".!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~",

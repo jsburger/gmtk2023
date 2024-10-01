@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scrBricks",
+  "%Name":"placement_effect",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scrBricks",
+  "name":"placement_effect",
   "parent":{
     "name":"Game",
     "path":"folders/Scripts/Game.yy",

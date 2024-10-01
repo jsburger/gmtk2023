@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scrBricks",
+  "%Name":"object_get_real_mask",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scrBricks",
+  "name":"object_get_real_mask",
   "parent":{
-    "name":"Game",
-    "path":"folders/Scripts/Game.yy",
+    "name":"Util",
+    "path":"folders/Scripts/Util.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

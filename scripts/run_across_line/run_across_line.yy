@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scrBricks",
+  "%Name":"run_across_line",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scrBricks",
+  "name":"run_across_line",
   "parent":{
-    "name":"Game",
-    "path":"folders/Scripts/Game.yy",
+    "name":"Util",
+    "path":"folders/Scripts/Util.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

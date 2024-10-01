@@ -99,3 +99,23 @@ function array_clone_shallow(array) {
 	array_copy(c, 0, array, 0, array_length(array))
 	return c;
 }
+
+/// Finds the index that contains a specific value
+function array_find(array, value) {
+	if array_contains(array, value) {
+		for (var i = 0, length = array_length(array); i < length; i++) {
+			if array[i] == value return i
+		}
+	}
+	return undefined;
+}
+
+
+/// Returns an index that is always in bounds of the array
+function array_wrap_index(array, n) {
+	if n < 0 {
+		var length = array_length(array);
+		return length - ((-n) mod length)
+	}
+	return n mod array_length(array)
+}

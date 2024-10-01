@@ -36,21 +36,27 @@ if(editor){
 		draw_textbox(draw_x + 8, draw_y + 8, _str2)
 	}
 	
-	_c = canplace ? c_lime : c_red;
-	if(canplace){
-		gpu_set_fog(true, _c, 0, 0);
-		draw_sprite(current_sprite,image_index,mx - 1,my);
-		draw_sprite(current_sprite,image_index,mx + 1,my);
-		draw_sprite(current_sprite,image_index,mx,my - 1);
-		draw_sprite(current_sprite,image_index,mx,my + 1);
-		gpu_set_fog(false, _c, 0, 0);
-	}else{
-		gpu_set_fog(true, _c, 0, 0);
-		draw_sprite(current_sprite,image_index,mx,my);
-		gpu_set_fog(false, _c, 0, 0);
-	}
+	//_c = canplace ? c_lime : c_red;
+	//if(canplace){
+	//	gpu_set_fog(true, _c, 0, 0);
+	//	draw_sprite(current_sprite,image_index,mx - 1,my);
+	//	draw_sprite(current_sprite,image_index,mx + 1,my);
+	//	draw_sprite(current_sprite,image_index,mx,my - 1);
+	//	draw_sprite(current_sprite,image_index,mx,my + 1);
+	//	gpu_set_fog(false, _c, 0, 0);
+	//}else{
+	//	gpu_set_fog(true, _c, 0, 0);
+	//	draw_sprite(current_sprite,image_index,mx,my);
+	//	gpu_set_fog(false, _c, 0, 0);
+	//}
 	
-	draw_set_alpha(.7);
-	draw_sprite(current_sprite,image_index,mx,my);
-	draw_set_alpha(1);
+	//draw_set_alpha(.7);
+	//draw_sprite(current_sprite,image_index,mx,my);
+	//draw_set_alpha(1);
+	
+	var placer = current_placer();
+	placer.draw_world()
+	with obj_cuffs {
+		placer.draw_preview(x, y);
+	}
 }

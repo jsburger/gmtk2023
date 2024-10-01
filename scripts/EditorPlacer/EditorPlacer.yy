@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scrBricks",
+  "%Name":"EditorPlacer",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scrBricks",
+  "name":"EditorPlacer",
   "parent":{
-    "name":"Game",
-    "path":"folders/Scripts/Game.yy",
+    "name":"Editor",
+    "path":"folders/Scripts/Editor.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
