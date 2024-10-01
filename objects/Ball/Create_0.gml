@@ -16,6 +16,7 @@ nograv = false;
 spr_hit = sprDiceHit;
 has_bounced = false;
 pierce = 3;
+bounce_speed = -12;
 
 patience_enable = true;
 last_bounce_coords = [x,y];

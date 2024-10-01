@@ -1,6 +1,8 @@
 /// @description Bounce off chip
 // You can write your code in this editor
 
+bounce_speed = -12;
+
 if image_blend = c_dkgray exit;
 x = xprevious
 y = yprevious
