@@ -3,7 +3,7 @@ function EditorPlacer() constructor {
 	/// Called when the swap buttons are pressed
 	static cycle = function(dir) {}
 	
-	/// Observes the object returns if the object can be created with this placer.
+	/// Observes the object, returns if the object can be created with this placer.
 	/// Also changes state to match it.
 	static try_match = function(object) { return false; }
 	
