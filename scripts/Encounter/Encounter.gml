@@ -178,6 +178,12 @@ encounter_add(
 		.with_enemies(BattlerOldPerson, BattlerOldPerson)	
 )
 
+encounter_add(
+	new Encounter("Two Germs")
+		.with_boards("TestGerms1")
+		.with_enemies(BattlerGerm, BattlerGerm)
+)
+
 
 //global.encounters = [];
 //encounter_add(new Encounter("Collision Test").with_boards("CollisionTester"))
