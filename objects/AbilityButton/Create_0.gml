@@ -23,7 +23,7 @@ on_click = function() {
 		var denied = true;
 		if ability.can_cast() {
 			// Try to mount ability and see if it succeeds
-			if CombatRunner.mount_ability(other.ability) {
+			if CombatRunner.mount_ability(ability) {
 				denied = false;
 				if ability.needs_target{
 					active = true;	
