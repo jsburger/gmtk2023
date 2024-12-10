@@ -30,7 +30,7 @@ if gunangle > 180{
 
 #macro chip_cost 1
 
-if can_act && button_pressed(inputs.shoot) && can_shoot && inBoard {
+if can_act && button_pressed(inputs.shoot) && can_shoot {
 	//Shoot chips
 	if instance_exists(die) {
 		//Zone where chips cannot be shot to stop people from wasting chips
@@ -49,7 +49,7 @@ if can_act && button_pressed(inputs.shoot) && can_shoot && inBoard {
 		}
 	}
 	//Shoot dice
-	else {
+	else if inBoard {
 		with instance_create_layer(x, y, "Projectiles", Ball) {
 			motion_set(other.gunangle, 18)
 			other.die = id;

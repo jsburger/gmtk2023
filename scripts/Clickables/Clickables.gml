@@ -2,7 +2,7 @@
 /// @ignore
 function Clickables_Step() {
     
-    if button_pressed(inputs.shoot) {
+    if button_pressed(inputs.shoot) && !throw_active() {
 		//Get hovered object
 		var clicked = get_hovered_clickable();
 		if clicked != noone {
