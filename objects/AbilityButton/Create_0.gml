@@ -20,16 +20,20 @@ can_click = function() {
 }
 on_click = function() {
 	if ability != undefined {
+		var denied = true;
 		if ability.can_cast() {
-			with CombatRunner mount_ability(other.ability)
-			if ability.needs_target{
-				active = true;	
-			}
-			else {
-				lean = 1.5	
+			// Try to mount ability and see if it succeeds
+			if CombatRunner.mount_ability(other.ability) {
+				denied = false;
+				if ability.needs_target{
+					active = true;	
+				}
+				else {
+					lean = 1.5	
+				}
 			}
 		}
-		else {
+		if denied {
 			lean = -.3
 		}
 	}

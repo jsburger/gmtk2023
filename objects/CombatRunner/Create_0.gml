@@ -42,8 +42,10 @@ throws = 1;
 
 #region Running Ability Logic
 
+	/// Returns if the ability was mounted successfully
 	mount_ability = function(ability, call_after = undefined) {
 		if current_ability != undefined {
+			if !current_ability.can_cancel return false;
 			cancel_targeting()
 		}
 		current_ability = ability
@@ -55,6 +57,7 @@ throws = 1;
 			run_ability()
 			//cancel_targeting()
 		}
+		return true;
 	}
 
 	run_ability = function() {

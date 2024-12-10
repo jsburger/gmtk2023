@@ -13,7 +13,7 @@ function Clickables_Step() {
 					CombatRunner.accept_target(clicked.get_target_info())
 				}
 				else {
-					CombatRunner.cancel_targeting()
+					if CombatRunner.current_ability.can_cancel CombatRunner.cancel_targeting()
 				}
 			}
 			else {
