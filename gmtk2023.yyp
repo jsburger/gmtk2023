@@ -1007,6 +1007,7 @@
     {"id":{"name":"sprHighRollerIcon","path":"sprites/sprHighRollerIcon/sprHighRollerIcon.yy",},},
     {"id":{"name":"sprHighRollerIdle","path":"sprites/sprHighRollerIdle/sprHighRollerIdle.yy",},},
     {"id":{"name":"sprHouseRoll","path":"sprites/sprHouseRoll/sprHouseRoll.yy",},},
+    {"id":{"name":"sprHud","path":"sprites/sprHud/sprHud.yy",},},
     {"id":{"name":"sprIconBg","path":"sprites/sprIconBg/sprIconBg.yy",},},
     {"id":{"name":"sprIntentAttack","path":"sprites/sprIntentAttack/sprIntentAttack.yy",},},
     {"id":{"name":"sprIntentDebuff","path":"sprites/sprIntentDebuff/sprIntentDebuff.yy",},},

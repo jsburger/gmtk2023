@@ -14,6 +14,7 @@ ball_bounce = function(ball) {
 	with ball {
 		move_outside_all(dir, 8)
 		motion_set(dir, max(abs(speed), .5));
+		ball.alarm[1] = 1;
 	}
 	ball.extraspeed = 3;
 }
