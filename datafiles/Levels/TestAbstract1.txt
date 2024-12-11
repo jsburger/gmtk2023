@@ -1,8 +1,13 @@
 {
+  "info":{
+    "name":"TestAbstract1",
+    "format":2.0,
+    "rounds":5.0
+  },
   "objects":[
     {
       "x":248.0,
-      "y":-672.0,
+      "y":-640.0,
       "data":{
         "color":0.0
       },
@@ -10,7 +15,7 @@
     },
     {
       "x":288.0,
-      "y":-672.0,
+      "y":-640.0,
       "data":{
         "color":0.0
       },
@@ -18,12 +23,12 @@
     },
     {
       "x":-256.0,
-      "y":-656.0,
+      "y":-624.0,
       "object_index":"BattlerBrick"
     },
     {
       "x":224.0,
-      "y":-656.0,
+      "y":-624.0,
       "data":{
         "color":0.0
       },
@@ -31,23 +36,15 @@
     },
     {
       "x":304.0,
-      "y":-648.0,
+      "y":-616.0,
       "data":{
         "color":0.0
       },
       "object_index":"BrickNormal"
     },
     {
-      "x":88.0,
-      "y":-640.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickNormalV"
-    },
-    {
       "x":48.0,
-      "y":-640.0,
+      "y":-608.0,
       "data":{
         "color":0.0
       },
@@ -55,15 +52,31 @@
     },
     {
       "x":128.0,
-      "y":-640.0,
+      "y":-608.0,
       "data":{
         "color":0.0
       },
       "object_index":"BrickLarge"
     },
     {
+      "x":88.0,
+      "y":-608.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickNormalV"
+    },
+    {
+      "x":224.0,
+      "y":-584.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickNormal"
+    },
+    {
       "x":144.0,
-      "y":-616.0,
+      "y":-584.0,
       "data":{
         "color":0.0
       },
@@ -71,15 +84,7 @@
     },
     {
       "x":32.0,
-      "y":-616.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickNormal"
-    },
-    {
-      "x":224.0,
-      "y":-616.0,
+      "y":-584.0,
       "data":{
         "color":0.0
       },
@@ -87,7 +92,7 @@
     },
     {
       "x":304.0,
-      "y":-608.0,
+      "y":-576.0,
       "data":{
         "color":0.0
       },
@@ -95,15 +100,23 @@
     },
     {
       "x":240.0,
-      "y":-592.0,
+      "y":-560.0,
       "data":{
         "color":0.0
       },
       "object_index":"BrickLarge"
     },
     {
+      "x":-88.0,
+      "y":-560.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormalV"
+    },
+    {
       "x":280.0,
-      "y":-592.0,
+      "y":-560.0,
       "data":{
         "color":0.0
       },
@@ -111,23 +124,15 @@
     },
     {
       "x":-48.0,
-      "y":-592.0,
+      "y":-560.0,
       "data":{
         "color":1.0
       },
       "object_index":"BrickLarge"
     },
     {
-      "x":-88.0,
-      "y":-592.0,
-      "data":{
-        "color":1.0
-      },
-      "object_index":"BrickNormalV"
-    },
-    {
       "x":32.0,
-      "y":-576.0,
+      "y":-544.0,
       "data":{
         "color":0.0
       },
@@ -135,62 +140,70 @@
     },
     {
       "x":-112.0,
-      "y":-576.0,
+      "y":-544.0,
       "data":{
         "color":1.0
       },
       "object_index":"BrickLargeV"
     },
     {
+      "x":88.0,
+      "y":-544.0,
+      "object_index":"BrickNormalV"
+    },
+    {
       "x":144.0,
-      "y":-576.0,
+      "y":-544.0,
       "data":{
         "color":0.0
       },
       "object_index":"BrickLargeV"
     },
     {
-      "x":88.0,
-      "y":-576.0,
-      "object_index":"BrickNormalV"
-    },
-    {
       "x":-32.0,
-      "y":-568.0,
+      "y":-536.0,
       "data":{
         "color":1.0
       },
       "object_index":"BrickNormal"
-    },
-    {
-      "x":88.0,
-      "y":-544.0,
-      "object_index":"BrickNormalV"
     },
     {
       "x":-72.0,
-      "y":-544.0,
+      "y":-512.0,
       "object_index":"BrickNormalV"
     },
     {
-      "x":32.0,
-      "y":-536.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickNormal"
+      "x":88.0,
+      "y":-512.0,
+      "object_index":"BrickNormalV"
     },
     {
       "x":144.0,
-      "y":-536.0,
+      "y":-504.0,
       "data":{
         "color":0.0
       },
       "object_index":"BrickNormal"
     },
     {
+      "x":32.0,
+      "y":-504.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickNormal"
+    },
+    {
+      "x":288.0,
+      "y":-504.0,
+      "data":{
+        "color":2.0
+      },
+      "object_index":"BrickHidden"
+    },
+    {
       "x":-112.0,
-      "y":-536.0,
+      "y":-504.0,
       "data":{
         "color":1.0
       },
@@ -198,15 +211,31 @@
     },
     {
       "x":-32.0,
-      "y":-528.0,
+      "y":-496.0,
       "data":{
         "color":1.0
       },
       "object_index":"BrickLargeV"
     },
     {
+      "x":288.0,
+      "y":-488.0,
+      "data":{
+        "color":2.0
+      },
+      "object_index":"BrickHidden"
+    },
+    {
+      "x":160.0,
+      "y":-480.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickLarge"
+    },
+    {
       "x":-232.0,
-      "y":-512.0,
+      "y":-480.0,
       "data":{
         "color":0.0
       },
@@ -214,7 +243,7 @@
     },
     {
       "x":-192.0,
-      "y":-512.0,
+      "y":-480.0,
       "data":{
         "color":0.0
       },
@@ -222,7 +251,7 @@
     },
     {
       "x":200.0,
-      "y":-512.0,
+      "y":-480.0,
       "data":{
         "color":0.0
       },
@@ -230,41 +259,17 @@
     },
     {
       "x":88.0,
-      "y":-512.0,
+      "y":-480.0,
       "object_index":"BrickNormalV"
     },
     {
       "x":-72.0,
-      "y":-512.0,
+      "y":-480.0,
       "object_index":"BrickNormalV"
     },
     {
-      "x":160.0,
-      "y":-512.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickLarge"
-    },
-    {
-      "x":32.0,
-      "y":-496.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickLargeV"
-    },
-    {
-      "x":-112.0,
-      "y":-496.0,
-      "data":{
-        "color":1.0
-      },
-      "object_index":"BrickLargeV"
-    },
-    {
       "x":224.0,
-      "y":-496.0,
+      "y":-464.0,
       "data":{
         "color":0.0
       },
@@ -272,61 +277,77 @@
     },
     {
       "x":-256.0,
-      "y":-496.0,
+      "y":-464.0,
       "data":{
         "color":0.0
       },
       "object_index":"BrickLargeV"
     },
     {
-      "x":-32.0,
-      "y":-488.0,
+      "x":32.0,
+      "y":-464.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickLargeV"
+    },
+    {
+      "x":-112.0,
+      "y":-464.0,
       "data":{
         "color":1.0
       },
-      "object_index":"BrickNormal"
+      "object_index":"BrickLargeV"
     },
     {
       "x":-176.0,
-      "y":-488.0,
+      "y":-456.0,
       "data":{
         "color":0.0
       },
       "object_index":"BrickNormal"
     },
     {
+      "x":-32.0,
+      "y":-456.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormal"
+    },
+    {
       "x":88.0,
-      "y":-480.0,
+      "y":-448.0,
       "object_index":"BrickNormalV"
     },
     {
       "x":-72.0,
-      "y":-480.0,
+      "y":-448.0,
       "object_index":"BrickNormalV"
     },
     {
       "x":144.0,
-      "y":-472.0,
+      "y":-440.0,
       "object_index":"BrickNormal"
     },
     {
       "x":176.0,
-      "y":-472.0,
+      "y":-440.0,
       "object_index":"BrickNormal"
     },
     {
       "x":112.0,
-      "y":-472.0,
+      "y":-440.0,
       "object_index":"BrickNormal"
     },
     {
       "x":-216.0,
-      "y":-464.0,
+      "y":-432.0,
       "object_index":"BrickNormalV"
     },
     {
       "x":224.0,
-      "y":-456.0,
+      "y":-424.0,
       "data":{
         "color":0.0
       },
@@ -334,7 +355,7 @@
     },
     {
       "x":32.0,
-      "y":-456.0,
+      "y":-424.0,
       "data":{
         "color":0.0
       },
@@ -342,7 +363,7 @@
     },
     {
       "x":-256.0,
-      "y":-456.0,
+      "y":-424.0,
       "data":{
         "color":0.0
       },
@@ -350,7 +371,7 @@
     },
     {
       "x":-112.0,
-      "y":-456.0,
+      "y":-424.0,
       "data":{
         "color":1.0
       },
@@ -358,7 +379,7 @@
     },
     {
       "x":-32.0,
-      "y":-448.0,
+      "y":-416.0,
       "data":{
         "color":1.0
       },
@@ -366,90 +387,32 @@
     },
     {
       "x":88.0,
-      "y":-448.0,
+      "y":-416.0,
       "object_index":"BrickNormalV"
     },
     {
       "x":-176.0,
-      "y":-448.0,
+      "y":-416.0,
       "data":{
         "color":0.0
       },
       "object_index":"BrickLargeV"
     },
     {
-      "x":168.0,
-      "y":-432.0,
+      "x":-320.0,
+      "y":-408.0,
       "data":{
-        "color":0.0
+        "color":2.0
       },
-      "object_index":"BrickNormalV"
+      "object_index":"BrickHidden"
     },
     {
       "x":-56.0,
-      "y":-432.0,
+      "y":-400.0,
       "data":{
         "color":1.0
       },
       "object_index":"BrickNormalV"
-    },
-    {
-      "x":-216.0,
-      "y":-432.0,
-      "object_index":"BrickNormalV"
-    },
-    {
-      "x":208.0,
-      "y":-432.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickLarge"
-    },
-    {
-      "x":-96.0,
-      "y":-432.0,
-      "data":{
-        "color":1.0
-      },
-      "object_index":"BrickLarge"
-    },
-    {
-      "x":32.0,
-      "y":-416.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickLargeV"
-    },
-    {
-      "x":88.0,
-      "y":-416.0,
-      "object_index":"BrickNormalV"
-    },
-    {
-      "x":-256.0,
-      "y":-416.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickLargeV"
-    },
-    {
-      "x":144.0,
-      "y":-416.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickLargeV"
-    },
-    {
-      "x":-176.0,
-      "y":-408.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickNormal"
     },
     {
       "x":-216.0,
@@ -457,8 +420,82 @@
       "object_index":"BrickNormalV"
     },
     {
+      "x":208.0,
+      "y":-400.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickLarge"
+    },
+    {
+      "x":-96.0,
+      "y":-400.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickLarge"
+    },
+    {
+      "x":168.0,
+      "y":-400.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickNormalV"
+    },
+    {
+      "x":-320.0,
+      "y":-392.0,
+      "data":{
+        "color":2.0
+      },
+      "object_index":"BrickHidden"
+    },
+    {
       "x":-256.0,
+      "y":-384.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickLargeV"
+    },
+    {
+      "x":88.0,
+      "y":-384.0,
+      "object_index":"BrickNormalV"
+    },
+    {
+      "x":32.0,
+      "y":-384.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickLargeV"
+    },
+    {
+      "x":144.0,
+      "y":-384.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickLargeV"
+    },
+    {
+      "x":-176.0,
       "y":-376.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickNormal"
+    },
+    {
+      "x":-216.0,
+      "y":-368.0,
+      "object_index":"BrickNormalV"
+    },
+    {
+      "x":-256.0,
+      "y":-344.0,
       "data":{
         "color":0.0
       },
@@ -466,7 +503,7 @@
     },
     {
       "x":32.0,
-      "y":-376.0,
+      "y":-344.0,
       "data":{
         "color":0.0
       },
@@ -474,7 +511,7 @@
     },
     {
       "x":144.0,
-      "y":-376.0,
+      "y":-344.0,
       "data":{
         "color":0.0
       },
@@ -482,68 +519,60 @@
     },
     {
       "x":232.0,
-      "y":-368.0,
+      "y":-336.0,
       "data":{
         "color":1.0
       },
       "object_index":"BrickNormalV"
-    },
-    {
-      "x":-216.0,
-      "y":-368.0,
-      "object_index":"BrickNormalV"
-    },
-    {
-      "x":272.0,
-      "y":-368.0,
-      "data":{
-        "color":1.0
-      },
-      "object_index":"BrickLarge"
     },
     {
       "x":-176.0,
-      "y":-368.0,
+      "y":-336.0,
       "data":{
         "color":0.0
       },
       "object_index":"BrickLargeV"
     },
     {
+      "x":272.0,
+      "y":-336.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickLarge"
+    },
+    {
+      "x":-216.0,
+      "y":-336.0,
+      "object_index":"BrickNormalV"
+    },
+    {
       "x":-312.0,
-      "y":-352.0,
+      "y":-320.0,
       "data":{
         "color":0.0
       },
       "object_index":"BrickNormalV"
-    },
-    {
-      "x":48.0,
-      "y":-352.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickLarge"
     },
     {
       "x":-272.0,
-      "y":-352.0,
+      "y":-320.0,
       "data":{
         "color":0.0
       },
       "object_index":"BrickLarge"
     },
     {
-      "x":-152.0,
-      "y":-352.0,
+      "x":48.0,
+      "y":-320.0,
       "data":{
         "color":0.0
       },
-      "object_index":"BrickNormalV"
+      "object_index":"BrickLarge"
     },
     {
       "x":88.0,
-      "y":-352.0,
+      "y":-320.0,
       "data":{
         "color":0.0
       },
@@ -551,7 +580,7 @@
     },
     {
       "x":128.0,
-      "y":-352.0,
+      "y":-320.0,
       "data":{
         "color":0.0
       },
@@ -559,7 +588,7 @@
     },
     {
       "x":-56.0,
-      "y":-352.0,
+      "y":-320.0,
       "data":{
         "color":2.0
       },
@@ -567,56 +596,22 @@
     },
     {
       "x":208.0,
-      "y":-352.0,
+      "y":-320.0,
       "data":{
         "color":1.0
       },
       "object_index":"BrickLargeV"
+    },
+    {
+      "x":-152.0,
+      "y":-320.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickNormalV"
     },
     {
       "x":288.0,
-      "y":-344.0,
-      "data":{
-        "color":1.0
-      },
-      "object_index":"BrickNormal"
-    },
-    {
-      "x":-216.0,
-      "y":-336.0,
-      "object_index":"BrickNormalV"
-    },
-    {
-      "x":-128.0,
-      "y":-336.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickLargeV"
-    },
-    {
-      "x":-336.0,
-      "y":-336.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickLargeV"
-    },
-    {
-      "x":-48.0,
-      "y":-328.0,
-      "data":{
-        "color":2.0
-      },
-      "object_index":"BrickNormal"
-    },
-    {
-      "x":248.0,
-      "y":-320.0,
-      "object_index":"BrickNormalV"
-    },
-    {
-      "x":208.0,
       "y":-312.0,
       "data":{
         "color":1.0
@@ -624,51 +619,28 @@
       "object_index":"BrickNormal"
     },
     {
+      "x":-128.0,
+      "y":-304.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickLargeV"
+    },
+    {
+      "x":-336.0,
+      "y":-304.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickLargeV"
+    },
+    {
       "x":-216.0,
       "y":-304.0,
       "object_index":"BrickNormalV"
     },
     {
-      "x":288.0,
-      "y":-304.0,
-      "data":{
-        "color":1.0
-      },
-      "object_index":"BrickLargeV"
-    },
-    {
-      "x":-128.0,
-      "y":-296.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickNormal"
-    },
-    {
-      "x":-192.0,
-      "y":-296.0,
-      "object_index":"BrickNormal"
-    },
-    {
-      "x":-336.0,
-      "y":-296.0,
-      "data":{
-        "color":0.0
-      },
-      "object_index":"BrickNormal"
-    },
-    {
-      "x":-240.0,
-      "y":-296.0,
-      "object_index":"BrickNormal"
-    },
-    {
-      "x":-272.0,
-      "y":-296.0,
-      "object_index":"BrickNormal"
-    },
-    {
-      "x":144.0,
+      "x":-48.0,
       "y":-296.0,
       "data":{
         "color":2.0
@@ -682,51 +654,63 @@
     },
     {
       "x":208.0,
-      "y":-272.0,
-      "data":{
-        "color":1.0
-      },
-      "object_index":"BrickLargeV"
-    },
-    {
-      "x":152.0,
-      "y":-272.0,
-      "data":{
-        "color":2.0
-      },
-      "object_index":"BrickNormalV"
-    },
-    {
-      "x":288.0,
-      "y":-264.0,
+      "y":-280.0,
       "data":{
         "color":1.0
       },
       "object_index":"BrickNormal"
     },
     {
-      "x":16.0,
-      "y":-256.0,
-      "data":{
-        "color":1.0
-      },
-      "object_index":"BrickLarge"
+      "x":-216.0,
+      "y":-272.0,
+      "object_index":"BrickNormalV"
     },
     {
-      "x":-336.0,
-      "y":-256.0,
+      "x":288.0,
+      "y":-272.0,
       "data":{
-        "color":0.0
+        "color":1.0
       },
       "object_index":"BrickLargeV"
     },
     {
-      "x":-24.0,
-      "y":-256.0,
+      "x":-128.0,
+      "y":-264.0,
       "data":{
-        "color":1.0
+        "color":0.0
       },
-      "object_index":"BrickNormalV"
+      "object_index":"BrickNormal"
+    },
+    {
+      "x":-192.0,
+      "y":-264.0,
+      "object_index":"BrickNormal"
+    },
+    {
+      "x":-336.0,
+      "y":-264.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickNormal"
+    },
+    {
+      "x":-240.0,
+      "y":-264.0,
+      "object_index":"BrickNormal"
+    },
+    {
+      "x":-272.0,
+      "y":-264.0,
+      "object_index":"BrickNormal"
+    },
+    {
+      "x":144.0,
+      "y":-264.0,
+      "data":{
+        "color":2.0
+      },
+      "object_index":"BrickNormal"
     },
     {
       "x":248.0,
@@ -734,32 +718,77 @@
       "object_index":"BrickNormalV"
     },
     {
-      "x":-128.0,
-      "y":-256.0,
+      "x":208.0,
+      "y":-240.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickLargeV"
+    },
+    {
+      "x":152.0,
+      "y":-240.0,
+      "data":{
+        "color":2.0
+      },
+      "object_index":"BrickNormalV"
+    },
+    {
+      "x":288.0,
+      "y":-232.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormal"
+    },
+    {
+      "x":16.0,
+      "y":-224.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickLarge"
+    },
+    {
+      "x":-336.0,
+      "y":-224.0,
       "data":{
         "color":0.0
       },
       "object_index":"BrickLargeV"
     },
     {
-      "x":-192.0,
-      "y":-240.0,
+      "x":-24.0,
+      "y":-224.0,
       "data":{
-        "color":0.0
-      },
-      "object_index":"BrickLarge"
-    },
-    {
-      "x":-152.0,
-      "y":-240.0,
-      "data":{
-        "color":0.0
+        "color":1.0
       },
       "object_index":"BrickNormalV"
     },
     {
+      "x":248.0,
+      "y":-224.0,
+      "object_index":"BrickNormalV"
+    },
+    {
+      "x":-128.0,
+      "y":-224.0,
+      "data":{
+        "color":0.0
+      },
+      "object_index":"BrickLargeV"
+    },
+    {
+      "x":96.0,
+      "y":-216.0,
+      "data":{
+        "color":2.0
+      },
+      "object_index":"BrickHidden"
+    },
+    {
       "x":-232.0,
-      "y":-240.0,
+      "y":-208.0,
       "data":{
         "color":0.0
       },
@@ -767,7 +796,7 @@
     },
     {
       "x":-48.0,
-      "y":-240.0,
+      "y":-208.0,
       "data":{
         "color":1.0
       },
@@ -775,7 +804,7 @@
     },
     {
       "x":-312.0,
-      "y":-240.0,
+      "y":-208.0,
       "data":{
         "color":0.0
       },
@@ -783,54 +812,38 @@
     },
     {
       "x":-272.0,
-      "y":-240.0,
+      "y":-208.0,
       "data":{
         "color":0.0
       },
       "object_index":"BrickLarge"
     },
     {
-      "x":208.0,
-      "y":-232.0,
-      "data":{
-        "color":1.0
-      },
-      "object_index":"BrickNormal"
-    },
-    {
-      "x":32.0,
-      "y":-232.0,
-      "data":{
-        "color":1.0
-      },
-      "object_index":"BrickNormal"
-    },
-    {
-      "x":288.0,
-      "y":-224.0,
-      "data":{
-        "color":1.0
-      },
-      "object_index":"BrickLargeV"
-    },
-    {
-      "x":264.0,
+      "x":-152.0,
       "y":-208.0,
       "data":{
-        "color":1.0
+        "color":0.0
       },
       "object_index":"BrickNormalV"
     },
     {
-      "x":224.0,
+      "x":-192.0,
       "y":-208.0,
       "data":{
-        "color":1.0
+        "color":0.0
       },
       "object_index":"BrickLarge"
     },
     {
-      "x":-48.0,
+      "x":96.0,
+      "y":-200.0,
+      "data":{
+        "color":2.0
+      },
+      "object_index":"BrickHidden"
+    },
+    {
+      "x":208.0,
       "y":-200.0,
       "data":{
         "color":1.0
@@ -839,6 +852,14 @@
     },
     {
       "x":32.0,
+      "y":-200.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormal"
+    },
+    {
+      "x":288.0,
       "y":-192.0,
       "data":{
         "color":1.0
@@ -846,7 +867,15 @@
       "object_index":"BrickLargeV"
     },
     {
-      "x":8.0,
+      "x":224.0,
+      "y":-176.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickLarge"
+    },
+    {
+      "x":264.0,
       "y":-176.0,
       "data":{
         "color":1.0
@@ -854,17 +883,36 @@
       "object_index":"BrickNormalV"
     },
     {
+      "x":-48.0,
+      "y":-168.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormal"
+    },
+    {
+      "x":32.0,
+      "y":-160.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickLargeV"
+    },
+    {
+      "x":8.0,
+      "y":-144.0,
+      "data":{
+        "color":1.0
+      },
+      "object_index":"BrickNormalV"
+    },
+    {
       "x":-32.0,
-      "y":-176.0,
+      "y":-144.0,
       "data":{
         "color":1.0
       },
       "object_index":"BrickLarge"
     }
-  ],
-  "info":{
-    "format":2.0,
-    "name":"TestAbstract1",
-    "rounds":5.0
-  }
+  ]
 }
