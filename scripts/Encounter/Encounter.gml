@@ -184,6 +184,12 @@ encounter_add(
 		.with_enemies(BattlerGerm, BattlerGerm)
 )
 
+encounter_add(
+	new Encounter("Super Germ")
+		.with_boards("TestAbstract1")
+		.with_enemies(BattlerSuperGerm)
+)
+
 
 //global.encounters = [];
 //encounter_add(new Encounter("Collision Test").with_boards("CollisionTester"))
