@@ -25,6 +25,7 @@ for (var i = _min; i <= _max; i += TILE_WIDTH) {
 
 for (var i = 0; i < ds_list_size(list); i++) {
 	var inst = list[| i];
+	if !instance_exists(inst) continue;
 	if inst.can_collide brick_hit(inst, 1, self)
 }
 
