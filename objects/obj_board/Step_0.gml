@@ -51,6 +51,18 @@ if keyboard_check_pressed(vk_home) {
 if(editor){
 	with(par_collectible) instance_destroy(self, false);
 	
+	// Paint mode toggle
+	if button_pressed(inputs.editor_color_mode) {
+		if mode == editorMode.paint {
+			sound_play_random(sndSwitch2, 1, .3)
+			exit_paint_mode()
+		}
+		else {
+			sound_play_random(sndSwitch1, 2, .3)
+			enter_paint_mode()
+		}
+	}
+	
 	if mode = editorMode.build {
 		var scroll = mouse_wheel_down() - mouse_wheel_up();
 		if scroll != 0 {
@@ -120,17 +132,31 @@ if(editor){
 		}
 	}
 	
+	
 	if mode = editorMode.paint {
-		if point_in_bbox(mouse_x, mouse_y, self) && (button_check(inputs.shoot) || button_check(inputs.mouse_right)) {
-			var n = instance_nearest(mouse_x, mouse_y, parBoardObject);
-			if instance_exists(n) {
-				if variable_instance_defget(n, "colorable", false) {
-					var col = button_check(inputs.shoot) ? paintcolor : -1;
-					if n.color != col {
-						n.set_color(col)
-						mark_level_changed()
-					}
+		var scroll = mouse_wheel_down() - mouse_wheel_up();
+		if scroll != 0 {
+			var maxcol = button_check(inputs.editor_modifier) ? COLORS.MAX : (COLORS.YELLOW + 1);
+			paintcolor = wrap(paintcolor + scroll, -1, maxcol)
+			enter_paint_mode()
+			sound_play_random(sndSwitch1, 2, .3)
+		}
+		
+		var n = instance_nearest(mouse_x, mouse_y, parBoardObject);
+		if instance_exists(n) && distance_to_bbox(mouse_x, mouse_y, n) < 10 && n.colorable {
+			// Color bricks
+			if (button_check(inputs.shoot) || button_check(inputs.mouse_right)) {
+				var col = button_check(inputs.shoot) ? paintcolor : -1;
+				if n.color != col {
+					n.set_color(col)
+					mark_level_changed()
+					sound_play_random(sound_pool(sndColor1))
 				}
+			}
+			// Color pick
+			if mouse_check_button_pressed(mb_middle) {
+				sound_play_random(sndSwitch1, 2, .3)
+				enter_paint_mode(n.color)
 			}
 		}
 	}

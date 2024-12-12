@@ -117,6 +117,26 @@ enum editorMode {
 mode = editorMode.build
 paintcolor = -1
 
+enter_paint_mode = function(col = undefined) {
+	with BoardPaintButton activate();
+	
+	mode = editorMode.paint;
+	if col != undefined {
+		paintcolor = col;
+	}
+	
+	with BoardPaintSubButton {
+		deactivate();
+		if color == other.paintcolor activate();
+	}
+}
+exit_paint_mode = function() {
+	with BoardPaintButton {
+		deactivate();
+	}
+	with BoardPaintSubButton deactivate();
+	mode = editorMode.build;
+}
 
 accept_objects_from = function(inst) {
 	

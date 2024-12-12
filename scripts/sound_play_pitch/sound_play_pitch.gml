@@ -8,8 +8,10 @@ function sound_play_pitch(sound, pitch){
 }
 
 /// Plays sound at base pitch * (80-120%)
-function sound_play_random(sound, base_pitch = 1) {
-	return sound_play_pitch(sound, base_pitch * random_range(.8, 1.2))
+function sound_play_random(sound, base_pitch = 1, volume = 1) {
+	var snd = sound_play_pitch(sound, base_pitch * random_range(.8, 1.2))
+	audio_sound_gain(snd, volume, 0);
+	return snd;
 }
 
 function sound_play(sound) {

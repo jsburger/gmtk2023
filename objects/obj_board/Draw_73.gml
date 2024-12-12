@@ -54,9 +54,24 @@ if(editor){
 	//draw_sprite(current_sprite,image_index,mx,my);
 	//draw_set_alpha(1);
 	
-	var placer = current_placer();
-	placer.draw_world()
-	with obj_cuffs {
-		placer.draw_preview(x, y);
+	if mode == editorMode.build {
+		var placer = current_placer();
+		placer.draw_world()
+		with obj_cuffs {
+			placer.draw_preview(x, y);
+		}
+	}
+	else if mode == editorMode.paint {
+		var col = mana_get_color(paintcolor),
+			alpha = 1;
+		var n = instance_nearest(mouse_x, mouse_y, parBoardObject);
+		if instance_exists(n) && distance_to_bbox(mouse_x, mouse_y, n) < 10 && n.colorable {
+			///Erm..
+		}
+		else {
+			col = merge_color(col, c_gray, .25)
+			alpha = .5
+		}
+		draw_sprite_ext(sprEditorPaintRing, 0, mouse_x, mouse_y, 1, 1, 0, col, alpha);
 	}
 }
