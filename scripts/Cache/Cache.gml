@@ -29,7 +29,13 @@ function FrameCache(func) constructor {
 		}
 		else {
 			last_frame = current_frame;
-			last_value = getter();
+			if argument_count > 0 {
+				arguments_pack
+				last_value = method_call(getter, args);
+			}
+			else {
+				last_value = getter();
+			}
 			return last_value;
 		}
 	}

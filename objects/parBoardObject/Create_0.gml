@@ -181,6 +181,7 @@
 #endregion
 
 #region Round integration
+	on_round_start = undefined;
 	on_round_end = undefined;
 	on_throw_end = undefined;
 #endregion

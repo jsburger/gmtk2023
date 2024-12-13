@@ -54,6 +54,8 @@ function encounter_start() {
 }
 
 function round_start() {
+	static interface = new CombatInterface();
+	
 	with par_bricklike event_perform(ev_other, ev_user15);
 	with obj_ball event_perform(ev_other, ev_user15);
 	
@@ -62,17 +64,25 @@ function round_start() {
 		decide_actions()
 	}
 	
-	schedule(10, function() {player_turn_start()})
+	with parBoardObject if on_round_start != undefined {
+		on_round_start();
+	}
+	
+	interface.wait(10);
+	interface.run(player_turn_start)
 }
 
 function player_turn_start() {
+	static interface = new CombatInterface();
+	
 	CombatRunner.is_player_turn = true
 	CombatRunner.throws = 1
 	PlayerBattler.turn_start()
 	
 	
 	if CombatRunner.throws > 0 {
-		schedule(40, enable_shooter)
+		interface.wait(20)
+		interface.run(enable_shooter)
 	}
 }
 
@@ -164,12 +174,19 @@ function enemy_turn() {
 
 function round_end() {
 	global.round += 1;
-	if global.round mod current_level.info.rounds == 0 {
+	if global.round mod board_rounds() == 0 {
 		make_new_board()
 	}
 	if !obj_board.editor schedule(30, function() {round_start()})
 }
 
+function board_rounds() {
+	return current_level.info.rounds;
+}
+
+function board_is_last_round() {
+	return global.round == (board_rounds() - 1);
+}
 
 function check_fullclear() {
 	var fullclear = true;
