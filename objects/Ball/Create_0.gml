@@ -1,4 +1,4 @@
-bounciness = 1;
+bounciness = .75;
 //Was .25, changed when removing friction
 gravity_base = .26
 gravity = gravity_base
