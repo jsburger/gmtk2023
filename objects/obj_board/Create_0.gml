@@ -78,6 +78,7 @@ right_clicked_y = 0;
 entity_list = [
 /*Bricks*/    [BrickNormal, BrickNormalV], [BrickLarge, BrickLargeV], [BrickGlow, BrickGlowV], [BrickLargeGlow, BrickLargeGlowV], [BrickLargeMetal, BrickLargeMetalV],
 			  [BrickHidden, BrickHiddenV], [BrickLargeHidden, BrickLargeHiddenV],
+			  new RotatingPlacer(OneWayBrick, 90),
 /*Movement 1*/[Bumper, ColorBumper],
 /*Movement 2*/ new PortalPlacer(),
 /*Movement 3*/ new LauncherPlacer(),

@@ -31,3 +31,7 @@ function in_range_exc(n, _min, _max) {
 function mouse_in_rectangle(x1, y1, x2, y2) {
 	return point_in_rectangle(mouse_x, mouse_y, x1, y1, x2, y2)
 }
+
+function point_distance_struct(a, b) {
+	return point_distance(a.x, a.y, b.x, b.y);
+}

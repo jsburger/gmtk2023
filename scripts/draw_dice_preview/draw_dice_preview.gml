@@ -84,7 +84,7 @@ function draw_dice_preview(_x, _y, gunangle) {
 				    bricks = instance_place_list(x, y, parBoardObject, list, false);
 				for (var i = 0; i < bricks; i++) {
 					var brick = list[| i];
-					if instance_exists(brick) && place_meeting(x, y, brick) {
+					if instance_exists(brick) {
 						
 						var lastx = x,
 							lasty = y,
@@ -101,7 +101,8 @@ function draw_dice_preview(_x, _y, gunangle) {
 							array_push(points, {x, y})
 							xLast = x;
 							yLast = y;
-							if brick.stops_preview && (ball_filter(self, brick) || lastPierce <= 0) {
+														//Not sure why this was here.
+							if brick.stops_preview && (/*ball_filter(self, brick) || */lastPierce <= 0) {
 								//tries = max(maxTries - 30, tries)
 								segments -= 1;
 							}

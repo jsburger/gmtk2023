@@ -34,7 +34,8 @@ function on_dice_bounce(dice){
 					}
 				}
 			}else last_bounce_patience = min(16,last_bounce_patience);
+			
+			last_bounce_coords = [x, y];
 		}
-		last_bounce_coords = [x, y];
 	}
 }

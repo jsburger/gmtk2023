@@ -282,3 +282,35 @@ function LauncherPlacer() : SingleObjectPlacer(Launcher) constructor {
 		return false;
 	}
 }
+
+function RotatingPlacer(obj, rotation_amount) : SingleObjectPlacer(obj) constructor {
+	rotation = 0;
+	self.rotation_amount = rotation_amount;
+	
+	static cycle = function(dir) {
+		var turning = button_check(inputs.editor_modifier) ? 5 : rotation_amount;
+		rotation += turning * -dir;
+		rotation = anglefy(rotation);
+	}
+	
+	static get_rotation = function() {
+		return rotation;
+	}
+	
+	static modify_object = function(object) {
+		object.set_rotation(rotation)
+	}
+	
+	static reset = function() {
+		reset_placement()
+		rotation = 0;
+	}
+	
+	static try_match = function(object) {
+		if matches(object) {
+			rotation = object.image_angle;
+			return true;
+		}
+		return false;
+	}
+}

@@ -185,3 +185,14 @@
 	on_round_end = undefined;
 	on_throw_end = undefined;
 #endregion
+
+#region Rotation
+	rotation = 0;
+	set_rotation = function(rot) {
+		rotation = rot;
+		image_angle = rot;
+	}
+	#macro save_rotation serializer.add_layer("rotation", \
+		function() {if rotation != 0 return rotation}, set_rotation)
+	
+#endregion
