@@ -52,6 +52,15 @@ if collider_changed {
 	}
 }
 
+// Take away acceleration from "after" the collision, it is given back later.
+var taken_acceleration = 0;
+if walk_distance > 0 {
+	var factor = walk_distance/speed;
+	taken_acceleration = previous_acceleration * factor;
+	hspeed -= lengthdir_x(taken_acceleration, gravity_direction);
+	vspeed -= lengthdir_y(taken_acceleration, gravity_direction);
+}
+
 // Reset variables
 nograv = false;
 extraspeed = 0;
@@ -98,6 +107,9 @@ if bounce {
 if walk_distance > 0 {
 	x += lengthdir_x(walk_distance, direction);
 	y += lengthdir_y(walk_distance, direction);
+	//Restore acceleration taken after collisions are complete
+	hspeed += lengthdir_x(taken_acceleration, gravity_direction);
+	vspeed += lengthdir_y(taken_acceleration, gravity_direction);
 }
 
 if !is_ghost && ball_can_damage(self, collider) {

@@ -18,6 +18,8 @@ has_bounced = false;
 pierce = 3;
 bounce_speed = -12;
 
+previous_acceleration = 0;
+
 patience_enable = false;
 last_bounce_coords = [x,y];
 last_bounce_patience = 16;

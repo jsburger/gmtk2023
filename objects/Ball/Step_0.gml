@@ -11,6 +11,8 @@ else {
 }
 gravity *= nograv ? 0 : 1;
 
+previous_acceleration = gravity;
+
 if is_rolling() {
 	image_speed = 0;
 	if alarm[0] > 0 alarm[0] += 1;
@@ -26,7 +28,8 @@ else if (hit_timer && !--hit_timer){
 extraspeed -= .07;
 extraspeed = max(extraspeed, 0);
 
-while(vspeed > max_fallspeed){
+while(vspeed > max_fallspeed) {
+	previous_acceleration -= .25;
 	speed -= .25;
 }
 
