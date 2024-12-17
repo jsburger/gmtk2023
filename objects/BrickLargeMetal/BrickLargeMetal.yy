@@ -1,19 +1,17 @@
 {
   "$GMObject":"",
   "%Name":"BrickLargeMetal",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"BrickLargeMetal",
   "overriddenProperties":[],
   "parent":{
-    "name":"Bricks",
-    "path":"folders/Objects/New Blocks/Bricks.yy",
+    "name":"Metal Bricks",
+    "path":"folders/Objects/New Blocks/Bricks/Metal Bricks.yy",
   },
   "parentObjectId":{
-    "name":"parBrick",
-    "path":"objects/parBrick/parBrick.yy",
+    "name":"BrickMetal",
+    "path":"objects/BrickMetal/BrickMetal.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprBrickLargeMetal",
-    "path":"sprites/sprBrickLargeMetal/sprBrickLargeMetal.yy",
+    "name":"sprBrickMetalLarge",
+    "path":"sprites/sprBrickMetalLarge/sprBrickMetalLarge.yy",
   },
   "spriteMaskId":null,
   "visible":true,

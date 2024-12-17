@@ -6,8 +6,8 @@
   "name":"BrickLargeMetalV",
   "overriddenProperties":[],
   "parent":{
-    "name":"Bricks",
-    "path":"folders/Objects/New Blocks/Bricks.yy",
+    "name":"Metal Bricks",
+    "path":"folders/Objects/New Blocks/Bricks/Metal Bricks.yy",
   },
   "parentObjectId":{
     "name":"BrickLargeMetal",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprBrickLargeMetalVertical",
-    "path":"sprites/sprBrickLargeMetalVertical/sprBrickLargeMetalVertical.yy",
+    "name":"sprBrickMetalLargeVertical",
+    "path":"sprites/sprBrickMetalLargeVertical/sprBrickMetalLargeVertical.yy",
   },
   "spriteMaskId":null,
   "visible":true,

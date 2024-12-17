@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"metal_brick_tint",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"metal_brick_tint",
+  "parent":{
+    "name":"Game",
+    "path":"folders/Scripts/Game.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

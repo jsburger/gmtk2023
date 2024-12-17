@@ -178,10 +178,12 @@ function board_cycle(offset = 1) {
 	level_load(global.level_num);
 }
 
-function level_load(levelnumber){
+function level_load(levelnumber){	
 	if !in_range(levelnumber, 0, array_length(global.level_data) - 1) exit;
 	
 	global.level_num = levelnumber
+	
+	generate_brick_tints();
 	
 	var level = global.level_data[levelnumber];
 	

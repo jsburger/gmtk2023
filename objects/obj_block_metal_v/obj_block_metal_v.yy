@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprBrickLargeMetalVertical",
-    "path":"sprites/sprBrickLargeMetalVertical/sprBrickLargeMetalVertical.yy",
+    "name":"sprBrickMetalLargeVertical",
+    "path":"sprites/sprBrickMetalLargeVertical/sprBrickMetalLargeVertical.yy",
   },
   "spriteMaskId":null,
   "visible":true,

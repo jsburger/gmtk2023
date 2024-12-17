@@ -8,3 +8,5 @@ snd_impact = sndDieHitMetal;
 
 flip;
 shuffle;
+
+//image_blend = metal_brick_tint(x, y)

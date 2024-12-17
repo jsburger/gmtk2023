@@ -1,6 +1,6 @@
 {
   "$GMSprite":"",
-  "%Name":"sprBrickLargeMetalVertical",
+  "%Name":"sprBrickMetalLargeVertical",
   "bboxMode":2,
   "bbox_bottom":63,
   "bbox_left":0,
@@ -23,19 +23,19 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"c83c491f-5557-4afc-9529-c1fd88930fdc","blendMode":0,"displayName":"default","isLocked":false,"name":"c83c491f-5557-4afc-9529-c1fd88930fdc","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"sprBrickLargeMetalVertical",
+  "name":"sprBrickMetalLargeVertical",
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Large Metal Brick",
-    "path":"folders/Sprites/Level Objects/Bricks/Large Metal Brick.yy",
+    "name":"Metal Bricks",
+    "path":"folders/Sprites/Level Objects/Bricks/Metal Bricks.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"",
-    "%Name":"sprBrickLargeMetalVertical",
+    "%Name":"sprBrickMetalLargeVertical",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -59,7 +59,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"sprBrickLargeMetalVertical",
+    "name":"sprBrickMetalLargeVertical",
     "playback":1,
     "playbackSpeed":0.0,
     "playbackSpeedType":0,
@@ -71,13 +71,13 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"cc251330-a173-463b-8b3d-cbaf691692f4","path":"sprites/sprBrickLargeMetalVertical/sprBrickLargeMetalVertical.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"cc251330-a173-463b-8b3d-cbaf691692f4","path":"sprites/sprBrickMetalLargeVertical/sprBrickMetalLargeVertical.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"4ed876b2-2f48-4f31-8176-8ed0b80aa100","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8a027a49-1a0d-4eb3-b999-7aa30556128e","path":"sprites/sprBrickLargeMetalVertical/sprBrickLargeMetalVertical.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8a027a49-1a0d-4eb3-b999-7aa30556128e","path":"sprites/sprBrickMetalLargeVertical/sprBrickMetalLargeVertical.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"9c52bd9c-70af-4bd5-a2d7-e9975e24c129","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e2054758-f46e-40d0-b0d6-9485bac7b318","path":"sprites/sprBrickLargeMetalVertical/sprBrickLargeMetalVertical.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e2054758-f46e-40d0-b0d6-9485bac7b318","path":"sprites/sprBrickMetalLargeVertical/sprBrickMetalLargeVertical.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"8a7b143c-a5d9-4e55-8519-7615a1b6160f","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
