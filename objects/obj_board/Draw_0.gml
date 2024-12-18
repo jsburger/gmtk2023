@@ -64,7 +64,7 @@ with par_collectible {
 }
 
 with Ball {
-	draw_self()
+	event_perform(ev_draw, ev_draw_normal)
 }
 
 with parBoardObject {
