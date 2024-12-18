@@ -34,6 +34,8 @@ function AbstractObjectPlacer() : EditorPlacer() constructor {
 	last_placement_x = 0;
 	last_placement_y = 0;
 	has_placed = false;
+	line_enabled = true;
+	base_draw = draw;
 	
 	#region Internal
 	static get_object = function() { return BrickNormal };
@@ -123,7 +125,7 @@ function AbstractObjectPlacer() : EditorPlacer() constructor {
 	}
 	
 	static draw_world = function() {
-		if has_placed && button_check(inputs.editor_modifier) {
+		if line_enabled && has_placed && button_check(inputs.editor_modifier) {
 			run_across_line(last_placement_x, last_placement_y, mouse_x, mouse_y, TILE_MIN, function(_x, _y) {
 				var pos = object_position(_x, _y);
 				if !mask_meeting(pos.x, pos.y, object_get_real_mask(get_object()), CollisionFrameOccupier, get_rotation()){
@@ -144,7 +146,7 @@ function AbstractObjectPlacer() : EditorPlacer() constructor {
 	
 	
 	static on_click = function() {
-		if has_placed && button_check(inputs.editor_modifier) {
+		if line_enabled && has_placed && button_check(inputs.editor_modifier) {
 			run_across_line(last_placement_x, last_placement_y, mouse_x, mouse_y, TILE_MIN, try_place)
 		}
 		else {
@@ -220,6 +222,7 @@ function SingleObjectPlacer(obj) : AbstractObjectPlacer() constructor {
 function PortalPlacer() : SingleObjectPlacer(Portal) constructor {
 	index = 0;
 	spr_back = sprPortalBackPurple;
+	line_enabled = false;
 	
 	static cycle = function(dir) {
 		index += dir;
@@ -254,10 +257,12 @@ function PortalPlacer() : SingleObjectPlacer(Portal) constructor {
 
 function LauncherPlacer() : SingleObjectPlacer(Launcher) constructor {
 	rotation = 90;
+	line_enabled = false;
+	
 	
 	static cycle = function(dir) {
 		var turning = button_check(inputs.editor_modifier) ? 5 : 45;
-		rotation += turning * dir;
+		rotation -= turning * dir;
 		rotation = anglefy(rotation);
 	}
 	
@@ -267,6 +272,11 @@ function LauncherPlacer() : SingleObjectPlacer(Launcher) constructor {
 	
 	static modify_object = function(object) {
 		object.set_launch_direction(rotation)
+	}
+	
+	static draw = function(_x, _y, canplace) {
+		base_draw(_x, _y, canplace);
+		draw_dice_preview(_x, _y, rotation)
 	}
 	
 	static reset = function() {

@@ -4,7 +4,7 @@
 function draw_dice_preview(_x, _y, gunangle) {
 	draw_set_alpha(.8)
 	with parBoardObject ghost_hits = 0;
-	with instance_create_layer(_x, _y, layer, Ball) {
+	with instance_create_layer(_x, _y, "Instances", Ball) {
 		is_ghost = true;
 		
 		var is_ball = instance_is(other, Ball);
@@ -101,8 +101,7 @@ function draw_dice_preview(_x, _y, gunangle) {
 							array_push(points, {x, y})
 							xLast = x;
 							yLast = y;
-														//Not sure why this was here.
-							if brick.stops_preview && (/*ball_filter(self, brick) || */lastPierce <= 0) {
+							if brick.stops_preview {
 								//tries = max(maxTries - 30, tries)
 								segments -= 1;
 							}

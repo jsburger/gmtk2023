@@ -97,6 +97,8 @@ if damaged {
 if (is_ghost && !collider.ghost_immune && ball_can_damage(self, collider)) {
 	collider.ghost_hits += 1;
 	rolled_on_collider = collider.id;
+	
+	has_bounced = true; //Used for preview drawing
 }
 
 if bounce && is_ghost && collider.can_take_damage {
@@ -104,6 +106,7 @@ if bounce && is_ghost && collider.can_take_damage {
 		//array_push(ghost_pierce_list, collider.id);
 		pierce -= 1;
 		bounce = false;
+		has_bounced = false;
 	}
 }
 
@@ -133,4 +136,3 @@ if !is_ghost && ball_can_damage(self, collider) {
 }
 
 on_dice_bounce(self);
-has_bounced = true;
