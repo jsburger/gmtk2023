@@ -2,21 +2,30 @@
 has_bounced = false;
 var collider = other;
 if image_blend = c_dkgray || !collider.can_collide exit;
-if !ball_filter(self, collider) exit;
 if !place_meeting(x, y, other) exit; //Collisions are cached during the event, even if the ball moves.
 
 // Walk back until not colliding any more
-var walk_distance = 0;
+var walk_distance = 0,
+	walk_start_x = x,
+	walk_start_y = y;
 if (collider.can_walk_back_ball) {
 	walk_distance += walk_back_collision(self, collider);
 }
+
+//Perform ball_filter *after* walking back for positional accuracy with things like One-Ways
+if !ball_filter(self, collider) {
+	x = walk_start_x;
+	y = walk_start_y;
+	exit;
+}
+
 // Check for "surfaces" created by bricks
 var collider_changed = false;
 if instance_is(collider, parBrick) {
 	// Check for outer bounds
-	var left = x <= collider.bbox_left,
+	var left = x < collider.bbox_left,
 		right = x > collider.bbox_right,
-		top = y <= collider.bbox_top,
+		top = y < collider.bbox_top,
 		bottom = y > collider.bbox_bottom,
 		horizontal = left || right,
 		vertical = top || bottom;

@@ -16,7 +16,7 @@ previous_acceleration = gravity;
 if is_rolling() {
 	image_speed = 0;
 	if alarm[0] > 0 alarm[0] += 1;
-	rotation += arc_length_to_degrees(speed, 25/2) * -sign(hspeed)
+	rotation += arc_length_to_degrees(-hspeed, 25/2)
 }
 else if (hit_timer && !--hit_timer){
 	image_speed = clamp(image_speed - 1, 0, 4);
@@ -25,8 +25,7 @@ else if (hit_timer && !--hit_timer){
 	}
 }
 
-extraspeed -= .07;
-extraspeed = max(extraspeed, 0);
+extraspeed = max(extraspeed - .07, 0);
 
 while(vspeed > max_fallspeed) {
 	previous_acceleration -= .25;
