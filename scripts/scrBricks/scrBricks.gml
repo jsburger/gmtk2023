@@ -89,6 +89,16 @@ function bricks_recolor(count, _color, sorter = undefined) {
 	
 }
 
+/// Returns a function which filters instances for that color
+function colorable_filter(color) {
+	static filters = memoize_array(COLORS.MAX + 1, function(i) {
+		return method({col: i - 1}, function(inst) {
+			return inst.colorable && inst.color != col;
+		})
+	});
+	return filters[color + 1];
+}
+
 function bricks_with_color(color) {
 	var n = 0;
 	with parBoardObject if colorable && self.color == color n++;
@@ -113,13 +123,15 @@ function brick_status_clear(brick) {
 
 #region Statuses
 	/// Returns if the brick is burning, frozen, or poisoned
-	function brick_has_status(brick) {
+	function brick_has_elemental_status(brick) {
 		return brick.is_burning || brick.is_frozen || brick.is_poisoned;
 	}
 	
+	
+	
 	#region Burn
 	function brick_can_burn(brick) {
-		return !brick.status_immune && brick.can_burn && !brick_has_status(brick);
+		return !brick.status_immune && brick.can_burn && !brick_has_elemental_status(brick);
 	}
 
 	function bricks_burn(count) {
@@ -141,7 +153,7 @@ function brick_status_clear(brick) {
 
 	#region Freeze
 	function brick_can_freeze(brick) {
-		return !brick.status_immune && brick.can_freeze && !brick_has_status(brick);
+		return !brick.status_immune && brick.can_freeze && !brick_has_elemental_status(brick);
 	}
 
 	function brick_on_unfreeze(brick) {
@@ -153,7 +165,7 @@ function brick_status_clear(brick) {
 	
 	#region Poison
 	function brick_can_poison(brick) {
-		return !brick.status_immune && brick.can_poison && !brick_has_status(brick);
+		return !brick.status_immune && brick.can_poison && !brick_has_elemental_status(brick);
 	}
 	
 	function brick_lose_poison(brick) {

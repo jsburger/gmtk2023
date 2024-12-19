@@ -8,7 +8,11 @@ enum MANA {
 
 #macro MANA_NONE -1
 
+//Todo: make one color enum, add MANA_MIN and MANA_MAX macros which are just red and yellow for loops
+// And make gray 0
+
 enum COLORS {
+	NONE = -1,
 	RED, BLUE, YELLOW,
 	PURPLE, GREEN, ORANGE,
 	MAX

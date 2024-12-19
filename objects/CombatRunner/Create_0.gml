@@ -6,7 +6,6 @@ enum PHASES {
 	END
 }
 
-
 schedule(20, function() {encounter_start()})
 
 actions = [];

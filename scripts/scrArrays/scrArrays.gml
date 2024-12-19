@@ -26,6 +26,13 @@ function array_build_filtered(object, filter) {
 	return a;
 }
 
+/// Creates an array of all instances in random order
+function array_build_shuffled(object) {
+	var a = array_build(object);
+	array_shuffle_ext(a);
+	return a;
+}
+
 /// Takes all items from From and puts them in To
 function array_transfer(to, from) {
 	if array_length(from) > 0 {
@@ -118,4 +125,55 @@ function array_wrap_index(array, n) {
 		return length - ((-n) mod length)
 	}
 	return n mod array_length(array)
+}
+
+/// Returns a new array with contents of source, sized to length
+function array_clip(source, start, length) {
+	var ret = [];
+	array_copy(ret, 0, source, start, length);
+	return ret;
+}
+
+/// Modifies the original array to contain rejects, and returns a new filtered array.
+function array_split_in_place(array, filter, return_failures = false) {
+	var success = [],
+		count = 0;
+	for (var i = 0, l = array_length(array); i < l; i++) {
+		if filter(array[i]) xor return_failures {
+			array_push(success, array[i]);
+		}
+		else {
+			array[count] = array[i]
+			count++;
+		}
+	}
+	array_resize(array, count);
+	return success;
+}
+
+/// Returns a struct of two new arrays, one filtered and one rejects
+function array_split(array, filter) {
+	var filtered = [],
+		rejected = [];
+	for (var i = 0, l = array_length(array); i < l; i++) {
+		if filter(array[i]) {
+			array_push(filtered, array[i]);
+		}
+		else {
+			array_push(rejected, array[i]);
+		}
+	}
+	return {
+		filtered,
+		rejected
+	}
+}
+
+/// Runs the generator function for [0-n), and returns an array with the results.
+function memoize_array(n, generator) {
+	var results = array_create(n);
+	for (var i = 0; i < n; i++) {
+		results[i] = generator(i)
+	}
+	return results;
 }
