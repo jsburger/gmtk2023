@@ -1,9 +1,11 @@
 function sound_pool(soundName) {
 	static cache = ds_map_create();
+	static nameCache = new FunctionCache(function(input) {
+		return string_letters(audio_get_name(input));
+	})
 	
 	if is_numeric(soundName) && asset_get_type(soundName) == asset_sound {
-		soundName = audio_get_name(soundName)
-		soundName = string_letters(soundName)
+		soundName = nameCache.get(soundName)
 	}
 	
 	if ds_map_exists(cache, soundName) {

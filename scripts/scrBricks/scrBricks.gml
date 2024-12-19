@@ -1,7 +1,7 @@
 enum SORTING {
-	BEFORE = 1,
+	BEFORE = -1,
 	EQUAL = 0,
-	AFTER = -1
+	AFTER = 1
 }
 
 #macro __BRICK_RECOLOR_DELAY 3
@@ -9,68 +9,20 @@ enum SORTING {
 /// Recolors X bricks to color, preferring uncolored and differently colored bricks.
 /// @returns {Real} Amount of bricks recolored
 function bricks_recolor(count, _color, sorter = undefined) {
-	var colorable = array_build_filtered(parBoardObject, function(brick) {
-			return brick.colorable;
-		}),
-		colorless = array_filter(colorable, function(brick) {
-			return brick.color == MANA_NONE;
-		});
-		
-	//Build array of bricks to color
-	var selected = [];
-	if array_length(colorless) <= count || (_color == MANA_NONE) {
-		// Take all colorless bricks available
-		if _color != MANA_NONE selected = colorless;
-		// Need more bricks, use differently colored ones
-		if array_length(selected) < count {
-			var filter = method({color : _color}, function(brick) {
-					return (brick.color != color) && brick.color != MANA_NONE;
-				}),
-				different_colors = array_filter(colorable, filter),
-				dif = count - array_length(selected);
-			
-			// If there's not enough bricks, take as many as possible
-			if array_length(different_colors) <= dif {
-				array_transfer(selected, different_colors)
-			}
-			// Otherwise, take as many as needed
-			else {
-				var source;
-				if sorter == undefined {
-					source = array_shuffle(different_colors);
-				}
-				else {
-					array_sort(different_colors, sorter)
-					source = different_colors
-				}
-				repeat dif {
-					array_push(selected, array_pop(source))
-				}
-			}
-		}
-	}
-	// More colorless bricks than count
-	else {
-		var source;
-		if sorter == undefined {
-			source = array_shuffle(colorless);
-		}
-		else {
-			source = colorless
-			array_sort(colorless, sorter)
-		}
-		repeat count {
-			array_push(selected, array_pop(source))
-		}
-	}
+	static finder = new InstanceFinder(parBoardObject) 
+		.filter(function(inst, col) {return inst.colorable && inst.color != col})
+		.prefer(function(inst) {return inst.color == COLORS.NONE})
 	
+	
+	finder.push(sorter, color)
+	var selected = finder.get(count);
 	
 	//Color the bricks
 	for (var i = 0; i < array_length(selected); i++) {
 		var change = method({color : _color, inst: selected[i]}, function() {
 			inst.set_color(color);
 			// Play Sound
-			sound_play_pitch(choose(sndColor1, sndColor2, sndColor3, sndColor4), random_range(.9, 1.1));
+			sound_play_random(sound_pool(sndColor1));
 			with inst {
 				with (instance_create_layer(random_range(bbox_left, bbox_right), random_range(bbox_top, bbox_bottom), "FX", obj_fx)) {
 					sprite_index = sprFXSplat
@@ -82,7 +34,7 @@ function bricks_recolor(count, _color, sorter = undefined) {
 				}
 			}
 		});
-		
+		// Todo: move this to combat runner queue
 		schedule((__BRICK_RECOLOR_DELAY * i) + 1, change)
 	}
 	return array_length(selected)
@@ -128,52 +80,57 @@ function brick_status_clear(brick) {
 	}
 	
 	
-	
 	#region Burn
-	function brick_can_burn(brick) {
-		return !brick.status_immune && brick.can_burn && !brick_has_elemental_status(brick);
-	}
-
-	function bricks_burn(count) {
-		// Play Sound
-		sound_play_pitch(sndApplyBurn, random_range(.9, 1.01));	
-		
-		var burnable = array_build_filtered(parBoardObject, brick_can_burn);
-	
-		array_shuffle_ext(burnable)
-		for (var i = 0; i < min(count, array_length(burnable)); i++) {
-			burnable[i].set_burning(true);
-			with (instance_create_layer(burnable[i].x,burnable[i].y, "FX", obj_fx)) {
-				sprite_index = sprFXPuffSmall
-				image_blend = c_orange
-			}			
+		function brick_can_burn(brick) {
+			return !brick.status_immune && brick.can_burn && !brick_has_elemental_status(brick);
 		}
-	}
+
+		function bricks_burn(count) {
+			static finder = new InstanceFinder(parBoardObject).filter(brick_can_burn);
+			// Play Sound
+			sound_play_pitch(sndApplyBurn, random_range(.9, 1.01));	
+		
+			var burnable = finder.get(count);
+	
+			for (var i = 0; i < array_length(burnable); i++) {
+				burnable[i].set_burning(true);
+				with (instance_create_layer(burnable[i].x,burnable[i].y, "FX", obj_fx)) {
+					sprite_index = sprFXPuffSmall
+					image_blend = c_orange
+				}			
+			}
+		}
 	#endregion
 
 	#region Freeze
-	function brick_can_freeze(brick) {
-		return !brick.status_immune && brick.can_freeze && !brick_has_elemental_status(brick);
-	}
-
-	function brick_on_unfreeze(brick) {
-		with PlayerBattler {
-			with statuses.find(STATUS.FREEZE) knock()
+		function brick_can_freeze(brick) {
+			return !brick.status_immune && brick.can_freeze && !brick_has_elemental_status(brick);
 		}
-	}
+
+		function brick_on_unfreeze(brick) {
+			with PlayerBattler {
+				with statuses.find(STATUS.FREEZE) knock()
+			}
+		}
 	#endregion
 	
 	#region Poison
-	function brick_can_poison(brick) {
-		return !brick.status_immune && brick.can_poison && !brick_has_elemental_status(brick);
-	}
-	
-	function brick_lose_poison(brick) {
-		with PlayerBattler {
-			with statuses.find(STATUS.POISON) knock();
+		function brick_can_poison(brick) {
+			return !brick.status_immune && brick.can_poison && !brick_has_elemental_status(brick);
 		}
-	}
 	
+		function brick_lose_poison(brick) {
+			with PlayerBattler {
+				with statuses.find(STATUS.POISON) knock();
+			}
+		}
+	
+	#endregion
+	
+	#region Curse
+		function brick_can_curse(brick) {
+			return false;
+		}
 	#endregion
 #endregion
 

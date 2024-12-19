@@ -233,28 +233,24 @@ function StatusFreeze(Strength) : StatusTickable(Strength) constructor {
 	sprite_index = sprStatusFrost;
 	
 	static tick = function() {
+		static finder = new InstanceFinder(parBoardObject).filter(brick_can_freeze);
 		if strength > 0 {
-			var frozen = array_build_filtered(parBoardObject, function(inst) {return inst.is_frozen})
-			if array_length(frozen) < strength {
+			var frozen = 0;
+			with parBoardObject if is_frozen frozen++;
+			if frozen < strength {
 				// Gather freezable bricks
-				var bricks = array_build_filtered(parBoardObject, brick_can_freeze),
-					dif = strength - array_length(frozen);
-				// Exit early if no bricks to freeze
-				if array_length(bricks) <= 0 {
-					exit;
-				}
-				// Randomize array order
-				array_shuffle_ext(bricks)
+				var dif = strength - frozen,
+					bricks = finder.get(dif);
 				// Freeze bricks
-				repeat(min(dif, array_length(bricks))) {
-					var brick = array_pop(bricks);
+				for(var i = 0; i < array_length(bricks); i++) {
+					var brick = bricks[i];
 					brick.set_frozen(true);
 					// Sparkle Effect
 					with (instance_create_layer(brick.x,brick.y, "FX", obj_fx)) {
 						sprite_index = sprFXHitSmall
 					}
-				// Play Sound
-				sound_play_pitch(sndApplyFreeze, random_range(.9, 1.1));
+					// Play Sound
+					sound_play_random(sndApplyFreeze);
 				}
 			}
 		}
@@ -281,7 +277,7 @@ function StatusFreeze(Strength) : StatusTickable(Strength) constructor {
 			base += 1;
 		}
 		if base > 0 {
-			for (var i = 0; i < MANA.MAX; i++) {
+			for (MANA_LOOP) {
 				modifier.add(i, base)
 			}
 		}
@@ -297,7 +293,7 @@ function StatusBurn(count) : Status(count) constructor {
 		static interface = new CombatInterface();
 		interface.run(function(){battler_hurt(CombatRunner.player, strength, self)})
 		// Play Sound
-		sound_play_pitch(sndBurn, random_range(.9, 1.1));		
+		sound_play_random(sndBurn);		
 	}
 	
 	static on_turn_end = function() {
@@ -319,7 +315,7 @@ function StatusPoison(count) : StatusTickable(count) constructor {
 		static interface = new CombatInterface();
 		interface.owner = self;
 		interface.attack(CombatRunner.player, strength)
-		sound_play_pitch(sndPoison, random_range(.9, 1.1));
+		sound_play_random(sndPoison);
 		//battler_hurt(PlayerBattler, strength, self);
 	}
 	
@@ -335,18 +331,14 @@ function StatusPoison(count) : StatusTickable(count) constructor {
 	}
 	
 	static tick = function() {
+		static finder = new InstanceFinder(parBoardObject).filter(brick_can_poison);
 		if strength > 0 {
-			var poisoned = array_build_filtered(parBoardObject, function(inst) {return inst.is_poisoned})
-			if array_length(poisoned) < strength {
+			var poisoned = 0;
+			with parBoardObject if is_poisoned poisoned++;
+			if poisoned < strength {
 				// Gather poisonable bricks
-				var bricks = array_build_filtered(parBoardObject, brick_can_poison),
-					dif = strength - array_length(poisoned);
-				// Exit early if no bricks to poison
-				if array_length(bricks) <= 0 {
-					exit;
-				}
-				// Randomize array order
-				array_shuffle_ext(bricks)
+				var dif = strength - array_length(poisoned),
+					bricks = finder.get(dif);
 				// Poison bricks
 				repeat(min(dif, array_length(bricks))) {
 					var brick = array_pop(bricks);

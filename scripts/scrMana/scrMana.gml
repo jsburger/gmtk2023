@@ -18,6 +18,11 @@ enum COLORS {
 	MAX
 }
 
+#macro MANA_MIN COLORS.RED
+#macro MANA_MAX COLORS.YELLOW
+#macro MANA_LOOP var i = MANA_MIN; i <= MANA_MAX; i++
+
+
 global.mana = array_create(MANA.MAX)
 global.mana_gained = array_create(MANA.MAX)
 

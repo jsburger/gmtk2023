@@ -40,3 +40,19 @@ function FrameCache(func) constructor {
 		}
 	}
 }
+
+function FunctionCache(func) constructor {
+	getter = func;
+	map = ds_map_create();
+	
+	static get = function(input) {
+		if ds_map_exists(map, input) {
+			return map[? input];
+		}
+		else {
+			var value = getter(input);
+			map[? input] = value;
+			return value;
+		}
+	}
+}
