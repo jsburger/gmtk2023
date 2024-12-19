@@ -1,12 +1,10 @@
+Rework combat queue to allow items to run multiple times (like greenman waves)
+
 Replace pipebomb spawning with something that occurs after board creation. (Fixes pop in)
 Add "save" layers to serializers to prepare for save states. Add things like statuses to bricks.
-Add editor Placers to enable different portal colors and, later, wires.
 Add and implement RandomSources.
 Add global save serializers to be used in scripts.
-Add ArrayBuilder for filter chaining and backtracking.
 Rework Player abilities. They're really clunky.
-[[[Rewrite CombatActions to handle multiple targets.]]] DONE
 TargetProvider. RoundResetFunctionProvider.
-[[[Targets.ALL, Targets.NOT_ME, Targets.OTHER_ENEMIES, Targets.ALL_ENEMIES]]] DONE
 Rewrite enemy moves to use factories instead (wrap the code creation in a function) (fixes clone error)
 Hoverable/clickable structs.

@@ -340,8 +340,8 @@ function StatusPoison(count) : StatusTickable(count) constructor {
 				var dif = strength - array_length(poisoned),
 					bricks = finder.get(dif);
 				// Poison bricks
-				repeat(min(dif, array_length(bricks))) {
-					var brick = array_pop(bricks);
+				for(var i = 0; i < array_length(bricks); i++) {
+					var brick = bricks[i];
 					brick.set_poisoned(true);
 					// Sparkle Effect
 					with (instance_create_layer(brick.x,brick.y, "FX", obj_fx)) {
