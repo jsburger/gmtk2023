@@ -190,6 +190,12 @@ encounter_add(
 		.with_enemies(BattlerSuperGerm)
 )
 
+encounter_add(
+	new Encounter("Cultist")
+		.with_boards("TestCultist1")
+		.with_enemies(BattlerCultist)
+)
+
 
 //global.encounters = [];
 //encounter_add(new Encounter("Collision Test").with_boards("CollisionTester"))
