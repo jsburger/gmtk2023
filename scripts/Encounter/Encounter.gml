@@ -192,7 +192,7 @@ encounter_add(
 
 encounter_add(
 	new Encounter("Cultist")
-		.with_boards("TestCultist1")
+		.with_boards("TestCultist1", "TestCultist2")
 		.with_enemies(BattlerCultist)
 )
 
