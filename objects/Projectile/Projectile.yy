@@ -1,18 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"parBoardObject",
+  "%Name":"Projectile",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"parBoardObject",
+  "name":"Projectile",
   "overriddenProperties":[],
   "parent":{
-    "name":"New Blocks",
-    "path":"folders/Objects/New Blocks.yy",
+    "name":"Projectiles",
+    "path":"folders/Objects/Projectiles.yy",
   },
   "parentObjectId":{
     "name":"BoardOccupant",

@@ -2,8 +2,8 @@
 
 // Inherit the parent event
 event_inherited();
-brick_properties(BrickNormal, function() {
+brick_properties(function() {
 	return new BrickHelper().statuses();
 })
 
-replace_with_pipebomb(BrickNormal)
+replace_with_pipebomb()

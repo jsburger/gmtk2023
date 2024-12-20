@@ -3,7 +3,7 @@
 // Inherit the parent event
 event_inherited();
 
-brick_properties(BrickLargeV, function() {
+brick_properties(function() {
 	return new BrickHelper().vertical().large().statuses(true, true, true)
 })
 

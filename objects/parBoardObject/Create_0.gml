@@ -1,5 +1,7 @@
 /// @description 
 
+event_inherited();
+
 #macro flip image_xscale *= choose(-1, 1)
 #macro dont_flip image_xscale = abs(image_xscale)
 #macro shuffle image_index = irandom(image_number - 1)
@@ -172,6 +174,16 @@
 			can_poison = true;
 			spr_poison = sprite
 		};
+	#endregion
+	
+	#region Curse
+		can_curse = false;
+		is_cursed = false;
+		
+		proc_curse = function() {
+			
+		}
+		
 	#endregion
 	
 #endregion

@@ -129,7 +129,13 @@ function brick_status_clear(brick) {
 	
 	#region Curse
 		function brick_can_curse(brick) {
-			return false;
+			return !brick.status_immune && brick.can_curse && !brick.is_cursed;
+		}
+		
+		function bricks_curse(count) {
+			static finder = new InstanceFinder(parBoardObject).filter(brick_can_curse);
+			
+			array_foreach(finder.get(count), function(inst) {inst.set_cursed(true)})
 		}
 	#endregion
 #endregion

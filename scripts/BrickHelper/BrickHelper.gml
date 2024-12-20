@@ -58,15 +58,17 @@ function BrickHelper(_large = false, _vertical = false) constructor {
 	
 }
 
-function brick_properties(object, properties_factory) {
+#macro is_this (object_index == event_object)
+
+function brick_properties(properties_factory) {
 	static map = ds_map_create();
 	
-	if !ds_map_exists(map, object) {
-		ds_map_set(map, object, properties_factory())
+	if !ds_map_exists(map, event_object) {
+		ds_map_set(map, event_object, properties_factory())
 	}
-	if object_index != object exit;
+	if object_index != event_object exit;
 	
-	var properties = map[? object];
+	var properties = map[? object_index];
 	properties.apply(self)
 }
 

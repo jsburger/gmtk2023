@@ -5,7 +5,7 @@ event_inherited();
 
 set_hp(2)
 
-brick_properties(BrickLarge, function() {
+brick_properties(function() {
 	return new BrickHelper(true, false).statuses(true, true, true)
 })
 

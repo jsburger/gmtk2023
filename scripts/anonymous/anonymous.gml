@@ -1,4 +1,5 @@
-/// Returns a method bound to noone. Prevents keeping stray objects in memory.
-function anonymous(func){
-	return method(noone, func);
+/// Returns a method bound to a dummy struct. Prevents keeping stray objects in memory.
+function anonymous(func) {
+	static dummy = {};
+	return method(dummy, func);
 }
