@@ -53,22 +53,22 @@ nexthurt = current_time;
 	if (string_pos("block", string_lower(object_get_name(object_index))) == 0) freezable = false;
 #endregion
 
-if instance_exists(obj_board) {
+if instance_exists(Board) {
 	visible = false
-	alarm[0] = obj_board.editor ?  1 : manhatten_distance(x, y, obj_board.bbox_left, obj_board.bbox_top)/32
+	alarm[0] = Board.editor ?  1 : manhatten_distance(x, y, Board.bbox_left, Board.bbox_top)/32
 }
 
-if random(10) < 1 && color == -1 && !obj_board.editor && (object_index == obj_block || object_index == obj_block_large) {
+if random(10) < 1 && color == -1 && !Board.editor && (object_index == obj_block || object_index == obj_block_large) {
 	set_color(MANA.YELLOW);
 }
 
 // Block replacements
-if chance(1, 60) && !obj_board.editor && object_index == obj_block{
+if chance(1, 60) && !Board.editor && object_index == obj_block{
 	instance_create_layer(x,y,"Instances",obj_super_block);
 	drop_chance = 0;
 	instance_destroy();
 }
-if chance(1, 120) && !obj_board.editor && object_index == obj_block{
+if chance(1, 120) && !Board.editor && object_index == obj_block{
 	instance_create_layer(x,y,"Instances",obj_block_gold);
 	drop_chance = 0;
 	instance_destroy();

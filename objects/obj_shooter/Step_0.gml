@@ -2,8 +2,8 @@
 
 var can_act = self.can_act(),
 	inBoard = false;
-if instance_exists(obj_board) {
-	inBoard = point_in_rectangle(mouse_x, mouse_y, obj_board.bbox_left, obj_board.bbox_top, obj_board.bbox_right, obj_board.bbox_bottom)
+if instance_exists(Board) {
+	inBoard = point_in_rectangle(mouse_x, mouse_y, Board.bbox_left, Board.bbox_top, Board.bbox_right, Board.bbox_bottom)
 }
 if (can_act) {
 	var acceleration = 1,
@@ -34,7 +34,7 @@ if can_act && button_pressed(inputs.shoot) && can_shoot {
 	//Shoot chips
 	if instance_exists(die) {
 		//Zone where chips cannot be shot to stop people from wasting chips
-		if (abs(die.y - obj_board.bbox_bottom) >  55) && (global.mana[MANA.YELLOW] > 0) {
+		if (abs(die.y - Board.bbox_bottom) >  55) && (global.mana[MANA.YELLOW] > 0) {
 			with instance_create_layer(x, y, "Projectiles", obj_chip) {
 				motion_set(other.gunangle, 16)
 				global.mana[MANA.YELLOW] -= chip_cost

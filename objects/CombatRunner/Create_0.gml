@@ -158,7 +158,7 @@ add_enemy_instance = function(instance) {
 	
 	instance.after_create()
 	
-	obj_board.accept_objects_from(instance)
+	Board.accept_objects_from(instance)
 	
 	return instance
 }

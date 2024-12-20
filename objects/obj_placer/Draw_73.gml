@@ -1,6 +1,6 @@
 /// @description Insert description here
-var _c = obj_board.canplace ? c_lime : c_red;
-if(obj_board.canplace){
+var _c = Board.canplace ? c_lime : c_red;
+if(Board.canplace){
 	gpu_set_fog(true, _c, 0, 0);
 	//draw_sprite(sprite_index,image_index,x - 1,y);
 	//draw_sprite(sprite_index,image_index,x + 1,y);

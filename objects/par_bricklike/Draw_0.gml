@@ -1,12 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
 var a = image_alpha;
-if obj_board.obj_layer != obj_layer && obj_board.editor image_alpha = .5;
+if Board.obj_layer != obj_layer && Board.editor image_alpha = .5;
 draw_self();
 image_alpha = a;
 
 if blocking{
-	if obj_board.obj_layer == obj_layer{
+	if Board.obj_layer == obj_layer{
 		draw_set_alpha(.35);
 		draw_rectangle_color(bbox_left, bbox_top, bbox_right, bbox_bottom, c_red, c_red, c_red, c_red, false);
 		draw_set_alpha(1);

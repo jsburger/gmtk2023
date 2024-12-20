@@ -17,7 +17,7 @@ die = -4;
 portal = -4;
 
 can_act = function() {
-	with obj_board {
+	with Board {
 		if editor return false
 		if !active return false
 	}

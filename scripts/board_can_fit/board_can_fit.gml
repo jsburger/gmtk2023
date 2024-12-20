@@ -54,7 +54,7 @@ function board_placement_position(object, _x, _y) {
 function board_grid_position(_x, _y) {
 	var board_off_x = 0,
 		board_off_y = 0;
-	with obj_board {
+	with Board {
 		board_off_x = ceil((bbox_left + bbox_right)/2) mod TILE_MIN;
 		board_off_y = bbox_bottom mod TILE_MIN;
 	}

@@ -5,4 +5,4 @@ lifetime = 8
 currentLife = lifetime - 2
 alarm[0] = 4
 image_blend = c_blue
-if obj_board.editor instance_destroy()
+if Board.editor instance_destroy()

@@ -177,7 +177,7 @@ function round_end() {
 	if global.round mod board_rounds() == 0 {
 		make_new_board()
 	}
-	if !obj_board.editor schedule(30, function() {round_start()})
+	if !Board.editor schedule(30, function() {round_start()})
 }
 
 function board_rounds() {

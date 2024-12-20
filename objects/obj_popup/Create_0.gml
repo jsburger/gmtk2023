@@ -1,10 +1,10 @@
-if(obj_board.editor){instance_destroy(); exit}
+if(Board.editor){instance_destroy(); exit}
 
 var _xmargin = TILE_MIN * 8,
     _ymargin = TILE_MIN * 8;
 
-x = clamp(x, obj_board.bbox_left + _xmargin, obj_board.bbox_right - _xmargin);
-y = clamp(y, obj_board.bbox_top + _ymargin, obj_board.bbox_bottom - _ymargin);
+x = clamp(x, Board.bbox_left + _xmargin, Board.bbox_right - _xmargin);
+y = clamp(y, Board.bbox_top + _ymargin, Board.bbox_bottom - _ymargin);
 
 var _xoff = 272/4, _yoff = 80;
 with(instance_create_layer(x - _xoff, y + _yoff, "Portraits", obj_prompt)){

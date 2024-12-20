@@ -17,7 +17,7 @@ if (hit_timer && !--hit_timer){
 }
 
 //Landing on the ground
-if (bbox_bottom >= obj_board.bbox_bottom-sprite_height/2){
+if (bbox_bottom >= Board.bbox_bottom-sprite_height/2){
 	event_perform(ev_other, ev_user0);
 }
 

@@ -1,8 +1,8 @@
 /// @description hiiii!
 event_inherited()
-if instance_exists(obj_board) {
+if instance_exists(Board) {
 	visible = false
-	alarm[0] = obj_board.editor ?  1 : manhatten_distance(x, y, obj_board.bbox_left, obj_board.bbox_top)/32
+	alarm[0] = Board.editor ?  1 : manhatten_distance(x, y, Board.bbox_left, Board.bbox_top)/32
 }
 index = 0;
 spr_back = sprPortalBackPurple;

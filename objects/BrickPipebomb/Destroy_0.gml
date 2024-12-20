@@ -12,8 +12,8 @@ var list = ds_list_create(),
 		rect.x1, rect.y1, rect.x2, rect.y2,
 		parBoardObject, true, true, list, false);
 
-var _min = is_vertical ? obj_board.bbox_top : obj_board.bbox_left,
-	_max = is_vertical ? obj_board.bbox_bottom : obj_board.bbox_right;
+var _min = is_vertical ? Board.bbox_top : Board.bbox_left,
+	_max = is_vertical ? Board.bbox_bottom : Board.bbox_right;
 for (var i = _min; i <= _max; i += TILE_WIDTH) {
 	with(instance_create_layer(is_vertical ? x : i, is_vertical ? i : y, "Projectiles", obj_explosion)) {
 		image_angle = random(360);

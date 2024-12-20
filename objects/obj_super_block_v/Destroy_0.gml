@@ -4,7 +4,7 @@ var list = ds_list_create();
 
 scr_screenshake(10, 2, 0.2);
 
-for (var _y = obj_board.bbox_top; _y <= obj_board.bbox_bottom; _y += TILE_WIDTH) {
+for (var _y = Board.bbox_top; _y <= Board.bbox_bottom; _y += TILE_WIDTH) {
 	with(instance_create_layer(x, _y, "Projectiles", obj_explosion)) {
 		image_angle = random(360);
 		collision_rectangle_list(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_block, 0, 1, list, false)

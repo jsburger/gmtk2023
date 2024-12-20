@@ -6,7 +6,7 @@ function Clickables_Step() {
 		//Get hovered object
 		var clicked = get_hovered_clickable();
 		if clicked != noone {
-			if !instance_is(clicked, obj_board) with obj_board active = false;
+			if !instance_is(clicked, Board) with Board active = false;
 			//If combat is targeting right now, check for targets before clicks
 			if (instance_exists(CombatRunner) && CombatRunner.targeting) {
 				if variable_instance_exists(clicked, "get_target_info") {
@@ -22,7 +22,7 @@ function Clickables_Step() {
 		}
 		else {
 			//Disable board when anything is clicked.
-			with obj_board active = false;
+			with Board active = false;
 		}
     }
     

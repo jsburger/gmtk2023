@@ -1,10 +1,10 @@
 /// @description Stay inside board
 // You can write your code in this editor
 if !canmove exit;
-if (instance_exists(obj_board)) {
-	if bbox_bottom > obj_board.bbox_bottom{
+if (instance_exists(Board)) {
+	if bbox_bottom > Board.bbox_bottom{
 		if (touchedBottom){
-			if bbox_bottom > obj_board.bbox_bottom + 128{
+			if bbox_bottom > Board.bbox_bottom + 128{
 				if object_index == Ball {
 					throw_end()
 					instance_destroy()

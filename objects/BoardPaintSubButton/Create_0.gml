@@ -4,7 +4,7 @@ color = -1
 image_speed = 0
 
 on_click = function() {
-	obj_board.enter_paint_mode(color)
+	Board.enter_paint_mode(color)
 }
 
 can_click = function() {

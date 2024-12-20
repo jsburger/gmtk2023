@@ -9,7 +9,7 @@ event_inherited();
 #region Fade in
 	is_visible = true;
 
-	if instance_exists(obj_board) {
+	if instance_exists(Board) {
 		visible = false
 		alarm[0] = 1
 	}

@@ -8,7 +8,7 @@ colorable = true;
 image_blend = #919a9f;
 
 // Chance to become yellow
-if color == -1 && !obj_board.editor && chance(1, 10) {
+if color == -1 && !Board.editor && chance(1, 10) {
 	set_color(MANA.YELLOW);
 }
 

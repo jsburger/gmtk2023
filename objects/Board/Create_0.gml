@@ -18,10 +18,10 @@
 //	matrix_set(matrix_world, matrix_build_identity())
 //})
 
-#macro board_top obj_board.bbox_top
-#macro board_bottom obj_board.bbox_bottom
-#macro board_left obj_board.bbox_left
-#macro board_right obj_board.bbox_right
+#macro board_top Board.bbox_top
+#macro board_bottom Board.bbox_bottom
+#macro board_left Board.bbox_left
+#macro board_right Board.bbox_right
 
 #macro cam_x camera_get_view_x(view_camera[0])
 #macro cam_y camera_get_view_y(view_camera[0])

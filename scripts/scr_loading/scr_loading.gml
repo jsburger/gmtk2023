@@ -212,8 +212,8 @@ function level_load(levelnumber){
 				serializer.read(entry.data)
 			}
 			
-			if !obj_board.editor && instance_is(self, parBoardObject) {
-				alarm[0] = manhatten_distance(x, y, obj_board.bbox_left, obj_board.bbox_top)/32
+			if !Board.editor && instance_is(self, parBoardObject) {
+				alarm[0] = manhatten_distance(x, y, Board.bbox_left, Board.bbox_top)/32
 			}
 		}
 	})
@@ -242,10 +242,10 @@ function transform_instance_position(inst, storing = false) {
 	var r_x = 0,
 		r_y = 0;
 	var xcheck = 0;
-	if instance_exists(obj_board) {
-		xcheck = (obj_board.bbox_left + obj_board.bbox_right)/2;
+	if instance_exists(Board) {
+		xcheck = (Board.bbox_left + Board.bbox_right)/2;
 		r_x = ceil(xcheck);
-		r_y = round(obj_board.bbox_bottom);
+		r_y = round(Board.bbox_bottom);
 	}
 	
 	if storing {

@@ -10,11 +10,11 @@ for (var i = 0; i <= COLORS.YELLOW + 1; i++) {
 }
 
 on_click = function() {
-	if obj_board.mode != editorMode.paint {
-		obj_board.enter_paint_mode()
+	if Board.mode != editorMode.paint {
+		Board.enter_paint_mode()
 	}
 	else {
-		obj_board.exit_paint_mode()
+		Board.exit_paint_mode()
 	}
 }
 
