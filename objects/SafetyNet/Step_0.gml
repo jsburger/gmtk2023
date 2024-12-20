@@ -3,8 +3,8 @@
 if instance_exists(Ball) {
 	x = Ball.x;
 }
-else if instance_exists(obj_shooter) {
-	x = obj_shooter.x;
+else if instance_exists(Shooter) {
+	x = Shooter.x;
 }
 var s = .05;
 if fading && image_alpha > 0 {

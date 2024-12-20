@@ -89,11 +89,11 @@ function player_turn_start() {
 function enable_shooter() {
 	
 	mana_add(MANA.YELLOW, 3)
-	with obj_shooter {
+	with Shooter {
 		mana_effect_create(x, y, MANA.YELLOW, 3)
 	}
 	
-	with obj_shooter {
+	with Shooter {
 		has_dice = true
 		can_shoot = true
 		sprite_index = sprHandIdleA;
@@ -117,7 +117,7 @@ function throw_start(){
 }
 
 function throw_end() {
-	with obj_shooter can_shoot = false;
+	with Shooter can_shoot = false;
 	
 	var enders = array_build_filtered(parBoardObject, function(i) {return i.on_throw_end != undefined});
 	array_sort(enders, sort_y)
