@@ -14,7 +14,7 @@ function bricks_recolor(count, _color, sorter = undefined) {
 		.prefer(function(inst) {return inst.color == COLORS.NONE})
 	
 	
-	finder.push(sorter, color)
+	finder.push(sorter, _color)
 	var selected = finder.get(count);
 	
 	//Color the bricks
