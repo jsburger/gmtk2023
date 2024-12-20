@@ -55,12 +55,22 @@ function StatusItem(_statusType, _strength) : CombatItem() constructor {
 	}	
 }
 
-function FunctionItem(func) : CombatItem() constructor {
-	self.func = func;
+/// @param {Function} func
+/// @param {Any} arguements...
+function FunctionItem() : CombatItem() constructor {
+	self.func = argument[0];
+	args = undefined;
+	if argument_count > 1 args = [];
+	for (var i = 1; i < argument_count; i++) {
+		array_push(args, argument[i])
+	}
 	delay = 0;
 	
 	static act = function(runner) {
-		func()
+		if args != undefined {
+			method_call(func, args)
+		}
+		else func()
 	}
 }
 

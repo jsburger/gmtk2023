@@ -35,3 +35,6 @@ function mouse_in_rectangle(x1, y1, x2, y2) {
 function point_distance_struct(a, b) {
 	return point_distance(a.x, a.y, b.x, b.y);
 }
+function point_direction_struct(a, b) {
+	return point_direction(a.x, a.y, b.x, b.y);
+}

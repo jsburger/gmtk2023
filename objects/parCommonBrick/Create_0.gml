@@ -7,6 +7,8 @@ mana_amount = 1;
 colorable = true;
 image_blend = #919a9f;
 
+can_curse = true;
+
 // Chance to become yellow
 if color == -1 && !Board.editor && chance(1, 10) {
 	set_color(MANA.YELLOW);

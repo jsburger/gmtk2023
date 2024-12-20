@@ -180,8 +180,16 @@ event_inherited();
 		can_curse = false;
 		is_cursed = false;
 		
+		set_cursed = function(value) {
+			if is_cursed == value exit;
+			is_cursed = value;
+		}
+		
 		proc_curse = function() {
-			
+			with instance_create_layer(x, y, "Projectiles", CurseProjectile) {
+				target_position = {x: Shooter.x, y: Shooter.y}
+				motion_set(direction_to_shooter(x, y) + 180 + random_range(-70, 70), 5)
+			}
 		}
 		
 	#endregion

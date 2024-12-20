@@ -1,9 +1,11 @@
 /// @description Movement and Chip shooting
 
+if keyboard_check_pressed(ord("Q")) bricks_curse(3);
+
 var can_act = self.can_act(),
 	inBoard = false;
 if instance_exists(Board) {
-	inBoard = point_in_rectangle(mouse_x, mouse_y, Board.bbox_left, Board.bbox_top, Board.bbox_right, Board.bbox_bottom)
+	inBoard = point_in_rectangle(mouse_x, mouse_y, board_left, board_top, board_right, board_bottom)
 }
 if (can_act) {
 	var acceleration = 1,

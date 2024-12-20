@@ -349,7 +349,7 @@ function StatusPoison(count) : StatusTickable(count) constructor {
 					}
 				}
 				// Play Sound
-				sound_play_pitch(sndApplyPoison, random_range(.9, 1.1));
+				if i > 0 sound_play_pitch(sndApplyPoison, random_range(.9, 1.1));
 			}
 		}
 	}

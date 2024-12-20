@@ -1,6 +1,9 @@
 
 global.round = 0
 
+// Fuck it why not
+global.interface = new CombatInterface();
+
 #macro BUY_IN 1000
 #macro game_speed game_get_speed(gamespeed_fps)
 

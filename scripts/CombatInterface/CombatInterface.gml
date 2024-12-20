@@ -68,5 +68,11 @@ function CombatInterface() constructor {
 		return act;
 	}
 
+	static curse = function(count) {
+		var act = new FunctionItem(anonymous(bricks_curse), count);
+		act.owner = owner;
+		consume(act);
+		return act;
+	}
 
 }
