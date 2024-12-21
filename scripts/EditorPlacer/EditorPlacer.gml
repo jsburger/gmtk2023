@@ -293,6 +293,44 @@ function LauncherPlacer() : SingleObjectPlacer(Launcher) constructor {
 	}
 }
 
+function BarrelPlacer() : SingleObjectPlacer(Barrel) constructor {
+	rotation = 90;
+	line_enabled = false;
+	
+	
+	static cycle = function(dir) {
+		var turning = button_check(inputs.editor_modifier) ? 5 : 45;
+		rotation -= turning * dir;
+		rotation = anglefy(rotation);
+	}
+	
+	static get_rotation = function() {
+		return rotation - 90;
+	}
+	
+	static modify_object = function(object) {
+		object.set_launch_direction(rotation)
+	}
+	
+	static draw = function(_x, _y, canplace) {
+		base_draw(_x, _y, canplace);
+		draw_dice_preview(_x, _y, rotation)
+	}
+	
+	static reset = function() {
+		reset_placement()
+		rotation = 90;
+	}
+	
+	static try_match = function(object) {
+		if matches(object) {
+			rotation = object.launch_direction;
+			return true;
+		}
+		return false;
+	}
+}
+
 function RotatingPlacer(obj, rotation_amount) : SingleObjectPlacer(obj) constructor {
 	rotation = 0;
 	self.rotation_amount = rotation_amount;
@@ -324,3 +362,4 @@ function RotatingPlacer(obj, rotation_amount) : SingleObjectPlacer(obj) construc
 		return false;
 	}
 }
+
