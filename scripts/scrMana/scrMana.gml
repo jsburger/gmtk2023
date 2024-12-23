@@ -131,6 +131,18 @@ function mana_get_highest() {
 	return highest;
 }
 
+function color_get_name(color) {
+	switch color {
+		case COLORS.NONE  : return "gray";
+		case COLORS.RED   : return "red";
+		case COLORS.BLUE  : return "blue";
+		case COLORS.YELLOW: return "yellow";
+		case COLORS.PURPLE: return "purple";
+		case COLORS.GREEN : return "green";
+		case COLORS.ORANGE: return "orange";
+	}
+}
+
 function mana_reset() {
 	for (var i = 0; i < MANA.MAX; ++i) {
 		global.mana[i] = 0
