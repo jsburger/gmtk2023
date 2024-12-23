@@ -82,6 +82,7 @@ entity_list = [
 /*Movement 1*/[Bumper, ColorBumper],
 /*Movement 2*/ new PortalPlacer(),
 /*Movement 3*/ new LauncherPlacer(),
+			   new BarrelPlacer(),
 /*Explosives*/[BrickPipebomb, BrickPipebombV], [Bomb, ColorBomb],
 /*Other*/     [Token],
 /*Battler*/   [BattlerBrick], [BattlerBrickSmall]
