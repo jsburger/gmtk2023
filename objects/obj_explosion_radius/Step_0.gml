@@ -1,3 +1,3 @@
 /// @description 
 
-active = false;
+die = true;
