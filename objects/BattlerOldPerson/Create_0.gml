@@ -2,7 +2,7 @@
 
 // Inherit the parent event
 event_inherited();
-set_hp(25)
+set_hp(35)
 
 movemode = moveOrder.RANDOM_STACK
 spr_icon = sprOldPersonIcon
@@ -17,14 +17,13 @@ with add_action("Lose") {
 	accept_provider(damage)
 	set_intent(INTENT.ATTACK, damage)
 	hit(damage)
-	recolor(6, MANA_NONE)	
 
-	desc = "Deal 6 Damage.\nUncolor 6 Bricks."
+	desc = "Deal 6 Damage."
 }
 
 with add_action("Drain") {
-	set_intent(INTENT.DEBUFF, 4)
-	run(reduce);
+	set_intent(INTENT.DEBUFF)
+	recolor(6, MANA_NONE)	
 	buff_strength(2);
-	desc = "Reduce all Mana by 4\nGain 2 Strength."
+	desc = "Uncolor 6 Bricks.\nGain 2 Strength."
 }
