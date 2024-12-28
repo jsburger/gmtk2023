@@ -177,3 +177,33 @@ function memoize_array(n, generator) {
 	}
 	return results;
 }
+
+
+/// @param {Array<Any>} array
+/// @param {Function, String} mapping Function that returns a number, or a string to sort by variable
+/// @desc Retuns a new array, sorted in ascending order after being mapped by the given function.
+function array_mapped_sort(array, mapper, ascending = true) {
+	static sorting_grid = ds_grid_create(2, 10);
+	var l = array_length(array);
+	ds_grid_resize(sorting_grid, 2, l);
+	if is_string(mapper) {
+		for(var i = 0; i < l; i++) {
+			ds_grid_set(sorting_grid, 0, i, array[i])
+			ds_grid_set(sorting_grid, 1, i, variable_instance_get(array[i], mapper))
+		}
+	}
+	else {
+		for(var i = 0; i < l; i++) {
+			ds_grid_set(sorting_grid, 0, i, array[i])
+			ds_grid_set(sorting_grid, 1, i, mapper(array[i]))
+		}
+	}
+	
+	ds_grid_sort(sorting_grid, 1, ascending)
+	
+	var a = array_create(l);
+	for(var i = 0; i < l; i++) {
+		a[i] = ds_grid_get(sorting_grid, 0, i)
+	}
+	return a
+}

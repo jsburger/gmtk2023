@@ -1,7 +1,7 @@
-function CombatItem() constructor {
+function CombatItem(owner) constructor {
 	delay = 0;
 	target = noone;
-	owner = noone;
+	self.owner = owner;
 	
 	static act = function(runner) {
 		
@@ -14,9 +14,12 @@ function CombatItem() constructor {
 	
 }
 
-function AttackItem(Damage) : CombatItem() constructor {
+///@param target
+///@param {Struct, Real} damage
+function AttackItem(target, damage, owner = noone) : CombatItem(owner) constructor {
 	delay = 15
-	damage = Damage
+	self.damage = damage;
+	self.target = target;
 	
 	static act = function(runner) {
 		var t = resolve_target(target)
@@ -26,26 +29,28 @@ function AttackItem(Damage) : CombatItem() constructor {
 	}
 }
 
-function DefendItem(Block) : CombatItem() constructor {
+function DefendItem(target, Block, owner = noone) : CombatItem(owner) constructor {
 	delay = 15
-	block = Block
+	self.block = Block
+	self.target = target
 	
 	static act = function(runner) {
 		var t = resolve_target(target)
 		if instance_exists(t) {
-			battler_give_block(t, provider_get(block))
+			battler_give_block(t, provider_get(self.block))
 		}
 	}
 }
 
-function WaitItem(duration) : CombatItem() constructor {
+function WaitItem(duration, owner = noone) : CombatItem(owner) constructor {
 	delay = duration;
 }
 
-function StatusItem(_statusType, _strength) : CombatItem() constructor {
+function StatusItem(_target, _statusType, _strength, owner = noone) : CombatItem(owner) constructor {
 	delay = 15
 	status = _statusType
 	strength = _strength
+	target = _target;
 	
 	static act = function(runner) {
 		var t = resolve_target(target)
@@ -55,13 +60,14 @@ function StatusItem(_statusType, _strength) : CombatItem() constructor {
 	}	
 }
 
+/// @param {Struct, Id.Instance} owner
 /// @param {Function} func
 /// @param {Any} arguements...
-function FunctionItem() : CombatItem() constructor {
-	self.func = argument[0];
+function FunctionItem() : CombatItem(argument[0]) constructor {
+	self.func = argument[1];
 	args = undefined;
-	if argument_count > 1 args = [];
-	for (var i = 1; i < argument_count; i++) {
+	if argument_count > 2 args = [];
+	for (var i = 2; i < argument_count; i++) {
 		array_push(args, argument[i])
 	}
 	delay = 0;
@@ -75,7 +81,7 @@ function FunctionItem() : CombatItem() constructor {
 }
 
 /// @ignore
-function RecolorItem(count, color) : CombatItem() constructor {
+function RecolorItem(count, color, owner = noone) : CombatItem(owner) constructor {
 	self.count = count;
 	self.color = color;
 	sorter = undefined;
