@@ -134,12 +134,12 @@ function throw_end() {
 				ability.is_normal_ass_attack = true;
 			CombatRunner.mount_ability(ability,
 			function() {
-				CombatRunner.enqueue(new FunctionItem(throw_resolve))
+				CombatRunner.enqueue(new FunctionItem(noone, throw_resolve))
 			})
 		})
 	}
 	else {
-		CombatRunner.enqueue(new FunctionItem(throw_resolve))
+		CombatRunner.enqueue(new FunctionItem(noone, throw_resolve))
 	}
 	if global.mana_gained[MANA.BLUE] > 0 {
 		with PlayerBattler block += global.mana_gained[MANA.BLUE]
