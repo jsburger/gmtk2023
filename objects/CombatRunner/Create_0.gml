@@ -9,7 +9,7 @@ enum PHASES {
 schedule(20, function() {encounter_start()})
 
 actions = [];
-resolving_actions = [];
+action_buffer = [];
 move_queue = [];
 
 is_player_turn = true;
@@ -99,7 +99,7 @@ throws = 1;
 
 enqueue = function(action) {
 	if acting {
-		array_push(resolving_actions, action)
+		array_push(action_buffer, action)
 	}
 	else {
 		array_push(actions, action)
@@ -111,11 +111,40 @@ enqueue_move = function(move) {
 }
 
 has_actions = function() {
-	return (array_length(actions) > 0 || array_length(resolving_actions) > 0 || array_length(move_queue) > 0)
+	return (array_length(actions) > 0 || array_length(action_buffer) > 0 || array_length(move_queue) > 0);
 }
 
 is_busy = function() {
 	return has_actions() || waitTime > 0;
+}
+
+wait = function(time) {
+	waitTime += time;
+}
+
+//
+progress_actions = function() {
+	if array_length(actions) > 0 {
+		if actions[0].finished {
+			var action = array_shift(actions);
+			wait(action.delay);
+		}
+	}
+	if array_length(action_buffer) > 0 {
+		// Move items out of the "hot" queue into the normal one after something is finished running.
+		var length = array_length(action_buffer);
+		if length > 0 {
+			actions = array_concat(action_buffer, actions)
+			array_clear(action_buffer)
+		}
+	}
+	if array_length(actions) <= 0 && array_length(move_queue) > 0 {
+		var move = array_shift(move_queue);
+		array_foreach(move.actions, function(action) {
+			array_push(actions, action)
+		})
+		Timeline.update(false);
+	}
 }
 
 do_phase_action = function(target) {
@@ -183,9 +212,12 @@ on_battler_die = function(battler) {
 		//Remove actions related to this battler.
 		var filter = method(battler, function(action) {
 			return action.get_target() != self && action.owner != self;
-		})
+		});
 		array_filter_resize(actions, filter);
-		array_filter_resize(resolving_actions, filter);
+		array_filter_resize(action_buffer, filter);
+		array_filter_resize(move_queue, method(battler, function(move) {
+			return move.owner != self;
+		}));
 		Timeline.update()
 	}
 	
@@ -206,7 +238,7 @@ on_battler_die = function(battler) {
 
 end_combat = function() {
 	actions = [];
-	resolving_actions = [];
+	action_buffer = [];
 	move_queue = [];
 	
 	combat_ending = true;

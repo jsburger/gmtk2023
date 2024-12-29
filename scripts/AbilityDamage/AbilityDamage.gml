@@ -19,9 +19,7 @@ register_ability("Hit24", function() {
 })
 
 register_ability("Recolor", function() {
-	with new FunctionAbility(function() {
-		bricks_recolor(8, MANA.RED)
-	}) {
+	with new Ability(TARGET_TYPE.NONE) {
 		name = "Redify"
 		desc = "Redify 8 bricks"
 		set_costs(3, 0, 1)
@@ -29,6 +27,10 @@ register_ability("Recolor", function() {
 		image_xscale = .35
 		image_yscale = .35
 		set_targets(TARGET_TYPE.NONE)
+		
+		act = function(runner) {
+			recolor(8, COLORS.RED)
+		}
 		
 		return self;
 	}

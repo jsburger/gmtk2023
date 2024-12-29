@@ -41,6 +41,22 @@ function bricks_recolor(count, _color, sorter = undefined) {
 	
 }
 
+/// Recolor a single brick
+function brick_recolor(brick, _color) {
+	with brick {
+		set_color(_color);
+		sound_play_random(sound_pool(sndColor1));
+		with instance_create_layer(random_range(bbox_left, bbox_right), random_range(bbox_top, bbox_bottom), "FX", obj_fx) {
+			sprite_index = sprFXSplat
+		
+			var rand_scale = random_range(0.5, 1.5);
+			image_xscale = rand_scale;
+			image_yscale = rand_scale;
+			image_blend = mana_get_color(_color);
+		}
+	}
+}
+
 /// Returns a function which filters instances for that color
 function colorable_filter(color) {
 	static filters = memoize_array(COLORS.MAX + 1, function(i) {

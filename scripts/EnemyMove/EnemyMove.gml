@@ -43,12 +43,6 @@ function EnemyMove() : CombatInterface() constructor {
 		array_push(actions, item)
 	}
 	
-	static act = function() {
-		array_foreach(actions, function(action) {
-			with CombatRunner enqueue(action)
-		})
-	}
-	
 	static multitarget = function(targets, func) {
 		var item = new MultiTargetItem(owner, targets, func);
 		consume(item);

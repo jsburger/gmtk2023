@@ -43,31 +43,12 @@ if button_pressed(inputs.dash) && targeting == true && current_ability != undefi
 //Resolve items added by actions
 acting = true
 while has_actions() && waitTime <= 0 {
-	//Resolve actions
-	if array_length(resolving_actions) > 0 {
-		var action = array_shift(resolving_actions);
+	if array_length(actions) > 0 {
+		var action = actions[0];
 		action.act(self);
-		waitTime += action.delay;
-		// Move items out of the "hot" queue into the normal one after something is finished running.
-		var length = array_length(resolving_actions);
-		if length > 0 {
-			actions = array_concat(resolving_actions, actions)
-			array_clear(actions)
-		}
+		action.progress += 1;
 	}
-	//Must have actions
-	else {
-		if array_length(actions) > 0 {
-			//Move actions to resolve queue
-			array_push(resolving_actions, array_shift(actions))
-		}
-		else {
-			acting = false
-			array_shift(move_queue).act()
-			Timeline.update(false)
-			acting = true
-		}
-	}
+	progress_actions();
 }
 acting = false
 

@@ -2,9 +2,15 @@ function CombatItem(owner) constructor {
 	delay = 0;
 	target = noone;
 	self.owner = owner;
+	progress = 0;
+	finished = false;
+	
+	static done = function() {
+		finished = true;
+	}
 	
 	static act = function(runner) {
-		
+		done();
 	}
 	
 	static get_target = function() {
@@ -26,6 +32,7 @@ function AttackItem(target, damage, owner = noone) : CombatItem(owner) construct
 		if instance_exists(t) {
 			battler_hurt(t, provider_get(damage), owner)
 		}
+		done();
 	}
 }
 
@@ -39,6 +46,7 @@ function DefendItem(target, Block, owner = noone) : CombatItem(owner) constructo
 		if instance_exists(t) {
 			battler_give_block(t, provider_get(self.block))
 		}
+		done();
 	}
 }
 
@@ -57,6 +65,7 @@ function StatusItem(_target, _statusType, _strength, owner = noone) : CombatItem
 		if instance_exists(t) {
 			t.statuses.add_status(status, provider_get(strength))
 		}
+		done();
 	}	
 }
 
@@ -77,6 +86,7 @@ function FunctionItem() : CombatItem(argument[0]) constructor {
 			method_call(func, args)
 		}
 		else func()
+		done();
 	}
 }
 
@@ -86,19 +96,35 @@ function RecolorItem(count, color, owner = noone) : CombatItem(owner) constructo
 	self.color = color;
 	sorter = undefined;
 	
+	results = undefined;
+	
 	static act = function(runner) {
-		var n = provider_get(count);
-		if n > 0 {
-			var c = bricks_recolor(n, provider_get(color), sorter)
-			runner.waitTime += (__BRICK_RECOLOR_DELAY * (c - 1)) + 1;
+		static finder = new InstanceFinder(parBoardObject) 
+			.filter(function(inst, col) {return inst.colorable && inst.color != col})
+			.prefer(function(inst) {return inst.color == COLORS.NONE});
+		if (progress == 0) {
+			var n = provider_get(count);
+			if n <= 0 {
+				done();
+				exit;
+			}
+			finder.push(sorter, color);
+			results = finder.get(n);
 		}
+		var length = array_length(results);
+		if (results != undefined && progress < length) {
+			var col = provider_get(color)
+			var brick = results[progress];
+			brick_recolor(brick, col)
+			if (progress != (length - 1)) runner.wait(__BRICK_RECOLOR_DELAY)
+		}
+		if progress >= length done();
 	}
 }
 
-function MultiTargetItem(owner, targets, func) : CombatItem() constructor {
+function MultiTargetItem(owner, targets, func) : CombatItem(owner) constructor {
 	self.targets = targets;
 	self.func = func;
-	self.owner = owner;
 	delay = 0;
 	
 	static act = function(runner) {
@@ -111,5 +137,16 @@ function MultiTargetItem(owner, targets, func) : CombatItem() constructor {
 				call(t[i])
 			}
 		}
+		done();
 	}
+}
+
+/// A CombatItem which doesn't declare itself done and passes itself to the function
+function RawCombatItem(owner, _func) : CombatItem(owner) constructor {
+	func = _func;
+	
+	static act = function(runner) {
+		func(self, runner)
+	}
+	
 }
