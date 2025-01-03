@@ -337,7 +337,7 @@ function StatusPoison(count) : StatusTickable(count) constructor {
 			with parBoardObject if is_poisoned poisoned++;
 			if poisoned < strength {
 				// Gather poisonable bricks
-				var dif = strength - array_length(poisoned),
+				var dif = strength - poisoned,
 					bricks = finder.get(dif);
 				// Poison bricks
 				for(var i = 0; i < array_length(bricks); i++) {
