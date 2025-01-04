@@ -79,6 +79,7 @@ entity_list = [
 /*Bricks*/    [BrickNormal, BrickNormalV, PegNormal], [BrickLarge, BrickLargeV], [BrickGlow, BrickGlowV], [BrickLargeGlow, BrickLargeGlowV], [BrickLargeMetal, BrickLargeMetalV],
 			  [BrickMetal, BrickMetalXL, PegMetal], [BrickHidden, BrickHiddenV], [BrickLargeHidden, BrickLargeHiddenV],
 			  new RotatingPlacer(OneWayBrick, 90),
+			  [FakeSolid],
 /*Movement 1*/[Bumper, ColorBumper],
 /*Movement 2*/ new PortalPlacer(),
 /*Movement 3*/ new LauncherPlacer(),

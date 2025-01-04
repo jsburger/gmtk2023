@@ -224,7 +224,7 @@ function place_trash_bricks(column, object = BrickNormal, offset = 0) {
 		found = false;
 		for (var i = 0; i < count; i++) {
 			var entry = list[| i];
-			if entry.can_collide {
+			if entry.can_collide || entry.is_fake_solid {
 				found = true;
 				break;
 			}
