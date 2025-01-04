@@ -3,6 +3,8 @@
 // Inherit the parent event
 event_inherited();
 
+extra_objects = [FakeSolid]
+
 move_max = 3;
 move_rerolls = 1;
 
