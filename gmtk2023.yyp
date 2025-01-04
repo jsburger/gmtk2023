@@ -299,6 +299,7 @@
     {"id":{"name":"scribble_fallback_font","path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},},
     {"id":{"name":"Blocks","path":"notes/Blocks/Blocks.yy",},},
     {"id":{"name":"Note2","path":"notes/Note2/Note2.yy",},},
+    {"id":{"name":"OneArmedBandit","path":"notes/OneArmedBandit/OneArmedBandit.yy",},},
     {"id":{"name":"Todo","path":"notes/Todo/Todo.yy",},},
     {"id":{"name":"AbilityButton","path":"objects/AbilityButton/AbilityButton.yy",},},
     {"id":{"name":"AbilityButtonHolder","path":"objects/AbilityButtonHolder/AbilityButtonHolder.yy",},},

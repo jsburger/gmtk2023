@@ -1,0 +1,31 @@
+//OLD VERSION
+
+The One-Armed Bandit has a passive ability that causes him to reroll 1 of his 3 
+upcoming attacks upon taking damage.
+
+POSSIBLE ACTIONS:
+1) RESPIN = Grant 8 Shield
+2) BAR    = Deal 3 Damage, Create a layer of Garbage Bricks
+3) PAYOUT = 25% to deal 25 Damage, double the odds of any future PAYOUTS this turn to hit
+
+This current iteration isn't fun and his hard to design around. Being able to reroll his attacks is
+supposed to give agency but instead feels random and pointless. He can kill you instantly if you get
+unlucky, and his most interesting move, BAR, has no synergy.
+
+
+//NEW VERSION
+
+Assume that the Bandit will always queue 4 attacks now, the last one being PAYOUT, which CANNOT be rerolled.
+
+Assume that the Bandit's passive now only triggers upon taking Spell Damage, and will reroll all
+possible moves instead of just 1 on the timeline.
+
+NEW POSSIBLE ACTIONS:
+1) RESPIN   = Grant 4 Shield. PAYOUT will create an additional line of blue bricks.
+2) HOTSTUFF = Deal 2 Damage.  PAYOUT will create an additional line of burning red bricks.
+3) JACKPOT  = Double the chance of PAYOUT dealing damage.
+4) PAYOUT   = Deal damage equal to # of Garbage Bricks, 15% chance of hitting. Create 5 Garbage Bricks.
+
+Assume that Garbage Bricks are now 2x2 squares, are just 1 HP bricks besides the functionality
+with PAYOUT's damage. Layouts could perhaps start with a few.
+   - Additional bricks spawned by PAYOUT are layered after

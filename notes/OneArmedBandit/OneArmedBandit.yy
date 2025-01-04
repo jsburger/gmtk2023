@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"",
+  "%Name":"OneArmedBandit",
+  "name":"OneArmedBandit",
+  "parent":{
+    "name":"Battlers",
+    "path":"folders/Objects/Battlers.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}

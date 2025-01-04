@@ -1,6 +1,6 @@
 event_inherited();
 
-bounciness = .75;
+bounciness = 1;
 //Was .25, changed when removing friction
 gravity_base = .26
 gravity = gravity_base

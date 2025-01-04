@@ -34,13 +34,13 @@ var setup_trash = function(move) {
 with add_action("BAR") {
 	desc = "Suck them bones dry, kid"
 	setup_trash(self)
-	var damage = as_damage(3);
+	var damage = as_damage(0);
 	hit(damage)
 	set_intent(INTENT.ATTACK, damage);
 	
 	wait(10)
 }
-
+/*
 with add_action("JACKPOT!") {
 	var damage = as_damage(new FunctionProvider(jackpot_damage));
 	hit(damage);

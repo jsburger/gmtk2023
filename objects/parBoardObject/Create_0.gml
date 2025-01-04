@@ -69,6 +69,8 @@ event_inherited();
 		ghost_hits = 0; //Used to track how many times a ghost has collided with an instance.
 		ghost_immune = false; //Prevents the object from accruing ghost hits, meaning it doesnt get pierced
 		stops_preview = true;
+		
+		is_fake_solid = false; //Used purely for creating Garbage Bricks
 	
 	#endregion
 	
