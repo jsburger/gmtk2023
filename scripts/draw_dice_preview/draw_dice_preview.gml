@@ -4,10 +4,10 @@
 function draw_dice_preview(_x, _y, gunangle) {
 	draw_set_alpha(.8)
 	with parBoardObject ghost_hits = 0;
-	with instance_create_layer(_x, _y, "Instances", Ball) {
+	with instance_create_layer(_x, _y, "Instances", PlayerBall) {
 		is_ghost = true;
 		
-		var is_ball = instance_is(other, Ball);
+		var is_ball = instance_is(other, PlayerBall);
 		if is_ball {
 			motion_set(other.direction, other.speed)
 			vars_apply(other)

@@ -11,4 +11,4 @@ fullclear_forced = false;
 colorable = true;
 can_collide = false;
 
-spawn_object = TokenCollectible;
+spawn_object = ManaToken;

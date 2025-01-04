@@ -2,33 +2,13 @@
 // You can write your code in this editor
 if !canmove exit;
 if (instance_exists(Board)) {
-	if bbox_bottom > Board.bbox_bottom{
-		if (touchedBottom){
-			if bbox_bottom > Board.bbox_bottom + 128{
-				if object_index == Ball {
-					throw_end()
-					instance_destroy()
-					exit;
-				}
-				else {
-					y = yprevious;
-				}
-			}
-		}
-		else {
-			if ++touchedBottom {
-				with SafetyNet deactivate()
-			}
-			y = yprevious;
-			vspeed = -5;
-			on_dice_bounce(self);
-			nograv = false
-		}
+	if bbox_bottom > Board.bbox_bottom {
+		on_board_bottom();
 	}
 }
 
 //True when bouncing
-if stay_inside_board() {
+if stay_inside_board(false) {
 	sound_play_pitch(sndDieHitWall, random_range(.9, 1.1))
 	extraspeed = 0;
 	nograv = false;

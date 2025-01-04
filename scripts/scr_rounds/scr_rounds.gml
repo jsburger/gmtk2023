@@ -60,7 +60,6 @@ function round_start() {
 	static interface = new CombatInterface();
 	
 	with par_bricklike event_perform(ev_other, ev_user15);
-	with obj_ball event_perform(ev_other, ev_user15);
 	
 	
 	with EnemyBattler {
@@ -110,7 +109,6 @@ function throw_start(){
 	with SafetyNet activate();
 	CombatRunner.throws -= 1;
 	if instance_exists(obj_ballplacer) with obj_ballplacer instance_destroy();
-	if instance_exists(obj_ball) with obj_ball canmove = true;
 	
 	
 	//Reset gained mana
@@ -225,10 +223,7 @@ function make_new_board() {
 	with par_collectible {
 		clear_item()
 	}
-	with obj_ball {
-		clear_item()
-	}
-	with parBoardObject clear_item()
+	with BoardOccupant clear_item()
 	schedule(8, start_new_board)
 	
 }

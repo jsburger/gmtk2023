@@ -1,7 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function on_dice_bounce(dice){
+function on_dice_bounce(dice) {
 //	dice.vspeed -= 2
+	if dice.is_coin exit;
 	dice.hit_timer = 30;
 	dice.sprite_index = dice.spr_hit;
 	if !dice.is_rolling() {

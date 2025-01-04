@@ -29,7 +29,7 @@ if keyboard_check_pressed(vk_home) {
 	//Enable editor
 	else{
 		with(par_collectible) instance_destroy(self, false);
-		with(Ball) instance_destroy(self, false);
+		with(AbstractBall) instance_destroy(self, false);
 		
 		global.editor_buttons.for_each_object(function(i) {
 			i.visible = true

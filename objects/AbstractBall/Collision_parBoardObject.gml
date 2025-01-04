@@ -19,6 +19,7 @@ if !ball_filter(self, collider) {
 	exit;
 }
 
+
 // Check for "surfaces" created by bricks
 var collider_changed = false;
 if instance_is(collider, parBrick) {
@@ -114,6 +115,7 @@ if bounce && is_ghost && collider.can_take_damage {
 //Bounce off
 if bounce {
 	collider.ball_bounce(self);
+	on_bounce();
 }
 
 if walk_distance > 0 {

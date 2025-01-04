@@ -11,8 +11,9 @@ spr_hit = sprColorBumperHit;
 colorable = true;
 mana_amount = 1;
 
+granted_extraspeed = 0;
+
 super = {
-	ball_bounce,
 	on_ball_impact,
 	set_color
 };
@@ -26,11 +27,6 @@ set_color = function(col) {
 
 update_color = function() {
 	image_blend = merge_color(base_color, c_dkgray, 1 - (bounces/bounces_max));
-}
-
-ball_bounce = function(ball) {
-	super.ball_bounce(ball);
-	ball.extraspeed = 0;
 }
 
 on_ball_impact = function(ball, collision_x, collision_y) {	

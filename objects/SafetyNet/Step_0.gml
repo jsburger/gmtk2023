@@ -1,7 +1,7 @@
 /// @description 
 
-if instance_exists(Ball) {
-	x = Ball.x;
+if instance_exists(PlayerBall) {
+	x = PlayerBall.x;
 }
 else if instance_exists(Shooter) {
 	x = Shooter.x;

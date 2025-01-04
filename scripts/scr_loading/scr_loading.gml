@@ -226,9 +226,6 @@ function jsonify_board() {
 	with par_bricklike {
 		array_push(objects, jsonify_instance(self))
 	}
-	with obj_ball {
-		array_push(objects, jsonify_instance(self))
-	}
 	with parBoardObject {
 		array_push(objects, jsonify_instance(self))
 	}

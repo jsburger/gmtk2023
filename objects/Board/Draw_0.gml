@@ -63,7 +63,7 @@ with par_collectible {
 	draw_self()
 }
 
-with Ball {
+with AbstractBall {
 	event_perform(ev_draw, ev_draw_normal)
 }
 

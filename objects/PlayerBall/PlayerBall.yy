@@ -1,19 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_dice_float",
+  "%Name":"PlayerBall",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_chip","path":"objects/obj_chip/obj_chip.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_dice_float",
+  "name":"PlayerBall",
   "overriddenProperties":[],
   "parent":{
     "name":"dice",
     "path":"folders/Objects/dice.yy",
   },
   "parentObjectId":{
-    "name":"Ball",
-    "path":"objects/Ball/Ball.yy",
+    "name":"AbstractBall",
+    "path":"objects/AbstractBall/AbstractBall.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprDiceFloat",
-    "path":"sprites/sprDiceFloat/sprDiceFloat.yy",
+    "name":"sprDiceHit",
+    "path":"sprites/sprDiceHit/sprDiceHit.yy",
   },
   "spriteMaskId":null,
   "visible":true,

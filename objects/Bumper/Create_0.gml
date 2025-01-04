@@ -9,14 +9,15 @@ stops_preview = false;
 spr_idle = sprBumper;
 spr_hit = sprBumperHit;
 
+granted_extraspeed = 3;
+
 ball_bounce = function(ball) {
 	var dir = point_direction(x, y, ball.x, ball.y);
 	with ball {
 		move_outside_all(dir, 8)
 		motion_set(dir, max(abs(speed), .5));
-		ball.alarm[1] = 1;
 	}
-	ball.extraspeed = 3;
+	ball.apply_extraspeed(granted_extraspeed);
 }
 
 on_ball_impact = function(ball, collision_x, collision_y) {
