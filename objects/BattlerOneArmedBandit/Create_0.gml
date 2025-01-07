@@ -5,6 +5,7 @@ event_inherited();
 
 extra_objects = [BrickTrash, FakeSolid]
 
+set_hp(80);
 move_max = 3;
 movemode = moveOrder.RANDOM;
 //move_rerolls = 3;
@@ -29,8 +30,8 @@ decide_actions = function() {
 	Timeline.update();
 }
 
-base_odds = 15;
-odds = base_odds;
+//base_odds = 15;
+//odds = base_odds;
 procs = 0;
 sleeping = false;
 
@@ -43,10 +44,11 @@ red_wave_count = 0;
 
 on_turn_end = function() {
 	sleeping = !sleeping;
-	odds = base_odds;
+	//odds = base_odds;
 	procs = 0;
 	blue_wave_count = 0;
 	red_wave_count = 0;
+	garbage_brick_count = 5;
 }
 
 nap = new EnemyMove();
@@ -78,17 +80,19 @@ with add_action("HOT STUFF") {
 }
 
 with add_action("JACKPOT") {
-	desc = "Double the odds of PAYOUT dealing damage."
+	desc = "PAYOUT will create 2 additional trash bricks."
 	set_intent(INTENT.MISC)
 	wait(15)
 	run(function() {
-		odds *= 2;
-		procs += 1;
+		garbage_brick_count += 2;
+		//odds *= 2;
+		//procs += 1;
 	})
 	
 }
 
 #region Payout
+	/*
 	var get_jackpot_damage = function() {
 		if chance_bad(odds, 100) return instance_number(BrickTrash);
 		return 0;
@@ -98,7 +102,7 @@ with add_action("JACKPOT") {
 		if procs == 0 return "?";
 		return string_repeat(".", procs) + "?";
 	}
-
+	*/
 	var spawn_waves = function(item, runner) {
 		if blue_wave_count > 0 {
 			var m = board_column_max(),
@@ -146,11 +150,21 @@ with add_action("JACKPOT") {
 		set_owner(other);
 		name = "PAYOUT"
 		desc = string(
-			"Deal damage equal to # of Garbage Bricks, {0}% chance of hitting.\nCreate {1} Garbage Bricks.",
-			other.base_odds, other.garbage_brick_count);
+			"Deal damage equal to # of Garbage Bricks")
 		is_rerollable = false;
 	
-		// Spawn 5 trash bricks.
+		// Deal damage
+		//var damage = as_damage(get_jackpot_damage);
+
+		var damage = as_damage(instance_number(BrickTrash) * 2);
+		var damage_preview = as_damage(function() {
+			return (instance_number(BrickTrash) * 2);
+		})
+		hit(damage_preview)
+		set_intent(INTENT.ATTACK, damage_preview)
+	
+	
+		// Spawn trash bricks.
 		run(function() {
 			var count = garbage_brick_count,
 				tries = 0;
@@ -160,20 +174,11 @@ with add_action("JACKPOT") {
 				var inst = place_trash_bricks(board_column_random(), BrickTrash, 1);
 				if instance_exists(inst){ 
 					count -= 1;
-					inst.set_color(COLORS.YELLOW)
+					//inst.set_color(COLORS.YELLOW)
 				}
 			}
 		})
 		wait(15)
-	
-		// Deal damage
-		var damage = as_damage(get_jackpot_damage);
-		var damage_preview = as_damage(function() {
-			 return instance_number(BrickTrash) + garbage_brick_count;
-		})
-		hit(damage)
-		set_intent(INTENT.ATTACK,
-			new Formatter("{0}{1}", damage_preview, new FunctionProvider(get_question_marks)))
 	
 		// Spawn red and blue bricks
 		raw(spawn_waves)
