@@ -61,7 +61,7 @@ function EnemyMove() : CombatInterface() constructor {
 	/// Shorthand for getting a damage provider from input
 	static as_damage = function(value, target = TARGETS.PLAYER) {
 		if is_method(value) {
-			if instance_exists(owner) value = method(owner, value);
+			value = recast_func(value);
 			value = new FunctionProvider(value);
 		}
 		return accept_provider(new DamageProvider(value, owner, target))

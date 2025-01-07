@@ -47,8 +47,23 @@ function CombatInterface() constructor {
 		
 	}
 	
+	/// Tries to cast the given method to the owner of this interface.
+	/// Does nothing if the method is determined to be intentionally scoped to something else.
+	static recast_func = function(func) {
+		if instance_exists(owner) {
+			var convert = true;
+			if is_method(func) && method_get_self(func) != self {
+				convert = false;
+			}
+			if convert {
+				func = method(owner, func);
+			}
+		}
+		return func;
+	}
+	
 	static run = function(func) {
-		if instance_exists(owner) func = method(owner, func);
+		func = recast_func(func);
 		var act = new FunctionItem(owner, func);
 		consume(act)
 		return act;
