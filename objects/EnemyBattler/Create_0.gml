@@ -88,11 +88,15 @@ decide_actions = function() {
 	Timeline.update()
 }
 reroll_actions = function(count) {
-	var indices = random_numbers(count, array_length(current_actions));
-	for (var i = 0; i < count; i++) {
+	var indices = random_numbers(array_length(current_actions), array_length(current_actions));
+	var n = 0;
+	for (var i = 0; n < count && i < array_length(indices); i++) {
 		var index = indices[i];
-		current_actions[index] = get_next_action().clone();
-		current_actions[index].on_move_decided();
+		if current_actions[index].is_rerollable {
+			n += 1;
+			current_actions[index] = get_next_action().clone();
+			current_actions[index].on_move_decided();
+		}
 	}
 	Timeline.update()
 }

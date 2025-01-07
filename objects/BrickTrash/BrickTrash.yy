@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprBrickTrash",
-    "path":"sprites/sprBrickTrash/sprBrickTrash.yy",
+    "name":"sprBrickSquare",
+    "path":"sprites/sprBrickSquare/sprBrickSquare.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -48,6 +48,7 @@ function CombatInterface() constructor {
 	}
 	
 	static run = function(func) {
+		if instance_exists(owner) func = method(owner, func);
 		var act = new FunctionItem(owner, func);
 		consume(act)
 		return act;
@@ -62,6 +63,12 @@ function CombatInterface() constructor {
 
 	static curse = function(count) {
 		var act = new FunctionItem(owner, anonymous(bricks_curse), count);
+		consume(act);
+		return act;
+	}
+
+	static raw = function(func) {
+		var act = new RawCombatItem(owner, func);
 		consume(act);
 		return act;
 	}

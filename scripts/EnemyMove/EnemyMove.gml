@@ -10,6 +10,8 @@ function EnemyMove() : CombatInterface() constructor {
 	
 	timeline_entry = new TimelineEnemyMove(self);
 	
+	is_rerollable = true;
+	
 	static clone = function() {
 		var _o = owner;
 		//owner = noone;
@@ -58,6 +60,10 @@ function EnemyMove() : CombatInterface() constructor {
 	/// @func as_damage
 	/// Shorthand for getting a damage provider from input
 	static as_damage = function(value, target = TARGETS.PLAYER) {
+		if is_method(value) {
+			if instance_exists(owner) value = method(owner, value);
+			value = new FunctionProvider(value);
+		}
 		return accept_provider(new DamageProvider(value, owner, target))
 	}
 	

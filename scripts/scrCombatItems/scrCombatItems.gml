@@ -28,9 +28,15 @@ function AttackItem(target, damage, owner = noone) : CombatItem(owner) construct
 	self.target = target;
 	
 	static act = function(runner) {
-		var t = resolve_target(target)
-		if instance_exists(t) {
-			battler_hurt(t, provider_get(damage), owner)
+		var d = provider_get(damage);
+		if d > 0 {
+			var t = resolve_target(target)
+			if instance_exists(t) {
+				battler_hurt(t, d, owner)
+			}
+		}
+		else {
+			delay = 0;
 		}
 		done();
 	}
@@ -144,6 +150,7 @@ function MultiTargetItem(owner, targets, func) : CombatItem(owner) constructor {
 /// A CombatItem which doesn't declare itself done and passes itself to the function
 function RawCombatItem(owner, _func) : CombatItem(owner) constructor {
 	func = _func;
+	delay = 0;
 	
 	static act = function(runner) {
 		func(self, runner)

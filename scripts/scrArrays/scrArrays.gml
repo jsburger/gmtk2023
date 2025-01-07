@@ -81,6 +81,7 @@ function random_numbers(count, max_number) {
 		indices[i] = i;
 	}
 	array_shuffle_ext(indices);
+	if count == max_number return indices;
 	var ret = [];
 	for (var i = 0; i < count; i++) {
 		var index = i mod max_number;
