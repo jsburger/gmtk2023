@@ -224,7 +224,7 @@ function place_trash_bricks(column, object = BrickNormal, offset = 0) {
 		found = false;
 		for (var i = 0; i < count; i++) {
 			var entry = list[| i];
-			if entry.can_collide || entry.is_fake_solid {
+			if entry.can_collide || instance_is(entry, FakeSolid) {
 				found = true;
 				break;
 			}
@@ -248,6 +248,7 @@ function place_trash_bricks(column, object = BrickNormal, offset = 0) {
 		instance_create_layer(_x, _y - TILE_MIN, "FX", effectDropTrail)
 		with instance_create_layer(placement.x, placement.y, "Instances", object) {
 			//alarm[0] = x/32
+			return self;
 		}
 	}
 }

@@ -552,6 +552,7 @@
     {"id":{"name":"BrickHelper","path":"scripts/BrickHelper/BrickHelper.yy",},},
     {"id":{"name":"Cache","path":"scripts/Cache/Cache.yy",},},
     {"id":{"name":"calculate_ability_cost","path":"scripts/calculate_ability_cost/calculate_ability_cost.yy",},},
+    {"id":{"name":"CallStack","path":"scripts/CallStack/CallStack.yy",},},
     {"id":{"name":"chance","path":"scripts/chance/chance.yy",},},
     {"id":{"name":"Clickables","path":"scripts/Clickables/Clickables.yy",},},
     {"id":{"name":"CombatInterface","path":"scripts/CombatInterface/CombatInterface.yy",},},

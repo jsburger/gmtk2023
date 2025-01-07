@@ -3,3 +3,13 @@
 function chance(A, B = 100) {
 	return (random(B) < A)
 }
+
+/// Chance, but for good effects. Functionally identical atm.
+function chance_good(A, B = 100) {
+	return chance(A, B)
+}
+
+/// Chance, but for detrimental effects. Functionally identical atm.
+function chance_bad(A, B = 100) {
+	return chance(A, B)
+}

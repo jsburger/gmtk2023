@@ -49,6 +49,11 @@ event_inherited();
 	
 #endregion
 
+#region Editor
+	// Called when an object is spawned by a level, not by anything else, and not in editor.
+	on_level_placement = new CallStack();
+#endregion
+
 #region Ball Logic
 	#region Collision
 		can_collide = true;

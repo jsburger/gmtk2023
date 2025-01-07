@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"CallStack",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"CallStack",
+  "parent":{
+    "name":"Classes",
+    "path":"folders/Scripts/Classes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

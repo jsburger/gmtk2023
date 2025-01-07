@@ -7,4 +7,8 @@ brick_properties(function() {
 	return new BrickHelper().vertical().statuses();
 })
 
-replace_with_pipebomb(true)
+if is_this {
+	on_level_placement.add_layer(function() {
+		replace_with_pipebomb(true)
+	})
+}

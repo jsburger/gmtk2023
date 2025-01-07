@@ -15,6 +15,9 @@ if keyboard_check_pressed(vk_home) {
 	//Disable editor
 	if !editor {
 		update_current_level()
+		
+		level_clear()
+		level_load(global.level_num)
 		global.round = 0
 		round_start()
 		

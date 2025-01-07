@@ -1,4 +1,10 @@
-Rework combat queue to allow items to run multiple times (like greenman waves)
+ball tech:
+	Instance blacklist (replaces "portal" and "launcher" variables)
+	Impulse control (special motion add scripts which cap speed appropriately)
+	Position Derivative in collision walk back (sub frame velocity vs acceleration vs position etc)
+	BallEffects, store changes to ball variables in an array. include cloning for preview.
+	Swap out ghost_hits system for ghost_damage or something like that.
+
 
 Replace pipebomb spawning with something that occurs after board creation. (Fixes pop in)
 Add "save" layers to serializers to prepare for save states. Add things like statuses to bricks.
