@@ -7,7 +7,7 @@ extra_objects = [BrickTrash, FakeSolid]
 
 move_max = 3;
 movemode = moveOrder.RANDOM;
-move_rerolls = 3;
+//move_rerolls = 3;
 
 super = {
 	decide_actions
@@ -25,7 +25,7 @@ odds = base_odds;
 procs = 0;
 
 garbage_brick_count = 5;
-red_count = 8;
+red_count = 10;
 
 blue_wave_count = 0;
 red_wave_count = 0;
@@ -81,12 +81,20 @@ with add_action("JACKPOT") {
 
 	var spawn_waves = function(item, runner) {
 		if blue_wave_count > 0 {
-			var m = board_column_max();
+			var m = board_column_max(),
+				b = [];
 			for (var i = 0; i < m; i++) {
 				with place_trash_bricks(i, BrickNormal, 1) {
-					set_color(COLORS.BLUE)
+					array_push(b, self);
+					//set_color(COLORS.BLUE)
 				}
 			}
+			array_shuffle_ext(b);
+			
+			for (var i = 0; i < min(red_count, array_length(b)); i++) {
+				b[i].set_color(COLORS.BLUE)
+			}
+			
 			blue_wave_count -= 1;
 			runner.wait(15)
 			exit;
@@ -97,7 +105,7 @@ with add_action("JACKPOT") {
 			for (var i = 0; i < m; i++) {
 				with place_trash_bricks(i, BrickNormal, 1) {
 					array_push(a, self);
-					set_burning(true);
+					//set_burning(true);
 				}
 			}
 			array_shuffle_ext(a);
@@ -130,7 +138,10 @@ with add_action("JACKPOT") {
 				tries += 1;
 				if tries > 100 exit;
 				var inst = place_trash_bricks(board_column_random(), BrickTrash, 1);
-				if instance_exists(inst) count -= 1;
+				if instance_exists(inst){ 
+					count -= 1;
+					inst.set_color(COLORS.YELLOW)
+				}
 			}
 		})
 		wait(15)
