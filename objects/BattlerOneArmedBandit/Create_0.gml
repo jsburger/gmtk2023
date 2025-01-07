@@ -13,6 +13,15 @@ super = {
 	decide_actions
 }
 decide_actions = function() {
+	if sleeping {
+		clear_actions();
+			//This part is optional. Doing nothing just works.
+			var move = nap.clone();
+			array_push(current_actions, move);
+			move.on_move_decided();
+		Timeline.update();
+		exit;
+	}
 	super.decide_actions();
 	var move = payout.clone()
 	move.on_move_decided()
@@ -23,6 +32,7 @@ decide_actions = function() {
 base_odds = 15;
 odds = base_odds;
 procs = 0;
+sleeping = false;
 
 garbage_brick_count = 5;
 red_count = 10;
@@ -32,10 +42,20 @@ red_wave_count = 0;
 
 
 on_turn_end = function() {
+	sleeping = !sleeping;
 	odds = base_odds;
 	procs = 0;
 	blue_wave_count = 0;
 	red_wave_count = 0;
+}
+
+nap = new EnemyMove();
+with nap {
+	name = "NAPPING";
+	desc = "Zzz..."
+	set_owner(other);
+	wait(15)
+	set_intent(INTENT.MISC)
 }
 
 with add_action("RESPIN") {
