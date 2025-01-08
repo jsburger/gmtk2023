@@ -5,6 +5,13 @@ ball tech:
 	BallEffects, store changes to ball variables in an array. include cloning for preview.
 	Swap out ghost_hits system for ghost_damage or something like that.
 
+Abilities:
+	Rework Targeting. switch to TargetType class which holds object and filter, store in struct for use.
+	implement as_damage and hit. as_damage takes target and damage. hit inherits target from provider
+	Remove prototypes, they don't do anything. Make it more like statuses.
+	Figure out how to do damage number drawing.
+		Maybe make TargetedAbility and then it has "preview number" function. idk.
+		Probably just dont worry about it for now. For some reason I doubt direct damage spells are coming.
 
 Replace pipebomb spawning with something that occurs after board creation. (Fixes pop in)
 Add "save" layers to serializers to prepare for save states. Add things like statuses to bricks.

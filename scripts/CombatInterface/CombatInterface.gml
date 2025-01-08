@@ -7,10 +7,6 @@ function CombatInterface() constructor {
 		return self;
 	}
 	
-	static act = function() {
-		
-	}
-	
 	static consume = function(item) {
 		CombatRunner.enqueue(item)
 	}

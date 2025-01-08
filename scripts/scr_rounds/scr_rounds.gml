@@ -81,6 +81,9 @@ function player_turn_start() {
 	CombatRunner.throws = 1
 	PlayerBattler.turn_start()
 	
+	array_foreach(global.player_stats.abilities, function(ability) {
+		ability.reset();
+	})
 	
 	if CombatRunner.throws > 0 {
 		interface.wait(20)

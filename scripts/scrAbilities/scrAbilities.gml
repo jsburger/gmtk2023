@@ -37,6 +37,9 @@ function Ability(TargetType = TARGET_TYPE.BATTLER) : CombatInterface() construct
 	image_xscale = 1
 	image_yscale = 1
 	
+	use_max = infinity;
+	uses = use_max;
+	
 	can_cancel = true;
 	
 	modified_costs = new FrameCache(function() {
@@ -45,8 +48,11 @@ function Ability(TargetType = TARGET_TYPE.BATTLER) : CombatInterface() construct
 	
 	position = 0;
 	
-	static act = function() {
-		
+	static act = function() {}
+	
+	/// Resets variables. Called on player turn start
+	static reset = function() {
+		uses = use_max;
 	}
 	
 	static set_cost = function(type, amount) {
@@ -58,7 +64,13 @@ function Ability(TargetType = TARGET_TYPE.BATTLER) : CombatInterface() construct
 		costs[MANA.YELLOW] = yellow
 	}
 	
+	static set_uses = function(n) {
+		uses = n;
+		use_max = n;
+	}
+	
 	static can_cast = function() {
+		if uses <= 0 return false;
 		var costs = modified_costs.get();
 		for (var i = 0; i < MANA.MAX; ++i) {
 		    if global.mana[i] < costs[i] return false
@@ -71,6 +83,14 @@ function Ability(TargetType = TARGET_TYPE.BATTLER) : CombatInterface() construct
 		for (var i = 0; i < MANA.MAX; ++i) {
 		    global.mana[i] -= costs[i]
 		}
+	}
+	
+	/// Where mana is spent and uses are decremented.
+	static after_cast = function() {
+		if uses > 0 {
+			uses -= 1;
+		}
+		spend_mana();
 	}
 	
 	#region Targeting logic:

@@ -1,6 +1,7 @@
 register_ability("Hit6", function() {
 	with new AbilityAttack(6) {
-		set_costs(0, 8, 0)
+		set_costs(0, 8, 0);
+		set_uses(2);
 		name = "Slammy"
 		desc = "Deal 6 damage to targeted enemy"
 		sprite_index = sprIntentAttack		
@@ -10,6 +11,7 @@ register_ability("Hit6", function() {
 
 register_ability("Hit24", function() {
 	with new AbilityAttack(24) {
+		set_uses(2);
 		set_costs(0, 16, 8)
 		name = "Slammy Senior"
 		desc = "Deal 24 damage to targeted enemy"

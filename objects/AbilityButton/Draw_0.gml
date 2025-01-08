@@ -14,6 +14,7 @@ if ability != undefined {
 	font_push(fntSmall)
 	draw_text(bbox_left + 64, y - 24, ability.name)
 	draw_text(bbox_left + 64, y + 8, ability.desc)
+	if ability.uses != infinity draw_text(bbox_right - 24, bbox_top + 12, ability.uses);
 	font_pop()
 	
 	var count = 0,

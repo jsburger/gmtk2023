@@ -62,7 +62,7 @@ throws = 1;
 	run_ability = function() {
 		//current_actor = PlayerBattler.id;
 		current_ability.act();
-		current_ability.spend_mana();
+		current_ability.after_cast();
 		if post_ability != undefined {
 			post_ability();
 			post_ability = undefined;
