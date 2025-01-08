@@ -156,7 +156,7 @@ encounter_add(
 
 encounter_add(
 	new Encounter("Smoker, High Rollers")
-		.with_boards("TestHybrid1", "TestHybrid2")
+		.with_boards("TestHybrid1")
 		.with_enemies(BattlerSmoker, BattlerHighRoller, BattlerHighRoller)	
 )
 

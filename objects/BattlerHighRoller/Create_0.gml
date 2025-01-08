@@ -3,7 +3,7 @@
 // Inherit the parent event
 event_inherited();
 
-set_hp(25)
+set_hp(20)
 
 size = ENEMY_SIZE.SMALL;
 move_max = 1;
