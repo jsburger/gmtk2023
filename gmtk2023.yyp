@@ -1150,6 +1150,7 @@
     {"id":{"name":"sprSwitchRightOn","path":"sprites/sprSwitchRightOn/sprSwitchRightOn.yy",},},
     {"id":{"name":"sprSwitchUpOff","path":"sprites/sprSwitchUpOff/sprSwitchUpOff.yy",},},
     {"id":{"name":"sprSwitchUpOn","path":"sprites/sprSwitchUpOn/sprSwitchUpOn.yy",},},
+    {"id":{"name":"sprTestBG","path":"sprites/sprTestBG/sprTestBG.yy",},},
     {"id":{"name":"sprTimeline","path":"sprites/sprTimeline/sprTimeline.yy",},},
     {"id":{"name":"sprTitle","path":"sprites/sprTitle/sprTitle.yy",},},
     {"id":{"name":"sprToken","path":"sprites/sprToken/sprToken.yy",},},
