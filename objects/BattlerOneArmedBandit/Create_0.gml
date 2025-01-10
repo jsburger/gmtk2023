@@ -70,8 +70,8 @@ with add_action("RESPIN") {
 }
 
 with add_action("HOT STUFF") {
-	desc = "Deal 2 Damage.\nPAYOUT will create an additional line of burning red bricks."
-	var damage = as_damage(2);
+	desc = "Deal 3 Damage.\nPAYOUT will create an additional line of red bricks."
+	var damage = as_damage(3);
 	hit(damage);
 	set_intent(INTENT.ATTACK, damage)
 	run(function() {
@@ -136,6 +136,7 @@ with add_action("JACKPOT") {
 			
 			for (var i = 0; i < min(red_count, array_length(a)); i++) {
 				a[i].set_color(COLORS.RED)
+				//a[i].set_burning(true);
 			}
 		
 			red_wave_count -= 1;
@@ -150,15 +151,15 @@ with add_action("JACKPOT") {
 		set_owner(other);
 		name = "PAYOUT"
 		desc = string(
-			"Deal damage equal to # of Garbage Bricks")
+			"Deal 3 Damage for every Trash Brick.\nSpawn 5 Trash Bricks.")
 		is_rerollable = false;
 	
 		// Deal damage
 		//var damage = as_damage(get_jackpot_damage);
 
-		var damage = as_damage(instance_number(BrickTrash) * 2);
+		var damage = as_damage(instance_number(BrickTrash) * 3);
 		var damage_preview = as_damage(function() {
-			return (instance_number(BrickTrash) * 2);
+			return (instance_number(BrickTrash) * 3);
 		})
 		hit(damage_preview)
 		set_intent(INTENT.ATTACK, damage_preview)
