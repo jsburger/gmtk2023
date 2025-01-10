@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"BallEffect",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"BallEffect",
+  "parent":{
+    "name":"BallEffects",
+    "path":"folders/Objects/dice/BallEffects.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

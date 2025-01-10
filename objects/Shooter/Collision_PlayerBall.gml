@@ -15,6 +15,7 @@ if(other.image_blend != c_dkgray){
 			//max_fallspeed += 0.5;
 			//gravity_base += .01;
 			//bounciness -= 0.1;
+			effects.on_shooter(self, other)
 		}
 		dash_timer = 0;
 	}

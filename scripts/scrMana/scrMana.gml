@@ -46,6 +46,11 @@ function mana_add(type, amount) {
 	}
 }
 
+function mana_spend(color, amount) {
+	global.mana[color] -= amount;
+	with ManaDrawer blink[color] = 1
+}
+
 function mana_subtract_all(amount) {
 	for (var i = 0; i < MANA.MAX; ++i) {
 		if global.mana[i] >= amount {

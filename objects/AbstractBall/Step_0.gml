@@ -3,7 +3,7 @@ speed = clamp(speed + extraspeed, -maxspeed - extraspeed, maxspeed + extraspeed)
 
 //Going down
 if vspeed > 0 {
-	gravity = gravity_base/1.2
+	gravity = gravity_base/downward_modifier
 }
 //Going up
 else {

@@ -30,11 +30,17 @@ if gunangle > 180{
 
 #macro chip_cost 1
 
+if keyboard_check_pressed(ord("J")) {
+	juno = !juno;
+}
+if juno image_blend = c_yellow;
+else image_blend = c_white;
+
 if can_act && button_pressed(inputs.shoot) && can_shoot {
 	//Shoot chips
 	if instance_exists(die) {
 		//Zone where chips cannot be shot to stop people from wasting chips
-		if (abs(die.y - Board.bbox_bottom) >  55) && (global.mana[MANA.YELLOW] > 0) {
+		if !juno && (abs(die.y - Board.bbox_bottom) >  55) && (global.mana[MANA.YELLOW] > 0) {
 			with instance_create_layer(x, y, "Projectiles", obj_chip) {
 				motion_set(other.gunangle, 16)
 				global.mana[MANA.YELLOW] -= chip_cost
@@ -45,6 +51,17 @@ if can_act && button_pressed(inputs.shoot) && can_shoot {
 			with obj_cuffs {
 				sprite_index = sprCuffsFire
 				image_index = 0
+			}
+		}
+		else if juno && global.mana[MANA.YELLOW] > 0 {
+			with die {
+				effects.add_effect(self, new JunoEffect())
+				vspeed = max_fallspeed * .8;
+				pierce += 2;
+				mana_spend(MANA.YELLOW, 1)
+				with instance_create_layer(x, y, "FX", obj_fx) {
+					sprite_index = sprFXHitMedium
+				}
 			}
 		}
 	}

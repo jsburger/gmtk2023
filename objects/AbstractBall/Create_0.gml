@@ -4,6 +4,8 @@ bounciness = 1;
 //Was .25, changed when removing friction
 gravity_base = .26
 gravity = gravity_base
+downward_modifier = 1.2
+
 //friction = .03
 maxspeed = 14
 max_fallspeed = 7;
@@ -18,7 +20,10 @@ nograv = false;
 spr_hit = sprDiceHit;
 has_bounced = false;
 pierce = 0;
-bounce_speed = -12;
+
+bounce_speed_base = -12;
+bounce_speed = bounce_speed_base;
+
 rotates = true;
 
 previous_acceleration = 0;
@@ -30,6 +35,8 @@ last_bounce_patience_frame = current_time;
 
 portal = noone;
 launcher = noone;
+
+effects = new BallEffectHolder();
 
 canmove = true;
 

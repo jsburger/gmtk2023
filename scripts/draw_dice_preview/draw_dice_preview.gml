@@ -11,6 +11,7 @@ function draw_dice_preview(_x, _y, gunangle) {
 		if is_ball {
 			motion_set(other.direction, other.speed)
 			vars_apply(other)
+			effects = variable_clone(effects)
 			is_ghost = true;
 			var vars = variable_instance_get_names(self);
 			for (var i = 0; i < array_length(vars); i++) {

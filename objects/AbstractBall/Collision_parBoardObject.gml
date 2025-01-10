@@ -81,17 +81,21 @@ var collision = {
 	y: clamp(y, collider.bbox_top, collider.bbox_bottom)
 };
 
-var damaged = false;
+var damaged = false,
+	pierced = true;
 if damage > 0 && !is_ghost && ball_can_damage(self, collider) {
 	damaged = brick_hit(collider, damage, self);
+	pierced = false;
 }
 
 var bounce = true;
+	
 //Try to pierce
 if damaged {
 	if pierce > 0 && collider.hp <= 0 {
 		bounce = false;
 		pierce -= 1;
+		pierced = true;
 	}
 }
 //Ghost piercing
@@ -106,6 +110,7 @@ if bounce && is_ghost && collider.can_take_damage {
 	if pierce > 0 && (((collider.hp / damage) + collider.is_frozen) <= collider.ghost_hits) {
 		//array_push(ghost_pierce_list, collider.id);
 		pierce -= 1;
+		pierced = true;
 		bounce = false;
 		has_bounced = false;
 	}
@@ -129,6 +134,11 @@ if walk_distance > 0 {
 if !is_ghost && ball_can_damage(self, collider) {
 	collider.on_ball_impact(self, collision.x, collision.y)
 	rolled_on_collider = collider.id;
+	
+	effects.on_impact(self, {
+		collider,
+		pierced
+	})
 	
 	if !is_ghost && !is_coin && collider.is_burning {
 		PlayerBattler.statuses.add_status(STATUS.BURN, 1)
