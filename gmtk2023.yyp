@@ -363,6 +363,7 @@
     {"id":{"name":"effectDropTrail","path":"objects/effectDropTrail/effectDropTrail.yy",},},
     {"id":{"name":"effectManaGained","path":"objects/effectManaGained/effectManaGained.yy",},},
     {"id":{"name":"EncounterButton","path":"objects/EncounterButton/EncounterButton.yy",},},
+    {"id":{"name":"EncounterList","path":"objects/EncounterList/EncounterList.yy",},},
     {"id":{"name":"EndTurnButton","path":"objects/EndTurnButton/EndTurnButton.yy",},},
     {"id":{"name":"EnemyBattler","path":"objects/EnemyBattler/EnemyBattler.yy",},},
     {"id":{"name":"FakeSolid","path":"objects/FakeSolid/FakeSolid.yy",},},
