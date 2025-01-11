@@ -8,7 +8,7 @@ damage = 1;
 uses_extraspeed = true;
 
 if juno {
-	gravity_base = .12;
+	gravity_base = .15;
 	pierce = 0;
 }
 
