@@ -1,12 +1,15 @@
-function board_can_fit(object, _x, _y) {
+function board_can_fit(object, _x, _y, halign = ALIGNMENT.CENTER, valign = ALIGNMENT.CENTER) {
 	var sprite = object_get_mask(object);
 	if sprite == -1 sprite = object_get_sprite(object)
-	var pos = board_grid_position(_x, _y);
+	var pos = board_placement_position(object, _x, _y, halign, valign);
 	
-	var box_left   = pos.x + sprite_get_bbox_left(sprite),
-		box_top    = pos.y + sprite_get_bbox_top(sprite),
-		box_right  = pos.x + sprite_get_bbox_right(sprite),
-		box_bottom = pos.y + sprite_get_bbox_bottom(sprite);
+	var sprite_x = sprite_get_xoffset(sprite),
+		sprite_y = sprite_get_yoffset(sprite);
+	
+	var box_left   = pos.x - (sprite_x - sprite_get_bbox_left(sprite)),
+		box_top    = pos.y - (sprite_y - sprite_get_bbox_top(sprite)),
+		box_right  = pos.x + (sprite_get_bbox_right(sprite) - sprite_x),
+		box_bottom = pos.y + (sprite_get_bbox_bottom(sprite) - sprite_y);
 	
 	draw_rectangle_color(
 		box_left, box_top, box_right, box_bottom,
@@ -40,16 +43,16 @@ function board_place(object, _x, _y) {
 	instance_create_layer(pos.x, pos.y, "Instances", object);
 }
 
-function board_placement_position(object, _x, _y) {
-	var pos = board_grid_position(_x, _y),
-		sprite = object_get_mask(object);
-	if sprite == -1 sprite = object_get_sprite(object)
+//function board_placement_position(object, _x, _y) {
+//	var pos = board_grid_position(_x, _y),
+//		sprite = object_get_mask(object);
+//	if sprite == -1 sprite = object_get_sprite(object)
 	
-	return {
-		x: pos.x + sprite_get_xoffset(sprite),
-		y: pos.y + sprite_get_yoffset(sprite)
-	}
-}
+//	return {
+//		x: pos.x + sprite_get_xoffset(sprite),
+//		y: pos.y + sprite_get_yoffset(sprite)
+//	}
+//}
 
 function board_grid_position(_x, _y) {
 	var board_off_x = 0,

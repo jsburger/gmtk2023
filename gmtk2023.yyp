@@ -551,6 +551,7 @@
     {"id":{"name":"BallEffectHolder","path":"scripts/BallEffectHolder/BallEffectHolder.yy",},},
     {"id":{"name":"battler_died","path":"scripts/battler_died/battler_died.yy",},},
     {"id":{"name":"board_can_fit","path":"scripts/board_can_fit/board_can_fit.yy",},},
+    {"id":{"name":"board_placement_position","path":"scripts/board_placement_position/board_placement_position.yy",},},
     {"id":{"name":"bounce_rectangular","path":"scripts/bounce_rectangular/bounce_rectangular.yy",},},
     {"id":{"name":"BrickHelper","path":"scripts/BrickHelper/BrickHelper.yy",},},
     {"id":{"name":"Cache","path":"scripts/Cache/Cache.yy",},},

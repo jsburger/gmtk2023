@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"board_placement_position",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"board_placement_position",
+  "parent":{
+    "name":"Editor",
+    "path":"folders/Scripts/Editor.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

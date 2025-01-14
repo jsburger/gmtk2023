@@ -44,17 +44,26 @@ function AbstractObjectPlacer() : EditorPlacer() constructor {
 		var obj = get_object(),
 			mask = object_get_real_mask(obj);
 		
-		var pos = board_grid_position(_x, _y),
-			right = sprite_get_bbox_right(  mask) + 1,
-			left  = sprite_get_bbox_left(   mask),
-			top   = sprite_get_bbox_top(    mask),
-			bottom = sprite_get_bbox_bottom(mask) + 1,
-			xoff = sprite_get_xoffset(mask),
-			yoff = sprite_get_yoffset(mask);
-		return {
-			x : clamp(pos.x + (xoff mod TILE_MIN), board_left + TILE_MIN + (xoff - left), board_right - TILE_MIN - (right - xoff)),
-			y : clamp(pos.y + (yoff mod TILE_MIN), board_top + TILE_MIN + (yoff - top), board_bottom - TILE_MIN - (bottom - yoff))
-		}
+		var valign = ALIGNMENT.CENTER;
+		if keyboard_check(ord("W")) valign = ALIGNMENT.LOWER;
+		if keyboard_check(ord("S")) valign = ALIGNMENT.UPPER;
+		var halign = ALIGNMENT.CENTER;
+		if keyboard_check(ord("A")) halign = ALIGNMENT.LOWER;
+		if keyboard_check(ord("D")) halign = ALIGNMENT.UPPER;
+
+		return board_placement_position(obj, _x, _y, halign, valign);
+		
+		//var pos = board_grid_position(_x, _y),
+		//	right = sprite_get_bbox_right(  mask) + 1,
+		//	left  = sprite_get_bbox_left(   mask),
+		//	top   = sprite_get_bbox_top(    mask),
+		//	bottom = sprite_get_bbox_bottom(mask) + 1,
+		//	xoff = sprite_get_xoffset(mask),
+		//	yoff = sprite_get_yoffset(mask);
+		//return {
+		//	x : clamp(pos.x + (xoff mod TILE_MIN), board_left + TILE_MIN + (xoff - left), board_right - TILE_MIN - (right - xoff)),
+		//	y : clamp(pos.y + (yoff mod TILE_MIN), board_top + TILE_MIN + (yoff - top), board_bottom - TILE_MIN - (bottom - yoff))
+		//}
 		
 	}
 	
@@ -62,7 +71,7 @@ function AbstractObjectPlacer() : EditorPlacer() constructor {
 	
 	static can_place = function(_x = mouse_x, _y = mouse_y) {
 		var pos = object_position(_x, _y);
-		return !mask_meeting(pos.x, pos.y, object_get_real_mask(get_object()), parBoardObject, get_rotation())
+		return !mask_meeting(pos.x, pos.y, object_get_real_mask(get_object()), [parBoardObject, CollisionFrameOccupier], get_rotation())
 	}
 	
 	static try_place = function(_x, _y) {
@@ -101,7 +110,7 @@ function AbstractObjectPlacer() : EditorPlacer() constructor {
 	
 	static draw = function(_x, _y, canplace) {
 		var sprite = object_get_sprite(get_object())
-		draw_sprite_ext(sprite, sprite_get_animation_frame(sprite), _x, _y, 1, 1, get_rotation(), canplace ? c_green : c_red, .8)
+		draw_sprite_ext(sprite, sprite_get_animation_frame(sprite), _x, _y, 1, 1, get_rotation(), canplace ? c_green : c_red, .8);
 	}
 	
 	
