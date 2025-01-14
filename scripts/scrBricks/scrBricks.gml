@@ -209,8 +209,8 @@ function board_column_random() {
 }
 
 function place_trash_bricks(column, object = BrickNormal, offset = 0) {
-	var width = snap_to_highest(object_width(object), TILE_MIN),
-		height = snap_to_highest(object_height(object), TILE_MIN);
+	var width = object_width(object),
+		height = object_height(object);
 	var _x = board_left + TILE_MIN + (width * column) + offset * TILE_MIN,
 		_y = board_top + (TILE_MIN + height);
 		
@@ -219,10 +219,10 @@ function place_trash_bricks(column, object = BrickNormal, offset = 0) {
 	
 	var list = ds_list_create();
 	var found = false,
-		_xright = _x + (width) - 2,
+		_xright = _x + (width),
 		can_place = false;
 	while _y < board_bottom {
-		var count = collision_rectangle_list(_x, _y, _xright, _y + height - 1, parBoardObject, true, false, list, false);
+		var count = collision_rectangle_list(_x, _y, _xright, _y + height, parBoardObject, true, false, list, false);
 		found = false;
 		for (var i = 0; i < count; i++) {
 			var entry = list[| i];
@@ -245,7 +245,7 @@ function place_trash_bricks(column, object = BrickNormal, offset = 0) {
 	}
 	ds_list_destroy(list);
 	
-	var placement = board_placement_position(object, _x, _y - TILE_MIN);
+	var placement = board_placement_position(object, _x, _y - TILE_MIN, ALIGNMENT.LOWER, ALIGNMENT.LOWER);
 	if found && can_place {
 		instance_create_layer(_x, _y - height, "FX", effectDropTrail)
 		with instance_create_layer(placement.x, placement.y, "Instances", object) {
