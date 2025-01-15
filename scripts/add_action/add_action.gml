@@ -1,8 +1,8 @@
 /// @context EnemyBattler
 /// @returns {Struct.EnemyMove}
 function add_action(name) {
-	var move = new EnemyMove();
-	move.set_owner(self)
+	var move = new EnemyMove(self);
+	
 	move.name = name
 	move.desc = "Description"
 	

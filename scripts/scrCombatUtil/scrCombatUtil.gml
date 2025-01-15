@@ -25,6 +25,7 @@ function resolve_multitarget(target) {
 }
 
 function provider_get(value) {
+	if is_method(value) return value();
 	return is_instanceof(value, Provider) ? value.get() : value;
 }
 

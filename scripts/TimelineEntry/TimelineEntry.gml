@@ -15,19 +15,49 @@ function TimelineEntry() constructor {
 	static draw = function(draw_x, draw_y) {}
 }
 
-function TimelineEnemyMove(move) : TimelineEntry() constructor {
-	height = 96;
-	action = move;
+function TimelineEnemyMove(owner) : TimelineEntry() constructor {
+	height = 0;
+	self.owner = owner;
+	
+	intents = [];
+	/// @param {Struct.Intent} intent
+	static add_intent = function(intent) {
+		array_push(intents, intent);
+		height += intent.height;
+		return intent;
+	}
+	
+	static reset_height = function() {
+		var h = 0;
+		for (var i = 0; i < array_length(intents); i++) {
+			h += intents[i].height;
+		}
+		height = h;
+	}
 	
 	static draw = function(draw_x, draw_y) {
-		draw_sprite_ext(sprIconBg, 0, draw_x, draw_y, 1, 1, snap_to(180 * dsin(current_frame * .2 + draw_y), 1), action.owner.bg_color, .75)
-		draw_sprite(action.owner.spr_icon, sprite_get_animation_frame(action.owner.spr_icon), draw_x, draw_y);
+		draw_sprite_ext(sprIconBg, 0, draw_x, draw_y, 1, 1, snap_to(180 * dsin(current_frame * .2 + draw_y), 1), owner.bg_color, .75)
+		draw_sprite(owner.spr_icon, sprite_get_animation_frame(owner.spr_icon), draw_x, draw_y);
 		
-		intent_draw(draw_x - 64, draw_y, action.intent, action.intent_value)
+		//intent_draw(draw_x + TIMELINE_GAP, draw_y, action.intent, action.intent_value)
 		
-		if mouse_in_rectangle(draw_x - 32, draw_y - 32, draw_x + 32, draw_y + 32) {
-			draw_textbox(draw_x - 64, draw_y - 48, action.desc)
-			action.owner.show_owner = true;
+		var offset = 0,
+			hovered = false;
+		for (var i = 0; i < array_length(intents); i++) {
+			var local_hover = false;
+			if !hovered {
+				local_hover = mouse_in_rectangle(
+					draw_x + TIMELINE_GAP - 32, draw_y - 32 + offset,
+					draw_x + TIMELINE_GAP + 32, draw_y - 32 + offset + intents[i].height);
+				hovered = local_hover;
+			}
+			intents[i].draw(draw_x + TIMELINE_GAP, draw_y + offset, local_hover);
+			offset += intents[i].height;
+		}
+		
+		
+		if hovered || mouse_in_rectangle(draw_x - 32, draw_y - 32, draw_x + 32, draw_y + 32) {
+			if instance_exists(owner) owner.show_owner = true;
 		}
 	}
 }

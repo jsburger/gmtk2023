@@ -1,6 +1,6 @@
 /// @description hi
 entries = [];
-ymax = bbox_bottom - bbox_top;
+ymax = bbox_bottom - bbox_top - 64;
 
 object_hints = ds_map_create();
 
@@ -14,18 +14,22 @@ update = function(update_positions = true) {
 		}
 		return !entry.initialized;
 	});
-	var new_count = 0;
+	var min_alpha = 1/3;
 	for (var i = 0; i < array_length(entries); i++) {
 		var entry = entries[i]
+		var index = ((i + .5)/(array_length(entries)));
+		
+		min_alpha = min(entry.alpha, min_alpha)
 		if !entry.initialized {
-			entry.y = (i/array_length(entries)) * ymax;
+			entry.y = index * ymax;
 			entry.ygoal = entry.y
-			entry.alpha = -new_count/3;
 			entry.initialized = true;
-			new_count += 1;
+			
+			entry.alpha = min_alpha - 1/3;
+			min_alpha = entry.alpha;
 		}
 		if update_positions {
-			entry.ygoal = (i/array_length(entries)) * ymax
+			entry.ygoal = index * ymax
 		}
 	}
 }

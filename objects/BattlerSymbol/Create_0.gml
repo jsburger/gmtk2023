@@ -23,16 +23,21 @@ var count_blocks = function() {
 var get_form = function() {
 	return form;
 }
+var symbol = self;
 with add_action("SYMBOL SLAM!!!") {
 	//var damage = as_damage(new FunctionProvider(count_blocks));
-	var damage = as_damage(new FunctionProvider(count_blocks));
-	set_intent(INTENT.DEBUFF, damage)
-	//hit(damage)
-	poison(damage)
-	var _form = accept_provider(new FunctionProvider(get_form));
+	var damage = as_damage(new FunctionProvider(count_blocks)),
+		_form = accept_provider(new FunctionProvider(get_form));
+		
+	hit(damage)
+	with add_intent(new Intent(sprIntentAttack, damage)) {
+		desc = format("Deal Damage equal to the \namount of {0} bricks.", new ColorNameProvider(_form));
+	}
+	
 	recolor(5, _form)
+	add_intent(new RecolorIntent(5, _form));
 	wait(25)
-	desc = "Deal Damage equal to the \namount of Matching bricks.\nRecolor 5 bricks to \nMatching color."
+	//desc = "Deal Damage equal to the \namount of Matching bricks.\nRecolor 5 bricks to \nMatching color."
 }
 
 on_turn_end = function() {

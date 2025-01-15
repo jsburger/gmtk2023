@@ -59,3 +59,10 @@ function FunctionProvider(func) : Provider(0) constructor {
 		return getter();
 	}
 }
+
+function ColorNameProvider(color) : Provider(0) constructor {
+	self.color = color;
+	static get = function() {
+		return color_get_name(provider_get(color));
+	}
+}

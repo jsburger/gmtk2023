@@ -51,11 +51,10 @@ on_turn_end = function() {
 	garbage_brick_count = 5;
 }
 
-nap = new EnemyMove();
+nap = new EnemyMove(self);
 with nap {
 	name = "NAPPING";
 	desc = "Zzz..."
-	set_owner(other);
 	wait(15)
 	set_intent(INTENT.MISC)
 }
@@ -145,10 +144,9 @@ with add_action("JACKPOT") {
 		}
 		item.done();
 	}
-	payout = new EnemyMove();
+	payout = new EnemyMove(self);
 	
 	with payout {
-		set_owner(other);
 		name = "PAYOUT"
 		desc = string(
 			"Deal 3 Damage for every Trash Brick.\nSpawn 5 Trash Bricks.")

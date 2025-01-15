@@ -20,3 +20,24 @@ function Formatter() constructor {
 		return get_text()
 	}
 }
+
+/// @desc Returns a formatted string if all arguments are static, or a Formatter if any are dynamic.
+function format() {
+	var args = [argument[0]],
+		dynamic = false;
+	for (var i = 1; i < argument_count; i++) {
+		array_push(args, argument[i]);
+		if !dynamic && (is_provider(argument[i]) || is_method(argument[i])) {
+			dynamic = true;
+		}
+	}
+	if dynamic {
+		// If you use script_execute on a constructor, it turns the current scope into that class.
+		// So, new empty struct I guess.
+		with ({}) {
+			script_execute_ext(Formatter, args)
+			return self;
+		}
+	}
+	return script_execute_ext(string, args);
+}

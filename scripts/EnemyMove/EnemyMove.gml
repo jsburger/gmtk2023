@@ -1,14 +1,12 @@
 
 ///Base Class for all enemy moves
-function EnemyMove() : CombatInterface() constructor {
+function EnemyMove(_owner) : CombatInterface() constructor {
+	set_owner(_owner)
 	
 	providers = []
 	actions = []
 	
-	intent = INTENT.MISC;
-	intent_value = undefined;
-	
-	timeline_entry = new TimelineEnemyMove(self);
+	timeline_entry = new TimelineEnemyMove(_owner);
 	
 	is_rerollable = true;
 	
@@ -22,9 +20,21 @@ function EnemyMove() : CombatInterface() constructor {
 	}
 	
 	/// @func set_intent
-	static set_intent = function(_intent, _value = undefined) {
-		intent = _intent;
-		intent_value = _value;
+	static set_intent = function(intent, value = undefined) {
+		with timeline_entry.add_intent(new Intent(intent_get_icon(intent), value)) {
+			ref = weak_ref_create(other);
+			desc = new Formatter("{0}", new FunctionProvider(function() {
+				if weak_ref_alive(ref) {
+					return ref.ref.desc;
+				}
+				return "";
+			}))
+		}
+	}
+	
+	/// @func add_intent
+	static add_intent = function(intent) {
+		return timeline_entry.add_intent(intent);
 	}
 	
 	///Runs when the enemy picks this move at the start of player turn
@@ -93,9 +103,8 @@ function EnemyMove() : CombatInterface() constructor {
 }
 
 
-function EnemyMoveMultiTarget(owner) : EnemyMove() constructor {
+function EnemyMoveMultiTarget(owner) : EnemyMove(owner) constructor {
 	delete timeline_entry;
-	set_owner(owner);
 	
 	static consume = function(action) {
 		CombatRunner.enqueue(action)

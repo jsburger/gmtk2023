@@ -1,7 +1,9 @@
 /// @description 
 
+#macro TIMELINE_GAP 80
+
 draw_self();
-var draw_x = bbox_right + 64,
+var draw_x = x - TIMELINE_GAP/2,
 	draw_y = bbox_top;
 for (var i = 0; i < array_length(entries); i++) {
 	var entry = entries[i];
