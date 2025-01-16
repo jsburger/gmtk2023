@@ -12,7 +12,7 @@
   "option_game_speed":60,
   "option_legacy_json_parsing":true,
   "option_legacy_number_conversion":true,
-  "option_legacy_other_behaviour":true,
+  "option_legacy_other_behaviour":false,
   "option_mips_for_3d_textures":false,
   "option_remove_unused_assets":false,
   "option_sci_usesci":false,
