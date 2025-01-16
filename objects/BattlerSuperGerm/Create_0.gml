@@ -10,16 +10,9 @@ spr_icon = sprSuperGermIcon
 
 
 with add_action("Super Yuck") {
-	set_intent(INTENT.DEBUFF, 12)
 	poison(12)
-	
-	desc = "Apply 12 Poison."
 }
 
 with add_action("Regenerate") {
-	set_intent(INTENT.BLOCK, 12)
-	
 	block(12);
-	
-	desc = "Add 12 Shield."
 }

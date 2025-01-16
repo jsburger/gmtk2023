@@ -23,6 +23,6 @@ var get_purple = function() {
 with add_action("Demon Smash") {
 	var damage = as_damage(new FunctionProvider(get_purple));
 	hit(damage)
-	set_intent(INTENT.ATTACK, damage)
-	desc = new Formatter("Deals damage equal to\nthe amount of PURPLE mana\ngained this battle.")
+	add_intent(new Intent(sprIntentAttack, damage)
+		.with_desc(format("Deals damage equal to\nthe amount of PURPLE mana\ngained this battle.")))
 }

@@ -1,3 +1,5 @@
+Remove ticking statuses and make battlers step their status holders (stability reasons)
+
 ball tech:
 	Instance blacklist (replaces "portal" and "launcher" variables)
 	Impulse control (special motion add scripts which cap speed appropriately)

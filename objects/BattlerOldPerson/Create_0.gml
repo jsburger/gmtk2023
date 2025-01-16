@@ -13,17 +13,12 @@ var reduce = function(){
 }
 
 with add_action("Lose") {
-	var damage = new DamageProvider(6, other, TARGETS.PLAYER)
-	accept_provider(damage)
-	set_intent(INTENT.ATTACK, damage)
-	hit(damage)
-
-	desc = "Deal 6 Damage."
+	hit(as_damage(6))
 }
 
 with add_action("Drain") {
-	set_intent(INTENT.DEBUFF)
-	recolor(6, MANA_NONE)	
+	recolor(6, MANA_NONE)
+	add_intent(new RecolorIntent(6, MANA_NONE))
+		.with_desc("Uncolor 6 bricks.")
 	buff_strength(2);
-	desc = "Uncolor 6 Bricks.\nGain 2 Strength."
 }

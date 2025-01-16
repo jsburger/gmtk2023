@@ -10,8 +10,5 @@ size = ENEMY_SIZE.SMALL;
 
 
 with add_action("Yuck") {
-	set_intent(INTENT.DEBUFF, 6)
-	poison(6)
-	
-	desc = "Apply 6 Poison."
+	poison(6);
 }

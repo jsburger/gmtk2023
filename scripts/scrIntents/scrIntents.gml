@@ -28,12 +28,18 @@ function Intent(sprite, value = undefined) constructor {
 	sprite_index = sprite;
 	
 	backdrop = undefined;
-	/// @param {Struct.Sprite} sprite
+	/// @param {Struct.Sprite, Asset.GMSprite} sprite
 	static with_backdrop = function(sprite) {
+		if !is_instanceof(sprite, Sprite) sprite = new Sprite(sprite);
 		backdrop = sprite;
 		return self;
 	}
 	
+	///@param {Struct.Formatter, String} _desc
+	static with_desc = function(_desc) {
+		desc = _desc;
+		return self;
+	}
 	
 	static draw_value = function(draw_x, draw_y) {
 		if (value != undefined) {

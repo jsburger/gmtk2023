@@ -9,10 +9,9 @@ spr_icon = sprDolphinIcon
 
 with add_action("Bet") {	
 	var damage = as_damage(new FunctionProvider(mana_get_highest));
-	set_intent(INTENT.ATTACK, damage)
+	add_intent(new Intent(sprIntentAttack, damage))
+		.with_desc("Deal Damage equal to\n highest Mana count.");
 	hit(damage)
 	
 	//freeze(4);
-
-	desc = "Deal Damage equal to\n highest Mana count."
 }

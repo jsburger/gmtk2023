@@ -9,20 +9,15 @@ spr_icon = sprTomatoIcon
 
 with add_action("Bite") {
 	var range = new RangeProvider(6, 12);
-	var damage = new DamageProvider(range, other, TARGETS.PLAYER);
-	accept_provider(damage)
-	set_intent(INTENT.ATTACK, damage)
-	hit(damage)
+	hit(as_damage(range))
 	recolor(12, MANA.RED)
-
-	desc = new Formatter("Deal {0} Damage.\nRecolor 12 Bricks Red.", range);
+	add_intent(new RecolorIntent(12, MANA.RED))
 }
 
 with add_action("Splat") {
-	set_intent(INTENT.BLOCK, 10)
 	block(10)
 	recolor(12, MANA.RED)
-	desc = "Add 10 Shield.\nRecolor 12 Bricks Red."
+	add_intent(new RecolorIntent(12, MANA.RED))
 }
 
 

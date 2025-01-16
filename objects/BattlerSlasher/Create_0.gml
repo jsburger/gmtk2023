@@ -18,10 +18,8 @@ slash = function() {
 }
 
 with add_action("Slash") {
-	var damage = new DamageProvider(1, other, TARGETS.PLAYER);
-	accept_provider(damage)
-	set_intent(INTENT.ATTACK, damage)
 	run(other.slash)
-	hit(damage).delay = 10
-	desc = "Die";
+	hit(as_damage(1)).delay = 10
+	last_intent().desc = "Die";
+	last_intent().value = undefined;
 }

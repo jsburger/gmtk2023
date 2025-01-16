@@ -24,7 +24,7 @@ function RangeProvider(minValue, maxValue) : Provider(minValue) constructor {
 	
 	static toString = function() {
 		return string(value)
-		return string("{0} - {1}", min_value, max_value)
+		//return string("{0} - {1}", min_value, max_value)
 	}
 }
 

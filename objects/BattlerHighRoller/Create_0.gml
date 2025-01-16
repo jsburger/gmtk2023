@@ -30,11 +30,15 @@ on_turn_end = function() {
 	roll = irandom_range(roll_min, roll_max);
 }
 
+var roll_range = function() {
+	return string("{0}-{1}", roll_max - 5, roll_max)
+}
+
 with add_action("Die") {
 	var damage = as_damage(new FunctionProvider(roll_damage));
 	hit(damage);
-	set_intent(INTENT.ATTACK, damage)
-	desc = "Deal 1-6 Damage.\nIncrease range by 1"
+	add_intent(new Intent(sprIntentAttack, damage))
+		.with_desc(format("Deal {0} Damage.\nIncrease range by 1", roll_range));
 	
 	wait(10)
 }

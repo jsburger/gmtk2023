@@ -54,33 +54,39 @@ on_turn_end = function() {
 nap = new EnemyMove(self);
 with nap {
 	name = "NAPPING";
-	desc = "Zzz..."
 	wait(15)
-	set_intent(INTENT.MISC)
+	add_intent(new Intent(sprIntentMisc, "Zzz"))
+		.with_desc("Pass the turn.")
 }
 
 with add_action("RESPIN") {
-	desc = "Grant 4 Shield.\nPAYOUT will create an additional line of blue bricks."
+	intent_auto = false;
 	block(4);
-	set_intent(INTENT.BLOCK, 4)
 	run(function() {
 		blue_wave_count += 1;
 	}).delay = 0;
+	add_intent(new Intent(new ColoredSprite(COLORS.BLUE, sprBrick), "4"))
+		.with_desc("Gain 4 block.\nPAYOUT will create an additional line of blue bricks.")
+		.with_backdrop(sprIntentDefend);
+		//.height /= 2;
 }
 
 with add_action("HOT STUFF") {
-	desc = "Deal 3 Damage.\nPAYOUT will create an additional line of red bricks."
+	intent_auto = false;
 	var damage = as_damage(3);
 	hit(damage);
-	set_intent(INTENT.ATTACK, damage)
 	run(function() {
 		red_wave_count += 1;
 	}).delay = 0;
+	add_intent(new Intent(new ColoredSprite(COLORS.RED, sprBrick), damage))
+		.with_desc(format("Deal {0} damage.\nPAYOUT will create an additional line of red bricks.", damage))
+		.with_backdrop(sprIntentAttack)
+		//.height /= 2;
 }
 
 with add_action("JACKPOT") {
-	desc = "PAYOUT will create 2 additional trash bricks."
-	set_intent(INTENT.MISC)
+	add_intent(new Intent(sprBrickSquare, "+2"))
+		.with_desc("PAYOUT will create 2 additional trash bricks.");
 	wait(15)
 	run(function() {
 		garbage_brick_count += 2;
@@ -147,20 +153,21 @@ with add_action("JACKPOT") {
 	payout = new EnemyMove(self);
 	
 	with payout {
-		name = "PAYOUT"
-		desc = string(
-			"Deal 3 Damage for every Trash Brick.\nSpawn 5 Trash Bricks.")
+		name = "PAYOUT";
 		is_rerollable = false;
 	
 		// Deal damage
 		//var damage = as_damage(get_jackpot_damage);
 
-		var damage = as_damage(instance_number(BrickTrash) * 3);
-		var damage_preview = as_damage(function() {
+		var damage = as_damage(function() {
 			return (instance_number(BrickTrash) * 3);
 		})
-		hit(damage_preview)
-		set_intent(INTENT.ATTACK, damage_preview)
+		hit(damage)
+		var sprite = new Sprite(sprBrickSquare);
+			sprite.image_blend = c_gray;
+		add_intent(new Intent(sprIntentAttack, damage))
+			.with_backdrop(sprite)
+			.with_desc("Deal 3 damage for every Trash Brick")
 	
 	
 		// Spawn trash bricks.
@@ -177,6 +184,10 @@ with add_action("JACKPOT") {
 				}
 			}
 		})
+		
+		add_intent(new Intent(sprBrickSquare, 5))
+			.with_desc("Spawn 5 Trash Bricks")
+		
 		wait(15)
 	
 		// Spawn red and blue bricks

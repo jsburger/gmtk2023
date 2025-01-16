@@ -18,6 +18,7 @@ function player_set_hp(n) {
 
 
 /// Give the player an ability. Accepts Ability instances or a String name
+/// @param {Struct.Ability, String} ability
 function ability_grant(ability) {
 	if is_string(ability) ability = ability_get(ability)
 	array_push(global.player_stats.abilities, ability)
