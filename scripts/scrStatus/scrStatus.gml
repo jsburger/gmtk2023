@@ -43,6 +43,12 @@ function StatusHolder(creator) constructor {
 		}
 	}
 	
+	static step = function() {
+		__status_loop {
+			statuses[i].step();
+		}
+	}
+	
 	static on_ability_used = function() {
 		__status_loop {
 			var s = statuses[i];
@@ -166,9 +172,9 @@ function Status(Strength) constructor {
 		}
 	}
 	
-	static on_hurt = function() {
-		
-	}
+	static on_hurt = function() {};
+	
+	static step = function() {};
 	
 	static get_attack_bonus = function() {
 		return 0;
@@ -217,22 +223,16 @@ function StatusStrength(Strength) : Status(Strength) constructor {
 	}
 }
 
-function StatusTickable(Strength) : Status(Strength) constructor {
-	static on_add = function() {
-		tickable_register(self, owner)
-	}
-}
-
 STATUS.FREEZE = status_register("Freeze", function(count) {return new StatusFreeze(count)})
 
 
-function StatusFreeze(Strength) : StatusTickable(Strength) constructor {
+function StatusFreeze(Strength) : Status(Strength) constructor {
 
 	name = "Frozen"
 	desc = "Increases the mana cost of abilities."
 	sprite_index = sprStatusFrost;
 	
-	static tick = function() {
+	static step = function() {
 		static finder = new InstanceFinder(parBoardObject).filter(brick_can_freeze);
 		if strength > 0 {
 			var frozen = 0;
@@ -249,6 +249,8 @@ function StatusFreeze(Strength) : StatusTickable(Strength) constructor {
 					with (instance_create_layer(brick.x,brick.y, "FX", obj_fx)) {
 						sprite_index = sprFXHitSmall
 					}
+				}
+				if i > 0 {
 					// Play Sound
 					sound_play_random(sndApplyFreeze);
 				}
@@ -304,7 +306,7 @@ function StatusBurn(count) : Status(count) constructor {
 STATUS.BURN = status_register("Burn", function(count){return new StatusBurn(count)})
 
 
-function StatusPoison(count) : StatusTickable(count) constructor {
+function StatusPoison(count) : Status(count) constructor {
 	sprite_index = sprStatusPoison;
 	name = "Poisoned"
 	desc = new Formatter("Take {0} Damage at the end of your turn.\nBreak poisoned bricks to reduce this!", strength_provider)
@@ -330,7 +332,7 @@ function StatusPoison(count) : StatusTickable(count) constructor {
 		strength = 0;
 	}
 	
-	static tick = function() {
+	static step = function() {
 		static finder = new InstanceFinder(parBoardObject).filter(brick_can_poison);
 		if strength > 0 {
 			var poisoned = 0;

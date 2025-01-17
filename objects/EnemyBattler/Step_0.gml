@@ -1,4 +1,5 @@
 /// @description 
+event_inherited()
 
 if x != lerp_x || y != lerp_y {
 	var s = .1;

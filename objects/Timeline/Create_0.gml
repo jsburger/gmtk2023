@@ -11,7 +11,7 @@ update = function(update_positions = true) {
 	var min_alpha = 0,
 		total_height = 0;
 	for (var i = 0; i < array_length(entries); i++) {
-		entries[i].reset_height();
+		if is_instanceof(entries[i], TimelineEnemyMove) entries[i].reset_height();
 		total_height += entries[i].height;
 	}
 	var scale = ymax/total_height,

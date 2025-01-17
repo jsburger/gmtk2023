@@ -1,10 +1,7 @@
-Remove ticking statuses and make battlers step their status holders (stability reasons)
-
 ball tech:
 	Instance blacklist (replaces "portal" and "launcher" variables)
 	Impulse control (special motion add scripts which cap speed appropriately)
 	Position Derivative in collision walk back (sub frame velocity vs acceleration vs position etc)
-	BallEffects, store changes to ball variables in an array. include cloning for preview.
 	Swap out ghost_hits system for ghost_damage or something like that.
 
 Abilities:

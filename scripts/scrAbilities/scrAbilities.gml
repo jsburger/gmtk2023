@@ -10,9 +10,12 @@ function register_ability(name, abilityFactory) {
 	static abilities = ds_map_create();
 	ds_map_add(abilities, name, abilityFactory)
 }
+/// @returns {Id.DsMap<Function>}
 function ability_get_register() {
+	// Feather disable once GM1045
 	return register_ability.abilities;
 }
+
 function ability_get_prototype(name) {
 	return ability_get_register()[? name]
 }
