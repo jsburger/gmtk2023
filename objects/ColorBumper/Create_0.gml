@@ -38,7 +38,7 @@ on_ball_impact = function(ball, collision_x, collision_y) {
 			if is_valid_mana(color) {
 				bounces -= 1;
 				update_color();
-				mana_give_at(x, y, color, mana_amount);
+				mana_give_board(x, y, color, mana_amount);
 			}
 			sprite_change(spr_hit)
 			sound_play_random(sndCoinBig);

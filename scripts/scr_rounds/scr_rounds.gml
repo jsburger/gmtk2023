@@ -27,10 +27,7 @@ function encounter_start() {
 	//var array = array_build(AbilityButton);
 	//array_sort(array, function(a, b) {if a.y > b.y return 1 else return -1})
 	//array_foreach(array, function(inst, index) {inst.ability.position = index})
-	
-	
-	
-	
+
 	global.round = 0
 	with CombatRunner combat_started = true;	
 	
@@ -121,6 +118,7 @@ function throw_start(){
 }
 
 function throw_end() {
+	static interface = new CombatInterface();
 	with Shooter can_shoot = false;
 	
 	var enders = array_build_filtered(parBoardObject, function(i) {return i.on_throw_end != undefined});
@@ -129,21 +127,24 @@ function throw_end() {
 		enders[i].on_throw_end()
 	}
 	
-	if global.mana_gained[MANA.RED] > 0 {
-		schedule(15, function() {
-			var ability = new AbilityAttack(global.mana_gained[MANA.RED]).dont_cancel();
+	if global.mana_effects.attack > 0 {
+		interface.wait(15)
+		interface.run(function() {
+			var ability = new AbilityAttack(global.mana_effects.attack).dont_cancel();
 				ability.is_normal_ass_attack = true;
 			CombatRunner.mount_ability(ability,
 			function() {
-				CombatRunner.enqueue(new FunctionItem(noone, throw_resolve))
+				CombatRunner.enqueue(new FunctionItem(noone, anonymous(throw_resolve)))
 			})
+			global.mana_effects.attack = 0
 		})
 	}
 	else {
-		CombatRunner.enqueue(new FunctionItem(noone, throw_resolve))
+		CombatRunner.enqueue(new FunctionItem(noone, anonymous(throw_resolve)))
 	}
-	if global.mana_gained[MANA.BLUE] > 0 {
-		with PlayerBattler block += global.mana_gained[MANA.BLUE]
+	if global.mana_effects.block > 0 {
+		with PlayerBattler block += global.mana_effects.block
+		global.mana_effects.block = 0;
 	}
 }
 

@@ -1,8 +1,7 @@
 /// @description 
 
 if mana_amount > 0 && is_valid_mana(color) {
-	mana_add(color, mana_amount)
-	mana_effect_create(x, y, color, mana_amount)
+	mana_give_board(x, y, color, mana_amount)
 }
 
 if drop_gibs with instance_create_layer(x, y, "Instances", Gibs) {

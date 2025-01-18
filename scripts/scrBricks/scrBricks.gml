@@ -83,8 +83,10 @@ function brick_status_clear(brick) {
 			set_burning(false);
 		}
 		if is_poisoned {
-			
 			set_poisoned(false, true)
+		}
+		if is_cursed {
+			set_cursed(false);
 		}
 	}
 }

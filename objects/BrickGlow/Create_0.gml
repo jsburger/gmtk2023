@@ -49,7 +49,7 @@ on_hurt = function(damage) {
 	if is_valid_mana(color) {
 		var dam = damage;
 		if hp < 0 dam += hp;
-		mana_give_at(x, y, color, mana_amount * dam);
+		mana_give_board(x, y, color, mana_amount * dam);
 	}
 	if hp <= 0 {
 		disable()

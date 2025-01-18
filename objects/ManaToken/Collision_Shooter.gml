@@ -6,9 +6,7 @@ with instance_create_depth(random_range(bbox_left, bbox_right), random_range(bbo
 }
 
 if mana_amount > 0 && is_valid_mana(color) {
-	//mana_give_at(x, y, color, mana_amount)
-	mana_add(color, mana_amount);
-	mana_effect_create(x, y, color, mana_amount);
+	mana_give_at(x, y, color, mana_amount);
 }
 
 sound_play_random(sndCoin);

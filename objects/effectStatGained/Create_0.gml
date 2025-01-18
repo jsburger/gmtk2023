@@ -4,13 +4,17 @@
 event_inherited();
 
 needs_board = false;
-curve = animcurve_get_channel(curveDamagePopup, "curve1");
-progress_max = 1.5 sec;
-damage = 1;
-tilt = random_range(-12, 12)
+image_angle = random_range(-5, 5);
+motion_set(random_range(-15, 15) + 90, 2);
+friction = .05;
+
+progress_max = .75 sec;
+value = 0;
+
 var range = 15;
 x += random_range(-range, range);
 y += random_range(-range, range);
+
 var d = depth;
-with effectDamagePopup d = min(d, depth);
+with effectStatGained d = min(d, depth);
 depth = d - 1;

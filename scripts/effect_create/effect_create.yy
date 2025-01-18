@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"effect_create",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"effect_create",
+  "parent":{
+    "name":"Util",
+    "path":"folders/Scripts/Util.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

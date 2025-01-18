@@ -25,6 +25,7 @@ enum COLORS {
 
 global.mana = array_create(MANA.MAX)
 global.mana_gained = array_create(MANA.MAX)
+global.mana_effects = {attack: 0, block: 0}
 
 //Reset mana when game restarted
 on_encounter_start(mana_reset)
@@ -165,14 +166,46 @@ function mana_effect_create(x, y, color, count) {
 }
 
 function mana_give_at(x, y, color, count) {
+	//if is_extra_color(color) {
+	//	var decompose = color_decompose(color);
+	//	for (var i = 0; i <= 1; i++) {
+	//		mana_give_at(x, y, decompose[i], count)
+	//	}
+	//}
+	//else {
+		mana_add(color, count);
+		mana_effect_create(x, y, color, count);
+	//}
+}
+
+function mana_give_board(x, y, color, count) {
+	mana_give_at(x, y, color, count);
+	mana_stat_effect_give(x, y, color, count);
+}
+
+function mana_stat_effect_give(x, y, color, count) {
 	if is_extra_color(color) {
 		var decompose = color_decompose(color);
 		for (var i = 0; i <= 1; i++) {
-			mana_give_at(x, y, decompose[i], count)
+			mana_stat_effect_give(x, y, decompose[i], count)
 		}
 	}
 	else {
-		mana_add(color, count);
-		mana_effect_create(x, y, color, count);
+		switch color {
+			case COLORS.RED:
+				global.mana_effects.attack += count;
+				with effect_create(x, y, effectStatGained) {
+					sprite_index = sprManaEffectAttack;
+					value = count;
+				}
+				break;
+			case COLORS.BLUE:
+				global.mana_effects.block += count;
+				with effect_create(x, y, effectStatGained) {
+					sprite_index = sprManaEffectDefend;
+					value = count;
+				}
+				break;
+		}
 	}
 }
