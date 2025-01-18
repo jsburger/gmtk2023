@@ -70,7 +70,6 @@ function getInput(inputName, inputType) {
 		case(inputs.editor_modifier):
 			keys = [vk_shift]
 			break
-			break 
 		case(inputs.editor_color_mode):
 			keys = ["C"]
 			break

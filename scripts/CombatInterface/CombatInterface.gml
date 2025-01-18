@@ -7,6 +7,7 @@ function CombatInterface() constructor {
 		return self;
 	}
 	
+	/// @param {Struct.CombatItem} item
 	static consume = function(item) {
 		CombatRunner.enqueue(item)
 	}
@@ -84,4 +85,12 @@ function CombatInterface() constructor {
 		return act;
 	}
 
+}
+
+function LastOnlyCombatInterface() : CombatInterface() constructor {
+	
+	/// @param {Struct.CombatItem} item
+	static consume = function(item) {
+		CombatRunner.enqueue_last(item);
+	}
 }

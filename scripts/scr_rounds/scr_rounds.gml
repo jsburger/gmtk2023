@@ -54,7 +54,7 @@ function encounter_start() {
 }
 
 function round_start() {
-	static interface = new CombatInterface();
+	static interface = new LastOnlyCombatInterface();
 	
 	with par_bricklike event_perform(ev_other, ev_user15);
 	
@@ -72,7 +72,7 @@ function round_start() {
 }
 
 function player_turn_start() {
-	static interface = new CombatInterface();
+	static interface = new LastOnlyCombatInterface();
 	
 	CombatRunner.is_player_turn = true
 	CombatRunner.throws = 1
@@ -118,7 +118,7 @@ function throw_start(){
 }
 
 function throw_end() {
-	static interface = new CombatInterface();
+	static interface = new LastOnlyCombatInterface();
 	with Shooter can_shoot = false;
 	
 	var enders = array_build_filtered(parBoardObject, function(i) {return i.on_throw_end != undefined});

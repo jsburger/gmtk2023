@@ -106,6 +106,10 @@ enqueue = function(action) {
 	}
 }
 
+enqueue_last = function(action) {
+	array_push(actions, action)
+}
+
 enqueue_move = function(move) {
 	array_push(move_queue, move)
 }
