@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"effect_create",
+  "%Name":"instance_mask",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"effect_create",
+  "name":"instance_mask",
   "parent":{
-    "name":"Game",
-    "path":"folders/Scripts/Game.yy",
+    "name":"Util",
+    "path":"folders/Scripts/Util.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

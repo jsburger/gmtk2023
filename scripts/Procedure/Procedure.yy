@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"effect_create",
+  "%Name":"Procedure",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"effect_create",
+  "name":"Procedure",
   "parent":{
-    "name":"Game",
-    "path":"folders/Scripts/Game.yy",
+    "name":"Classes",
+    "path":"folders/Scripts/Classes.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
