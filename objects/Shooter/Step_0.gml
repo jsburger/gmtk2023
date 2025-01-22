@@ -68,7 +68,7 @@ if can_act && button_pressed(inputs.shoot) && can_shoot {
 	//Shoot dice
 	else if inBoard {
 		with instance_create_layer(x, y, "Projectiles", PlayerBall) {
-			motion_set(other.gunangle, 18)
+			motion_set(other.gunangle, other.throw_speed)
 			other.die = id;
 		}
 			

@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
-function draw_dice_preview(_x, _y, gunangle) {
+function draw_dice_preview(_x, _y, gunangle, launch_speed = 18, modifier_struct = undefined) {
 	draw_set_alpha(.8)
 	with parBoardObject ghost_hits = 0;
 	with instance_create_layer(_x, _y, "Instances", PlayerBall) {
@@ -21,7 +21,11 @@ function draw_dice_preview(_x, _y, gunangle) {
 				}
 			}
 		}
-		else motion_set(gunangle, 18)
+		else motion_set(gunangle, launch_speed)
+		
+		if modifier_struct != undefined {
+			vars_apply(modifier_struct)
+		}
 		
 		var points = [{"x": x, "y":y}];
 		

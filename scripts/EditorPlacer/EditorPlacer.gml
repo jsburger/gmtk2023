@@ -264,10 +264,10 @@ function PortalPlacer() : SingleObjectPlacer(Portal) constructor {
 	}
 }
 
-function LauncherPlacer() : SingleObjectPlacer(Launcher) constructor {
+function LauncherPlacer(object) : SingleObjectPlacer(object) constructor {
 	rotation = 90;
 	line_enabled = false;
-	
+	nograv = object != Barrel;
 	
 	static cycle = function(dir) {
 		var turning = button_check(inputs.editor_modifier) ? 5 : 45;
@@ -285,45 +285,7 @@ function LauncherPlacer() : SingleObjectPlacer(Launcher) constructor {
 	
 	static draw = function(_x, _y, canplace) {
 		base_draw(_x, _y, canplace);
-		draw_dice_preview(_x, _y, rotation)
-	}
-	
-	static reset = function() {
-		reset_placement()
-		rotation = 90;
-	}
-	
-	static try_match = function(object) {
-		if matches(object) {
-			rotation = object.launch_direction;
-			return true;
-		}
-		return false;
-	}
-}
-
-function BarrelPlacer() : SingleObjectPlacer(Barrel) constructor {
-	rotation = 90;
-	line_enabled = false;
-	
-	
-	static cycle = function(dir) {
-		var turning = button_check(inputs.editor_modifier) ? 5 : 45;
-		rotation -= turning * dir;
-		rotation = anglefy(rotation);
-	}
-	
-	static get_rotation = function() {
-		return rotation - 90;
-	}
-	
-	static modify_object = function(object) {
-		object.set_launch_direction(rotation)
-	}
-	
-	static draw = function(_x, _y, canplace) {
-		base_draw(_x, _y, canplace);
-		draw_dice_preview(_x, _y, rotation)
+		draw_dice_preview(_x, _y, rotation, 14, {nograv})
 	}
 	
 	static reset = function() {

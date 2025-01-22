@@ -16,6 +16,8 @@ die = -4;
 
 portal = -4;
 
+throw_speed = 18;
+
 can_act = function() {
 	with Board {
 		if editor return false

@@ -81,8 +81,8 @@ entity_list = [
 			  new RotatingPlacer(OneWayBrick, 90),
 /*Movement 1*/[Bumper, ColorBumper],
 /*Movement 2*/ new PortalPlacer(),
-/*Movement 3*/ new LauncherPlacer(),
-			   new BarrelPlacer(),
+/*Movement 3*/ new LauncherPlacer(Launcher),
+			   new LauncherPlacer(Barrel),
 /*Explosives*/[BrickPipebomb, BrickPipebombV], [Bomb, ColorBomb],
 /*Other*/     [Token],
 /*Battler*/   [BattlerBrick], [BattlerBrickSmall]

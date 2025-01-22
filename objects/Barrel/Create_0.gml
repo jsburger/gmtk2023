@@ -6,7 +6,6 @@ event_inherited();
 stops_preview = false;
 
 launch_direction = 90;
-spr_idle = sprBarrel;
 
 set_launch_direction = function(dir) {
 	launch_direction = dir;
@@ -16,6 +15,7 @@ set_launch_direction = function(dir) {
 serializer.add_var_layer(self, "launch_direction", set_launch_direction);
 
 can_ball_collide = function(ball) {
+	if ball.is_coin return false;
 	return ball.launcher != id;
 }
 can_walk_back_ball = false;
