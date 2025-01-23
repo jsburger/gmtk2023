@@ -119,6 +119,9 @@ function Ability(TargetType = TARGET_TYPE.BATTLER) : CombatInterface() construct
 			}
 		}
 		
+		/// Runs every step from CombatRunner while targeting
+		static on_target_step = function() {}
+		
 	#endregion
 	
 	static dont_cancel = function() {

@@ -11,10 +11,10 @@ function board_can_fit(object, _x, _y, halign = ALIGNMENT.CENTER, valign = ALIGN
 		box_right  = pos.x + (sprite_get_bbox_right(sprite) - sprite_x),
 		box_bottom = pos.y + (sprite_get_bbox_bottom(sprite) - sprite_y);
 	
-	draw_rectangle_color(
-		box_left, box_top, box_right, box_bottom,
-		0, 0, 0, 0, false
-	)
+	//draw_rectangle_color(
+	//	box_left, box_top, box_right, box_bottom,
+	//	0, 0, 0, 0, false
+	//)
 	
 	if instance_exists(collision_rectangle(
 		box_left, box_top, box_right, box_bottom,
@@ -40,7 +40,7 @@ function board_can_fit(object, _x, _y, halign = ALIGNMENT.CENTER, valign = ALIGN
 
 function board_place(object, _x, _y) {
 	var pos = board_placement_position(object, _x, _y);
-	instance_create_layer(pos.x, pos.y, "Instances", object);
+	return instance_create_layer(pos.x, pos.y, "Instances", object);
 }
 
 //function board_placement_position(object, _x, _y) {

@@ -40,6 +40,10 @@ if button_pressed(inputs.dash) && targeting == true && current_ability != undefi
 	cancel_targeting()
 }
 
+if current_ability != undefined && targeting {
+	current_ability.on_target_step();
+}
+
 //Resolve items added by actions
 acting = true
 while has_actions() && waitTime <= 0 {

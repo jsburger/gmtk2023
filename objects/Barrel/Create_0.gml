@@ -7,6 +7,10 @@ stops_preview = false;
 
 launch_direction = 90;
 
+set_rotation = function(dir) {
+	set_launch_direction(anglefy(dir + 90))
+}
+
 set_launch_direction = function(dir) {
 	launch_direction = dir;
 	image_angle = dir - 90;
