@@ -47,10 +47,18 @@ if(editor){
 if !surface_exists(shadow_surface) {
 	shadow_surface = surface_create(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));	
 }
+if !surface_exists(splat_surface) {
+	splat_surface = surface_create(cam_width, cam_height);
+	surface_set_target(splat_surface);
+	draw_clear_alpha(c_black, 0);
+	surface_reset_target();
+}
 
 var surface = shadow_surface
 var camera_x = camera_get_view_x(view_camera[0]) 
 var camera_y = camera_get_view_y(view_camera[0])
+
+draw_surface(splat_surface, camera_x, camera_y);
 
 surface_set_target(surface)
 draw_clear_alpha(c_black,0);

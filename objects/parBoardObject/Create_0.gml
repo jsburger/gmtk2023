@@ -37,8 +37,10 @@ event_inherited();
 	set_color = function(col) {
 		if !is_valid_color(col) exit
 		color = col
-		image_blend = mana_get_color(col)
+		image_blend = mana_get_color(col);
+		modify_tint();
 	}
+	modify_tint = function() {};
 	
 	serializer.add_layer("color",
 		function() {

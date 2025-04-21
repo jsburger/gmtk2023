@@ -57,6 +57,17 @@ get_target_info = function() {
 //For drawing shadows
 shadow_surface = -1;
 
+splat_surface = undefined;
+splat_start = function() {
+	surface_set_target(splat_surface);
+	matrix_set(matrix_world, matrix_build(-cam_x, -cam_y, 0, 0, 0, 0, 1, 1, 1))
+}
+splat_end = function() {
+	surface_reset_target();
+	matrix_set(matrix_world, matrix_build_identity())
+}
+
+
 editor = false;
 canplace = true;
 entity_num = 0;

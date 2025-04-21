@@ -7,12 +7,7 @@ set_hp(1);
 snd_impact = sndDieHitMetal;
 image_blend = c_white;
 
-super = {
-	set_color
-}
-
-set_color = function(col) {
-	super.set_color(col);
+modify_tint = function() {
 	image_blend = merge_color(image_blend, c_white, .5);
 }
 

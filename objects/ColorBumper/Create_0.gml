@@ -13,16 +13,11 @@ mana_amount = 1;
 
 granted_extraspeed = 0;
 
-super = {
-	on_ball_impact,
-	set_color
-};
 
 base_color = image_blend;
-set_color = function(col) {
-	super.set_color(col)
+modify_tint = function() {
 	base_color = image_blend;
-	update_color()
+	update_color();
 }
 
 update_color = function() {

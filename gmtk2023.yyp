@@ -1057,6 +1057,7 @@
     {"id":{"name":"sprLogoStart","path":"sprites/sprLogoStart/sprLogoStart.yy",},},
     {"id":{"name":"sprManaEffectAttack","path":"sprites/sprManaEffectAttack/sprManaEffectAttack.yy",},},
     {"id":{"name":"sprManaEffectDefend","path":"sprites/sprManaEffectDefend/sprManaEffectDefend.yy",},},
+    {"id":{"name":"sprManaSplat","path":"sprites/sprManaSplat/sprManaSplat.yy",},},
     {"id":{"name":"sprMoneyBack","path":"sprites/sprMoneyBack/sprMoneyBack.yy",},},
     {"id":{"name":"sprMuteButton","path":"sprites/sprMuteButton/sprMuteButton.yy",},},
     {"id":{"name":"sprNameCuffs","path":"sprites/sprNameCuffs/sprNameCuffs.yy",},},

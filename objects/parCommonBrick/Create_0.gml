@@ -6,6 +6,16 @@ event_inherited();
 mana_amount = 1;
 colorable = true;
 image_blend = #919a9f;
+color_value = random_range(.9, 1.1);
+modify_tint = function() {
+	var color = make_color_hsv(
+		color_get_hue(image_blend),
+		color_get_saturation(image_blend),
+		color_get_value(image_blend) * color_value
+	);
+	image_blend = color;
+}
+modify_tint();
 
 can_curse = true;
 
