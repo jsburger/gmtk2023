@@ -47,7 +47,7 @@ function draw_payout(_x, _y, moneyString) {
 	draw_sprite(sprChips, get_animation_frame(2), xsaved, _y)
 }
 
-function draw_number_panel(_x, _y, numberString, bgColor, maxLength = undefined, scale = 1) {
+function draw_number_panel(_x, _y, numberString, bgColor, maxLength = undefined, scale = 1, numcol = c_black) {
 	maxLength ??= string_length(numberString);
 	var gap = 48 * scale;
 	for (var i = 0; i < maxLength; i++) {
@@ -56,13 +56,18 @@ function draw_number_panel(_x, _y, numberString, bgColor, maxLength = undefined,
 	_x += gap * (maxLength - string_length(numberString))
 	for (var i = 1; i <= string_length(numberString); i++) {
 		draw_sprite_ext(sprNumbers, get_number_index(string_char_at(numberString, i)), _x + (gap * (i - 1)), _y,
-			scale, scale, 0, c_white, 1)
+			scale, scale, 0, numcol, 1)
 	}
 }
 
-function draw_number_panel_centered(_x, _y, numberString, bgColor, maxLength = undefined, scale = 1) {
+function draw_number_panel_centered(_x, _y, numberString, bgColor, maxLength = undefined, scale = 1, numcol = c_black) {
 	maxLength ??= string_length(numberString);
-	draw_number_panel(_x - (24 * (maxLength - 1) * scale), _y, numberString, bgColor, maxLength, scale)
+	draw_number_panel(_x - (24 * (maxLength - 1) * scale), _y, numberString, bgColor, maxLength, scale, numcol)
+}
+
+function draw_number_panel_ra(_x, _y, numberString, bgColor, maxLength = undefined, scale = 1, numcol = c_black) {
+	maxLength ??= string_length(numberString);
+	draw_number_panel(_x - (48 * (maxLength - 1) * scale), _y, numberString, bgColor, maxLength, scale, numcol)
 }
 
 function get_number_index(str) {

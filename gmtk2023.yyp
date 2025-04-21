@@ -668,6 +668,7 @@
     {"id":{"name":"Sprite","path":"scripts/Sprite/Sprite.yy",},},
     {"id":{"name":"SpriteSet","path":"scripts/SpriteSet/SpriteSet.yy",},},
     {"id":{"name":"stay_inside_board","path":"scripts/stay_inside_board/stay_inside_board.yy",},},
+    {"id":{"name":"Stencils","path":"scripts/Stencils/Stencils.yy",},},
     {"id":{"name":"string_height_scribble_ext","path":"scripts/string_height_scribble_ext/string_height_scribble_ext.yy",},},
     {"id":{"name":"string_height_scribble","path":"scripts/string_height_scribble/string_height_scribble.yy",},},
     {"id":{"name":"string_length_scribble","path":"scripts/string_length_scribble/string_length_scribble.yy",},},

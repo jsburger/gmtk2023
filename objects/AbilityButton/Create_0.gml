@@ -15,6 +15,10 @@ lean = 0;
 position = 0;
 playSound = true;
 
+image_xscale = .325;
+
+hovered = false;
+
 can_click = function() {
 	return combat_active();
 }
