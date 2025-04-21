@@ -6,7 +6,7 @@ event_inherited();
 mana_amount = 1;
 colorable = true;
 image_blend = #919a9f;
-color_value = random_range(.9, 1.1);
+color_value = random_range(.9, 1.15);
 modify_tint = function() {
 	var color = make_color_hsv(
 		color_get_hue(image_blend),
