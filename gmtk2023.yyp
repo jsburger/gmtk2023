@@ -1,5 +1,5 @@
 {
-  "$GMProject":"",
+  "$GMProject":"v1",
   "%Name":"gmtk2023",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
@@ -173,6 +173,7 @@
     {"$GMFolder":"","%Name":"You Lose","folderPath":"folders/Voice lines/You Lose.yy","name":"You Lose","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"You Win","folderPath":"folders/Voice lines/You Win.yy","name":"You Win","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
+  "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":".txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":".txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"3-Code.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"3-Code.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -290,7 +291,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.11.0.179",
+    "IDEVersion":"2024.13.1.193",
   },
   "name":"gmtk2023",
   "resources":[

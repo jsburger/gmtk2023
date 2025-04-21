@@ -181,6 +181,10 @@ function mana_give_at(x, y, color, count) {
 function mana_give_board(x, y, color, count) {
 	mana_give_at(x, y, color, count);
 	mana_stat_effect_give(x, y, color, count);
+	Board.splat_start();
+	draw_sprite_ext(sprManaSplat, 0, x, y,
+		choose(-1, 1), choose(-1, 1), random(360), mana_get_color(color), 1);
+	Board.splat_end();
 }
 
 function mana_stat_effect_give(x, y, color, count) {

@@ -332,5 +332,10 @@ function level_clear() {
 	with(par_collectible) instance_destroy(self, false);
 	with(par_bricklike) instance_destroy(self, false);
 	with parBoardObject instance_destroy(self, false);
+	with Board {
+		splat_start();
+		draw_clear_alpha(c_black, 0);
+		splat_end();
+	}
 }
 
