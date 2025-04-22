@@ -7,7 +7,7 @@
 	var scale = instance_is(self, PlayerBattler) ? .75 : .5;
 	draw_number_panel_centered(x, _y, string(hp), c_white, hpsize, scale)
 	if block > 0 {
-		draw_number_panel_centered(bbox_left - 12, _y, string(block), merge_color(c_blue, c_white, .5), undefined, scale)
+		draw_number_panel_centered(bbox_left - 12, _y, string(block), merge_color(c_blue, c_white, .5), undefined, scale, c_white)
 	}
 
 	// Draw statuses

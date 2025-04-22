@@ -101,6 +101,20 @@ function StatusHolder(creator) constructor {
 		}
 	}
 	
+	static draw_player = function(x, y) {
+		var gap = 68;
+		__status_loop {
+			var s = statuses[i],
+				draw_x = x + 40 * (i div 3),
+				draw_y = y + gap * (i mod 3);
+			draw_sprite(s.sprite_index, sprite_get_animation_frame(s.sprite_index), draw_x, draw_y)
+			draw_text(draw_x + 22, draw_y + 22, string(s.strength))
+			if mouse_in_rectangle(draw_x - 32, draw_y - 32, draw_x + 32, draw_y + 32) {
+				draw_textbox(draw_x, draw_y, [s.name, s.desc])
+			}
+		}
+	}
+	
 }
 
 function status_register(name, statusFactory) {

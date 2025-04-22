@@ -55,7 +55,7 @@ function draw_number_panel(_x, _y, numberString, bgColor, maxLength = undefined,
 	}
 	_x += gap * (maxLength - string_length(numberString))
 	for (var i = 1; i <= string_length(numberString); i++) {
-		draw_sprite_ext(sprNumbers, get_number_index(string_char_at(numberString, i)), _x + (gap * (i - 1)), _y,
+		draw_sprite_ext(sprNumbersWhite, get_number_index(string_char_at(numberString, i)), _x + (gap * (i - 1)), _y,
 			scale, scale, 0, numcol, 1)
 	}
 }
