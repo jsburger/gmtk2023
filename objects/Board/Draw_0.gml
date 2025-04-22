@@ -58,7 +58,6 @@ var surface = shadow_surface
 var camera_x = camera_get_view_x(view_camera[0]) 
 var camera_y = camera_get_view_y(view_camera[0])
 
-draw_surface(splat_surface, camera_x, camera_y);
 
 surface_set_target(surface)
 draw_clear_alpha(c_black,0);
@@ -97,4 +96,10 @@ matrix_set(matrix_world, matrix_build_identity())
 surface_reset_target()
 gpu_set_fog(false, c_black, 0, 0)
 
-draw_surface_ext(surface, camera_x + 4, camera_y + 4, 1, 1, 0, c_black, 0.8)
+draw_surface_ext(surface, camera_x + 4, camera_y + 4, 1, 1, 0, c_black, 0.8);
+
+if instance_exists(obj_screenshake) {
+	camera_x = obj_screenshake.camera_x;
+	camera_y = obj_screenshake.camera_y;
+}
+draw_surface(splat_surface, camera_x, camera_y);
