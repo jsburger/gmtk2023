@@ -39,28 +39,40 @@ else image_blend = c_white;
 if can_act && button_pressed(inputs.shoot) && can_shoot {
 	//Shoot chips
 	if instance_exists(die) {
-		//Zone where chips cannot be shot to stop people from wasting chips
-		if !juno && (abs(die.y - Board.bbox_bottom) >  55) && (global.mana[MANA.YELLOW] > 0) {
-			with instance_create_layer(x, y, "Projectiles", obj_chip) {
-				motion_set(other.gunangle, 16)
-				global.mana[MANA.YELLOW] -= chip_cost
+		if (USE_CHARGES && active_charges > 0) || (!USE_CHARGES && (global.mana[MANA.YELLOW] > 0)) {
+			//Zone where chips cannot be shot to stop people from wasting chips
+			if !juno && (abs(die.y - Board.bbox_bottom) >  55) {
+				with instance_create_layer(x, y, "Projectiles", obj_chip) {
+					motion_set(other.gunangle, 16)
+				}
+				sound_play_pitch(choose(sndChipThrow1, sndChipThrow2), 1)
+				sprite_index = sprHandThanosSnap;
+				image_index = 0;
+				with obj_cuffs {
+					sprite_index = sprCuffsFire
+					image_index = 0
+				}
+				if USE_CHARGES {
+					active_charges -= 1;
+				}
+				else {
+					mana_spend(MANA.YELLOW, 1)
+				}
 			}
-			sound_play_pitch(choose(sndChipThrow1, sndChipThrow2), 1)
-			sprite_index = sprHandThanosSnap;
-			image_index = 0;
-			with obj_cuffs {
-				sprite_index = sprCuffsFire
-				image_index = 0
-			}
-		}
-		else if juno && global.mana[MANA.YELLOW] > 0 {
-			with die {
-				effects.add_effect(self, new JunoEffect())
-				vspeed = max_fallspeed * .8;
-				pierce += 2;
-				mana_spend(MANA.YELLOW, 1)
-				with instance_create_layer(x, y, "FX", obj_fx) {
-					sprite_index = sprFXHitMedium
+			else if juno {
+				with die {
+					effects.add_effect(self, new JunoEffect())
+					vspeed = max_fallspeed * .8;
+					pierce += 2;
+					if USE_CHARGES {
+						other.active_charges -= 1;
+					}
+					else {
+						mana_spend(MANA.YELLOW, 1)
+					}
+					with instance_create_layer(x, y, "FX", obj_fx) {
+						sprite_index = sprFXHitMedium
+					}
 				}
 			}
 		}

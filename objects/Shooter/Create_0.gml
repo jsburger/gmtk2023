@@ -12,11 +12,13 @@ dash_direction = 0;
 
 has_dice = false
 can_shoot = false
-die = -4;
+die = noone
 
 portal = -4;
 
 throw_speed = 18;
+
+active_charges = 3;
 
 can_act = function() {
 	with Board {

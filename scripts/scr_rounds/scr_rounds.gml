@@ -90,10 +90,16 @@ function player_turn_start() {
 
 function enable_shooter() {
 	
-	mana_add(MANA.YELLOW, 3)
-	with Shooter {
-		mana_effect_create(x, y, MANA.YELLOW, 3)
+	if USE_CHARGES {
+		with Shooter active_charges = 3;
 	}
+	else {
+		mana_add(MANA.YELLOW, 3)
+		with Shooter {
+			mana_effect_create(x, y, MANA.YELLOW, 3)
+		}
+	}
+	
 	
 	with Shooter {
 		has_dice = true
