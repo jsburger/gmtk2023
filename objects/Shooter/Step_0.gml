@@ -98,21 +98,23 @@ if can_act && button_pressed(inputs.shoot) && can_shoot {
 
 // Dash
 var _input = button_check(inputs.right) - button_check(inputs.left)
-if can_act && button_pressed(inputs.dash) && dash_timer <= 10 && _input != 0 {
-	dash_timer = 20;
-	dash_direction = _input;
-	sound_play_pitch(choose(sndDash1, sndDash2), 1);
-	if !has_dice{
-		sprite_index = sprHandDash;
-		image_index = 0;
+if !NO_DASHES {
+	if can_act && button_pressed(inputs.dash) && dash_timer <= 10 && _input != 0 {
+		dash_timer = 20;
+		dash_direction = _input;
+		sound_play_pitch(choose(sndDash1, sndDash2), 1);
+		if !has_dice{
+			sprite_index = sprHandDash;
+			image_index = 0;
+		}
 	}
-}
-if (--dash_timer){
-	with instance_create_depth(x, random_range(bbox_top, bbox_bottom), depth + 1, obj_dash){
-		image_speed *= random_range(.9, 1.2);
-		motion_add(other.direction, random(1) * -1);
+	if (--dash_timer){
+		with instance_create_depth(x, random_range(bbox_top, bbox_bottom), depth + 1, obj_dash){
+			image_speed *= random_range(.9, 1.2);
+			motion_add(other.direction, random(1) * -1);
+		}
+		hspeed = sign(dash_direction) * 15;
 	}
-	hspeed = sign(dash_direction) * 15;
 }
 
 //Portal reset

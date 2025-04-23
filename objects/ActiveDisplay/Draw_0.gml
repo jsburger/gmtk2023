@@ -1,5 +1,5 @@
 /// @description 
-if instance_exists(Shooter) {
+if instance_exists(Shooter) && USE_CHARGES {
 	var start_angle = 0;
 	for (var i = Shooter.active_charges; i > 0; i--) {
 		draw_sprite_ext(sprChip, 0,

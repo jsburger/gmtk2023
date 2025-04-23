@@ -29,6 +29,9 @@ on_board_bottom = function() {
 		}
 		y = yprevious;
 		vspeed = -5;
+		if NO_DASHES {
+			vspeed *= 4;
+		}
 		on_dice_bounce(self);
 		nograv = false
 	}	
