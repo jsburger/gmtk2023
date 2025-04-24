@@ -4,7 +4,7 @@ global.use_charges = true;
 #macro USE_CHARGES global.use_charges
 
 // Prevents dashing, but the safety net launches the ball much higher
-global.no_dashes = true;
+global.no_dashes = false;
 #macro NO_DASHES global.no_dashes
 
 global.no_max_speed = true;
