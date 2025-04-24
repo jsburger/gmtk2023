@@ -12,6 +12,7 @@ function draw_dice_preview(_x, _y, gunangle, launch_speed = 18, modifier_struct 
 			motion_set(other.direction, other.speed)
 			vars_apply(other)
 			effects = variable_clone(effects)
+			effects.clone_update();
 			is_ghost = true;
 			var vars = variable_instance_get_names(self);
 			for (var i = 0; i < array_length(vars); i++) {

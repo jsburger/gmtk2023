@@ -33,6 +33,9 @@ on_board_bottom = function() {
 			vspeed *= 4;
 			effects.add_effect(self, new CannonLaunchEffect())
 		}
+		if SMART_NET {
+			motion_set(point_direction(x, y, mouse_x, mouse_y), speed);
+		}
 		on_dice_bounce(self);
 		nograv = false
 	}	

@@ -76,6 +76,29 @@ function BallEffectHolder() : BallEffect() constructor {
 		array_clear(effects)
 	}
 	
+	/// Fixes cloning not adjusting the effects array inside the methods
+	static clone_update = function() {
+		//var names = struct_get_names(self),
+		//	values = struct_get_values(self);
+		//for (var i = 0; i < array_length(values); i++) {
+		//	struct_set(self, names[i], variable_clone(values[i]))
+		//}
+		//var values = struct_get_values(self);
+		//for (var i = 0; i < array_length(values); i++) {
+		//	if is_method(values[i]) {
+		//		var struct = method_get_self(values[i]);
+		//		struct.effects = effects;
+		//	}
+		//}
+		var names = struct_get_names(self);
+		for (var i = 0; i < array_length(names); i++) {
+			var value = struct_get(self, names[i]);
+			if is_method(value) {
+				struct_set(self, names[i], method(variable_clone(method_get_self(value)), value))
+			}
+		}
+	}
+	
 }
 
 

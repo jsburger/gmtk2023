@@ -13,3 +13,6 @@ if fading && image_alpha > 0 {
 if !fading && image_alpha < 1 {
 	image_alpha += s;
 }
+if SMART_NET {
+	image_angle = angle_difference(point_direction(x, y, mouse_x, mouse_y), 90)/3;
+}
