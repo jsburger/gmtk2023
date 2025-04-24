@@ -1,5 +1,5 @@
 if !canmove exit;
-speed = clamp(speed + extraspeed, -maxspeed - extraspeed, maxspeed + extraspeed)
+if !NO_MAX_SPEED speed = clamp(speed + extraspeed, -maxspeed - extraspeed, maxspeed + extraspeed)
 
 //Going down
 if vspeed > 0 {
@@ -29,9 +29,11 @@ if rotates {
 
 extraspeed = max(extraspeed - .07, 0);
 
-while(vspeed > max_fallspeed) {
-	previous_acceleration -= .25;
-	speed -= .25;
+if !NO_MAX_SPEED {
+	while(vspeed > max_fallspeed) {
+		previous_acceleration -= .25;
+		speed -= .25;
+	}
 }
 
 //Portal reset
@@ -52,3 +54,5 @@ if damage > 0 {
 }
 
 if !is_rolling() rolled_on_collider = noone;
+
+effects.on_step(self);

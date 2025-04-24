@@ -103,3 +103,6 @@ if instance_exists(obj_screenshake) {
 	camera_y = obj_screenshake.camera_y;
 }
 draw_surface(splat_surface, camera_x, camera_y);
+
+
+if NO_MAX_SPEED draw_text(0, 10, "No ball speed cap")

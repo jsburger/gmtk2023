@@ -234,6 +234,11 @@ function make_new_board() {
 		clear_item()
 	}
 	with BoardOccupant clear_item()
+	//with Board {
+	//	splat_start();
+	//	draw_clear_alpha(c_black, 0);
+	//	splat_end();
+	//}
 	schedule(8, start_new_board)
 	
 }

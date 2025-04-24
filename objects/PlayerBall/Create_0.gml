@@ -31,6 +31,7 @@ on_board_bottom = function() {
 		vspeed = -5;
 		if NO_DASHES {
 			vspeed *= 4;
+			effects.add_effect(self, new CannonLaunchEffect())
 		}
 		on_dice_bounce(self);
 		nograv = false

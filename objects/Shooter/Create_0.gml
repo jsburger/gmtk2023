@@ -16,7 +16,7 @@ die = noone
 
 portal = -4;
 
-throw_speed = 18;
+throw_speed = 14;
 
 active_charges = 3;
 

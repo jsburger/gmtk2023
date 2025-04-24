@@ -27,7 +27,7 @@ function global_step() {
 	
 	Clickables_Step()
 	Tickables_Step()
-	
+	tweaks_step();
 	//static interface = new CombatInterface();
 	//if keyboard_check_pressed(ord("B")) interface.apply_status(TARGETS.PLAYER, STATUS.POISON, 1)
 }
