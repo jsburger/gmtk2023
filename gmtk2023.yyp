@@ -561,6 +561,7 @@
     {"id":{"name":"get_animation_frame","path":"scripts/get_animation_frame/get_animation_frame.yy",},},
     {"id":{"name":"get_save_location","path":"scripts/get_save_location/get_save_location.yy",},},
     {"id":{"name":"GlobalStep","path":"scripts/GlobalStep/GlobalStep.yy",},},
+    {"id":{"name":"Hoverables","path":"scripts/Hoverables/Hoverables.yy",},},
     {"id":{"name":"instance_is","path":"scripts/instance_is/instance_is.yy",},},
     {"id":{"name":"instance_mask","path":"scripts/instance_mask/instance_mask.yy",},},
     {"id":{"name":"InstanceFinder","path":"scripts/InstanceFinder/InstanceFinder.yy",},},

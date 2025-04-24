@@ -4,7 +4,7 @@ enum TIMELINE_ORDER {
 	AFTER_MOVES
 }
 
-function TimelineEntry() constructor {
+function TimelineEntry() : HoverableParent() constructor {
 	height = 0;
 	alpha = 0;
 	
@@ -27,6 +27,17 @@ function TimelineEnemyMove(owner) : TimelineEntry() constructor {
 		return intent;
 	}
 	
+	static test_children = function(tester, xbase, ybase, depthbase) {
+		for (var i = 0; i < array_length(intents); i++) {
+			tester.test(intents[i], 
+				xbase + TIMELINE_GAP - 32, ybase - 32,
+				xbase + TIMELINE_GAP + 32, ybase - 32 + intents[i].height,
+				depthbase
+			);
+			ybase += intents[i].height;
+		}
+	}
+	
 	static reset_height = function() {
 		var h = 0;
 		for (var i = 0; i < array_length(intents); i++) {
@@ -42,21 +53,23 @@ function TimelineEnemyMove(owner) : TimelineEntry() constructor {
 		//intent_draw(draw_x + TIMELINE_GAP, draw_y, action.intent, action.intent_value)
 		
 		var offset = 0,
-			hovered = false;
+			intent_hovered = false;
 		for (var i = 0; i < array_length(intents); i++) {
-			var local_hover = false;
-			if !hovered {
-				local_hover = mouse_in_rectangle(
-					draw_x + TIMELINE_GAP - 32, draw_y - 32 + offset,
-					draw_x + TIMELINE_GAP + 32, draw_y - 32 + offset + intents[i].height);
-				hovered = local_hover;
-			}
-			intents[i].draw(draw_x + TIMELINE_GAP, draw_y + offset, local_hover);
+			//var local_hover = false;
+			//if !hovered {
+			//	local_hover = mouse_in_rectangle(
+			//		draw_x + TIMELINE_GAP - 32, draw_y - 32 + offset,
+			//		draw_x + TIMELINE_GAP + 32, draw_y - 32 + offset + intents[i].height);
+			//	hovered = local_hover;
+			//}
+			if intents[i].hovered intent_hovered = true;
+			intents[i].draw(draw_x + TIMELINE_GAP, draw_y + offset);
 			offset += intents[i].height;
 		}
 		
 		
-		if hovered || mouse_in_rectangle(draw_x - 32, draw_y - 32, draw_x + 32, draw_y + 32) {
+		//if hovered || mouse_in_rectangle(draw_x - 32, draw_y - 32, draw_x + 32, draw_y + 32) {
+		if hovered || intent_hovered {
 			if instance_exists(owner) owner.show_owner = true;
 		}
 	}
@@ -73,7 +86,8 @@ function TimelineBoardNote(sprite, desc) : TimelineEntry() constructor {
 		draw_sprite_ext(sprIconBg, 0, draw_x, draw_y, 1, 1, snap_to(180 * dsin(current_frame * .2 + draw_y), 1), bg_color, .75)
 		draw_sprite(sprite, sprite_get_animation_frame(sprite), draw_x, draw_y)
 		
-		if mouse_in_rectangle(draw_x - 32, draw_y - 32, draw_x + 32, draw_y + 32) {
+		//if mouse_in_rectangle(draw_x - 32, draw_y - 32, draw_x + 32, draw_y + 32) {
+		if hovered {
 			draw_textbox(draw_x - 64, draw_y - 48, desc)
 			if highlight_object != undefined with highlight_object {
 				var top = bbox_top + 3 * dsin(current_frame + draw_y);

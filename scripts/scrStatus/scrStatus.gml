@@ -1,7 +1,8 @@
-function StatusHolder(creator) constructor {
+function StatusHolder(creator) : HoverableParent() constructor {
 	status_map = {};
 	
 	owner = creator;
+	is_player = false;
 	
 	static add_status = function(status_key, strength) {
 		if struct_exists(status_map, status_key) {
@@ -88,33 +89,43 @@ function StatusHolder(creator) constructor {
 	}
 	
 	
+	static status_x = function(xbase, index) {
+		if is_player {
+			return (xbase + 40 * (index div 3));
+		}
+		return (xbase + 68 * index);
+	}
+	static status_y = function(ybase, index) {
+		if is_player {
+			return ybase + 68 * (index mod 3);
+		}
+		return ybase;
+	}
+	
 	static draw = function(x, y) {
 		var gap = 68;
 		__status_loop {
 			var s = statuses[i],
-				draw_x = x + gap * i;
-			draw_sprite(s.sprite_index, sprite_get_animation_frame(s.sprite_index), draw_x, y)
-			draw_text(draw_x + 22, y + 22, string(s.strength))
-			if mouse_in_rectangle(draw_x - 32, y - 32, draw_x + 32, y + 32) {
-				draw_textbox(draw_x, y, [s.name, s.desc])
-			}
-		}
-	}
-	
-	static draw_player = function(x, y) {
-		var gap = 68;
-		__status_loop {
-			var s = statuses[i],
-				draw_x = x + 40 * (i div 3),
-				draw_y = y + gap * (i mod 3);
+				draw_x = status_x(x, i),
+				draw_y = status_y(y, i);
 			draw_sprite(s.sprite_index, sprite_get_animation_frame(s.sprite_index), draw_x, draw_y)
 			draw_text(draw_x + 22, draw_y + 22, string(s.strength))
-			if mouse_in_rectangle(draw_x - 32, draw_y - 32, draw_x + 32, draw_y + 32) {
-				draw_textbox(draw_x, draw_y, [s.name, s.desc])
+		}
+		__status_loop {
+			if s.hovered {
+				draw_textbox(status_x(x, i), status_y(y, i), [s.name, s.desc])
 			}
 		}
 	}
 	
+	static test_children = function(tester, basex, basey, depthbase) {
+		__status_loop {
+			var s = statuses[i],
+				_x = status_x(basex, i),
+				_y = status_y(basey, i);
+			tester.test_box(s, _x, _y, 32, depthbase);
+		}
+	}
 }
 
 function status_register(name, statusFactory) {
@@ -140,7 +151,7 @@ global.statuses = {}
 #macro STATUS global.statuses
 
 
-function Status(Strength) constructor {
+function Status(Strength) : Hoverable() constructor {
 	strength = Strength;
 	
 	visible = true;

@@ -97,3 +97,15 @@ die = function() {
 /// Use this instead of die to override
 on_die = function() {}
 
+status_x = function() {
+	gml_pragma("forceinline");
+	return bbox_left;
+}
+status_y = function() {
+	gml_pragma("forceinline")
+	return bbox_bottom + 32;
+}
+
+test_hoverables = function(tester) {
+	statuses.test_children(tester, status_x(), status_y(), depth - 1);
+}

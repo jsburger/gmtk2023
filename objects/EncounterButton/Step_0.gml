@@ -2,7 +2,7 @@
 
 var leanMax = active ? 1 : 0,
 	leanSpeed = .5;
-if point_in_bbox(mouse_x, mouse_y, self) {
+if hovered {
 	leanMax += 1
 }
 

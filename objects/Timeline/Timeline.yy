@@ -37,5 +37,8 @@
     "path":"sprites/sprTimeline/sprTimeline.yy",
   },
   "spriteMaskId":null,
+  "tags":[
+    "HasHoverables",
+  ],
   "visible":true,
 }

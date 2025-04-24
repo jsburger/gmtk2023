@@ -3,9 +3,8 @@
 var cast = ability.can_cast();
 var leanMax = active ? 1 : 0;
 
-if point_in_bbox(mouse_x, mouse_y, self) {
+if hovered {
 	leanMax = 1
-	hovered = true;
 	//if !cast leanMax -= .3
 	if playSound && cast {
 		sound_play_pitch(sndButton, random_range(0.9, 1.1))
@@ -13,7 +12,6 @@ if point_in_bbox(mouse_x, mouse_y, self) {
 	}
 }
 else {
-	hovered = false;
 	playSound = true;	
 }
 

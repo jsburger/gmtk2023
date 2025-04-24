@@ -11,4 +11,4 @@
 	}
 
 	// Draw statuses
-	statuses.draw(bbox_left, bbox_bottom + 32)
+	statuses.draw(status_x(), status_y())

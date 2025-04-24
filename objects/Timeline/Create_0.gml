@@ -36,3 +36,20 @@ update = function(update_positions = true) {
 }
 
 update()
+
+function entry_position_x(entry) {
+	return (x - TIMELINE_GAP/2) + 32 * (1 - entry.alpha);
+}
+function entry_position_y(entry) {
+	return (bbox_top + entry.y)
+}
+
+test_hoverables = function(tester) {
+	for (var i = 0; i < array_length(entries); i++) {
+		var entry = entries[i],
+			xpos = entry_position_x(entry),
+			ypos = entry_position_y(entry);
+		tester.test(entry, xpos - 32, ypos - 32, xpos + 32, ypos + 32, depth - .1 * i);
+		entry.test_children(tester, xpos, ypos, depth - 1 - .1 * i);
+	}
+}

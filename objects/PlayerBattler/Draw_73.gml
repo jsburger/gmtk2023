@@ -12,4 +12,4 @@
 	}
 
 	// Draw statuses
-	statuses.draw_player(bbox_right + 32, bbox_top)
+	statuses.draw(status_x(), status_y())

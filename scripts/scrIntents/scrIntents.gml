@@ -21,7 +21,7 @@ function intent_draw(_x, _y, intent, value) {
 	
 }
 
-function Intent(sprite, value = undefined) constructor {
+function Intent(sprite, value = undefined) : Hoverable() constructor {
 	height = 72;
 	self.value = value;
 	desc = "Default Description"
@@ -47,7 +47,7 @@ function Intent(sprite, value = undefined) constructor {
 		}
 	}
 	
-	static draw = function(draw_x, draw_y, hovered) {
+	static draw = function(draw_x, draw_y) {
 		if backdrop != undefined backdrop.draw(draw_x, draw_y);
 		if is_instanceof(sprite_index, Sprite) {
 			sprite_index.draw(draw_x, draw_y);

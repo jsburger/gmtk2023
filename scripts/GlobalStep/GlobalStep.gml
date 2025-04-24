@@ -25,6 +25,7 @@ function global_step() {
 	
 	current_frame += 1;
 	
+	get_hovered_object();
 	Clickables_Step()
 	Tickables_Step()
 	tweaks_step();

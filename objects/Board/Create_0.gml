@@ -40,6 +40,7 @@ become_active = false;
 //Allows the shooter to act
 active = false;
 
+hovered = false;
 // Activates when clicked and not targeting
 on_click = function() {
 	if !active {

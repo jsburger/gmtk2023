@@ -91,7 +91,7 @@ if(editor){
 		}
 		
 		var placer = current_placer();
-		if point_in_bbox(mouse_x, mouse_y, self) {
+		if hovered {
 			if button_pressed(inputs.shoot) {
 				clicked = true;
 				clicked_x = mouse_x;

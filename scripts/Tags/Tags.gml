@@ -1,13 +1,8 @@
 
-//global.level_starts = new TaggedObjects("LevelStart")
-//global.solids = new TaggedObjects("Solid")
-//global.projectile_blockers = new TaggedObjects("Obstruction")
 global.clickable_objects = new TaggedObjects("Clickable")
 global.editor_buttons = new TaggedObjects("EditorButton")
-//global.spawners = new TaggedObjects("Spawner")
-//global.power_recievers = new TaggedObjects("PowerReciever")
-//global.power_emitters  = new TaggedObjects("PowerEmitter")
-//global.pausable_objects = new TaggedObjects("Pausable")
+global.has_hoverables = new TaggedObjects("HasHoverables")
+
 
 function TaggedObjects(_tag) constructor {
     tag = _tag;

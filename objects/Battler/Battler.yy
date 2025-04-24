@@ -35,6 +35,7 @@
   "spriteMaskId":null,
   "tags":[
     "Clickable",
+    "HasHoverables",
   ],
   "visible":true,
 }
