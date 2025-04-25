@@ -17,7 +17,9 @@ hit_timer = 10;
 on_board_bottom = function() {
 	if (touchedBottom){
 		if bbox_bottom > board_bottom + 128 {
-			throw_end()
+			if !is_ghost {
+				throw_end();
+			}
 			instance_destroy()
 			exit;
 		}
@@ -25,7 +27,9 @@ on_board_bottom = function() {
 	else {
 		touchedBottom += 1;
 		if touchedBottom {
-			with SafetyNet deactivate()
+			if !is_ghost {
+				with SafetyNet deactivate()
+			}
 		}
 		y = yprevious;
 		vspeed = -5;

@@ -1,6 +1,3 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-
 function draw_dice_preview(_x, _y, gunangle, launch_speed = 18, modifier_struct = undefined) {
 	draw_set_alpha(.8)
 	with parBoardObject ghost_hits = 0;
@@ -123,10 +120,11 @@ function draw_dice_preview(_x, _y, gunangle, launch_speed = 18, modifier_struct 
 			}
 			if segments <= 0 break
 			
+			has_bounced = false;
 			//End Step
-			if stay_inside_board() {
-				break;
-			}
+			event_perform(ev_step, ev_step_end)
+			if has_bounced segments -= 1;
+			if touchedBottom && y > board_bottom break
 			
 		}
 		

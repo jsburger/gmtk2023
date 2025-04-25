@@ -9,14 +9,14 @@ if (instance_exists(Board)) {
 
 //True when bouncing
 if stay_inside_board(false) {
-	sound_play_pitch(sndDieHitWall, random_range(.9, 1.1))
+	if !is_ghost sound_play_pitch(sndDieHitWall, random_range(.9, 1.1))
 	extraspeed = 0;
 	nograv = false;
 }
 
 // When the dice explodes. Anti-softlock check
 if image_blend = c_dkgray{
-	if random(6) < 1{
+	if random(6) < 1 && !is_ghost {
 		with(instance_create_layer(x, y, "Projectiles", obj_hit_medium)){
 			x += random_range(-8,8);
 			y += random_range(-8,8);

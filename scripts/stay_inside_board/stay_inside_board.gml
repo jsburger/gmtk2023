@@ -29,5 +29,11 @@ function stay_inside_board(use_bottom = true) {
 		returnValue = true
 	}
 	
+	if instance_is(self, AbstractBall) {
+		if returnValue {
+			has_bounced = true;
+		}
+	}
+	
 	return returnValue
 }
