@@ -17,9 +17,11 @@ slash = function() {
 	arm.image_angle = 70
 }
 
-with add_action("Slash") {
+add_action("Slash", function() {
+	MOVESTART
 	run(other.slash)
 	hit(as_damage(1)).delay = 10
 	last_intent().desc = "Die";
 	last_intent().value = undefined;
-}
+	MOVEEND
+})

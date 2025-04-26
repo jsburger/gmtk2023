@@ -13,10 +13,6 @@ spr_icon = sprHighRollerIcon
 roll_max = 6;
 roll = irandom_range(1, roll_max);
 
-var roll_damage = function() {
-	return roll;
-}
-
 enemy_hurt = function() {
 	if roll > 0 {
 		roll = roll - 1;	
@@ -30,15 +26,21 @@ on_turn_end = function() {
 	roll = irandom_range(roll_min, roll_max);
 }
 
-var roll_range = function() {
-	return string("{0}-{1}", roll_max - 5, roll_max)
-}
 
-with add_action("Die") {
+add_action("Die", function() {
+	var roll_damage = function() {
+		return roll;
+	}
+	var roll_range = function() {
+		return string("{0}-{1}", roll_max - 5, roll_max)
+	}
+
+	MOVESTART
 	var damage = as_damage(new FunctionProvider(roll_damage));
 	hit(damage);
 	add_intent(new Intent(sprIntentAttack, damage))
 		.with_desc(format("Deal {0} Damage.\nIncrease range by 1", roll_range));
 	
 	wait(10)
-}
+	MOVEEND
+})

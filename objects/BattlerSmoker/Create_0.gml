@@ -7,13 +7,17 @@ set_hp(50)
 movemode = moveOrder.RANDOM_STACK
 spr_icon = sprSmokerIcon
 
-with add_action("Burn Attack") {
+add_action("Burn Attack", function() {
+	MOVESTART
 	hit(9);
 	burn(6);
-}
+	MOVEEND
+});
 
-with add_action("Burn Shield") {
+add_action("Burn Shield", function() {
+	MOVESTART
 	block(6);
 	burn(12);
-}
+	MOVEEND
+});
 

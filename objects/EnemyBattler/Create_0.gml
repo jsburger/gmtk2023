@@ -76,11 +76,17 @@ get_next_action = function() {
 			return shuffled[moveProgress++]
 	}
 }
+/// @param {Struct.MoveFactory} move
+mount_move = function(move) {
+	var act = move.get();
+	array_push(current_actions, act);
+	act.on_move_decided();	
+}
 
 decide_actions = function() {
 	clear_actions()
 	while array_length(current_actions) < move_max {
-		array_push(current_actions, get_next_action().clone());
+		array_push(current_actions, get_next_action().get());
 	}
 	for_each_action(function(act) {
 		act.on_move_decided()
@@ -94,7 +100,7 @@ reroll_actions = function(count) {
 		var index = indices[i];
 		if current_actions[index].is_rerollable {
 			n += 1;
-			current_actions[index] = get_next_action().clone();
+			current_actions[index] = get_next_action().get();
 			current_actions[index].on_move_decided();
 		}
 	}

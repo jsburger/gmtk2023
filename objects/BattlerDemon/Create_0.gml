@@ -16,13 +16,16 @@ on_mana_gained = function(color, count) {
 	}
 }
 
-var get_purple = function() {
-	return purple_counter
-}
-
-with add_action("Demon Smash") {
+add_action("Demon Smash", function() {
+	var get_purple = function() {
+		return purple_counter
+	}
+	
+	MOVESTART
 	var damage = as_damage(new FunctionProvider(get_purple));
 	hit(damage)
 	add_intent(new Intent(sprIntentAttack, damage)
 		.with_desc(format("Deals damage equal to\nthe amount of PURPLE mana\ngained this battle.")))
-}
+		
+	MOVEEND 
+})

@@ -17,14 +17,17 @@ after_create = function() {
 	change_form(form);
 }
 
-var count_blocks = function() {
-	return bricks_with_color(form)
-}
-var get_form = function() {
-	return form;
-}
-var symbol = self;
-with add_action("SYMBOL SLAM!!!") {
+
+add_action("SYMBOL SLAM!!!", function() {
+	var count_blocks = function() {
+		return bricks_with_color(form)
+	}
+	var get_form = function() {
+		return form;
+	}
+	var symbol = self;
+	
+	MOVESTART
 	//var damage = as_damage(new FunctionProvider(count_blocks));
 	var damage = as_damage(new FunctionProvider(count_blocks)),
 		_form = accept_provider(new FunctionProvider(get_form));
@@ -38,7 +41,8 @@ with add_action("SYMBOL SLAM!!!") {
 	add_intent(new RecolorIntent(5, _form));
 	wait(25)
 	//desc = "Deal Damage equal to the \namount of Matching bricks.\nRecolor 5 bricks to \nMatching color."
-}
+	MOVEEND
+})
 
 on_turn_end = function() {
 	CombatRunner.waitTime += 10;

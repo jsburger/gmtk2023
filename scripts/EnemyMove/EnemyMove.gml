@@ -10,16 +10,8 @@ function EnemyMove(_owner) : CombatInterface() constructor {
 	is_rerollable = true;
 	intent_auto = true;	
 	
-	static clone = function() {
-		var _o = owner;
-		//owner = noone;
-		var copy = variable_clone(self);
-		//owner = _o;
-		//copy.owner = _o;
-		return copy;
-	}
-	
 	/// @func add_intent
+	/// @returns {Struct.Intent}
 	static add_intent = function(intent) {
 		return timeline_entry.add_intent(intent);
 	}

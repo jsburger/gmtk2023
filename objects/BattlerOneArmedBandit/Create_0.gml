@@ -17,16 +17,12 @@ decide_actions = function() {
 	if sleeping {
 		clear_actions();
 			//This part is optional. Doing nothing just works.
-			var move = nap.clone();
-			array_push(current_actions, move);
-			move.on_move_decided();
+			mount_move(nap);
 		Timeline.update();
 		exit;
 	}
 	super.decide_actions();
-	var move = payout.clone()
-	move.on_move_decided()
-	array_push(current_actions, move)
+	mount_move(payout);
 	Timeline.update();
 }
 
@@ -51,15 +47,17 @@ on_turn_end = function() {
 	garbage_brick_count = 5;
 }
 
-nap = new EnemyMove(self);
-with nap {
-	name = "NAPPING";
-	wait(15)
+nap = new MoveFactory("NAPPING", function() {
+	MOVESTART
+	wait(15);
 	add_intent(new Intent(sprIntentMisc, "Zzz"))
-		.with_desc("Pass the turn.")
-}
+		.with_desc("Pass the turn.");
+			
+	MOVEEND
+})
 
-with add_action("RESPIN") {
+add_action("RESPIN", function() {
+	MOVESTART
 	intent_auto = false;
 	block(4);
 	run(function() {
@@ -69,9 +67,11 @@ with add_action("RESPIN") {
 		.with_desc("Gain 4 block.\nPAYOUT will create an additional line of blue bricks.")
 		.with_backdrop(sprIntentDefend);
 		//.height /= 2;
-}
+	MOVEEND
+})
 
-with add_action("HOT STUFF") {
+add_action("HOT STUFF", function() {
+	MOVESTART
 	intent_auto = false;
 	var damage = as_damage(3);
 	hit(damage);
@@ -82,9 +82,11 @@ with add_action("HOT STUFF") {
 		.with_desc(format("Deal {0} damage.\nPAYOUT will create an additional line of red bricks.", damage))
 		.with_backdrop(sprIntentAttack)
 		//.height /= 2;
-}
+	MOVEEND
+})
 
-with add_action("JACKPOT") {
+add_action("JACKPOT", function() {
+	MOVESTART
 	add_intent(new Intent(sprBrickSquare, "+2"))
 		.with_desc("PAYOUT will create 2 additional trash bricks.");
 	wait(15)
@@ -92,9 +94,9 @@ with add_action("JACKPOT") {
 		garbage_brick_count += 2;
 		//odds *= 2;
 		//procs += 1;
-	})
-	
-}
+	})	
+	MOVEEND	
+})
 
 #region Payout
 	/*
@@ -108,7 +110,7 @@ with add_action("JACKPOT") {
 		return string_repeat(".", procs) + "?";
 	}
 	*/
-	var spawn_waves = function(item, runner) {
+	spawn_waves = function(item, runner) {
 		if blue_wave_count > 0 {
 			var m = board_column_max(),
 				b = [];
@@ -150,10 +152,9 @@ with add_action("JACKPOT") {
 		}
 		item.done();
 	}
-	payout = new EnemyMove(self);
 	
-	with payout {
-		name = "PAYOUT";
+	payout = new MoveFactory("PAYOUT", function() {
+		MOVESTART
 		is_rerollable = false;
 	
 		// Deal damage
@@ -191,9 +192,10 @@ with add_action("JACKPOT") {
 		wait(15)
 	
 		// Spawn red and blue bricks
-		raw(spawn_waves)
+		raw(other.spawn_waves)
+		MOVEEND
 	
-	}
+	})
 #endregion
 
 

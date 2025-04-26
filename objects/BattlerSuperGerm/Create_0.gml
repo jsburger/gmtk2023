@@ -9,10 +9,14 @@ spr_icon = sprSuperGermIcon
 //size = ENEMY_SIZE.SMALL;
 
 
-with add_action("Super Yuck") {
+add_action("Super Yuck", function() {
+	MOVESTART
 	poison(12)
-}
+	MOVEEND
+})
 
-with add_action("Regenerate") {
+add_action("Regenerate", function() {
+	MOVESTART
 	block(12);
-}
+	MOVEEND
+})

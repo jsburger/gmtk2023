@@ -9,6 +9,8 @@ spr_icon = sprGermIcon
 size = ENEMY_SIZE.SMALL;
 
 
-with add_action("Yuck") {
+add_action("Yuck", function() {
+	MOVESTART
 	poison(6);
-}
+	MOVEEND
+})

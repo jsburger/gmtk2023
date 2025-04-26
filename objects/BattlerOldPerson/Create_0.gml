@@ -12,13 +12,17 @@ var reduce = function(){
 	mana_subtract_all(4)
 }
 
-with add_action("Lose") {
+add_action("Lose", function() {
+	MOVESTART
 	hit(as_damage(6))
-}
+	MOVEEND
+})
 
-with add_action("Drain") {
+add_action("Drain", function() {
+	MOVESTART
 	recolor(6, MANA_NONE)
 	add_intent(new RecolorIntent(6, MANA_NONE))
 		.with_desc("Uncolor 6 bricks.")
 	buff_strength(2);
-}
+	MOVEEND
+})

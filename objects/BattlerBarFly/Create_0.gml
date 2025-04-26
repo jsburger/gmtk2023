@@ -7,16 +7,20 @@ set_hp(30)
 movemode = moveOrder.RANDOM
 spr_icon = sprBarFlyIcon
 
-with add_action("Numb") {
+add_action("Numb", function() {
+	MOVESTART
 	block(8);
 	freeze(6);
-}
+	MOVEEND
+})
 
-with add_action("Rounds") {
+add_action("Rounds", function() {
+	MOVESTART
 	freeze(4)
 	wait(5)
 	poison(4)
-}
+	MOVEEND
+})
 
 /* example
 with add_action("Slap") {

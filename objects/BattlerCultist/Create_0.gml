@@ -8,14 +8,17 @@ movemode = moveOrder.LINEAR
 spr_icon = sprCultistIcon
 //size = ENEMY_SIZE.SMALL;
 
-with add_action("Slice") {	
+add_action("Slice", function() {
+	MOVESTART
 	hit(10)
 	//freeze(4);
-}
+	MOVEEND
+})
 
-with add_action("Incantation") {
+add_action("Incantation", function() {
+	MOVESTART
 	curse(12);
 	block(6);
 	//freeze(4);
-
-}
+	MOVEEND
+})

@@ -7,18 +7,22 @@ set_hp(50)
 movemode = moveOrder.LINEAR
 spr_icon = sprTomatoIcon
 
-with add_action("Bite") {
+add_action("Bite", function() {
+	MOVESTART
 	var range = new RangeProvider(6, 12);
 	hit(as_damage(range))
 	recolor(12, MANA.RED)
 	add_intent(new RecolorIntent(12, MANA.RED))
-}
+	MOVEEND
+})
 
-with add_action("Splat") {
+add_action("Splat", function() {
+	MOVESTART
 	block(10)
 	recolor(12, MANA.RED)
 	add_intent(new RecolorIntent(12, MANA.RED))
-}
+	MOVEEND
+})
 
 
 //with add_action("Explode") {
