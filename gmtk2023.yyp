@@ -1009,6 +1009,7 @@
     {"id":{"name":"sprFXHitLarge","path":"sprites/sprFXHitLarge/sprFXHitLarge.yy",},},
     {"id":{"name":"sprFXHitMedium","path":"sprites/sprFXHitMedium/sprFXHitMedium.yy",},},
     {"id":{"name":"sprFXHitSmall","path":"sprites/sprFXHitSmall/sprFXHitSmall.yy",},},
+    {"id":{"name":"sprFXJuno","path":"sprites/sprFXJuno/sprFXJuno.yy",},},
     {"id":{"name":"sprFXManaDrop","path":"sprites/sprFXManaDrop/sprFXManaDrop.yy",},},
     {"id":{"name":"sprFXPortalBlue","path":"sprites/sprFXPortalBlue/sprFXPortalBlue.yy",},},
     {"id":{"name":"sprFXPortalGray","path":"sprites/sprFXPortalGray/sprFXPortalGray.yy",},},

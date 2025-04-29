@@ -71,7 +71,7 @@ if can_act && button_pressed(inputs.shoot) && can_shoot {
 						mana_spend(MANA.YELLOW, 1)
 					}
 					with instance_create_layer(x, y, "FX", obj_fx) {
-						sprite_index = sprFXHitMedium
+						sprite_index = sprFXJuno
 					}
 				}
 			}
