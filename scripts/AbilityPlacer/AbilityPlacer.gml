@@ -1,35 +1,3 @@
-
-// Dont make a million of these, I still need to add a prototype system. Like the technical kind of prototype.
-register_ability("PlaceBomb", function() {
-	with new AbilityPlacer(Bomb) {
-		name = "Bomb Placer"
-		desc = "Place a Bomb"
-		sprite_index = sprBomb
-		set_costs(12, 4, 0)
-		return self
-	}
-})
-
-register_ability("PlaceBlock", function() {
-	with new AbilityPlacer(BrickNormal) {
-		name = "Block Placer"
-		desc = "Place a Block"
-		sprite_index = sprBrick
-		set_cost(MANA.BLUE, 1)		
-		return self
-	}
-})
-register_ability("PlaceBarrel", function() {
-	with new AbilityPlacer(Barrel) {
-		name = "Barrel Placer"
-		desc = "Place a Barrel"
-		can_rotate = true;
-		rotation = 45;
-		sprite_index = sprBarrel
-		set_cost(MANA.YELLOW, 2)	
-		return self
-	}
-})
 /// @param {Asset.GMObject} obj
 function AbilityPlacer(obj) : Ability(TARGET_TYPE.BOARD) constructor {
 	object = obj

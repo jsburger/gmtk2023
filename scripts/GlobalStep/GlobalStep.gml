@@ -19,7 +19,21 @@ draw_set_font(global.font)
 
 #macro fntBig global.font
 #macro fntSmall _fontLimestock
- 
+
+function on_game_load() {
+	static hooks = [];
+	if argument_count > 0 {
+		array_push(hooks, argument0);
+	}
+	else {
+		for (var i = 0; i < array_length(hooks); i++) {
+			hooks[i]();
+		}
+		array_clear(hooks);
+	}
+}
+
+call_later(1, time_source_units_frames, on_game_load, false);
 
 function global_step() {
 	

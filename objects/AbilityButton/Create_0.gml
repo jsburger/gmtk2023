@@ -1,10 +1,7 @@
 /// @description 
 setup = function() {
 	if is_string(ability) && string_length(ability) > 0 {
-		var prototype = ability_get_prototype(ability_key)
-		if prototype != undefined {
-			ability = prototype()
-		}
+		ability = ability_get(ability_key);
 	}
 }
 

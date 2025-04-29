@@ -5,22 +5,28 @@ enum TARGET_TYPE {
 	BATTLER
 }
 
-
+/// @param {String} name
+/// @param {Function} abilityFactory
 function register_ability(name, abilityFactory) {
 	static abilities = ds_map_create();
 	ds_map_add(abilities, name, abilityFactory)
+	return name;
 }
-/// @returns {Id.DsMap<Function>}
-function ability_get_register() {
-	// Feather disable once GM1045
-	return register_ability.abilities;
-}
+///// @returns {Id.DsMap<Function>}
+//function ability_get_register() {
+//	// Feather disable once GM1045
+//	return register_ability.abilities;
+//}
 
-function ability_get_prototype(name) {
-	return ability_get_register()[? name]
-}
+//function ability_get_prototype(name) {
+//	return ability_get_register()[? name]
+//}
+/// @param {String} name
+/// @returns {Struct.Ability, Undefined}
 function ability_get(name) {
-	var proto = ability_get_prototype(name);
+	var proto = register_ability.abilities[? name];
+	if proto == undefined return undefined;
+	// Feather disable once GM1045
 	return proto();
 }
 

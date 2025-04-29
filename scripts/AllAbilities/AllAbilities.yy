@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scrAbilities",
+  "%Name":"AllAbilities",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scrAbilities",
+  "name":"AllAbilities",
   "parent":{
     "name":"Player Abilities",
     "path":"folders/Scripts/Combat/Player Abilities.yy",

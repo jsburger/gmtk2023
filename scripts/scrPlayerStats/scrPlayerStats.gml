@@ -28,9 +28,11 @@ function ability_grant(ability) {
 	}
 }
 
-ability_grant("Hit6")
-ability_grant("Block6")
-ability_grant("Recolor")
-//ability_grant("Hit24")
-ability_grant("PlaceBomb")
-ability_grant("PlaceBarrel")
+on_game_load(function() {
+	ability_grant(SPELLS.SLAMMY)
+	ability_grant(SPELLS.BLOCKO)
+	ability_grant(SPELLS.REDIFY)
+	//ability_grant("Hit24")
+	ability_grant(SPELLS.PLACE_BOMB)
+	ability_grant(SPELLS.PLACE_BARREL)
+})

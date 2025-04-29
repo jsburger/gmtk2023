@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"AbilityDefend",
+  "%Name":"Abilities",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"AbilityDefend",
+  "name":"Abilities",
   "parent":{
-    "name":"Damage",
-    "path":"folders/Scripts/Combat/Player Abilities/Damage.yy",
+    "name":"Player Abilities",
+    "path":"folders/Scripts/Combat/Player Abilities.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
