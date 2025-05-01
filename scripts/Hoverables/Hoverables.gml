@@ -19,10 +19,12 @@ function gather_hoverables() {
 	var clickables = global.clickable_objects.instances();
 	for (var i = 0; i < array_length(clickables); i++) {
 		if clickables[i].depth <= tester.depth {
-			tester.test(clickables[i], 
-				clickables[i].bbox_left, clickables[i].bbox_top,
-				clickables[i].bbox_right, clickables[i].bbox_bottom,
-				clickables[i].depth);
+			if (!variable_instance_exists(clickables[i], "can_click") || clickables[i].can_click()) {
+				tester.test(clickables[i], 
+					clickables[i].bbox_left, clickables[i].bbox_top,
+					clickables[i].bbox_right, clickables[i].bbox_bottom,
+					clickables[i].depth);
+			}
 		}
 	}
 	
