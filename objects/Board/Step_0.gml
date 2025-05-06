@@ -51,7 +51,13 @@ if keyboard_check_pressed(vk_home) {
 
 }
 
-if(editor){
+var menu = (editor && button_check(inputs.editor_objects));
+
+if (menu && !instance_exists(EditorObjectSelector)) {
+	instance_create_depth(bbox_left, bbox_top, depth - 100, EditorObjectSelector);
+}
+
+if (editor && !menu) {
 	with(par_collectible) instance_destroy(self, false);
 	
 	// Paint mode toggle
@@ -66,6 +72,7 @@ if(editor){
 		}
 	}
 	
+	// Build mode
 	if mode = editorMode.build {
 		var scroll = mouse_wheel_down() - mouse_wheel_up();
 		if scroll != 0 {
@@ -90,8 +97,10 @@ if(editor){
 			}
 		}
 		
+		// Run Placer scripts
 		var placer = current_placer();
-		if hovered {
+		if point_in_bbox(mouse_x, mouse_y, self) {
+			// Left Click
 			if button_pressed(inputs.shoot) {
 				clicked = true;
 				clicked_x = mouse_x;
@@ -110,6 +119,7 @@ if(editor){
 					clicked_y = mouse_y;
 				}
 			}
+			// Right Click
 			if button_pressed(inputs.dash) {
 				right_clicked = true;
 				right_clicked_x = mouse_x;
@@ -135,7 +145,7 @@ if(editor){
 		}
 	}
 	
-	
+	// Paint Mode
 	if mode = editorMode.paint {
 		var scroll = mouse_wheel_down() - mouse_wheel_up();
 		if scroll != 0 {

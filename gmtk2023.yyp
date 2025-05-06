@@ -360,6 +360,7 @@
     {"id":{"name":"CombatRunner","path":"objects/CombatRunner/CombatRunner.yy",},},
     {"id":{"name":"CurseProjectile","path":"objects/CurseProjectile/CurseProjectile.yy",},},
     {"id":{"name":"DemonOrb","path":"objects/DemonOrb/DemonOrb.yy",},},
+    {"id":{"name":"EditorObjectSelector","path":"objects/EditorObjectSelector/EditorObjectSelector.yy",},},
     {"id":{"name":"effectDamagePopup","path":"objects/effectDamagePopup/effectDamagePopup.yy",},},
     {"id":{"name":"effectDropTrail","path":"objects/effectDropTrail/effectDropTrail.yy",},},
     {"id":{"name":"effectManaGained","path":"objects/effectManaGained/effectManaGained.yy",},},

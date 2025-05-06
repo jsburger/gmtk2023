@@ -8,7 +8,7 @@ draw_sprite_ext(sprBoardBorder, 0, x, y, 1, 1, image_angle, image_blend, image_a
 //board_can_fit(obj_bomb, mouse_x, mouse_y)
 
 //Editor grid
-if(editor){
+if (editor) {
 	
 	var _c = c_black,
 	    _w = 1,

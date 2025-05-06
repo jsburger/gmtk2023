@@ -13,6 +13,8 @@ function EditorPlacer() constructor {
 	/// Draw a phantom or whatever the object needs.
 	/// Drawn in world space.
 	static draw_world = function() {}
+	
+	static draw_variants = function(_x, _y, gap) {}
 
 	/// Run when the mouse clicks
 	static on_click = function() {}
@@ -212,6 +214,13 @@ function ObjectPlacer() : AbstractObjectPlacer() constructor {
 			return true;
 		}
 		return false;
+	}
+	
+	static draw_variants = function(_x, _y, gap) {
+		for (var i = 0; i < array_length(objects); i++) {
+			var sprite = object_get_sprite(objects[i]);
+			draw_sprite_ext(sprite, sprite_get_animation_frame(sprite), _x + gap * (i - selected), _y, 1, 1, 0, c_white, .6);
+		}
 	}
 }
 

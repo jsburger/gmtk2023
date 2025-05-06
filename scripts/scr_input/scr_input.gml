@@ -73,6 +73,12 @@ function getInput(inputName, inputType) {
 		case(inputs.editor_color_mode):
 			keys = ["C"]
 			break
+		case (inputs.editor_objects):
+			keys = [vk_tab]
+			break
+		case (inputs.editor_info):
+			keys = ["`"]
+			break
 		
 		case (inputs.menu_use):
 			keys = [mb_left]
@@ -153,7 +159,9 @@ enum inputs {
 	editor_translate_up,
 	editor_translate_down,
 	editor_modifier,
-	editor_color_mode
+	editor_color_mode,
+	editor_objects,
+	editor_info
 }
 
 enum inputTypes {
