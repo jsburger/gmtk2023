@@ -37,6 +37,9 @@
     "name":"sprDiceHit",
     "path":"sprites/sprDiceHit/sprDiceHit.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"mskBall",
+    "path":"sprites/mskBall/mskBall.yy",
+  },
   "visible":true,
 }

@@ -7,11 +7,6 @@ pierce = 3;
 damage = 1;
 uses_extraspeed = true;
 
-if juno {
-	gravity_base = .15;
-	pierce = 0;
-}
-
 hit_timer = 10;
 
 on_board_bottom = function() {

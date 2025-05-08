@@ -21,7 +21,9 @@ if (bbox_bottom >= Board.bbox_bottom-sprite_height/2){
 }
 
 //Portal reset
-if portal > -4 && !place_meeting(x, y, portal)portal = -4;
+if instance_exists(portal) && !place_meeting(x, y, portal) {
+	portal = noone;
+}
 //Decide rolled value 
 if landed{
 	fade--;

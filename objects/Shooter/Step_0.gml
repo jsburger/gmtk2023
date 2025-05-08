@@ -30,69 +30,73 @@ if gunangle > 180{
 
 #macro chip_cost 1
 
-if keyboard_check_pressed(ord("J")) {
-	juno = !juno;
-}
-if juno image_blend = c_yellow;
-else image_blend = c_white;
-
 if can_act && button_pressed(inputs.shoot) && can_shoot {
 	//Shoot chips
 	if instance_exists(die) {
 		if (USE_CHARGES && active_charges > 0) || (!USE_CHARGES && (global.mana[MANA.YELLOW] > 0)) {
-			//Zone where chips cannot be shot to stop people from wasting chips
-			if !juno && (abs(die.y - Board.bbox_bottom) >  55) {
-				with instance_create_layer(x, y, "Projectiles", obj_chip) {
-					motion_set(other.gunangle, 16)
-				}
-				sound_play_pitch(choose(sndChipThrow1, sndChipThrow2), 1)
-				sprite_index = sprHandThanosSnap;
-				image_index = 0;
-				with obj_cuffs {
-					sprite_index = sprCuffsFire
-					image_index = 0
-				}
+			// Try active, if it succeeds, spend resources
+			if active() {
 				if USE_CHARGES {
 					active_charges -= 1;
 				}
 				else {
-					mana_spend(MANA.YELLOW, 1)
+					mana_spend(MANA.YELLOW, 1);
 				}
+				
+				player_fire();
+				
 			}
-			else if juno {
-				with die {
-					effects.add_effect(self, new JunoEffect())
-					vspeed = max_fallspeed * .8;
-					pierce += 2;
-					if USE_CHARGES {
-						other.active_charges -= 1;
-					}
-					else {
-						mana_spend(MANA.YELLOW, 1)
-					}
-					with instance_create_layer(x, y, "FX", obj_fx) {
-						sprite_index = sprFXJuno
-					}
-				}
-			}
+			
+			//if !juno && (abs(die.y - Board.bbox_bottom) >  55) {
+			//	with instance_create_layer(x, y, "Projectiles", obj_chip) {
+			//		motion_set(other.gunangle, 16)
+			//	}
+			//	sound_play_pitch(choose(sndChipThrow1, sndChipThrow2), 1)
+			//	sprite_index = sprHandThanosSnap;
+			//	image_index = 0;
+			//	with obj_cuffs {
+			//		sprite_index = sprCuffsFire
+			//		image_index = 0
+			//	}
+			//	if USE_CHARGES {
+			//		active_charges -= 1;
+			//	}
+			//	else {
+			//		mana_spend(MANA.YELLOW, 1)
+			//	}
+			//}
+			//else if juno {
+			//	with die {
+			//		effects.add_effect(self, new JunoEffect())
+			//		vspeed = max_fallspeed * .8;
+			//		pierce += 2;
+			//		if USE_CHARGES {
+			//			other.active_charges -= 1;
+			//		}
+			//		else {
+			//			mana_spend(MANA.YELLOW, 1)
+			//		}
+			//		with instance_create_layer(x, y, "FX", obj_fx) {
+			//			sprite_index = sprFXJuno
+			//		}
+			//	}
+			//}
 		}
 	}
 	//Shoot dice
 	else if inBoard {
-		with instance_create_layer(x, y, "Projectiles", PlayerBall) {
+		with instance_create_layer(x, y, "Projectiles", Player.character.ball) {
 			motion_set(other.gunangle, other.throw_speed)
 			other.die = id;
 		}
 			
-		sound_play_pitch(sndDieThrow, 1)
-		sprite_index = sprHandThrow;
-		has_dice = false
-		image_index = 0;
-		throw_start()
-		with obj_cuffs {
-			sprite_index = sprCuffsFire
-			image_index = 0
-		}
+		sound_play_pitch(sndDieThrow, 1);
+		
+		sprite_change(spr_throw);
+		
+		has_dice = false;
+		throw_start();
+		player_fire();
 	}
 }
 
@@ -104,7 +108,7 @@ if !NO_DASHES {
 		dash_direction = _input;
 		sound_play_pitch(choose(sndDash1, sndDash2), 1);
 		if !has_dice{
-			sprite_index = sprHandDash;
+			sprite_index = spr_dash;
 			image_index = 0;
 		}
 	}
@@ -118,8 +122,9 @@ if !NO_DASHES {
 }
 
 //Portal reset
-if portal > -4 && !place_meeting(x, y, portal)portal = -4;
-
+if instance_exists(portal) && !place_meeting(x, y, portal) {
+	portal = noone;
+}
 
 
 //Fake Spell Casting

@@ -104,7 +104,8 @@ function enable_shooter() {
 	with Shooter {
 		has_dice = true
 		can_shoot = true
-		sprite_index = sprHandIdleA;
+		sprite_index = spr_hold;
+		on_refresh()
 	}
 	
 	

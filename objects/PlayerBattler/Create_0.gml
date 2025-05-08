@@ -16,3 +16,6 @@ status_y = function() {
 	gml_pragma("forceinline")
 	return bbox_top;
 }
+
+sprite_index = Player.character.spr_idle;
+bg_color = Player.character.bg_color;

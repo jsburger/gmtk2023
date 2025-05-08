@@ -3,7 +3,7 @@ if(other.image_blend != c_dkgray){
 	other.nograv = false;
 	if (dash_timer){
 		
-		with(other){
+		with(other) {
 			instance_create_layer(x, y, "FX", obj_hit_large)
 			vspeed = bounce_speed;
 			bounce_speed = (bounce_speed * 0.8);

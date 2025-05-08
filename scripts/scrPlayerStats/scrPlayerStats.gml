@@ -1,9 +1,11 @@
 global.player_stats = {
+	character : new Character("Default"),
 	hp: 50,
 	throws_max: 1,
 	throws: 1,
 	abilities: []
 }
+#macro Player global.player_stats
 
 function player_get_hp() {
 	if instance_exists(PlayerBattler) return PlayerBattler.hp;
@@ -15,7 +17,6 @@ function player_set_hp(n) {
 	global.player_stats.hp = n;
 	with PlayerBattler hp = n;
 }
-
 
 /// Give the player an ability. Accepts Ability instances or a String name
 /// @param {Struct.Ability, String} ability

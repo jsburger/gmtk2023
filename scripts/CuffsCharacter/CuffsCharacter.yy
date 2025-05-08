@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"CuffsCharacter",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"CuffsCharacter",
+  "parent":{
+    "name":"Cuffs",
+    "path":"folders/Characters/Cuffs.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

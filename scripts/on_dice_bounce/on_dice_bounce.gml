@@ -11,7 +11,7 @@ function on_dice_bounce(dice) {
 	}
 	with(dice) if patience_enable && !is_ghost {
 		if last_bounce_patience_frame < current_time{
-			if point_distance(x,y,last_bounce_coords[0],last_bounce_coords[1]) < TILE_WIDTH{
+			if point_distance(x,y,last_bounce_coords[0],last_bounce_coords[1]) < TILE_WIDTH {
 				var _last_patience = last_bounce_patience
 				last_bounce_patience --;
 				last_bounce_patience_frame = current_time + 1000;

@@ -1,7 +1,11 @@
 function draw_dice_preview(_x, _y, gunangle, launch_speed = 18, modifier_struct = undefined) {
 	draw_set_alpha(.8)
 	with parBoardObject ghost_hits = 0;
-	with instance_create_layer(_x, _y, "Instances", PlayerBall) {
+	var obj = PlayerBall;
+	if instance_is(self, Shooter) {
+		obj = Player.character.ball;
+	}
+	with instance_create_layer(_x, _y, "Instances", obj) {
 		is_ghost = true;
 		
 		var is_ball = instance_is(other, PlayerBall);
