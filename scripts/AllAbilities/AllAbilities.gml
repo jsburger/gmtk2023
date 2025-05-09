@@ -40,9 +40,8 @@ global.abilitykeys = {};
 			name = "Redify"
 			desc = "Redify 8 bricks"
 			set_costs(3, 0, 1)
-			sprite_index = sprPortraitBg
-			image_xscale = .35
-			image_yscale = .35
+			sprite_index = new Sprite(sprPortraitBg).scale(.35);
+			sprite_index.image_blend = c_red;
 		
 			act = function(runner) {
 				recolor(8, COLORS.RED)
@@ -50,7 +49,22 @@ global.abilitykeys = {};
 		
 			return self;
 		}
+	})
 	
+	SPELLS.REVIVE = register_ability("Revive", function() {
+		with new Ability(TARGET_TYPE.NONE) {
+			name = "Revive";
+			desc = "Respawn 10 bricks";
+			set_costs(1, 1, 1);
+			sprite_index = new Sprite(sprPortraitBg).scale(.35);
+			sprite_index.image_blend = merge_color(c_lime, c_gray, .7);
+			
+			act = function(runner) {
+				consume(new RespawnItem(owner, 10))
+			}
+			
+			return self;
+		}
 	})
 	
 #endregion

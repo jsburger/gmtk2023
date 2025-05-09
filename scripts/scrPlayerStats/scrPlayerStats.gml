@@ -32,8 +32,9 @@ function ability_grant(ability) {
 on_game_load(function() {
 	ability_grant(SPELLS.SLAMMY)
 	ability_grant(SPELLS.BLOCKO)
-	ability_grant(SPELLS.REDIFY)
+	//ability_grant(SPELLS.REDIFY)
 	//ability_grant("Hit24")
 	ability_grant(SPELLS.PLACE_BOMB)
 	ability_grant(SPELLS.PLACE_BARREL)
+	ability_grant(SPELLS.REVIVE)
 })

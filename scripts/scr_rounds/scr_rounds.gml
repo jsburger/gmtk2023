@@ -8,10 +8,17 @@ global.interface = new CombatInterface();
 #macro game_speed game_get_speed(gamespeed_fps)
 
 
-function on_encounter_start(func) {
-	static resetCalls = [];
+function on_encounter_start() {
+	static hooks = [];
 	
-	array_push(resetCalls, func)
+	if argument_count > 0 {
+		array_push(hooks, argument[0]);
+	}
+	else {
+		for (var i = 0; i < array_length(hooks); i++) {
+			hooks[i]();
+		}
+	}
 }
 
 function encounter_start() {
@@ -20,9 +27,7 @@ function encounter_start() {
 		global.encounter_current = encounter_get()
 	}
 	
-	array_foreach(on_encounter_start.resetCalls, function(call) {
-		call()
-	})
+	on_encounter_start();
 	
 	//var array = array_build(AbilityButton);
 	//array_sort(array, function(a, b) {if a.y > b.y return 1 else return -1})
@@ -235,6 +240,9 @@ function make_new_board() {
 		clear_item()
 	}
 	with BoardOccupant clear_item()
+	
+	array_clear(global.dead_bricks);
+	
 	//with Board {
 	//	splat_start();
 	//	draw_clear_alpha(c_black, 0);

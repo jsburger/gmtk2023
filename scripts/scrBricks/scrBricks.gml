@@ -201,6 +201,8 @@ function brick_killed_by_damage(brick) {
 		
 		brick.set_poisoned(false)
 	}
+	
+	array_push(global.dead_bricks, jsonify_instance(brick));
 }
 
 function board_column_max() {

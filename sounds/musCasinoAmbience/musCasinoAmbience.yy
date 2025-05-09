@@ -13,7 +13,7 @@
   "name":"musCasinoAmbience",
   "parent":{
     "name":"Music",
-    "path":"folders/Music.yy",
+    "path":"folders/Sounds/Music.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

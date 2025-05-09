@@ -157,3 +157,25 @@ function RawCombatItem(owner, _func) : CombatItem(owner) constructor {
 	}
 	
 }
+
+global.dead_bricks = [];
+function RespawnItem(owner, count) : CombatItem(owner) constructor {
+	self.count = count;
+	
+	static act = function(runner) {
+		var d = global.dead_bricks;
+		var n = min(provider_get(count), array_length(d));
+		if (progress >= n) {
+			done();
+			exit;
+		}
+		var index = irandom(array_length(d));
+		with spawn_json_object(d[index]) {
+			if instance_is(self, parBoardObject) {
+				alarm[0] = 1;
+			}
+		}
+		array_delete(d, index, 1);
+		if (n != progress - 1) runner.wait(4);
+	}
+}

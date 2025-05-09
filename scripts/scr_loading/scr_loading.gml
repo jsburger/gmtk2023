@@ -283,6 +283,23 @@ function jsonify_instance(inst) {
 	return json
 }
 
+function spawn_json_object(entry) {
+	var pos = transform_instance_position(entry);
+	var obj = asset_get_index(entry.object_index);
+	with instance_create_layer(pos.x, pos.y, "Instances", obj) {	
+
+		if variable_struct_exists(entry, "data") {
+			serializer.read(entry.data)
+		}
+			
+		//if !Board.editor && instance_is(self, parBoardObject) {
+		//	alarm[0] = manhatten_distance(x, y, Board.bbox_left, Board.bbox_top)/32
+		//}
+		
+		return self;
+	}
+}
+
 #macro current_level global.level_data[global.level_num]
 
 function save_current_level() {
