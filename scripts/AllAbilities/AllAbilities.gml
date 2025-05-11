@@ -63,6 +63,10 @@ global.abilitykeys = {};
 				consume(new RespawnItem(owner, 10))
 			}
 			
+			can_cast_modifier = function() {
+				return (array_length(global.dead_bricks) > 0);
+			}
+			
 			return self;
 		}
 	})

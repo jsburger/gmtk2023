@@ -164,12 +164,12 @@ function RespawnItem(owner, count) : CombatItem(owner) constructor {
 	
 	static act = function(runner) {
 		var d = global.dead_bricks;
-		var n = min(provider_get(count), array_length(d));
-		if (progress >= n) {
+		var n = provider_get(count);
+		if (progress >= n || array_length(d) <= 0) {
 			done();
 			exit;
 		}
-		var index = irandom(array_length(d));
+		var index = irandom(array_length(d) - 1);
 		with spawn_json_object(d[index]) {
 			if instance_is(self, parBoardObject) {
 				alarm[0] = 1;

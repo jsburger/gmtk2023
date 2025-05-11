@@ -84,8 +84,10 @@ function Ability(TargetType = TARGET_TYPE.BATTLER) : CombatInterface() construct
 		for (var i = 0; i < MANA.MAX; ++i) {
 		    if global.mana[i] < costs[i] return false
 		}
-		return true
+		return can_cast_modifier();
 	}
+	
+	static can_cast_modifier = function() { return true; }
 	
 	static spend_mana = function() {
 		var costs = modified_costs.get();
