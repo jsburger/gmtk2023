@@ -32,6 +32,11 @@ function mouse_in_rectangle(x1, y1, x2, y2) {
 	return point_in_rectangle(mouse_x, mouse_y, x1, y1, x2, y2)
 }
 
+function mouse_in_bbox(inst) {
+	gml_pragma("forceinline");
+	return point_in_bbox(mouse_x, mouse_y, inst);
+}
+
 function point_distance_struct(a, b) {
 	return point_distance(a.x, a.y, b.x, b.y);
 }

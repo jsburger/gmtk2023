@@ -91,6 +91,37 @@ function brick_status_clear(brick) {
 	}
 }
 
+function brick_status_text(brick) {
+	var a = [];
+	if brick.is_burning {
+		array_push(a,
+			"Burning:",
+			"Hitting this brick with your ball will inflict you with 1 stack of Burn.",
+			"Burn deals damage to you when casting spells."
+		);
+	}
+	if brick.is_frozen {
+		array_push(a,
+			"Frozen:",
+			"While this brick is frozen, your spells cost more.",
+			"Dealing damage to this brick will instead un-freeze it."
+		);
+	}
+	if brick.is_poisoned {
+		array_push(a,
+			"Poisoned:",
+			"At the end of your turn, take 1 damage.",
+		);
+	}
+	if brick.is_cursed {
+		array_push(a,
+			"Cursed:",
+			"When destroyed, this will fire a projectile at the Shooter."
+		)
+	}
+	return a;
+}
+
 #region Statuses
 	/// Returns if the brick is burning, frozen, or poisoned
 	function brick_has_elemental_status(brick) {

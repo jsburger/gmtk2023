@@ -18,11 +18,14 @@ if (can_act) {
 	speed = clamp(speed, -maxspeed, maxspeed)
 }
 
-gunangle = point_direction(x, y, mouse_x, mouse_y);
-if gunangle > 180{
-	if gunangle > 270{
+if !button_check(inputs.inspect) {
+	gunangle = point_direction(x, y, mouse_x, mouse_y);
+}
+if gunangle > 180 {
+	if gunangle > 270 {
 		gunangle = 0;	
-	}else gunangle = 180;
+	}
+	else gunangle = 180;
 }
 
 //image_xscale = ((gunangle + 270) % 360) < 180 ? -1 : 1;

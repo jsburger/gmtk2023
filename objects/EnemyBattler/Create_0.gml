@@ -60,7 +60,7 @@ current_actions = [];
 move_max = 1;
 move_rerolls = 0;
 
-/// @returns {Struct.EnemyMove}
+/// @returns {Struct.MoveFactory}
 get_next_action = function() {
 	switch(movemode) {
 		case moveOrder.RANDOM:

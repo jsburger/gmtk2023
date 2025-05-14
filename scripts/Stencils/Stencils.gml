@@ -12,6 +12,13 @@ function stencil_setup_read() {
 	gpu_set_stencil_pass(stencilop_keep);
 }
 
+function stencil_setup_avoid() {
+	gpu_set_stencil_enable(true);
+	gpu_set_stencil_func(cmpfunc_notequal);
+	gpu_set_stencil_ref(gpu_get_stencil_ref() + 1);
+	gpu_set_stencil_pass(stencilop_keep);
+}
+
 function stencil_disable() {
 	gpu_set_stencil_enable(false);
 }

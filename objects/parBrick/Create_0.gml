@@ -16,3 +16,7 @@ on_ball_impact = method(self, impact_normal);
 #endregion
 
 drop_gibs = true;
+
+inspect_text = function() {
+	return brick_status_text(self);
+}

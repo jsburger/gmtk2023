@@ -12,10 +12,11 @@ if ability != undefined {
 	font_pop()
 }
 
-stencil_setup_write(1);
+if (hovered || active) { stencil_setup_write(1); }
 draw_self()
 image_blend = c_white;
 
+if (hovered || active) { stencil_disable(); }
 
 if ability != undefined {
 

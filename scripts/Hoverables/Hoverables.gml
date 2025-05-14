@@ -2,6 +2,11 @@
 function gather_hoverables() {
 	static last_inst = noone;
 	
+	if button_check(inputs.inspect) {
+		if instance_exists(last_inst) last_inst.hovered = false;
+		return noone;
+	}
+	
 	var tester = {
 		depth : infinity,
 		inst : noone,
