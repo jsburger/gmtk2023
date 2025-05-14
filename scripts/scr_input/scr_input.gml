@@ -10,93 +10,79 @@ function button_released(inputName) {
 	return getInput(inputName, inputTypes.released);
 }
 
+/// @ignore
+function get_input_keys(input) {
+	static keys = memoize_array(inputs.MAX, function(i) {
+		switch (i) {
+			case (inputs.use):
+				return ["E", vk_enter, vk_space]
+			case (inputs.up):
+				return ["W", vk_up]
+			case (inputs.down):
+				return ["S", vk_down]
+			case (inputs.right):
+				return ["D", vk_right]
+			case (inputs.left):
+				return ["A", vk_left]
+				
+			case(inputs.turn_left):
+				return ["Q"];
+			case(inputs.turn_right):
+				return ["E"];
+				
+			case(inputs.editor_cycle):
+				return [vk_left, vk_right]
+			case(inputs.editor_left):
+				return [vk_left]
+			case(inputs.editor_right):
+				return [vk_right]
+			case(inputs.editor_clear):
+				return [vk_delete]
+			case(inputs.editor_save):
+				return [vk_enter]
+			case(inputs.editor_new):
+				return ["N"]
+			case(inputs.editor_reload):
+				return ["T"]
+			case(inputs.editor_translate_down):
+				return [vk_down]
+			case(inputs.editor_translate_up):
+				return [vk_up]
+			case(inputs.editor_modifier):
+				return [vk_shift]
+			case(inputs.editor_color_mode):
+				return ["C"]
+			case (inputs.editor_objects):
+				return [vk_tab]
+			case (inputs.editor_info):
+				return ["`"]
+		
+			case (inputs.menu_use):
+				return [mb_left]
+			case (inputs.mouse_right):
+				return [mb_right];
+			case (inputs.menu_select):
+				return [mb_middle];
+			
+			case(inputs.shoot):
+				return [mb_left];
+			case(inputs.dash):
+				return [vk_space, mb_right]
+				
+			case (inputs.inspect):
+				return [vk_alt];
+		}
+	});
+	
+	return keys[input];	
+}
+
+/// @ignore
 function getInput(inputName, inputType) {
 	
 	if instance_exists(obj_text_prompt) return false
 	
-	var keys = [];
-
-	switch (inputName) {
-		case (inputs.use):
-			keys = ["E", vk_enter, vk_space]
-			break
-		case (inputs.up):
-			keys = ["W", vk_up]
-			break
-		case (inputs.down):
-			keys = ["S", vk_down]
-			break
-		case (inputs.right):
-			keys = ["D", vk_right]
-			break
-		case (inputs.left):
-			keys = ["A", vk_left]
-			break
-			
-		case(inputs.turn_left):
-			keys = ["Q"];
-			break
-		case(inputs.turn_right):
-			keys = ["E"];
-			break
-			
-		case(inputs.editor_cycle):
-			keys = [vk_left, vk_right]
-			break
-		case(inputs.editor_left):
-			keys = [vk_left]
-			break
-		case(inputs.editor_right):
-			keys = [vk_right]
-			break
-		case(inputs.editor_clear):
-			keys = [vk_delete]
-			break
-		case(inputs.editor_save):
-			keys = [vk_enter]
-			break
-		case(inputs.editor_new):
-			keys = ["N"]
-			break
-		case(inputs.editor_reload):
-			keys = ["T"]
-			break 
-		case(inputs.editor_translate_down):
-			keys = [vk_down]
-			break 
-		case(inputs.editor_translate_up):
-			keys = [vk_up]
-			break 
-		case(inputs.editor_modifier):
-			keys = [vk_shift]
-			break
-		case(inputs.editor_color_mode):
-			keys = ["C"]
-			break
-		case (inputs.editor_objects):
-			keys = [vk_tab]
-			break
-		case (inputs.editor_info):
-			keys = ["`"]
-			break
-		
-		case (inputs.menu_use):
-			keys = [mb_left]
-			break
-		case (inputs.mouse_right):
-			keys = [mb_right];
-			break
-		case (inputs.menu_select):
-			keys = [mb_middle];
-			break
-			
-		case(inputs.shoot):
-			keys = [mb_left];
-			break
-		case(inputs.dash):
-			keys = [vk_space, mb_right]
-			break
-	}
+	var keys = get_input_keys(inputName);	
 	
 	for (var i = 0; i < array_length(keys); i++) {
 		if check_button(keys[i], inputType) return true
@@ -104,6 +90,7 @@ function getInput(inputName, inputType) {
 	return false
 }
 
+/// @ignore
 function check_button(input, inputType) {
 	if is_string(input) {
 		return get_key_function(ord(input), inputType)
@@ -114,6 +101,7 @@ function check_button(input, inputType) {
 	else return get_key_function(input, inputType)
 }
 
+/// @ignore
 function get_key_function(input, inputType) {
 	switch(inputType) {
 		case(inputTypes.pressed):
@@ -125,6 +113,7 @@ function get_key_function(input, inputType) {
 	}
 }
 
+/// @ignore
 function get_mouse_function(input, inputType) {
 	switch(inputType) {
 		case(inputTypes.pressed):
@@ -149,6 +138,7 @@ enum inputs {
 	menu_select,
 	turn_left,
 	turn_right,
+	
 	editor_save,
 	editor_cycle,
 	editor_left,
@@ -161,7 +151,11 @@ enum inputs {
 	editor_modifier,
 	editor_color_mode,
 	editor_objects,
-	editor_info
+	editor_info,
+	
+	inspect,
+	
+	MAX
 }
 
 enum inputTypes {
