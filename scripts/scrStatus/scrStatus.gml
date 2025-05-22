@@ -318,7 +318,14 @@ function StatusBurn(count) : Status(count) constructor {
 	
 	static after_ability_used = function() {
 		static interface = new CombatInterface();
+		with instance_create_layer(PlayerBattler.x, PlayerBattler.y + 24, "FX", obj_fx) {
+			needs_board = false;
+			sprite_index = sprFXBurnPortrait
+			image_angle = 0;
+		}	
+	
 		interface.run(function(){battler_hurt(CombatRunner.player, strength, self)})
+
 		// Play Sound
 		sound_play_random(sndBurn);		
 	}

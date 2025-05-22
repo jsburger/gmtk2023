@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprTokenFall",
-    "path":"sprites/sprTokenFall/sprTokenFall.yy",
+    "name":"sprTokenSpinBottom",
+    "path":"sprites/sprTokenSpinBottom/sprTokenSpinBottom.yy",
   },
   "spriteMaskId":null,
   "visible":true,

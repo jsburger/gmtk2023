@@ -6,4 +6,6 @@ event_inherited();
 //fullclear_ignore = true;
 drop_gibs = false;
 
+image_blend = c_white;
+
 dont_flip;

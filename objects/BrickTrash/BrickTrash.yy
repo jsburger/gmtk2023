@@ -9,8 +9,8 @@
   "name":"BrickTrash",
   "overriddenProperties":[],
   "parent":{
-    "name":"Bricks",
-    "path":"folders/Objects/New Blocks/Bricks.yy",
+    "name":"Enemy Specific",
+    "path":"folders/Objects/New Blocks/Enemy Specific.yy",
   },
   "parentObjectId":{
     "name":"parCommonBrick",

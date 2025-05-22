@@ -10,4 +10,8 @@ for(var i = 0; i < 3; i++) {
 	}
 }
 
-sound_play(sndSwitch2)
+with instance_create_layer(x, y, "FX", obj_fx) {
+	sprite_index = sprFXSphere
+}
+
+sound_play(sndBrickCashHit)
