@@ -15,7 +15,7 @@ function sprite_get_animation_frame(sprite) {
 	return get_animation_frame(sprite_get_number(sprite), sprite_get_speed(sprite))
 }
 
-/// @param {Asset.GMSprite, Struct.Sprite} sprite
+/// @param {Asset.GMSprite,Struct.Sprite} sprite
 function draw_sprite_auto(sprite, x, y) {
 	if is_struct(sprite) && is_instanceof(sprite, Sprite) {
 		sprite.draw(x, y);

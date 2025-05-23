@@ -1,3 +1,29 @@
+if !surface_exists(marker_surface) {
+	marker_surface = surface_create(cam_width, cam_height);
+	surface_set_target(marker_surface);
+	draw_clear_alpha(c_black, 0);
+	surface_reset_target();
+}
+
+var camera_x = cam_x,
+	camera_y = cam_y;
+if instance_exists(obj_screenshake) {
+	camera_x = obj_screenshake.camera_x;
+	camera_y = obj_screenshake.camera_y;
+}
+draw_surface_ext(marker_surface, camera_x, camera_y, 1, 1, 0, c_white, .6);
+if button_check(inputs.draw) && !button_check(inputs.inspect) {
+	if button_check(inputs.dash) {
+		draw_sprite_auto(sprMarkerEraser, mouse_x, mouse_y)
+	}
+	else {
+		var _y = mouse_y - (button_check(inputs.shoot) ? 0 : 10)
+		draw_sprite_auto(sprMarkerCursor, mouse_x, _y);
+		draw_sprite_ext(sprMarkerCursorOverlay, 0, mouse_x, _y, 1, 1, 0, mana_get_color(marker_color_index), 1);
+	}
+}
+
+
 if(editor){
 	
 	var _str =

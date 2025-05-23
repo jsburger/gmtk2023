@@ -1,5 +1,33 @@
 /// @description Editor Code
 
+if button_check(inputs.draw) {
+	if button_pressed(inputs.shoot) {
+		marker_x = mouse_x;
+		marker_y = mouse_y;
+	}
+	if button_check(inputs.shoot) {
+		marker_draw(mouse_x, mouse_y, mana_get_color(marker_color_index), 6);
+	}
+	
+	if button_pressed(inputs.dash) {
+		marker_x = mouse_x;
+		marker_y = mouse_y;
+	}
+	if button_check(inputs.dash) {
+		gpu_set_blendmode(bm_subtract);
+		marker_draw(mouse_x, mouse_y, c_white, 20);
+		gpu_set_blendmode(bm_normal);
+	}
+	
+	if mouse_wheel_up() {
+		marker_color_index = wrap(marker_color_index + 1, COLORS.RED, COLORS.YELLOW + 1);
+	}
+	if mouse_wheel_down() {
+		marker_color_index = wrap(marker_color_index - 1, COLORS.RED, COLORS.YELLOW + 1);
+	}
+}
+
+
 if become_active > 0 {
 	become_active -= 1
 	if become_active == 0 {

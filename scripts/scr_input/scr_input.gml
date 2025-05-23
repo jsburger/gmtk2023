@@ -71,6 +71,9 @@ function get_input_keys(input) {
 				
 			case (inputs.inspect):
 				return [vk_alt];
+				
+			case (inputs.draw):
+				return [vk_control];
 		}
 	});
 	
@@ -154,6 +157,7 @@ enum inputs {
 	editor_info,
 	
 	inspect,
+	draw,
 	
 	MAX
 }

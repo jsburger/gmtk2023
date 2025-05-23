@@ -2,7 +2,7 @@
 function gather_hoverables() {
 	static last_inst = noone;
 	
-	if button_check(inputs.inspect) {
+	if button_check(inputs.inspect) || button_check(inputs.draw) {
 		if instance_exists(last_inst) last_inst.hovered = false;
 		return noone;
 	}

@@ -68,6 +68,24 @@ splat_end = function() {
 	matrix_set(matrix_world, matrix_build_identity())
 }
 
+marker_surface = undefined;
+marker_x = mouse_x;
+marker_y = mouse_y;
+
+marker_draw = function(x, y, col, size) {
+	matrix_set(matrix_world, matrix_build(-cam_x, -cam_y, 0, 0, 0, 0, 1, 1, 1))
+	surface_set_target(marker_surface);
+	draw_circle_color(marker_x, marker_y, size, col, col, false);
+	draw_line_width_color(marker_x, marker_y, x, y, 2 * size, col, col);
+	draw_circle_color(x, y, size, col, col, false);
+	surface_reset_target();
+	matrix_set(matrix_world, matrix_build_identity())
+	
+	marker_x = x;
+	marker_y = y;
+}
+
+marker_color_index = COLORS.RED;
 
 editor = false;
 canplace = true;
