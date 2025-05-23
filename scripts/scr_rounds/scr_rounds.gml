@@ -9,16 +9,7 @@ global.interface = new CombatInterface();
 
 
 function on_encounter_start() {
-	static hooks = [];
-	
-	if argument_count > 0 {
-		array_push(hooks, argument[0]);
-	}
-	else {
-		for (var i = 0; i < array_length(hooks); i++) {
-			hooks[i]();
-		}
-	}
+	HOOK_BODY
 }
 
 function encounter_start() {
@@ -241,7 +232,7 @@ function make_new_board() {
 	}
 	with BoardOccupant clear_item()
 	
-	array_clear(global.dead_bricks);
+	on_board_clear();
 	
 	//with Board {
 	//	splat_start();

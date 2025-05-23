@@ -159,6 +159,10 @@ function RawCombatItem(owner, _func) : CombatItem(owner) constructor {
 }
 
 global.dead_bricks = [];
+on_board_clear(function() {
+	array_clear(global.dead_bricks);
+})
+
 function RespawnItem(owner, count) : CombatItem(owner) constructor {
 	self.count = count;
 	

@@ -591,6 +591,7 @@
     {"id":{"name":"metal_brick_tint","path":"scripts/metal_brick_tint/metal_brick_tint.yy",},},
     {"id":{"name":"MoveFactory","path":"scripts/MoveFactory/MoveFactory.yy",},},
     {"id":{"name":"object_get_real_mask","path":"scripts/object_get_real_mask/object_get_real_mask.yy",},},
+    {"id":{"name":"on_board_clear","path":"scripts/on_board_clear/on_board_clear.yy",},},
     {"id":{"name":"on_dice_bounce","path":"scripts/on_dice_bounce/on_dice_bounce.yy",},},
     {"id":{"name":"placement_effect","path":"scripts/placement_effect/placement_effect.yy",},},
     {"id":{"name":"Pool","path":"scripts/Pool/Pool.yy",},},

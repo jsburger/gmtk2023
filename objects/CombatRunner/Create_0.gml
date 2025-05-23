@@ -248,6 +248,7 @@ end_combat = function() {
 	combat_ending = true;
 	
 	fade_to(encounter_room)
+	on_board_clear();
 	// Test code to reset player health when they "die"
 	if player_get_hp() <= 0 player_set_hp(50)
 	
