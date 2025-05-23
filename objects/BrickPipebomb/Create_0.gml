@@ -17,17 +17,20 @@ on_hurt = function(damage) {
 	}
 }
 
+explosion_size = 7
+
 get_rectangle = function() {
+	var n = TILE_WIDTH * explosion_size/2
 	if is_vertical return {
 		x1: bbox_left - 6,
-		y1: board_top,
+		y1: y - n,
 		x2: bbox_right + 6,
-		y2: board_bottom
+		y2: y + n
 	}
 	return {
-		x1: board_left,
+		x1: x - n,
 		y1: bbox_top - 6,
-		x2: board_right,
+		x2: x + n,
 		y2: bbox_bottom + 6,
 	}
 }
