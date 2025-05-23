@@ -261,6 +261,7 @@
     {"$GMIncludedFile":"","%Name":"TestInk1.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"TestInk1.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"TestInvaders1.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"TestInvaders1.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"TestLayers1.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"TestLayers1.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"TestLow.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"TestLow.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"TestPawn1.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"TestPawn1.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"TestPawn2.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"TestPawn2.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"TestPawn3.txt","CopyToMask":-1,"filePath":"datafiles/Levels","name":"TestPawn3.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},

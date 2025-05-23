@@ -49,6 +49,11 @@ encounter_add(
 		.with_enemies(BattlerGayLittleSquirrel)
 )
 
+encounter_add(
+	new Encounter("One Squirrel Low")
+		.with_boards("TestLow")
+		.with_enemies(BattlerGayLittleSquirrel)
+)
 
 encounter_add(
 	new Encounter("Two Squirrels")
