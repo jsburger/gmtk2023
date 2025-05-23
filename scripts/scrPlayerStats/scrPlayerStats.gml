@@ -37,4 +37,5 @@ on_game_load(function() {
 	ability_grant(SPELLS.PLACE_BOMB)
 	ability_grant(SPELLS.PLACE_BARREL)
 	ability_grant(SPELLS.REVIVE)
+	ability_grant(SPELLS.REDIFY)
 })
