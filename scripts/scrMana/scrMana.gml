@@ -29,6 +29,7 @@ global.mana_effects = {attack: 0, block: 0}
 
 //Reset mana when game restarted
 on_encounter_start(mana_reset)
+on_board_clear(mana_effects_clear)
 
 function mana_add(type, amount) {
 	with EnemyBattler if variable_instance_exists(self, "on_mana_gained") {
@@ -211,5 +212,12 @@ function mana_stat_effect_give(x, y, color, count) {
 				}
 				break;
 		}
+	}
+}
+
+function mana_effects_clear() {
+	with global.mana_effects {
+		attack = 0;
+		block = 0;
 	}
 }
