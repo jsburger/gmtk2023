@@ -5,6 +5,7 @@ event_inherited();
 #macro flip image_xscale *= choose(-1, 1)
 #macro dont_flip image_xscale = abs(image_xscale)
 #macro shuffle image_index = irandom(image_number - 1)
+#macro dont_shuffle image_index = 0
 
 #region Fade in
 	is_visible = true;

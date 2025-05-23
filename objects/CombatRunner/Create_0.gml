@@ -73,6 +73,7 @@ throws = 1;
 				statuses.on_ability_used();
 			}
 		}
+		player_fire();		
 		current_ability = undefined;
 	}
 	

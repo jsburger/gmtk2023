@@ -1,7 +1,7 @@
 /// @description draw_self();
 
 if is_cursed { //This gets replaced later
-	var alpha = .4 + dsin((current_frame * 3) + manhatten_distance(x, y, board_left, board_right)) * .1,
+	var alpha = .4 + dsin((current_frame * 3) + manhatten_distance(x, y, board_left, board_top)) * .1,
 		scale = 1.3;
 	draw_sprite_ext(
 		sprite_index, image_index, x, y,
