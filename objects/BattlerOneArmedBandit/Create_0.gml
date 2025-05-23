@@ -62,11 +62,10 @@ add_action("RESPIN", function() {
 		blue_wave_count += 1;
 	}).delay = 0;
 	
-	var blue_payout = new DummyStatus("Blue Payout");
-	with blue_payout {
-		desc = "PAYOUT will create an additional line of blue bricks.";
-		sprite_index = new ColoredSprite(COLORS.BLUE, sprBrick);
-	};
+	var blue_payout = new DummyStatus("Blue Payout",
+		"PAYOUT will create an additional line of blue bricks.",
+		new ColoredSprite(COLORS.BLUE, sprBrick)
+	);
 	apply_status(TARGETS.SELF, blue_payout)
 	
 	add_intent(new Intent(new ColoredSprite(COLORS.BLUE, sprBrick), "4"))
@@ -85,11 +84,10 @@ add_action("HOT STUFF", function() {
 		red_wave_count += 1;
 	}).delay = 0;
 	
-	var red_payout = new DummyStatus("Red Payout");
-	with red_payout {
-		desc = "PAYOUT will create an additional line of red bricks.";
-		sprite_index = new ColoredSprite(COLORS.RED, sprBrick);
-	};
+	var red_payout = new DummyStatus("Red Payout",
+		"PAYOUT will create an additional line of red bricks.",
+		new ColoredSprite(COLORS.RED, sprBrick)
+	);
 	apply_status(TARGETS.SELF, red_payout)
 	
 	add_intent(new Intent(new ColoredSprite(COLORS.RED, sprBrick), damage))
@@ -110,12 +108,10 @@ add_action("JACKPOT", function() {
 		//procs += 1;
 	})
 	
-	var payout = new DummyStatus("Jackpot");
-	with payout {
-		desc = "PAYOUT will create 2 additional trash bricks.";
-		sprite_index = new Sprite(sprBrickSquare);
-		strength = 2;
-	};
+	var payout = new DummyStatus("Jackpot",
+		"PAYOUT will create 2 additional trash bricks.",
+		new Sprite(sprBrickSquare).with_color(c_gray)
+	);
 	apply_status(TARGETS.SELF, payout)
 	
 	MOVEEND	

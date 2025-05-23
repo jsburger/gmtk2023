@@ -13,6 +13,10 @@ spr_icon = sprHighRollerIcon
 roll_max = 6;
 roll = irandom_range(1, roll_max);
 
+spindown = new DummyStatus("Spindown", "Rerolls attack damage when hit", sprHighRollerPassive)
+spindown.show_strength = false;
+statuses.add_status(spindown, 1);
+
 enemy_hurt = function() {
 	if roll > 0 {
 		roll = roll - 1;	

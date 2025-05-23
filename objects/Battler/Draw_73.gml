@@ -11,4 +11,4 @@
 	}
 
 	// Draw statuses
-	statuses.draw(status_x(), status_y())
+	if hp > 0 statuses.draw(status_x(), status_y())

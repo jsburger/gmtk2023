@@ -260,9 +260,11 @@ function Status(Strength) : Hoverable() constructor {
 	}
 }
 
-function DummyStatus(Name) : Status(1) constructor {
+function DummyStatus(Name, Desc, _sprite) : Status(1) constructor {
 	key = Name;
-	name = Name;
+	name = Name;;
+	sprite_index = _sprite;
+	desc = Desc;
 }
 
 STATUS.STRENGTH = status_register("Strength", function(count) {return new StatusStrength(count)})

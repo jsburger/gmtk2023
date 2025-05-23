@@ -1058,6 +1058,7 @@
     {"id":{"name":"sprHealthBarUnder","path":"sprites/sprHealthBarUnder/sprHealthBarUnder.yy",},},
     {"id":{"name":"sprHighRollerIcon","path":"sprites/sprHighRollerIcon/sprHighRollerIcon.yy",},},
     {"id":{"name":"sprHighRollerIdle","path":"sprites/sprHighRollerIdle/sprHighRollerIdle.yy",},},
+    {"id":{"name":"sprHighRollerPassive","path":"sprites/sprHighRollerPassive/sprHighRollerPassive.yy",},},
     {"id":{"name":"sprHouseRoll","path":"sprites/sprHouseRoll/sprHouseRoll.yy",},},
     {"id":{"name":"sprHud","path":"sprites/sprHud/sprHud.yy",},},
     {"id":{"name":"sprIconBg","path":"sprites/sprIconBg/sprIconBg.yy",},},
