@@ -19,6 +19,7 @@ function StatusHolder(creator) : HoverableParent() constructor {
 				struct_set(status_map, status_key.key, status_key);
 				status_key.add();
 			}
+			return self;
 		}
 		
 		if struct_exists(status_map, status_key) {
@@ -100,6 +101,7 @@ function StatusHolder(creator) : HoverableParent() constructor {
 		return array_filter(struct_get_values(status_map), func)
 	}
 	
+	/// @returns {Struct.Status}
 	static find = function(key) {
 		return struct_get(status_map, key);
 	}
@@ -124,10 +126,14 @@ function StatusHolder(creator) : HoverableParent() constructor {
 			var s = statuses[i],
 				draw_x = status_x(x, i),
 				draw_y = status_y(y, i);
-			draw_sprite(s.sprite_index, sprite_get_animation_frame(s.sprite_index), draw_x, draw_y)
-			draw_text(draw_x + 22, draw_y + 22, string(s.strength))
+			
+			draw_sprite_auto(s.sprite_index, draw_x, draw_y)
+			if s.show_strength {
+				draw_text(draw_x + 22, draw_y + 22, string(s.strength));
+			}
 		}
 		__status_loop {
+			var s = statuses[i];
 			if s.hovered {
 				draw_textbox(status_x(x, i), status_y(y, i), [s.name, s.desc])
 			}
@@ -139,7 +145,7 @@ function StatusHolder(creator) : HoverableParent() constructor {
 			var s = statuses[i],
 				_x = status_x(basex, i),
 				_y = status_y(basey, i);
-			tester.test_box(s, _x, _y, 32, depthbase);
+			tester.test_box(s, _x, _y, 32, depthbase + i/100);
 		}
 	}
 }
@@ -187,6 +193,8 @@ function Status(Strength) : Hoverable() constructor {
 	strength_provider = new FunctionProvider(function() {return strength})
 	
 	timeline_entry = undefined;
+	
+	show_strength = true;
 	
 	static set_owner = function(Owner) {
 		owner = Owner

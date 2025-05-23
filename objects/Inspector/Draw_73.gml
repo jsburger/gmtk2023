@@ -15,9 +15,10 @@ if fade > 0 {
 	
 	draw_rectangle_simple(cam_x, cam_y, cam_right, cam_bottom, c_black, .5 * fade);
 	
-	if instance_exists(inspected) {
-		stencil_disable();
+	stencil_disable();
 	
+	if instance_exists(inspected) {
+		
 		font_push(fntSmall);
 		draw_set_color(c_white);
 		draw_textbox(inspected.bbox_right + 32, inspected.bbox_top - 32, text);

@@ -12,6 +12,7 @@ function Sprite(sprite) constructor {
 		return image_blend;
 	}
 
+
 	static draw = function(draw_x, draw_y) {
 		draw_sprite_ext(sprite_index, sprite_get_animation_frame(sprite_index), draw_x + x, draw_y + y,
 		image_xscale, image_yscale, image_angle, get_color(), image_alpha)
@@ -20,6 +21,10 @@ function Sprite(sprite) constructor {
 	static scale = function(xscale, yscale = xscale) {
 		image_xscale = xscale;
 		image_yscale = yscale;
+		return self;
+	}
+	static with_color = function(color) {
+		image_blend = color;
 		return self;
 	}
 }
