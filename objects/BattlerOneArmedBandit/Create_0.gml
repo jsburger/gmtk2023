@@ -4,6 +4,7 @@
 event_inherited();
 
 extra_objects = [BrickTrash, FakeSolid]
+spr_icon = sprOneArmedBanditIcon;
 
 set_hp(80);
 move_max = 3;
@@ -17,12 +18,12 @@ decide_actions = function() {
 	if sleeping {
 		clear_actions();
 			//This part is optional. Doing nothing just works.
-			mount_move(nap);
+			mount_move(payout);
 		Timeline.update();
 		exit;
 	}
 	super.decide_actions();
-	mount_move(payout);
+	//mount_move(payout);
 	Timeline.update();
 }
 
@@ -42,9 +43,6 @@ on_turn_end = function() {
 	sleeping = !sleeping;
 	//odds = base_odds;
 	procs = 0;
-	blue_wave_count = 0;
-	red_wave_count = 0;
-	garbage_brick_count = 5;
 }
 
 nap = new MoveFactory("NAPPING", function() {
@@ -63,6 +61,14 @@ add_action("RESPIN", function() {
 	run(function() {
 		blue_wave_count += 1;
 	}).delay = 0;
+	
+	var blue_payout = new DummyStatus("Blue Payout");
+	with blue_payout {
+		desc = "PAYOUT will create an additional line of blue bricks.";
+		sprite_index = new ColoredSprite(COLORS.BLUE, sprBrick);
+	};
+	apply_status(TARGETS.SELF, blue_payout)
+	
 	add_intent(new Intent(new ColoredSprite(COLORS.BLUE, sprBrick), "4"))
 		.with_desc("Gain 4 block.\nPAYOUT will create an additional line of blue bricks.")
 		.with_backdrop(sprIntentDefend);
@@ -78,6 +84,14 @@ add_action("HOT STUFF", function() {
 	run(function() {
 		red_wave_count += 1;
 	}).delay = 0;
+	
+	var red_payout = new DummyStatus("Red Payout");
+	with red_payout {
+		desc = "PAYOUT will create an additional line of red bricks.";
+		sprite_index = new ColoredSprite(COLORS.RED, sprBrick);
+	};
+	apply_status(TARGETS.SELF, red_payout)
+	
 	add_intent(new Intent(new ColoredSprite(COLORS.RED, sprBrick), damage))
 		.with_desc(format("Deal {0} damage.\nPAYOUT will create an additional line of red bricks.", damage))
 		.with_backdrop(sprIntentAttack)
@@ -94,7 +108,16 @@ add_action("JACKPOT", function() {
 		garbage_brick_count += 2;
 		//odds *= 2;
 		//procs += 1;
-	})	
+	})
+	
+	var payout = new DummyStatus("Jackpot");
+	with payout {
+		desc = "PAYOUT will create 2 additional trash bricks.";
+		sprite_index = new Sprite(sprBrickSquare);
+		strength = 2;
+	};
+	apply_status(TARGETS.SELF, payout)
+	
 	MOVEEND	
 })
 
@@ -127,6 +150,7 @@ add_action("JACKPOT", function() {
 			}
 			
 			blue_wave_count -= 1;
+			with statuses.find("Blue Payout") knock();
 			runner.wait(15)
 			exit;
 		}
@@ -147,6 +171,7 @@ add_action("JACKPOT", function() {
 			}
 		
 			red_wave_count -= 1;
+			with statuses.find("Red Payout") knock();
 			runner.wait(15)
 			exit;
 		}
@@ -181,9 +206,11 @@ add_action("JACKPOT", function() {
 				var inst = place_trash_bricks(board_column_random(), BrickTrash, 1);
 				if instance_exists(inst){ 
 					count -= 1;
+					garbage_brick_count -= 1;
 					//inst.set_color(COLORS.YELLOW)
 				}
 			}
+			with statuses.find("Jackpot") clear();
 		})
 		
 		add_intent(new Intent(sprBrickSquare, 5))

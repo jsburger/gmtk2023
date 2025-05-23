@@ -1103,6 +1103,7 @@
     {"id":{"name":"sprNumbersWhite","path":"sprites/sprNumbersWhite/sprNumbersWhite.yy",},},
     {"id":{"name":"sprOldPerson","path":"sprites/sprOldPerson/sprOldPerson.yy",},},
     {"id":{"name":"sprOldPersonIcon","path":"sprites/sprOldPersonIcon/sprOldPersonIcon.yy",},},
+    {"id":{"name":"sprOneArmedBanditIcon","path":"sprites/sprOneArmedBanditIcon/sprOneArmedBanditIcon.yy",},},
     {"id":{"name":"sprOneArmedBanditIdle","path":"sprites/sprOneArmedBanditIdle/sprOneArmedBanditIdle.yy",},},
     {"id":{"name":"sprOneWayBrick","path":"sprites/sprOneWayBrick/sprOneWayBrick.yy",},},
     {"id":{"name":"sprPeg","path":"sprites/sprPeg/sprPeg.yy",},},
