@@ -1,4 +1,6 @@
 /// @description 
+draw_rectangle_simple(cam_x, cam_y, cam_right, cam_bottom, c_black, .5)
+
 mouse_found = false;
 hovered = false;
 
@@ -9,13 +11,12 @@ for (var i = 0; i < array_length(list); i++) {
 	var col = c_white;
 	if hovered {
 		hovered_index = i;
-		draw_sprite_ext(sprEnemyBgSmall, 0, xmid, ymid, 1, 1, 0, c_gray, .7);
 	}
 	else {
-		col = c_gray;
-	}	
+		if Board.placer_index != i col = c_gray;
+	}
+	draw_sprite_ext(sprEnemyBgSmall, 0, xmid, ymid, 1, 1, 0, c_gray, .7);
 	draw_sprite_ext(sprEnemyFrameSmall, 0, xmid, ymid, 1, 1, 0, col, .7);
-	draw_set_color(c_white)
 	list[i].draw_preview(xmid, ymid);
 }
 if (hovered_index > -1) {
