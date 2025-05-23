@@ -4,7 +4,23 @@ function StatusHolder(creator) : HoverableParent() constructor {
 	owner = creator;
 	is_player = false;
 	
+	/// @param {String, Struct.Status} status_key
 	static add_status = function(status_key, strength) {
+		// Support for inline statuses
+		if is_struct(status_key) {
+			if struct_exists(status_map, status_key.key) {
+				var status = struct_get(status_map, status_key.key);
+				status.on_stack(strength);
+			}
+			else {
+				status_key.strength = strength;
+				status_key.set_owner(owner);
+				status_key.set_holder(self);
+				struct_set(status_map, status_key.key, status_key);
+				status_key.add();
+			}
+		}
+		
 		if struct_exists(status_map, status_key) {
 			var status = struct_get(status_map, status_key);
 			status.on_stack(strength);
@@ -234,6 +250,11 @@ function Status(Strength) : Hoverable() constructor {
 	static on_stack = function(amount) {
 		strength += amount;
 	}
+}
+
+function DummyStatus(Name) : Status(1) constructor {
+	key = Name;
+	name = Name;
 }
 
 STATUS.STRENGTH = status_register("Strength", function(count) {return new StatusStrength(count)})
