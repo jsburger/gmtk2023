@@ -104,5 +104,13 @@ if instance_exists(obj_screenshake) {
 }
 draw_surface(splat_surface, camera_x, camera_y);
 
+if !surface_exists(marker_surface) {
+	marker_surface = surface_create(cam_width, cam_height);
+	surface_set_target(marker_surface);
+	draw_clear_alpha(c_black, 0);
+	surface_reset_target();
+}
+
+draw_surface_ext(marker_surface, camera_x, camera_y, 1, 1, 0, c_ltgray, .6);
 
 if NO_MAX_SPEED draw_text(0, 10, "No ball speed cap")

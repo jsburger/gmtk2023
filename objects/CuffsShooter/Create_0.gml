@@ -13,7 +13,7 @@ spr_toss = sprHandThanosSnap;
 
 active = function() {
 	//Zone where chips cannot be shot to stop people from wasting chips
-	if (abs(die.y - Board.bbox_bottom) >  55) {
+	//if (abs(die.y - Board.bbox_bottom) >  55) {
 		with instance_create_layer(x, y, "Projectiles", obj_chip) {
 			motion_set(other.gunangle, 16);
 		}
@@ -21,6 +21,6 @@ active = function() {
 		sprite_change(spr_toss);
 		
 		return true;
-	}
-	return false;
+	//}
+	//return false;
 }

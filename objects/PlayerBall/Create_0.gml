@@ -19,15 +19,15 @@ on_board_bottom = function() {
 			exit;
 		}
 	}
-	else {
+	else if bbox_bottom > board_bottom + 10 {
 		touchedBottom += 1;
 		if touchedBottom {
 			if !is_ghost {
 				with SafetyNet deactivate()
 			}
 		}
-		y = yprevious;
-		vspeed = -5;
+		y += (board_bottom - bbox_bottom) - vspeed;
+		vspeed = -6;
 		if NO_DASHES {
 			vspeed *= 4;
 			effects.add_effect(self, new CannonLaunchEffect())

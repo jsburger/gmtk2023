@@ -19,10 +19,10 @@ if button_check(inputs.draw) {
 		gpu_set_blendmode(bm_normal);
 	}
 	
-	if mouse_wheel_up() {
+	if mouse_wheel_down() {
 		marker_color_index = wrap(marker_color_index + 1, COLORS.RED, COLORS.YELLOW + 1);
 	}
-	if mouse_wheel_down() {
+	if mouse_wheel_up() {
 		marker_color_index = wrap(marker_color_index - 1, COLORS.RED, COLORS.YELLOW + 1);
 	}
 }

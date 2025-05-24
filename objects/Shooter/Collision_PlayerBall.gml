@@ -1,5 +1,5 @@
 /// @description Dash into die
-if(other.image_blend != c_dkgray){
+if(other.image_blend != c_dkgray) && other.vspeed >= 1 {
 	other.nograv = false;
 	if (dash_timer){
 		
