@@ -9,8 +9,15 @@ var xoff = 0,
 
 for(var i = MANA.RED; i < MANA.MAX; i++) {
 	var color = merge_color(mana_get_color(i), c_white, blink[i]/3)
-	draw_number_panel(delta_x + gap * i, y - 34, string(global.mana_gained[i]), color, 2, .5)
-	draw_number_panel(draw_x + gap * i, y, string(global.mana[i]), color, 2)
+	draw_number_panel(delta_x + gap * i, y - 34, string(global.mana_gained[i]), color, 2, .5);
+	var number = global.mana[i];
+	if Board.editor {
+		number = bricks_with_color(i);
+	}
+	draw_number_panel(draw_x + gap * i, y, string(number), color, 2);
+}
+if Board.editor {
+	draw_number_panel(draw_x + gap * i - 12, y, string(bricks_with_color(COLORS.NONE)), c_gray, 2, .5)
 }
 
 //draw_text(x, y, global.mana[MANA.RED]);

@@ -1,4 +1,4 @@
-function get_animation_frame(framecount, _fps = 10) {
+function get_animation_frame(framecount, _fps = 12) {
 	// f/s / animation/s = frames per animation frame
 	var n = 60 / _fps;
 	return (time_to_frame() / n) mod framecount;
@@ -6,8 +6,9 @@ function get_animation_frame(framecount, _fps = 10) {
 
 function time_to_frame() {
 	//1000 ms/s / f/s = ms per game frame
-	static n = 1000/60;
-	return round(current_time / n);
+	//static n = 1000/60;
+	gml_pragma("forceinline");
+	return round(current_time / (1000/60));
 }
 
 function sprite_get_animation_frame(sprite) {

@@ -1,0 +1,17 @@
+spell rework:
+requirements:
+	enemy targeting: no friendly fire, only living battlers. have to discover valid targets
+		TargetedSpell class that handles this like current system?
+	placement options
+		click and drag
+		drawing preview
+		placement checking
+		taking editor placers? would need destroying disabled.
+		
+
+Combatrunner.current_spell
+	left_click, no right click
+	done() script which tells combat runner when the spell is done
+	cancel click events
+	
+	
