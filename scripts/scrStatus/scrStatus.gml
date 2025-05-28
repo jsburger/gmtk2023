@@ -67,11 +67,11 @@ function StatusHolder(creator) : HoverableParent() constructor {
 		}
 	}
 	
-	static on_ability_used = function() {
+	static on_spell_used = function() {
 		__status_loop {
 			var s = statuses[i];
-			if struct_exists(s, "after_ability_used") {
-				s.after_ability_used()
+			if struct_exists(s, "after_spell_used") {
+				s.after_spell_used()
 			}
 		}
 	}
@@ -285,7 +285,7 @@ STATUS.FREEZE = status_register("Freeze", function(count) {return new StatusFree
 function StatusFreeze(Strength) : Status(Strength) constructor {
 
 	name = "Frozen"
-	desc = "Increases the mana cost of abilities."
+	desc = "Increases the mana cost of spells."
 	sprite_index = sprStatusFrost;
 	
 	static step = function() {
@@ -325,11 +325,11 @@ function StatusFreeze(Strength) : Status(Strength) constructor {
 		strength = 0;
 	}
 	
-	/// @param {Struct.AbilityCostModifier} modifier
-	static modify_ability_cost = function(modifier) {
-		var position = modifier.ability.position + 1,
-			posmax = array_length(global.player_stats.abilities),
-			index = strength mod posmax, //How many abilities are in a partial lap
+	/// @param {Struct.SpellCostModifier} modifier
+	static modify_spell_cost = function(modifier) {
+		var position = modifier.spell.position + 1,
+			posmax = array_length(global.player_stats.spells),
+			index = strength mod posmax, //How many spells are in a partial lap
 			base = strength div posmax; //How many laps the freeze count makes
 		if position <= index { //If this is in a partial lap
 			base += 1;
@@ -347,7 +347,7 @@ function StatusBurn(count) : Status(count) constructor {
 	name = "Burned";
 	desc = new Formatter("YOUVE BEEN BURNED!!!! \nTAKE {0} DAMAGE WHEN YOU CAST SPELLS!", strength_provider)
 	
-	static after_ability_used = function() {
+	static after_spell_used = function() {
 		static interface = new CombatInterface();
 		with instance_create_layer(PlayerBattler.x, PlayerBattler.y + 24, "FX", obj_fx) {
 			needs_board = false;

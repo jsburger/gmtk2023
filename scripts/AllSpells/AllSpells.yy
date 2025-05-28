@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"AllAbilities",
+  "%Name":"AllSpells",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"AllAbilities",
+  "name":"AllSpells",
   "parent":{
-    "name":"Player Abilities",
-    "path":"folders/Scripts/Combat/Player Abilities.yy",
+    "name":"Spells",
+    "path":"folders/Scripts/Combat/Spells.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -3,12 +3,12 @@
 var _x = x,
 	scale = image_xscale;
 //x += 50 * lean
-if !(ability.can_cast()) {
+if !(spell.can_cast()) {
 	image_blend = c_ltgray;
 }
-if ability != undefined {
+if spell != undefined {
 	font_push(fntSmall)
-	image_xscale += ((string_width(ability.desc) + 8)/sprite_get_width(sprite_index)) * lean;
+	image_xscale += ((string_width(spell.desc) + 8)/sprite_get_width(sprite_index)) * lean;
 	font_pop()
 }
 
@@ -18,23 +18,23 @@ image_blend = c_white;
 
 if (hovered || active) { stencil_disable(); }
 
-if ability != undefined {
+if spell != undefined {
 
 	if hovered || active {
 		stencil_setup_read()
 	
 		font_push(fntSmall)
-		draw_text(bbox_left + 64, y - 24, ability.name)
-		draw_text(bbox_left + 64, y + 8, ability.desc)
+		draw_text(bbox_left + 64, y - 24, spell.name)
+		draw_text(bbox_left + 64, y + 8, spell.desc)
 		font_pop()
 	
 		stencil_disable();
 	}
 	
-	draw_sprite_auto(ability.sprite_index, bbox_left + 32, y)
+	draw_sprite_auto(spell.sprite_index, bbox_left + 32, y)
 	
 	var count = 0,
-		costs = ability.modified_costs.get();
+		costs = spell.modified_costs.get();
 	for (var i = 0; i < array_length(costs); i++) {
 		if costs[i] > 0 {
 			//var enough = global.mana[i] >= costs[i];
@@ -45,9 +45,9 @@ if ability != undefined {
 		}
 	}
 	var col = merge_color(c_maroon, c_ltgray, .5)
-	if ability.uses != infinity draw_number_panel(bbox_right, bbox_top + 12, string(ability.uses), col, undefined, .5);
+	if spell.uses != infinity draw_number_panel(bbox_right, bbox_top + 12, string(spell.uses), col, undefined, .5);
 	
-	//draw_text(bbox_left, bbox_top - 8, string(ability.position))
+	//draw_text(bbox_left, bbox_top - 8, string(spell.position))
 }
 x = _x
 image_xscale = scale;

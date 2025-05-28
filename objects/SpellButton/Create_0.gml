@@ -1,11 +1,11 @@
 /// @description 
 setup = function() {
-	if is_string(ability) && string_length(ability) > 0 {
-		ability = ability_get(ability_key);
+	if is_string(spell) && string_length(spell) > 0 {
+		spell = spell_get(spell_key);
 	}
 }
 
-ability = undefined;
+spell = undefined;
 setup()
 active = false;
 lean = 0;
@@ -20,13 +20,13 @@ can_click = function() {
 	return combat_active();
 }
 on_click = function() {
-	if ability != undefined {
+	if spell != undefined {
 		var denied = true;
-		if ability.can_cast() {
-			// Try to mount ability and see if it succeeds
-			if CombatRunner.spell_mount(ability) {
+		if spell.can_cast() {
+			// Try to mount spell and see if it succeeds
+			if CombatRunner.spell_mount(spell) {
 				denied = false;
-				if !ability.is_instant {
+				if !spell.is_instant {
 					active = true;	
 				}
 				else {

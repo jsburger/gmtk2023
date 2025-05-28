@@ -1,23 +1,23 @@
-/// @param {Struct.Ability} ability
-function calculate_ability_cost(ability) {
-	var modifier = new AbilityCostModifier(ability),
-		sources = gather_ability_cost_modifiers();
+/// @param {Struct.Spell} spell
+function calculate_spell_cost(spell) {
+	var modifier = new SpellCostModifier(spell),
+		sources = gather_spell_cost_modifiers();
 	
 	for (var i = 0, l = array_length(sources); i < l; i++) {
-		sources[i].modify_ability_cost(modifier);
+		sources[i].modify_spell_cost(modifier);
 	}
 	
 	return modifier.get_result();
 }
 
 /// @ignore
-function gather_ability_cost_modifiers() {
+function gather_spell_cost_modifiers() {
 	var modifiers = [];
 	
 	var player_statuses;
 	with PlayerBattler {
 		array_transfer(modifiers, statuses.filter(function(status) {
-			return struct_exists(status, "modify_ability_cost")
+			return struct_exists(status, "modify_spell_cost")
 		}))
 	}
 	
@@ -26,8 +26,8 @@ function gather_ability_cost_modifiers() {
 
 
 /// @ignore
-function AbilityCostModifier(ability) constructor {
-	self.ability = ability;
+function SpellCostModifier(spell) constructor {
+	self.spell = spell;
 	adders = array_create_2d(MANA.MAX);
 	multipliers = array_create_2d(MANA.MAX);
 	
@@ -40,7 +40,7 @@ function AbilityCostModifier(ability) constructor {
 	}
 	
 	static get_result = function() {
-		var original = variable_clone(ability.costs);
+		var original = variable_clone(spell.costs);
 		
 		for (var i = 0; i < array_length(adders); i++) {
 			if original[i] > 0 { //Don't add to 0 costs

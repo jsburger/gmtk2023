@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"Abilities",
+  "%Name":"draw_object_ghost",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Abilities",
+  "name":"draw_object_ghost",
   "parent":{
-    "name":"Player Abilities",
-    "path":"folders/Scripts/Combat/Player Abilities.yy",
+    "name":"Util",
+    "path":"folders/Scripts/Util.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

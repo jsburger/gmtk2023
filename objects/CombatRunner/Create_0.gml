@@ -28,10 +28,6 @@ targeted_enemy = 0;
 waitTime = 0;
 acting = false;
 
-current_ability = undefined;
-targeting = false;
-post_ability = undefined;
-
 current_target = undefined;
 
 combat_started = false;
@@ -74,7 +70,7 @@ throws = 1;
 		if (current_spell != undefined) {
 			if current_spell.triggers_reactions {
 				with Battler {
-					statuses.on_ability_used();
+					statuses.on_spell_used();
 				}
 			}
 			player_fire();
@@ -87,7 +83,7 @@ throws = 1;
 			current_spell.clear();
 		}
 		current_spell = undefined;
-		with AbilityButton { if active { active = false; } }
+		with SpellButton { if active { active = false; } }
 	}
 	
 	set_target = function(inst) {
@@ -95,64 +91,6 @@ throws = 1;
 	}
 #endregion
 
-#region Running Ability Logic
-
-	/// Returns if the ability was mounted successfully
-	mount_ability = function(ability, call_after = undefined) {
-		if current_ability != undefined {
-			if !current_ability.can_cancel return false;
-			cancel_targeting()
-		}
-		current_ability = ability
-		targeting = ability.needs_target
-		if call_after != undefined {
-			post_ability = call_after;
-		}		
-		if !targeting {
-			run_ability()
-			//cancel_targeting()
-		}
-		return true;
-	}
-
-	run_ability = function() {
-		//current_actor = PlayerBattler.id;
-		current_ability.act();
-		current_ability.after_cast();
-		if post_ability != undefined {
-			post_ability();
-			post_ability = undefined;
-		}
-		
-		if !struct_exists(current_ability, "is_normal_ass_attack") {
-			with Battler {
-				statuses.on_ability_used();
-			}
-		}
-		player_fire();		
-		current_ability = undefined;
-	}
-	
-	accept_target = function(info) {
-		if current_ability.accepts_target(info) {
-			current_target = info
-			run_ability()
-			cancel_targeting() //Doesn't really cancel, just cleans up
-		}
-	}
-	
-	cancel_targeting = function() {
-		current_ability = undefined;
-		targeting = false;
-		post_ability = undefined;
-		with AbilityButton if active {
-			active = false
-		}
-	}
-	
-	
-	
-#endregion
 
 enqueue = function(action) {
 	if acting {

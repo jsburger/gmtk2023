@@ -48,13 +48,6 @@ on_click = function() {
 	}
 }
 
-// Takes priority over on_click when CombatRunner is targeting.
-get_target_info = function() {
-	return {
-		type: TARGET_TYPE.BOARD
-	}
-}
-
 //For drawing shadows
 shadow_surface = -1;
 

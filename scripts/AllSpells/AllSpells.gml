@@ -1,10 +1,25 @@
-global.abilitykeys = {};
-#macro SPELLS global.abilitykeys
+/// @param {String} name
+/// @param {Function} spellFactory
+function register_spell(name, spellFactory) {
+	static spells = ds_map_create();
+	ds_map_add(spells, name, spellFactory)
+	return name;
+}
 
-// Dont make a million of these, I still need to add a prototype system. Like the technical kind of prototype.
+/// @param {String} name
+/// @returns {Struct.Spell, Undefined}
+function spell_get(name) {
+	var proto = register_spell.spells[? name];
+	if proto == undefined return undefined;
+	// Feather disable once GM1045
+	return proto();
+}
+
+global.spellkeys = {};
+#macro SPELLS global.spellkeys
 
 #region Placers
-	SPELLS.PLACE_BOMB = register_ability("PlaceBomb", function() {
+	SPELLS.PLACE_BOMB = register_spell("PlaceBomb", function() {
 		with new PlacerSpell(Bomb) {
 			name = "Bomb Placer"
 			desc = "Place a Bomb"
@@ -14,7 +29,7 @@ global.abilitykeys = {};
 		}
 	})
 
-	SPELLS.PLACE_BRICK = register_ability("PlaceBlock", function() {
+	SPELLS.PLACE_BRICK = register_spell("PlaceBlock", function() {
 		with new PlacerSpell(BrickNormal) {
 			name = "Block Placer"
 			desc = "Place a Block"
@@ -23,7 +38,7 @@ global.abilitykeys = {};
 			return self
 		}
 	})
-	SPELLS.PLACE_BARREL = register_ability("PlaceBarrel", function() {
+	SPELLS.PLACE_BARREL = register_spell("PlaceBarrel", function() {
 		var placer = new LauncherPlacer(Barrel, 45);
 		placer.rotation_speed = 90;
 		
@@ -36,7 +51,7 @@ global.abilitykeys = {};
 		}
 	})
 	
-	SPELLS.PLACE_ORB = register_ability("PlaceOrb", function() {
+	SPELLS.PLACE_ORB = register_spell("PlaceOrb", function() {
 		with new PlacerSpell(DemonOrb) {
 			name = "Summon Demon";
 			desc = "Place a Demon Orb, which colors nearby bricks Purple.";
@@ -46,7 +61,7 @@ global.abilitykeys = {};
 		}
 	})
 	
-	SPELLS.REDIFY = register_ability("Redify", function() {
+	SPELLS.REDIFY = register_spell("Redify", function() {
 		with new InstantSpell() {
 			name = "Redify"
 			desc = "Redify 8 bricks"
@@ -62,7 +77,7 @@ global.abilitykeys = {};
 		}
 	})
 	
-	SPELLS.REVIVE = register_ability("Revive", function() {
+	SPELLS.REVIVE = register_spell("Revive", function() {
 		with new InstantSpell() {
 			name = "Revive";
 			desc = "Respawn 10 bricks";
@@ -85,7 +100,7 @@ global.abilitykeys = {};
 #endregion
 
 #region Attacks
-	SPELLS.SLAMMY = register_ability("Hit6", function() {
+	SPELLS.SLAMMY = register_spell("Hit6", function() {
 		with new AttackSpell(6) {
 			set_costs(0, 8, 0);
 			set_uses(2);
@@ -96,7 +111,7 @@ global.abilitykeys = {};
 		}
 	})
 
-	SPELLS.BIG_SLAMMY = register_ability("Hit24", function() {
+	SPELLS.BIG_SLAMMY = register_spell("Hit24", function() {
 		with new AttackSpell(24) {
 			set_uses(2);
 			set_costs(0, 16, 8)
@@ -107,7 +122,7 @@ global.abilitykeys = {};
 		}
 	})
 
-	SPELLS.BLOCKO = register_ability("Block6", function() {
+	SPELLS.BLOCKO = register_spell("Block6", function() {
 		with new BlockSpell(6) {
 			set_costs(8, 0, 0);
 			set_uses(2);

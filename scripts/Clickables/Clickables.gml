@@ -7,18 +7,7 @@ function Clickables_Step() {
 		var clicked = get_hovered_clickable();
 		if clicked != noone {
 			if !instance_is(clicked, Board) with Board active = false;
-			////If combat is targeting right now, check for targets before clicks
-			//if (instance_exists(CombatRunner) && CombatRunner.targeting) {
-			//	if variable_instance_exists(clicked, "get_target_info") {
-			//		CombatRunner.accept_target(clicked.get_target_info())
-			//	}
-			//	else {
-			//		if CombatRunner.current_ability.can_cancel CombatRunner.cancel_targeting()
-			//	}
-			//}
-			//else {
-				with clicked on_click(mouse_x - bbox_left, mouse_y - bbox_top)
-			//}
+			with clicked on_click(mouse_x - bbox_left, mouse_y - bbox_top)
 		}
 		else {
 			//Disable board when anything is clicked.

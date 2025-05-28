@@ -1,6 +1,6 @@
 /// @description Lean
 
-var cast = ability.can_cast();
+var cast = spell.can_cast();
 var leanMax = active ? 1 : 0;
 
 if hovered {
@@ -19,8 +19,8 @@ else {
 
 lean = lerp(lean, leanMax, .5)
 
-if (hovered || active) && ability != undefined {
-	var costs = ability.costs;
+if (hovered || active) && spell != undefined {
+	var costs = spell.costs;
 	for (var i = 0; i < array_length(costs); i++) {
 		if costs[i] > 0 {
 			with ManaDrawer blink[i] = .6;

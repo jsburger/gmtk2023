@@ -10,6 +10,11 @@ function TargetedSpell() : Spell() constructor {
 			cast();
 		}
 	}
+	
+	/// @param {Real,Struct.Provider,Function} damage
+	static hit = function(damage) {
+		attack(TARGETS.AIMED, damage)
+	}
 }
 
 /// @param {Real,Struct.Provider,Function} damage
@@ -28,7 +33,7 @@ function AttackSpell(damage) : TargetedSpell() constructor {
 			draw_sprite_auto(sprAttackTarget, hovered.x, hovered.y);
 		}
 		
-		with AbilityButton if active {
+		with SpellButton if active {
 			draw_line_width_color(bbox_right, y, _x, _y, 2, c_white, c_white)
 		}
 		
@@ -36,7 +41,7 @@ function AttackSpell(damage) : TargetedSpell() constructor {
 		font_push(fntBig, fa_center, fa_bottom);
 		draw_text_transformed(_x, _y, -damage, 1.5, 1.5, 0);
 		font_pop();
-	}
+	}	
 	
 	static act = function() {
 		attack(TARGETS.AIMED, damage_value)
@@ -53,4 +58,23 @@ function PostThrowAttackSpell(damage) : AttackSpell(damage) constructor {
 		CombatRunner.enqueue_last(new FunctionItem(noone, anonymous(throw_resolve)));
 		done();
 	}
+	
+	static active_draw = function() {
+		var _x = mouse_x, _y = mouse_y,
+			hovered = get_hovered_object();
+		if (accepts_target(hovered)) {
+			_x = hovered.x;
+			_y = hovered.bbox_top + 24;
+			draw_sprite_auto(sprAttackTarget, hovered.x, hovered.y);
+		}
+		
+		with PlayerBattler {
+			draw_line_width_color(bbox_right, y, _x, _y, 2, c_white, c_white)
+		}
+		
+		var damage = provider_get(damage_value);
+		font_push(fntBig, fa_center, fa_bottom);
+		draw_text_transformed(_x, _y, -damage, 1.5, 1.5, 0);
+		font_pop();
+	}	
 }

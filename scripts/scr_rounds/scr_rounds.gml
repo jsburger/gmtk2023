@@ -20,9 +20,9 @@ function encounter_start() {
 	
 	on_encounter_start();
 	
-	//var array = array_build(AbilityButton);
+	//var array = array_build(SpellButton);
 	//array_sort(array, function(a, b) {if a.y > b.y return 1 else return -1})
-	//array_foreach(array, function(inst, index) {inst.ability.position = index})
+	//array_foreach(array, function(inst, index) {inst.spell.position = index})
 
 	global.round = 0
 	with CombatRunner combat_started = true;	
@@ -74,8 +74,8 @@ function player_turn_start() {
 	CombatRunner.throws = 1
 	PlayerBattler.turn_start()
 	
-	array_foreach(global.player_stats.abilities, function(ability) {
-		ability.reset();
+	array_foreach(global.player_stats.spells, function(spell) {
+		spell.reset();
 	})
 	
 	if CombatRunner.throws > 0 {
@@ -135,11 +135,6 @@ function throw_end() {
 		interface.run(function() {
 			var spell = new PostThrowAttackSpell(global.mana_effects.attack);
 			CombatRunner.spell_mount(spell);
-			//	//ability.is_normal_ass_attack = true;
-			//CombatRunner.mount_ability(ability,
-			//function() {
-			//	CombatRunner.enqueue(new FunctionItem(noone, anonymous(throw_resolve)))
-			//})
 			global.mana_effects.attack = 0
 		})
 	}

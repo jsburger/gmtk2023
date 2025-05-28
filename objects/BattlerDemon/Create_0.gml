@@ -9,7 +9,7 @@ extra_objects = [DemonOrb]
 set_hp(99);
 
 on_die = function() {
-	ability_grant(SPELLS.PLACE_ORB);
+	spell_grant(SPELLS.PLACE_ORB);
 }
 
 purple_counter = 0;

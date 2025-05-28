@@ -15,7 +15,7 @@ function Spell() : CombatInterface() constructor {
 	triggers_reactions = true;
 	
 	modified_costs = new FrameCache(function() {
-		return calculate_ability_cost(self);
+		return calculate_spell_cost(self);
 	})
 	
 	static act = function() {};

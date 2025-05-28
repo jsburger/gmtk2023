@@ -1,10 +1,3 @@
-// Takes priority over on_click when CombatRunner is targeting.
-get_target_info = function() {
-	return {
-		type: TARGET_TYPE.BATTLER,
-		instance: other
-	}
-}
 //Here because being targetable means being clickable. Will fix later. Maybe.
 on_click = function() {}
 

@@ -3,7 +3,7 @@ global.player_stats = {
 	hp: 50,
 	throws_max: 1,
 	throws: 1,
-	abilities: []
+	spells: []
 }
 #macro Player global.player_stats
 
@@ -18,24 +18,24 @@ function player_set_hp(n) {
 	with PlayerBattler hp = n;
 }
 
-/// Give the player an ability. Accepts Ability instances or a String name
-/// @param {Struct.Ability, String} ability
-function ability_grant(ability) {
-	if is_string(ability) ability = ability_get(ability)
-	array_push(global.player_stats.abilities, ability)
+/// Give the player an spell. Accepts Spell instances or a String name
+/// @param {Struct.Spell, String} spell
+function spell_grant(spell) {
+	if is_string(spell) spell = spell_get(spell)
+	array_push(global.player_stats.spells, spell)
 	
-	with (AbilityButtonHolder) {
-		add_button(ability)
+	with (SpellButtonHolder) {
+		add_button(spell)
 	}
 }
 
 on_game_load(function() {
-	ability_grant(SPELLS.SLAMMY)
-	ability_grant(SPELLS.BLOCKO)
-	//ability_grant(SPELLS.REDIFY)
-	//ability_grant("Hit24")
-	ability_grant(SPELLS.PLACE_BOMB)
-	ability_grant(SPELLS.PLACE_BARREL)
-	ability_grant(SPELLS.REVIVE)
-	ability_grant(SPELLS.REDIFY)
+	spell_grant(SPELLS.SLAMMY)
+	spell_grant(SPELLS.BLOCKO)
+	//spell_grant(SPELLS.REDIFY)
+	//spell_grant("Hit24")
+	spell_grant(SPELLS.PLACE_BOMB)
+	spell_grant(SPELLS.PLACE_BARREL)
+	spell_grant(SPELLS.REVIVE)
+	spell_grant(SPELLS.REDIFY)
 })

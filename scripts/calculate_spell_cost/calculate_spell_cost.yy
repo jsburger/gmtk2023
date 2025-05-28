@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"AbilityPlacer",
+  "%Name":"calculate_spell_cost",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"AbilityPlacer",
+  "name":"calculate_spell_cost",
   "parent":{
-    "name":"Placers",
-    "path":"folders/Scripts/Combat/Player Abilities/Placers.yy",
+    "name":"Spells",
+    "path":"folders/Scripts/Combat/Spells.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
