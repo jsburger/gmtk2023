@@ -3,7 +3,7 @@ function gather_hoverables() {
 	static last_inst = noone;
 	
 	if button_check(inputs.inspect) || button_check(inputs.draw) {
-		if instance_exists(last_inst) last_inst.hovered = false;
+		if last_inst != noone last_inst.hovered = false;
 		return noone;
 	}
 	
@@ -38,9 +38,13 @@ function gather_hoverables() {
 		instances[i].test_hoverables(tester);
 	}
 	
-	if instance_exists(last_inst) last_inst.hovered = false;
+	if last_inst != noone {
+		last_inst.hovered = false;
+	}
 	last_inst = tester.inst;
-	if instance_exists(last_inst) last_inst.hovered = true;
+	if last_inst != noone {
+		last_inst.hovered = true;
+	}
 	return tester.inst;
 }
 
