@@ -33,7 +33,7 @@ add_action("SYMBOL SLAM!!!", function() {
 		_form = accept_provider(new FunctionProvider(get_form));
 		
 	hit(damage)
-	with add_intent(new Intent(sprIntentAttack, damage)) {
+	with add_intent(new Intent(new ColoredSprite(_form, sprIntentAttackGray), damage)) {
 		desc = format("Deal Damage equal to the \namount of {0} bricks.", new ColorNameProvider(_form));
 	}
 	

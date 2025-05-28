@@ -28,7 +28,7 @@ add_action("Demon Smash", function() {
 	MOVESTART
 	var damage = as_damage(new FunctionProvider(get_purple));
 	hit(damage)
-	add_intent(new Intent(sprIntentAttack, damage)
+	add_intent(new Intent(sprDemonAttackIndicator, damage)
 		.with_desc(format("Deals damage equal to\nthe amount of PURPLE mana\ngained this battle.")))
 		
 	MOVEEND 
