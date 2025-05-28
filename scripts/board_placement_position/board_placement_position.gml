@@ -48,7 +48,7 @@ function board_placement_position(object, _x, _y, halign = ALIGNMENT.CENTER, val
 	}
 }
 
-/// Returns the "smallest" offset using modulo. Express built for grid alignment.
+/// Returns the "smallest" offset using modulo. Purpose built for grid alignment.
 function mod_nearest_offset(n, modulo) {
 	var m = n mod modulo,
 		negative = modulo - m;

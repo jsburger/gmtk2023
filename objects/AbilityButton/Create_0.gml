@@ -24,13 +24,13 @@ on_click = function() {
 		var denied = true;
 		if ability.can_cast() {
 			// Try to mount ability and see if it succeeds
-			if CombatRunner.mount_ability(ability) {
+			if CombatRunner.spell_mount(ability) {
 				denied = false;
-				if ability.needs_target{
+				if !ability.is_instant {
 					active = true;	
 				}
 				else {
-					lean = 1.5	
+					lean = 1.5
 				}
 			}
 		}

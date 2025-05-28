@@ -39,6 +39,62 @@ combat_ending = false;
 
 throws = 1;
 
+#region Spell logic
+
+	clicked = false;
+	clicked_x = 0;
+	clicked_y = 0;
+	
+	is_targeting = function() {
+		return current_spell != undefined;
+	}
+
+	current_spell = new Spell();
+	delete current_spell;
+	current_spell = undefined;
+	
+	/// Returns if the spell was mounted successfully
+	spell_mount = function(spell) {
+		if (current_spell != undefined) {
+			if !current_spell.can_cancel return false;
+			spell_clear();
+		}
+		current_spell = spell;
+		if (spell.is_instant) {
+			current_spell.cast();
+			spell_finish();
+			return true;
+		}
+		current_spell.on_mount();
+		return true;
+	}
+	
+	/// Called when spells call done(), Clears spell and calls several hooks
+	spell_finish = function() {
+		if (current_spell != undefined) {
+			if current_spell.triggers_reactions {
+				with Battler {
+					statuses.on_ability_used();
+				}
+			}
+			player_fire();
+			spell_clear();
+		}
+	}
+	
+	spell_clear = function() {
+		if current_spell != undefined {
+			current_spell.clear();
+		}
+		current_spell = undefined;
+		with AbilityButton { if active { active = false; } }
+	}
+	
+	set_target = function(inst) {
+		current_target = inst;
+	}
+#endregion
+
 #region Running Ability Logic
 
 	/// Returns if the ability was mounted successfully

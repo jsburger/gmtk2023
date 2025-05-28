@@ -133,12 +133,13 @@ function throw_end() {
 	if global.mana_effects.attack > 0 {
 		interface.wait(15)
 		interface.run(function() {
-			var ability = new AbilityAttack(global.mana_effects.attack).dont_cancel();
-				ability.is_normal_ass_attack = true;
-			CombatRunner.mount_ability(ability,
-			function() {
-				CombatRunner.enqueue(new FunctionItem(noone, anonymous(throw_resolve)))
-			})
+			var spell = new PostThrowAttackSpell(global.mana_effects.attack);
+			CombatRunner.spell_mount(spell);
+			//	//ability.is_normal_ass_attack = true;
+			//CombatRunner.mount_ability(ability,
+			//function() {
+			//	CombatRunner.enqueue(new FunctionItem(noone, anonymous(throw_resolve)))
+			//})
 			global.mana_effects.attack = 0
 		})
 	}

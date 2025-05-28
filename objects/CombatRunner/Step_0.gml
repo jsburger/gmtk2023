@@ -32,16 +32,37 @@ if run_round_end && !is_busy() {
 	}
 }
 
-if is_player_turn && current_ability != undefined && !targeting {
-	run_ability()
+if button_pressed(inputs.dash) && is_targeting() && current_spell.can_cancel {
+	spell_clear()
 }
 
-if button_pressed(inputs.dash) && targeting == true && current_ability != undefined && current_ability.can_cancel {
-	cancel_targeting()
-}
-
-if current_ability != undefined && targeting {
-	current_ability.on_target_step();
+if is_targeting() {
+	var spell = current_spell;
+	spell.active_step();
+	
+	if (point_in_bbox(mouse_x, mouse_y, Board)) {
+		// Left Click
+		if button_pressed(inputs.shoot) {
+			clicked = true;
+			clicked_x = mouse_x;
+			clicked_y = mouse_y;
+			spell.on_click();
+		}
+		else {
+			if !button_check(inputs.shoot) {
+				clicked = false
+				spell.on_release()
+			}
+			else {
+				spell.on_hold(clicked_x, clicked_y);
+				clicked_x = mouse_x;
+				clicked_y = mouse_y;
+			}
+		}
+	}
+	else {
+		clicked = false
+	}
 }
 
 //Resolve items added by actions

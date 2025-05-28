@@ -5,7 +5,7 @@ global.abilitykeys = {};
 
 #region Placers
 	SPELLS.PLACE_BOMB = register_ability("PlaceBomb", function() {
-		with new AbilityPlacer(Bomb) {
+		with new PlacerSpell(Bomb) {
 			name = "Bomb Placer"
 			desc = "Place a Bomb"
 			sprite_index = sprBomb
@@ -15,7 +15,7 @@ global.abilitykeys = {};
 	})
 
 	SPELLS.PLACE_BRICK = register_ability("PlaceBlock", function() {
-		with new AbilityPlacer(BrickNormal) {
+		with new PlacerSpell(BrickNormal) {
 			name = "Block Placer"
 			desc = "Place a Block"
 			sprite_index = sprBrick
@@ -24,19 +24,30 @@ global.abilitykeys = {};
 		}
 	})
 	SPELLS.PLACE_BARREL = register_ability("PlaceBarrel", function() {
-		with new AbilityPlacer(Barrel) {
+		var placer = new LauncherPlacer(Barrel, 45);
+		placer.rotation_speed = 90;
+		
+		with new PlacerSpell(placer) {
 			name = "Barrel Placer"
 			desc = "Place a Barrel"
-			can_rotate = true;
-			rotation = 45;
 			sprite_index = sprBarrel
-			set_cost(MANA.YELLOW, 2)	
+			set_cost(MANA.YELLOW, 2)
 			return self
 		}
 	})
 	
-	SPELLS.REDIFY = register_ability("Recolor", function() {
-		with new Ability(TARGET_TYPE.NONE) {
+	SPELLS.PLACE_ORB = register_ability("PlaceOrb", function() {
+		with new PlacerSpell(DemonOrb) {
+			name = "Summon Demon";
+			desc = "Place a Demon Orb, which colors nearby bricks Purple.";
+			set_costs(2, 2, 2);
+			sprite_index = sprDemonOrb;
+			return self;
+		}
+	})
+	
+	SPELLS.REDIFY = register_ability("Redify", function() {
+		with new InstantSpell() {
 			name = "Redify"
 			desc = "Redify 8 bricks"
 			set_costs(3, 0, 1)
@@ -52,7 +63,7 @@ global.abilitykeys = {};
 	})
 	
 	SPELLS.REVIVE = register_ability("Revive", function() {
-		with new Ability(TARGET_TYPE.NONE) {
+		with new InstantSpell() {
 			name = "Revive";
 			desc = "Respawn 10 bricks";
 			set_costs(1, 1, 1);
@@ -75,7 +86,7 @@ global.abilitykeys = {};
 
 #region Attacks
 	SPELLS.SLAMMY = register_ability("Hit6", function() {
-		with new AbilityAttack(6) {
+		with new AttackSpell(6) {
 			set_costs(0, 8, 0);
 			set_uses(2);
 			name = "Slammy"
@@ -86,7 +97,7 @@ global.abilitykeys = {};
 	})
 
 	SPELLS.BIG_SLAMMY = register_ability("Hit24", function() {
-		with new AbilityAttack(24) {
+		with new AttackSpell(24) {
 			set_uses(2);
 			set_costs(0, 16, 8)
 			name = "Slammy Senior"
@@ -97,7 +108,7 @@ global.abilitykeys = {};
 	})
 
 	SPELLS.BLOCKO = register_ability("Block6", function() {
-		with new AbilityDefend(6) {
+		with new BlockSpell(6) {
 			set_costs(8, 0, 0);
 			set_uses(2);
 			name = "Blocko"

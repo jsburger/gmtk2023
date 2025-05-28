@@ -31,7 +31,7 @@ show_owner = false;
 #region Deprecated?
 can_click = function() {
 	if instance_exists(CombatRunner) {
-		return CombatRunner.targeting
+		return CombatRunner.is_targeting()
 	}	
 	return false
 }

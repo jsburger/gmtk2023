@@ -1,4 +1,5 @@
 function EditorPlacer() constructor {
+	admin = true;
 	
 	/// Called when the swap buttons are pressed
 	static cycle = function(dir) {}
@@ -46,13 +47,15 @@ function AbstractObjectPlacer() : EditorPlacer() constructor {
 		var obj = get_object(),
 			mask = object_get_real_mask(obj);
 		
-		var valign = ALIGNMENT.CENTER;
-		if keyboard_check(ord("W")) valign = ALIGNMENT.LOWER;
-		if keyboard_check(ord("S")) valign = ALIGNMENT.UPPER;
-		var halign = ALIGNMENT.CENTER;
-		if keyboard_check(ord("A")) halign = ALIGNMENT.LOWER;
-		if keyboard_check(ord("D")) halign = ALIGNMENT.UPPER;
-
+		var valign = ALIGNMENT.CENTER,
+			halign = ALIGNMENT.CENTER;
+		if admin {
+			if keyboard_check(ord("W")) valign = ALIGNMENT.LOWER;
+			if keyboard_check(ord("S")) valign = ALIGNMENT.UPPER;
+		
+			if keyboard_check(ord("A")) halign = ALIGNMENT.LOWER;
+			if keyboard_check(ord("D")) halign = ALIGNMENT.UPPER;
+		}
 		return board_placement_position(obj, _x, _y, halign, valign);
 		
 		//var pos = board_grid_position(_x, _y),
@@ -91,8 +94,12 @@ function AbstractObjectPlacer() : EditorPlacer() constructor {
 			last_placement_x = _x;
 			last_placement_y = _y;
 			
-			mark_level_changed()
+			if admin {
+				mark_level_changed()
+			}
+			return true;
 		}
+		return false;
 	}
 	
 	static try_delete = function(_x, _y) {
@@ -161,7 +168,7 @@ function AbstractObjectPlacer() : EditorPlacer() constructor {
 			run_across_line(last_placement_x, last_placement_y, mouse_x, mouse_y, TILE_MIN, try_place)
 		}
 		else {
-			try_place(mouse_x, mouse_y)
+			return try_place(mouse_x, mouse_y);
 		}
 	}
 	
@@ -273,13 +280,15 @@ function PortalPlacer() : SingleObjectPlacer(Portal) constructor {
 	}
 }
 
-function LauncherPlacer(object) : SingleObjectPlacer(object) constructor {
-	rotation = 90;
+function LauncherPlacer(object, starting_rotation = 90) : SingleObjectPlacer(object) constructor {
+	rotation = starting_rotation;
+	self.starting_rotation = starting_rotation
+	rotation_speed = 45;
 	line_enabled = false;
 	nograv = object != Barrel;
 	
 	static cycle = function(dir) {
-		var turning = button_check(inputs.editor_modifier) ? 5 : 45;
+		var turning = (button_check(inputs.editor_modifier) && admin) ? 5 : rotation_speed;
 		rotation -= turning * dir;
 		rotation = anglefy(rotation);
 	}
@@ -299,7 +308,7 @@ function LauncherPlacer(object) : SingleObjectPlacer(object) constructor {
 	
 	static reset = function() {
 		reset_placement()
-		rotation = 90;
+		rotation = starting_rotation;
 	}
 	
 	static try_match = function(object) {

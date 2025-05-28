@@ -31,14 +31,8 @@ if ability != undefined {
 		stencil_disable();
 	}
 	
-	if is_struct(ability.sprite_index) && is_instanceof(ability.sprite_index, Sprite) {
-		ability.sprite_index.draw(bbox_left + 32, y)
-	}
-	else {
-		draw_sprite_ext(ability.sprite_index, sprite_get_animation_frame(ability.sprite_index),
-			bbox_left + 32, y, ability.image_xscale, ability.image_yscale,
-			0, c_white, 1);
-	}
+	draw_sprite_auto(ability.sprite_index, bbox_left + 32, y)
+	
 	var count = 0,
 		costs = ability.modified_costs.get();
 	for (var i = 0; i < array_length(costs); i++) {

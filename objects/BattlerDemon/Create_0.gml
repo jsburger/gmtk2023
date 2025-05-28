@@ -8,6 +8,10 @@ extra_objects = [DemonOrb]
 
 set_hp(99);
 
+on_die = function() {
+	ability_grant(SPELLS.PLACE_ORB);
+}
+
 purple_counter = 0;
 
 on_mana_gained = function(color, count) {
