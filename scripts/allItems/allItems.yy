@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_movement",
+  "%Name":"allItems",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_movement",
+  "name":"allItems",
   "parent":{
-    "name":"Systems",
-    "path":"folders/Scripts/Systems.yy",
+    "name":"Items",
+    "path":"folders/Scripts/Combat/Items.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

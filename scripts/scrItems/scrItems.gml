@@ -1,0 +1,19 @@
+/// @ignore
+/// @returns {Array<Struct.Item>}
+function get_item_array() {
+	return [];
+}
+
+global.items = get_item_array()
+#macro ITEM_LOOP for (var index = 0, l = array_length(global.items), item = l > 0 ? global.items[0] : undefined; \
+	index < l; {index++; item = l > index ? global.items[index] : undefined})
+
+function Item() : Hoverable() constructor {
+	name = "Item";
+	desc = "Description";
+	sprite_index = sprIntentAttack;
+	
+	static draw = function(x, y) {
+		draw_sprite_auto(sprite_index, x, y);
+	}
+}
