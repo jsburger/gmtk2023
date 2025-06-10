@@ -32,6 +32,9 @@ on_encounter_start(mana_reset)
 on_board_clear(mana_effects_clear)
 
 function mana_add(type, amount) {
+	ITEM_LOOP {
+		item.on_mana_gained(type, amount);
+	}
 	with EnemyBattler if variable_instance_exists(self, "on_mana_gained") {
 		on_mana_gained(type, amount)
 	}

@@ -30,4 +30,30 @@ function item_grant(name) {
 global.itemKeys = {};
 #macro ITEMS global.itemKeys
 
+on_game_load(function() {
+	item_grant(ITEMS.RED_PAINT)
+})
 
+ITEMS.RED_PAINT = register_item("RedManaToRedBrick", function() {
+	with new Item() {
+		name = "Red Paint";
+		desc = "For each Red Mana you gain,\n1 in 3 to color a brick Red.";
+		sprite_index = sprItemRedPaint;
+		
+		on_mana_gained = function(type, amount) {
+			if type == MANA.RED {
+				var count = 0;
+				repeat(amount) {
+					if chance_good(1, 3) {
+						amount += 1;
+					}
+				}
+				if amount > 0 {
+					global.interface.recolor(amount, COLORS.RED);
+				}
+			}
+		}
+		
+		return self;
+	}
+})

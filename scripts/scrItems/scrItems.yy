@@ -6,7 +6,7 @@
   "name":"scrItems",
   "parent":{
     "name":"Items",
-    "path":"folders/Scripts/Combat/Items.yy",
+    "path":"folders/Scripts/Items.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
