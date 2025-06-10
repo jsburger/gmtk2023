@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"prompt_input",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Unsorted",
+    "path":"folders/Scripts/Unsorted.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

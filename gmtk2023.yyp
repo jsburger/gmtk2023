@@ -67,6 +67,7 @@
     {"$GMFolder":"","%Name":"Game","folderPath":"folders/Scripts/Game.yy","name":"Game","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Math","folderPath":"folders/Scripts/Math.yy","name":"Math","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Systems","folderPath":"folders/Scripts/Systems.yy","name":"Systems","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Unsorted","folderPath":"folders/Scripts/Unsorted.yy","name":"Unsorted","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Util","folderPath":"folders/Scripts/Util.yy","name":"Util","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sounds","folderPath":"folders/Sounds.yy","name":"Sounds","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Dice","folderPath":"folders/Sounds/Dice.yy","name":"Dice","resourceType":"GMFolder","resourceVersion":"2.0",},

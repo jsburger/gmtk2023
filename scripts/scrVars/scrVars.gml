@@ -37,3 +37,9 @@ function instance_ref(inst, variable) {
 		else struct_set_from_hash(inst, variable, argument0)
 	}
 }
+
+function call_safe(inst, variable_name, arguments) {
+	if struct_exists(inst, variable_name) {
+		method_call(struct_get(inst, variable_name), arguments)
+	}
+}
