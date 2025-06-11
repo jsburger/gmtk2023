@@ -1,6 +1,7 @@
 /// @ignore
 /// @returns {Array<Struct.Item>}
 function get_item_array() {
+	// Feather disable once GM1045
 	return [];
 }
 
@@ -12,6 +13,9 @@ function Item() : Hoverable() constructor {
 	name = "Item";
 	desc = "Description";
 	sprite_index = sprIntentAttack;
+	
+	interface = new CombatInterface();
+	interface.set_owner(self);
 	
 	static draw = function(x, y) {
 		draw_sprite_auto(sprite_index, x, y);

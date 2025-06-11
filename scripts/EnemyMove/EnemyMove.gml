@@ -53,6 +53,7 @@ function EnemyMove(_owner) : CombatInterface() constructor {
 	/// @func hit
 	/// Shorthand for targeting the player with an attack
 	static hit = function(damage) {
+		if is_real(damage) damage = as_damage(damage);
 		if (intent_auto && (
 			(is_provider(damage) && !is_instanceof(damage.inner, FunctionProvider))
 			|| is_real(damage))) {
@@ -73,7 +74,7 @@ function EnemyMove(_owner) : CombatInterface() constructor {
 	static as_damage = function(value, target = TARGETS.PLAYER) {
 		if is_method(value) {
 			value = recast_func(value);
-			value = new FunctionProvider(value);
+			//value = new FunctionProvider(value);
 		}
 		return accept_provider(new DamageProvider(value, owner, target))
 	}

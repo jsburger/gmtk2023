@@ -7,6 +7,7 @@ event_inherited();
 extra_objects = [DemonOrb]
 
 set_hp(99);
+spr_icon = sprDemonIcon;
 
 on_die = function() {
 	spell_grant(SPELLS.PLACE_ORB);
@@ -26,7 +27,7 @@ add_action("Demon Smash", function() {
 	}
 	
 	MOVESTART
-	var damage = as_damage(new FunctionProvider(get_purple));
+	var damage = as_damage(get_purple);
 	hit(damage)
 	add_intent(new Intent(sprDemonAttackIndicator, damage)
 		.with_desc(format("Deals damage equal to\nthe amount of PURPLE mana\ngained this battle.")))

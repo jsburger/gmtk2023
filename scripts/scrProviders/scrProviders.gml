@@ -29,17 +29,18 @@ function RangeProvider(minValue, maxValue) : Provider(minValue) constructor {
 }
 
 function DamageProvider(innerProvider, _owner, _target) : Provider(provider_get(innerProvider)) constructor {
-	if !is_provider(innerProvider) innerProvider = new Provider(innerProvider);
 	inner = innerProvider
 	owner = _owner
 	target = _target
 	
 	static on_move_decided = function() {
-		inner.on_move_decided()
+		if is_provider(inner) {
+			inner.on_move_decided()
+		}
 	}
 	
 	static get = function() {
-		var v = inner.get();
+		var v = provider_get(inner)
 		if instance_exists(owner) {
 			v += owner.statuses.get_attack_bonus()
 		}

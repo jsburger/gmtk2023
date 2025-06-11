@@ -4,43 +4,6 @@ enum SORTING {
 	AFTER = 1
 }
 
-#macro __BRICK_RECOLOR_DELAY 3
-
-/// Recolors X bricks to color, preferring uncolored and differently colored bricks.
-/// @returns {Real} Amount of bricks recolored
-function bricks_recolor(count, _color, sorter = undefined) {
-	static finder = new InstanceFinder(parBoardObject) 
-		.filter(function(inst, col) {return inst.colorable && inst.color != col})
-		.prefer(function(inst) {return inst.color == COLORS.NONE})
-	
-	
-	finder.push(sorter, _color)
-	var selected = finder.get(count);
-	
-	//Color the bricks
-	for (var i = 0; i < array_length(selected); i++) {
-		var change = method({color : _color, inst: selected[i]}, function() {
-			inst.set_color(color);
-			// Play Sound
-			sound_play_random(sound_pool(sndColor1));
-			with inst {
-				with (instance_create_layer(random_range(bbox_left, bbox_right), random_range(bbox_top, bbox_bottom), "FX", obj_fx)) {
-					sprite_index = sprFXSplat
-		
-					var rand_scale = random_range(0.5, 1.5);
-					image_xscale = rand_scale;
-					image_yscale = rand_scale;
-					image_blend = mana_get_color(other.color);
-				}
-			}
-		});
-		// Todo: move this to combat runner queue
-		schedule((__BRICK_RECOLOR_DELAY * i) + 1, change)
-	}
-	return array_length(selected)
-	
-}
-
 /// Recolor a single brick
 function brick_recolor(brick, _color) {
 	with brick {

@@ -122,7 +122,7 @@ function RecolorItem(count, color, owner = noone) : CombatItem(owner) constructo
 			var col = provider_get(color)
 			var brick = results[progress];
 			brick_recolor(brick, col)
-			if (progress != (length - 1)) runner.wait(__BRICK_RECOLOR_DELAY)
+			if (progress != (length - 1)) runner.wait(3)
 		}
 		if progress >= length done();
 	}

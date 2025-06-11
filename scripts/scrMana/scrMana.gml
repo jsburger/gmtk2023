@@ -3,7 +3,7 @@ enum MANA {
 	BLUE,
 	YELLOW,
 	
-	MAX //Dont use this, its just meant to represent the last value in the enum so you know how many manas there are
+	MAX //Dont use this, its just meant to represent the last value in the enum.
 }
 
 #macro MANA_NONE -1

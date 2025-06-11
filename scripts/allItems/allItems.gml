@@ -37,19 +37,21 @@ on_game_load(function() {
 ITEMS.RED_PAINT = register_item("RedManaToRedBrick", function() {
 	with new Item() {
 		name = "Red Paint";
-		desc = "For each Red Mana you gain,\n1 in 3 to color a brick Red.";
+		odds = 2;
+		desc = $"For each Red Mana you gain,\n1 in {odds} to color ANY brick Red.";
 		sprite_index = sprItemRedPaint;
-		
+				
 		on_mana_gained = function(type, amount) {
+			static finder = new InstanceFinder(parBrick).filter(colorable_filter(COLORS.RED));
 			if type == MANA.RED {
 				var count = 0;
 				repeat(amount) {
-					if chance_good(1, 3) {
-						amount += 1;
+					if chance_good(1, odds) {
+						count += 1;
 					}
 				}
-				if amount > 0 {
-					global.interface.recolor(amount, COLORS.RED);
+				if count > 0 {
+					interface.recolor(count, COLORS.RED).finder = finder;
 				}
 			}
 		}
