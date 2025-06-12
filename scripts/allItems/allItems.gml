@@ -12,7 +12,7 @@ function item_get(name) {
 	var proto = register_item.items[? name];
 	if proto == undefined return undefined;
 	// Feather disable once GM1045
-	return proto();
+	return proto() ?? Item.last_item;
 }
 
 /// @param {Struct.Item,String} name

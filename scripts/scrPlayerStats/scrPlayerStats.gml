@@ -29,13 +29,13 @@ function spell_grant(spell) {
 	}
 }
 
-on_game_load(function() {
-	spell_grant(SPELLS.SLAMMY)
-	spell_grant(SPELLS.BLOCKO)
-	//spell_grant(SPELLS.REDIFY)
-	//spell_grant("Hit24")
-	spell_grant(SPELLS.PLACE_BOMB)
-	spell_grant(SPELLS.PLACE_BARREL)
-	spell_grant(SPELLS.REVIVE)
-	spell_grant(SPELLS.REDIFY)
-})
+//on_game_load(function() {
+//	spell_grant(SPELLS.SLAMMY)
+//	spell_grant(SPELLS.BLOCKO)
+//	//spell_grant(SPELLS.REDIFY)
+//	//spell_grant("Hit24")
+//	spell_grant(SPELLS.PLACERS.BOMB)
+//	spell_grant(SPELLS.PLACERS.BARREL)
+//	spell_grant(SPELLS.REVIVE)
+//	spell_grant(SPELLS.REDIFY)
+//})

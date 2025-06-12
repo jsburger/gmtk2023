@@ -19,6 +19,10 @@ active = function() {
 		with instance_create_layer(x, y, "FX", obj_fx) {
 			sprite_index = sprFXJuno;
 		}
+		if instance_exists(JunoProbe) {
+			direction = point_direction_struct(self, instance_nearest(x, y, JunoProbe));
+			nograv = true;
+		}
 		return true;
 	}
 	return false;

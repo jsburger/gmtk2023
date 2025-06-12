@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.450729,
+  "duration":1.4507483,
   "name":"sndPipebombLit",
   "parent":{
     "name":"Level Objects",

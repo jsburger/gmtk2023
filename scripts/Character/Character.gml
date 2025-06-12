@@ -9,6 +9,8 @@ function Character(_name) constructor {
 	
 	ball = PlayerBall;
 	
+	starting_spells = [SPELLS.SLAMMY, SPELLS.BLOCKO];
+	
 	static set_sprites = function(idle, fire) {
 		spr_idle = idle;
 		spr_fire = fire;
@@ -38,6 +40,13 @@ function change_character(character) {
 	with Shooter {
 		instance_create_layer(x, y, layer, character.shooter, {can_shoot, has_dice, die})
 		instance_destroy()
+	}
+	array_clear(Player.spells);
+	with SpellButtonHolder {
+		reset();
+	}
+	for (var spells = character.starting_spells, i = 0, l = array_length(spells); i < l; i++) {
+		spell_grant(spells[i]);
 	}
 }
 

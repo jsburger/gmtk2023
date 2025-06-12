@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":4.421859,
+  "duration":4.4218593,
   "name":"sndExplosion",
   "parent":{
     "name":"Level Objects",

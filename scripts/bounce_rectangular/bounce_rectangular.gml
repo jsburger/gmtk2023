@@ -3,11 +3,6 @@ function bounce_rectangular(ball) {
 
 	var dir = point_direction(collision.x,collision.y, ball.x, ball.y);
 	ball_bounce_on_normal(ball, self, dir);
-	with ball {
-		//ball_bounce_on_normal(ball, self, dir);
-		//JANK
-		if keyboard_check(ord("Q")) if (vspeed < 0 && speed > 2) vspeed = min(vspeed, -4);
-	}
 	
 }
 

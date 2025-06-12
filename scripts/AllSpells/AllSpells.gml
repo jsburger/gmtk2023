@@ -12,14 +12,16 @@ function spell_get(name) {
 	var proto = register_spell.spells[? name];
 	if proto == undefined return undefined;
 	// Feather disable once GM1045
-	return proto();
+	return proto() ?? Spell.last_spell;
 }
 
 global.spellkeys = {};
 #macro SPELLS global.spellkeys
 
 #region Placers
-	SPELLS.PLACE_BOMB = register_spell("PlaceBomb", function() {
+	SPELLS.JUNO = get_juno_spells();
+	SPELLS.PLACERS = {};
+	SPELLS.PLACERS.BOMB = register_spell("PlaceBomb", function() {
 		with new PlacerSpell(Bomb) {
 			name = "Bomb Placer"
 			desc = "Place a Bomb"
@@ -29,16 +31,7 @@ global.spellkeys = {};
 		}
 	})
 
-	SPELLS.PLACE_BRICK = register_spell("PlaceBlock", function() {
-		with new PlacerSpell(BrickNormal) {
-			name = "Block Placer"
-			desc = "Place a Block"
-			sprite_index = sprBrick
-			set_cost(MANA.BLUE, 1)		
-			return self
-		}
-	})
-	SPELLS.PLACE_BARREL = register_spell("PlaceBarrel", function() {
+	SPELLS.PLACERS.BARREL = register_spell("PlaceBarrel", function() {
 		var placer = new LauncherPlacer(Barrel, 45);
 		placer.rotation_speed = 90;
 		
@@ -51,7 +44,7 @@ global.spellkeys = {};
 		}
 	})
 	
-	SPELLS.PLACE_ORB = register_spell("PlaceOrb", function() {
+	SPELLS.PLACERS.DEMON_ORB = register_spell("PlaceOrb", function() {
 		with new PlacerSpell(DemonOrb) {
 			name = "Summon Demon";
 			desc = "Place a Demon Orb, which colors nearby bricks Purple.";

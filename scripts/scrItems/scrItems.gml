@@ -10,6 +10,9 @@ global.items = get_item_array()
 	index < l; item = (l > (++index)) ? global.items[index] : undefined)
 
 function Item() : Hoverable() constructor {
+	static last_item = self;
+	last_item = self;
+	
 	name = "Item";
 	desc = "Description";
 	sprite_index = sprIntentAttack;

@@ -13,3 +13,10 @@ add_button = function(spell) {
 array_foreach(global.player_stats.spells, function(item) {
 	add_button(item)
 })
+
+reset = function() {
+	with SpellButton instance_destroy();
+	buttons = 0;
+	array_clear(queue);
+	alarm[0] = -1;
+}

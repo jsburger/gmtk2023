@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":3.04225,
+  "duration":3.0422676,
   "name":"sndBombLit",
   "parent":{
     "name":"Level Objects",

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"JunoSpells",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"JunoSpells",
+  "parent":{
+    "name":"Juno",
+    "path":"folders/Characters/Juno.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

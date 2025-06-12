@@ -5,7 +5,13 @@ function JunoCharacter() : Character("Juno") constructor {
 	shooter = JunoShooter;
 	ball = JunoBall;
 	
-	bg_color = #89db70
+	//get_juno_spells() <= middle click for quick access
+	starting_spells = [
+		SPELLS.SLAMMY, SPELLS.BLOCKO,
+		SPELLS.JUNO.PLACERS.PROBE, SPELLS.PLACERS.BARREL,
+		SPELLS.REDIFY, SPELLS.REVIVE];
+	
+	bg_color = #89db70;
 }
 
 function JunoEffect() : BallEffect() constructor {

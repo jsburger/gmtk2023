@@ -55,7 +55,7 @@ function EnemyMove(_owner) : CombatInterface() constructor {
 	static hit = function(damage) {
 		if is_real(damage) damage = as_damage(damage);
 		if (intent_auto && (
-			(is_provider(damage) && !is_instanceof(damage.inner, FunctionProvider))
+			(is_provider(damage) && !is_instanceof(damage.inner, FunctionProvider) && !is_method(damage.inner))
 			|| is_real(damage))) {
 			add_intent(new Intent(sprIntentAttack, damage)
 				.with_desc(format("Deal {0} damage.", damage)))

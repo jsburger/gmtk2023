@@ -217,7 +217,7 @@ function check_fullclear() {
 
 /// Destroys current board and spawns a new one shortly after
 function make_new_board() {
-	with obj_stain_effect{
+	with BombStain{
 		clear_item()	
 	}
 	with par_bricklike {

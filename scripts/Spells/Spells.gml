@@ -1,4 +1,6 @@
 function Spell() : CombatInterface() constructor {
+	static last_spell = self;
+	last_spell = self;
 	
 	is_instant = false;
 	costs = array_create(MANA.MAX);

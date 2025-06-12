@@ -5,5 +5,11 @@ function CuffsCharacter() : Character("Cuffs") constructor {
 	
 	bg_color = color_multiply(merge_color(c_blue, c_aqua, .5), c_ltgray);
 	
+	starting_spells = [
+		SPELLS.SLAMMY, SPELLS.BLOCKO,
+		SPELLS.PLACERS.BOMB, SPELLS.PLACERS.BARREL,
+		SPELLS.REDIFY, SPELLS.REVIVE
+	]
+	
 	ball = CuffsBall;
 }

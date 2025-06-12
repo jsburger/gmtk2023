@@ -10,7 +10,7 @@ set_hp(99);
 spr_icon = sprDemonIcon;
 
 on_die = function() {
-	spell_grant(SPELLS.PLACE_ORB);
+	spell_grant(SPELLS.PLACERS.DEMON_ORB);
 }
 
 purple_counter = 0;
