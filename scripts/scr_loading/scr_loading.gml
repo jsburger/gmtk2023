@@ -197,28 +197,35 @@ function level_load(levelnumber){
 	array_foreach(level.objects, function(entry) {
 		var pos = transform_instance_position(entry);
 		var obj = asset_get_index(entry.object_index);
-		if obj == -1 trace("UNABLE TO FIND OBJECT FOR :" + entry.object_index)
-		else with instance_create_layer(pos.x, pos.y, "Instances", obj) {
-			//Old
-			if instance_is(self, obj_cable) obj_layer = 1
-			else obj_layer = 0
-			
-			//Old
-			if variable_struct_exists(entry, "serialized_info") {
-				deserialize(entry.serialized_info)
+		if obj == -1 {
+			trace("UNABLE TO FIND OBJECT FOR :" + entry.object_index)
+		}
+		else {
+			if !Board.editor { 
+				obj = Player.character.modify_level_brick(obj);
 			}
+			with instance_create_layer(pos.x, pos.y, "Instances", obj) {
+				//Old
+				if instance_is(self, obj_cable) obj_layer = 1
+				else obj_layer = 0
 			
-			//New
-			if variable_struct_exists(entry, "data") {
-				serializer.read(entry.data)
-			}
-			
-			if !Board.editor && instance_is(self, parBoardObject) {
-				alarm[0] = manhatten_distance(x, y, Board.bbox_left, Board.bbox_top)/32
-				if keyboard_check_pressed(vk_home) {
-					alarm[0] /= 2;
+				//Old
+				if variable_struct_exists(entry, "serialized_info") {
+					deserialize(entry.serialized_info)
 				}
-				on_level_placement.call()
+			
+				//New
+				if variable_struct_exists(entry, "data") {
+					serializer.read(entry.data)
+				}
+			
+				if !Board.editor && instance_is(self, parBoardObject) {
+					alarm[0] = manhatten_distance(x, y, Board.bbox_left, Board.bbox_top)/32
+					if keyboard_check_pressed(vk_home) {
+						alarm[0] /= 2;
+					}
+					on_level_placement.call()
+				}
 			}
 		}
 	})

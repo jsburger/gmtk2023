@@ -16,6 +16,8 @@ function Character(_name) constructor {
 		spr_fire = fire;
 	}
 	
+	/// @param {Asset.GMObject} input
+	static modify_level_brick = function(input) { return input };
 }
 
 on_game_load(function() {
@@ -28,6 +30,8 @@ global.characters = {}
 CHARACTERS.CUFFS = new CuffsCharacter();
 
 CHARACTERS.JUNO = new JunoCharacter();
+
+CHARACTERS.GOBLIN = new GoblinCharacter();
 
 /// @param {Struct.Character} character
 function change_character(character) {

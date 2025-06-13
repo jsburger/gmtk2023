@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"GoblinCharacter",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"GoblinCharacter",
+  "parent":{
+    "name":"Goblin",
+    "path":"folders/Characters/Goblin.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

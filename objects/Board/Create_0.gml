@@ -99,7 +99,7 @@ right_clicked_y = 0;
 
 
 entity_list = [
-/*Bricks*/    [BrickNormal, BrickNormalV, PegNormal], [BrickLarge, BrickLargeV], [BrickGlow, BrickGlowV], [BrickLargeGlow, BrickLargeGlowV], [BrickLargeMetal, BrickLargeMetalV],
+/*Bricks*/    [BrickNormal, BrickNormalV, PegSmall], [BrickLarge, BrickLargeV, PegNormal], [BrickGlow, BrickGlowV], [BrickLargeGlow, BrickLargeGlowV], [BrickLargeMetal, BrickLargeMetalV],
 			  [BrickMetal, BrickMetalXL, PegMetal], [BrickHidden, BrickHiddenV], [BrickLargeHidden, BrickLargeHiddenV],
 			  new RotatingPlacer(OneWayBrick, 90),
 /*Movement 1*/[Bumper, ColorBumper],

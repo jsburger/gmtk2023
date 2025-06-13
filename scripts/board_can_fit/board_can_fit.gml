@@ -62,8 +62,8 @@ function board_grid_position(_x, _y) {
 		board_off_y = bbox_bottom mod TILE_MIN;
 	}
 	
-	var grid_x = snap_to(_x, TILE_MIN) + board_off_x,
-		grid_y = snap_to(_y, TILE_MIN) + board_off_y;
+	var grid_x = snap_to_lowest(_x, TILE_MIN) + board_off_x,
+		grid_y = snap_to_lowest(_y, TILE_MIN) + board_off_y;
 		
 	return {
 		x: grid_x,
