@@ -9,9 +9,9 @@ requirements:
 		taking editor placers? would need destroying disabled.
 		
 
-Combatrunner.current_spell
-	left_click, no right click
-	done() script which tells combat runner when the spell is done
-	cancel click events
-	just hardcode the targeting (with EnemyBattler)
+"run" mode:
+	3 decks of encounters
+	can see top card of each deck
+	each deck has its own progress
+	track total combats and end chapter when time is up
 	
