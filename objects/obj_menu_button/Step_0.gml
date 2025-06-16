@@ -8,7 +8,7 @@ if !clicked {
 			clicked = true
 			image_index = 1
 			image_blend = c_white
-			with instance_create_layer(x, y, "Portraits", obj_fade_to) {
+			with instance_create_layer(x, y, "Portraits", FadeTo) {
 				destination = intro_room
 			}
 			audio_stop_sound(ambience)

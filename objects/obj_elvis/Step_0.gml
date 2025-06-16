@@ -7,7 +7,7 @@ if waitforvoiceline > 0 {
 	if waitforvoiceline <= 0 {
 		if room == intro_room{
 			say_line(voIntro, function() {
-				with instance_create_depth(x, y, depth + 2, obj_fade_to) {
+				with instance_create_depth(x, y, depth + 2, FadeTo) {
 					destination = a_roominit;
 				}
 			})

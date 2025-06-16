@@ -4,7 +4,7 @@
 
 image_index = 0
 if sprite_index == sprLogoEnd {
-	with instance_create_layer(x, y, layer, obj_fade_to) {
+	with instance_create_layer(x, y, layer, FadeTo) {
 		destination = main_menu
 	}
 	image_alpha = 0

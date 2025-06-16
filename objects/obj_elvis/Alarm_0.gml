@@ -1,7 +1,7 @@
 /// @description Chatter
 exit
 {
-	if !elvis_is_speaking() && !instance_exists(obj_fade_to) && irandom(2) != 0 {
+	if !elvis_is_speaking() && !instance_exists(FadeTo) && irandom(2) != 0 {
 		var _snd = sound_pool("voChatter");
 
 		if !irandom(50) _snd = sound_pool("voChatterRare");
