@@ -5,8 +5,8 @@ function get_item_array() {
 	return [];
 }
 
-global.items = get_item_array()
-#macro ITEM_LOOP for (var index = 0, l = array_length(global.items), item = (l > 0) ? global.items[0] : undefined; \
+global.items = get_item_array();
+#macro ITEM_LOOP for (var index = 0, l = array_length(global.items), item = array_first(global.items); \
 	index < l; item = (l > (++index)) ? global.items[index] : undefined)
 
 function Item() : Hoverable() constructor {
@@ -25,4 +25,6 @@ function Item() : Hoverable() constructor {
 	}
 	
 	static on_mana_gained = function(type, amount) {};
+
+	static on_turn_start = function() {};
 }

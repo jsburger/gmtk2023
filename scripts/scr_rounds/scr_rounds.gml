@@ -78,8 +78,13 @@ function player_turn_start() {
 		spell.reset();
 	})
 	
+	interface.wait(10);
+	ITEM_LOOP {
+		item.on_turn_start();
+	}
+	
 	if CombatRunner.throws > 0 {
-		interface.wait(20)
+		interface.wait(10);
 		interface.run(enable_shooter)
 	}
 }

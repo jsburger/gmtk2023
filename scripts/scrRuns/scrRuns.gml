@@ -34,6 +34,9 @@ function Run() constructor {
 	
 	static on_combat_ended = function() {
 		victories += 1;
+		if victories mod 2 == 1 || true {
+			item_grant(item_random());
+		}
 	}
 	
 }

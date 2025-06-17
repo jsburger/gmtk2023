@@ -1,15 +1,15 @@
 /// @param {String} name
 /// @param {Function} spellFactory
 function register_item(name, itemFactory) {
-	static items = ds_map_create();
-	ds_map_add(items, name, itemFactory)
+	static registered_items = ds_map_create();
+	ds_map_add(registered_items, name, itemFactory)
 	return name;
 }
 
 /// @param {String} name
-/// @returns {Struct.Spell, Undefined}
+/// @returns {Struct.Item, Undefined}
 function item_get(name) {
-	var proto = register_item.items[? name];
+	var proto = register_item.registered_items[? name];
 	if proto == undefined return undefined;
 	// Feather disable once GM1045
 	return proto() ?? Item.last_item;
@@ -26,13 +26,17 @@ function item_grant(name) {
 	return item;
 }
 
+function item_random() {
+	return array_random(ds_map_keys_to_array(register_item.registered_items));
+}
+
 
 global.itemKeys = {};
 #macro ITEMS global.itemKeys
 
-on_game_load(function() {
-	item_grant(ITEMS.RED_PAINT)
-})
+//on_game_load(function() {
+//	item_grant(ITEMS.RED_PAINT)
+//})
 
 ITEMS.RED_PAINT = register_item("RedManaToRedBrick", function() {
 	with new Item() {
@@ -57,5 +61,47 @@ ITEMS.RED_PAINT = register_item("RedManaToRedBrick", function() {
 		}
 		
 		return self;
+	}
+})
+
+ITEMS.PURPLE_TURN_START = register_item("PurpleBricksOnTurnStart", function() {
+	with new Item() {
+		name = "Scary Aura";
+		count = 4;
+		desc = $"At the start of your turn,\nColor {count} bricks Purple.";
+		
+		sprite_index = sprItemPurpleAura;
+		
+		on_turn_start = function() {
+			interface.recolor(count, COLORS.PURPLE);
+		}
+		
+		return self;
+	}
+});
+
+ITEMS.BLOCK_TURN_START = register_item("BlockTurnStart", function() {
+	with new Item() {
+		name = "Friendly Shield";
+		block = 4;
+		desc = $"At the start of your turn,\ngain {block} Shield.";
+		sprite_index = sprItemFriendlyShield;
+		
+		on_turn_start = function() {
+			interface.block(block);
+		}
+	}
+})
+
+ITEMS.REVIVE_TURN_START = register_item("ReviveTurnStart", function() {
+	with new Item() {
+		name = "Photographic Memory";
+		revive_count = 5;
+		desc = $"At the start of your turn,\nRebuild {revive_count} bricks."
+		sprite_index = sprItemPhotographicMemory;
+		
+		on_turn_start = function() {
+			interface.consume(new RespawnItem(self, revive_count));
+		}
 	}
 })
