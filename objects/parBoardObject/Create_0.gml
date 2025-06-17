@@ -74,7 +74,7 @@ event_inherited();
 		
 		snd_impact = sndDieHitBrick;
 		
-		ghost_hits = 0; //Used to track how many times a ghost has collided with an instance.
+		//ghost_hits = 0; //Used to track how many times a ghost has collided with an instance.
 		ghost_immune = false; //Prevents the object from accruing ghost hits, meaning it doesnt get pierced
 		stops_preview = true;
 		
@@ -87,6 +87,7 @@ event_inherited();
 		can_take_damage = false;
 		hp = 1;
 		hp_max = 1;
+		ghost_hp = 1;
 			
 		on_hurt = function(damage) {};
 			
@@ -111,6 +112,7 @@ event_inherited();
 		spr_frozen = sprBrickFrozen;
 		spr_frozen_index = 0;
 		is_frozen = false;
+		is_ghost_unfrozen = false;
 		/// Cleaning prevents the function from calling brick_unfreeze, which would create a loop
 		set_frozen = function(value, cleaning = false) {
 			if value != is_frozen {

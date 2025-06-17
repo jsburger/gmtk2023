@@ -1,6 +1,9 @@
 function draw_dice_preview(_x, _y, gunangle, launch_speed = 18, modifier_struct = undefined) {
 	draw_set_alpha(.8)
-	with parBoardObject ghost_hits = 0;
+	with parBoardObject {
+		ghost_hp = hp;
+		is_ghost_unfrozen = false;
+	}
 	var obj = PlayerBall;
 	if instance_is(self, Shooter) {
 		obj = Player.character.ball;

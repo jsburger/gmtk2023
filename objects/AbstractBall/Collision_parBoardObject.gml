@@ -83,7 +83,7 @@ var collision = {
 
 var damaged = false,
 	pierced = true;
-if damage > 0 && !is_ghost && ball_can_damage(self, collider) {
+if damage > 0 && ball_can_damage(self, collider) {
 	damaged = brick_hit(collider, damage, self);
 	pierced = false;
 }
@@ -92,35 +92,18 @@ var bounce = true;
 	
 //Try to pierce
 if damaged {
-	if pierce > 0 && collider.hp <= 0 {
+	if pierce > 0 && (collider.hp <= 0 || (is_ghost && collider.ghost_hp <= 0)) {
 		bounce = false;
 		pierce -= 1;
 		pierced = true;
 	}
 }
-//Ghost piercing
-if (is_ghost && !collider.ghost_immune && ball_can_damage(self, collider)) {
-	collider.ghost_hits += 1;
-	rolled_on_collider = collider.id;
-	
-	has_bounced = true; //Used for preview drawing
-}
-
-if bounce && is_ghost && collider.can_take_damage {
-	if pierce > 0 && (((collider.hp / damage) + collider.is_frozen) <= collider.ghost_hits) {
-		//array_push(ghost_pierce_list, collider.id);
-		pierce -= 1;
-		pierced = true;
-		bounce = false;
-		has_bounced = false;
-	}
-}
-
 
 //Bounce off
 if bounce {
 	collider.ball_bounce(self);
 	on_bounce();
+	has_bounced = true;
 }
 
 if walk_distance > 0 {
@@ -131,8 +114,10 @@ if walk_distance > 0 {
 	vspeed += lengthdir_y(taken_acceleration, gravity_direction);
 }
 
-if !is_ghost && ball_can_damage(self, collider) {
-	collider.on_ball_impact(self, collision.x, collision.y)
+if ball_can_damage(self, collider) {
+	if !is_ghost {
+		collider.on_ball_impact(self, collision.x, collision.y)
+	}
 	rolled_on_collider = collider.id;
 	
 	effects.on_impact(self, {

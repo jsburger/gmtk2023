@@ -156,11 +156,23 @@ function brick_status_text(brick) {
 /// Returns if the brick was actually damaged
 function brick_hit(brick, damage, source) {
 	if damage <= 0 return false;
-	if brick.is_frozen {
-		brick.set_frozen(false)
+	var is_ghost = variable_instance_defget(source, "is_ghost", false);
+	
+	if brick.is_frozen && (!brick.is_ghost_unfrozen) {
+		if is_ghost {
+			brick.is_ghost_unfrozen = true;
+			return false;
+		}
+		brick.set_frozen(false);
 		return false;
 	}
+	
 	if brick.can_take_damage {
+		if is_ghost && !brick.ghost_immune {
+			brick.ghost_hp -= damage;
+			return true;
+		}
+		
 		//Hit brick
 		brick.hp -= damage;
 		brick.on_hurt(damage, source);
