@@ -29,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sprRunModeButton",
+    "path":"sprites/sprRunModeButton/sprRunModeButton.yy",
+  },
   "spriteMaskId":null,
   "tags":[
     "Clickable",

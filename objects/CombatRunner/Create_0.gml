@@ -242,7 +242,13 @@ end_combat = function() {
 	
 	combat_ending = true;
 	
-	fade_to(encounter_room)
+	if global.run_mode {
+		fade_to(RoomRunMode);
+		global.run.on_combat_ended();
+	}
+	else {
+		fade_to(encounter_room)
+	}
 	on_board_clear();
 	// Test code to reset player health when they "die"
 	if player_get_hp() <= 0 player_set_hp(50)

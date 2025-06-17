@@ -43,6 +43,11 @@ function encounter_get() {
 	return array_random(global.encounters)
 }
 
+/// @param {Struct.Encounter} encounter
+function encounter_set(encounter) {
+	global.encounter_current = encounter;
+}
+
 encounter_add(
 	new Encounter("One Squirrel")
 		.with_boards("TestColumns1")
