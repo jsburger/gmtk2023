@@ -1102,6 +1102,7 @@
     {"id":{"name":"sprIOIndicator","path":"sprites/sprIOIndicator/sprIOIndicator.yy",},},
     {"id":{"name":"sprItemDisplay","path":"sprites/sprItemDisplay/sprItemDisplay.yy",},},
     {"id":{"name":"sprItemFriendlyShield","path":"sprites/sprItemFriendlyShield/sprItemFriendlyShield.yy",},},
+    {"id":{"name":"sprItemFriendlyShieldNew","path":"sprites/sprItemFriendlyShieldNew/sprItemFriendlyShieldNew.yy",},},
     {"id":{"name":"sprItemPhotographicMemory","path":"sprites/sprItemPhotographicMemory/sprItemPhotographicMemory.yy",},},
     {"id":{"name":"sprItemPurpleAura","path":"sprites/sprItemPurpleAura/sprItemPurpleAura.yy",},},
     {"id":{"name":"sprItemRedPaint","path":"sprites/sprItemRedPaint/sprItemRedPaint.yy",},},

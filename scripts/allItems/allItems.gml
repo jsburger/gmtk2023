@@ -85,7 +85,7 @@ ITEMS.BLOCK_TURN_START = register_item("BlockTurnStart", function() {
 		name = "Friendly Shield";
 		block = 4;
 		desc = $"At the start of your turn,\ngain {block} Shield.";
-		sprite_index = sprItemFriendlyShield;
+		sprite_index = sprItemFriendlyShieldNew;
 		
 		on_turn_start = function() {
 			interface.block(block);
