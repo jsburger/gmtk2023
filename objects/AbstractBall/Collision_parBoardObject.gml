@@ -72,7 +72,6 @@ if walk_distance > 0 {
 }
 
 // Reset variables
-nograv = false;
 extraspeed = 0;
 
 //Todo: replace this
@@ -100,6 +99,10 @@ if damaged {
 		}
 		pierced = true;
 	}
+}
+
+if !pierced {
+	nograv = false;
 }
 
 //Bounce off

@@ -14,6 +14,11 @@ global.smart_net = false;
 #macro SMART_NET global.smart_net
 
 function tweaks_step() {
+	if keyboard_check_pressed(vk_f1) {
+		mana_add(COLORS.RED, 60);
+		mana_add(COLORS.BLUE, 60);
+		mana_add(COLORS.YELLOW, 60);
+	}
 	if keyboard_check_pressed(ord("1")) {
 		USE_CHARGES = !USE_CHARGES;
 	}

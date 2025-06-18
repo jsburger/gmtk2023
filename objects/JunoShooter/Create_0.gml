@@ -21,6 +21,7 @@ active = function() {
 		}
 		if instance_exists(JunoProbe) {
 			direction = point_direction_struct(self, instance_nearest(x, y, JunoProbe));
+			speed = maxspeed;
 			nograv = true;
 		}
 		return true;
