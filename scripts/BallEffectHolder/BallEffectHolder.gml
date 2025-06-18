@@ -12,32 +12,50 @@ function BallEffectHolder() : BallEffect() constructor {
 		if is_method(struct_get(static_struct, name)) && name != "clear" {
 			struct_set(self, name, method({effects, hash}, function() {
 				var length = array_length(effects);
-				if length <= 0 exit;
+				if length <= 0 return false;
 				arguments_pack;
-				var need_refresh = false;
+				var need_refresh = false,
+					return_value = false;
 				for (var i = 0; i < length; i++) {
 					var func = struct_get_from_hash(effects[i], hash)
-					with effects[i] method_call(func, args)
+					with effects[i] {
+						return_value = method_call(func, args);
+					}
 					if effects[i].wants_deletion {
 						need_refresh = true;
+					}
+					// Exit early if true for can_ scripts
+					if (return_value) {
+						break;
 					}
 				}
 				
 				if need_refresh {
+					var ball = args[0];
 					for (var i = length - 1; i >= 0; i--) {
 						if effects[i].wants_deletion {
-							effects[i].on_remove(args[0]);
+							effects[i].on_remove(ball);
 						}
 						else {
-							effects[i].on_refresh(args[0]);
+							effects[i].on_refresh(ball);
+						}
+						// Disable stat changes
+						for (var o = array_length(effects[i].stat_changes) - 1; o >= 0; o--) {
+							effects[i].stat_changes[o].reverse(ball);
 						}
 					}
 					array_filter_resize(effects, function(effect) {return !effect.wants_deletion})
 					length = array_length(effects)
 					for (var i = 0; i < length; i++) {
-						effects[i].on_reapply(args[0])
+						// Re-enable stat changes
+						for (var o = 0; o < array_length(effects[i].stat_changes); o++) {
+							effects[i].stat_changes[o].apply(ball)
+						}
+						effects[i].on_reapply(ball);
 					}
 				}
+				
+				return return_value;
 			}))
 		}
 	}
@@ -64,6 +82,10 @@ function BallEffectHolder() : BallEffect() constructor {
 		//		array_push(list, effect)
 		//	}
 		//}
+		
+		for (var i = 0; i < array_length(effect.stat_changes); i++) {
+			effect.stat_changes[i].apply(ball)
+		}
 		
 		// Run apply hook
 		effect.on_apply(ball);

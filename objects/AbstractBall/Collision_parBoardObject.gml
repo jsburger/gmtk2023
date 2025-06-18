@@ -92,9 +92,12 @@ var bounce = true;
 	
 //Try to pierce
 if damaged {
-	if pierce > 0 && (collider.hp <= 0 || (is_ghost && collider.ghost_hp <= 0)) {
+	var infpierce = effects.can_infinite_pierce(self, collider);
+	if (pierce > 0 || infpierce) && (collider.hp <= 0 || (is_ghost && collider.ghost_hp <= 0)) {
 		bounce = false;
-		pierce -= 1;
+		if !infpierce {
+			pierce -= 1;
+		}
 		pierced = true;
 	}
 }

@@ -28,33 +28,3 @@ function tweaks_step() {
 	}
 }
 
-
-function CannonLaunchEffect() : BallEffect() constructor {
-	leeway = 1;
-	starting_pierce = 0;
-
-	static on_apply = function(ball) {
-		starting_pierce = ball.pierce;
-		ball.pierce = infinity;
-	}
-
-	static on_remove = function(ball) {
-		ball.pierce = starting_pierce;
-	}
-	
-	static on_step = function(ball) {		
-		if ball.vspeed >= 0 {
-			if leeway <= 0 {
-				clear();
-			}
-			else {
-				leeway -= 1;
-			}
-		}
-		if !ball.is_ghost {
-			with instance_create_layer(ball.x, ball.y, "FX", obj_fx) {
-				sprite_index = sprFXDust;
-			}
-		}
-	}
-}

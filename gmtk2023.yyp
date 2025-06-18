@@ -704,6 +704,7 @@
     {"id":{"name":"scrTickables","path":"scripts/scrTickables/scrTickables.yy",},},
     {"id":{"name":"scrVars","path":"scripts/scrVars/scrVars.yy",},},
     {"id":{"name":"Serializer","path":"scripts/Serializer/Serializer.yy",},},
+    {"id":{"name":"sleep","path":"scripts/sleep/sleep.yy",},},
     {"id":{"name":"snap_to","path":"scripts/snap_to/snap_to.yy",},},
     {"id":{"name":"sort_union","path":"scripts/sort_union/sort_union.yy",},},
     {"id":{"name":"sort_y","path":"scripts/sort_y/sort_y.yy",},},

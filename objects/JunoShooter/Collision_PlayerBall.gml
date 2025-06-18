@@ -1,11 +1,10 @@
 /// @description 
 
-if (has_dash && dash_timer > 0) {
-	var ball = other;
-	
+var ball = other,
+	boost = variable_instance_defget(ball, "has_juno_boost", false);
+if (boost && dash_timer > 0) {
 	if ball.image_blend != c_dkgray {
-		has_dash = false;
-		
+		//has_dash = false;
 		ball.nograv = false;
 		
 		with ball {

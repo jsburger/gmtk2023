@@ -15,7 +15,7 @@ active = function() {
 	with die {
 		effects.add_effect(self, new JunoEffect())
 		vspeed = max_fallspeed * .8;
-		pierce += 2;
+		//pierce += 2;
 		with instance_create_layer(x, y, "FX", obj_fx) {
 			sprite_index = sprFXJuno;
 		}
